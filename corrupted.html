@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investor Relations | Q5+</title>
+  <meta name="keywords" content="Gerchan,Gerchan Farms,Gadha,Raj,Sheranos,grchnraj,Lizzie Holmes,memelourde,gerchtothefuture,itsgerchintime,Amit Gaur,Q5,Space Gulag,Big Tex Wang,bigtexwang,sterlingwinslow,leoncochran,The Gerch-Verse,Gerch,Gerchan,The Gerch Verse,Gerch-Verse,Gerch Verse,Cole Mercer,pharma_bro,Dark Amit,darkamit,Light Amit,lightamit,Evil Amit,evilamit,evilgrchnfrms,Gerchlander,gerchlander,Michael Moo,michael.moo,Eel On Muskmelon,eelonmuskmelon,Gadha,gadhamilk,Sterling Winslow,sterlingwinslow,Raj Mehta,grchnraj,Leon Cochran,leoncochran,Amit's Mother,Mediocrates">
+  <meta name="description" content="Q5 earnings classified. Investor materials restricted. Continued interest constitutes implied consent to future quarters.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://thegerchverse.neocities.org/corrupted.html">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://thegerchverse.neocities.org/sitemap.xml">
+  <meta property="og:image" content="https://thegerchverse.neocities.org/images/bg.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:title" content="Gerch-Verse | Investor Relations">
+  <meta property="og:description" content="Q5 earnings classified. Continued interest constitutes implied consent to future quarters.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root {
+      --cyan: #00FFFF;
+      --pink: #FF007F;
+      --red: #FF3333;
+      --bg: #050505;
+      --glass: rgba(255,255,255,0.06);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #111 0%, #000 60%);
+      color: #E0E0E0;
+      font-family: 'Orbitron', system-ui, sans-serif;
+      /* override flex centering for this page */
+      display: block;
+      overflow-x: hidden;
+    }
+
+    /* ambient scanlines */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      pointer-events: none;
+      opacity: 0.25;
+    }
+
+    .ir-container {
+      position: relative;
+      width: min(900px, 92vw);
+      height: min(600px, 88vh);
+      background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border: 1px solid rgba(0,255,255,0.3);
+      box-shadow:
+        0 0 40px rgba(0,255,255,0.25),
+        inset 0 0 30px rgba(255,0,127,0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: breathe 6s ease-in-out infinite;
+      margin: 2rem auto 0 auto; /* move card to top & horizontally center */
+    }
+
+    @keyframes breathe {
+      0%,100% { box-shadow: 0 0 40px rgba(0,255,255,0.25); }
+      50% { box-shadow: 0 0 60px rgba(255,0,127,0.35); }
+    }
+
+    /* CLASSIFIED stamp */
+    .classified {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .classified span {
+      border: 6px solid var(--red);
+      color: var(--red);
+      padding: 1rem 3rem;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: 0.3em;
+      transform: rotate(-28deg);
+      opacity: 0.18;
+      text-shadow: 0 0 20px rgba(255,0,0,0.6);
+    }
+
+    .doc-icon {
+      font-size: 4.5rem;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 10px var(--cyan));
+    }
+
+    h1 {
+      margin: 0.5rem 0;
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      background: linear-gradient(45deg, var(--cyan), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+
+    .message {
+      text-align: center;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 600px;
+      color: #CCC;
+    }
+
+    .message strong {
+      color: var(--cyan);
+      font-weight: 700;
+    }
+
+    .error-code {
+      margin-top: 1.2rem;
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: #777;
+    }
+
+    /* fake loading bar */
+    .loader {
+      margin-top: 2rem;
+      width: 70%;
+      height: 8px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .loader span {
+      display: block;
+      height: 100%;
+      width: 30%;
+      background: linear-gradient(90deg, var(--cyan), var(--pink));
+      animation: loading 2.5s ease-in-out infinite;
+    }
+
+    @keyframes loading {
+      0% { transform: translateX(-100%); }
+      50% { transform: translateX(250%); }
+      100% { transform: translateX(250%); }
+    }
+
+    .ticker {
+      position: absolute;
+      bottom: 1.2rem;
+      font-size: 0.7rem;
+      color: var(--cyan);
+      letter-spacing: 0.15em;
+      opacity: 0.85;
+      text-align: center;
+    }
+
+    .ticker span {
+      color: var(--pink);
+    }
+
+    .noob-exit {
+      margin-top: 2.5rem;
+      text-decoration: none;
+      text-align: center;
+      padding: 0.9rem 1.4rem;
+      border: 1px dashed rgba(255,255,255,0.4);
+      color: #999;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .noob-exit span {
+      display: block;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      margin-top: 0.3rem;
+      opacity: 0.7;
+    }
+
+    .noob-exit:hover {
+      color: #000;
+      background: linear-gradient(45deg, #00FFFF, #FF007F);
+      border-color: transparent;
+      box-shadow: 0 0 20px rgba(0,255,255,0.6);
+    }
+
+    .noob-exit:hover span {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ir-container">
+    <div class="classified"><span>CLASSIFIED</span></div>
+
+    <div class="doc-icon">📄</div>
+
+    <h1>Q5_Earnings_FINAL.pdf</h1>
+
+    <div class="message">
+      This document has been reviewed and deemed <strong>Acceptable</strong>.<br>
+      Visibility has been restricted to protect stakeholders from context.
+      <br><br>
+      Continued interest constitutes implied consent to future quarters.
+    </div>
+
+    <div class="error-code">
+      ERROR 0xQ5 :: CLEARANCE_EXCEEDS_SHAREHOLDER_STATUS
+    </div>
+
+    <div class="loader"><span></span></div>
+    
+    <a href="./index.html" class="noob-exit">
+      Exit Investor Materials/Return to Non-Accredited Reality
+      <span>For cost-sensitive insolent individuals unwilling to commit capital.</span>
+    </a>
+  </div>
+  
+  <!-- Emergency fallback for iOS -->
+<script>
+(function() {
+  // Hardcoded calculation for Dec 12, 2021
+  var DISAPPEARANCE = 1639267200000;
+  var days = Math.floor((Date.now() - DISAPPEARANCE) / 86400000);
+  
+  // Try to update for 5 seconds
+  var attempts = 0;
+  var interval = setInterval(function() {
+    var el = document.getElementById('gerchanDays');
+    if (el) {
+      el.textContent = days;
+      clearInterval(interval);
+      console.log('[Emergency] Set days to:', days);
+    }
+    attempts++;
+    if (attempts > 50) clearInterval(interval); // Give up after 5s
+  }, 100);
+})();
+</script>
+
+<!-- Mediocrates Document Approver Badge -->
+<div style="position: fixed; bottom: 10px; right: 10px; background: rgba(0,0,0,0.8); border: 1px solid #FFD700; border-radius: 4px; padding: 0.3rem 0.6rem; z-index: 100; display: flex; align-items: center; gap: 0.5rem;">
+  <img src="./images/mediocrates.jpg" alt="Mediocrates" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;">
+  <span style="font-family: 'Orbitron', sans-serif; font-size: 0.6rem; color: #FFD700;">DOCUMENT APPROVED: NOT INSPECTED</span>
+</div>
+
+</body>
+</html>

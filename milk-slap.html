@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Gerch-Verse | Milk-Slap Championship</title>
+  <link rel="stylesheet" href="./gerchverse.css">
+  <meta name="keywords" content="Gerchan,Gerchan Farms,Gadha,milk slap game,Amit Gaur,Q5,Mediocrates,insolent cow">
+  <meta name="description" content="The only milk-slap game where scores are philosophical and effort is always acceptable.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://thegerchverse.neocities.org/milk-slap.html">
+      <style>
+    /* Critical game styles - no chaos popups here */
+    .game-arena {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .gerchan-silhouette {
+      width: clamp(200px, 50vw, 400px);
+      height: clamp(280px, 70vw, 560px);
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.1s;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      filter: drop-shadow(0 0 40px rgba(0,0,0,0.8));
+    }
+    
+    .gerchan-silhouette:active {
+      transform: scale(0.98);
+    }
+    
+    .gerchan-silhouette.slap-left {
+      animation: slapLeft 0.3s ease-out;
+    }
+    
+    .gerchan-silhouette.slap-right {
+      animation: slapRight 0.3s ease-out;
+    }
+    
+    @keyframes slapLeft {
+      0%, 100% { transform: rotate(0deg) translateX(0); }
+      25% { transform: rotate(-8deg) translateX(-20px); }
+      50% { transform: rotate(-5deg) translateX(-10px); }
+    }
+    
+    @keyframes slapRight {
+      0%, 100% { transform: rotate(0deg) translateX(0); }
+      25% { transform: rotate(8deg) translateX(20px); }
+      50% { transform: rotate(5deg) translateX(10px); }
+    }
+    
+    .hand-cursor {
+      position: fixed;
+      width: 80px;
+      height: 80px;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.05s;
+      display: none;
+    }
+    
+    .hand-cursor.slap {
+      animation: handSlap 0.15s ease-out;
+    }
+    
+    @keyframes handSlap {
+      0% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+      50% { transform: translate(-50%, -50%) scale(1.3) rotate(-20deg); }
+      100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+    }
+    
+    .slap-effect {
+      position: absolute;
+      font-size: 3rem;
+      font-weight: 900;
+      color: #00FFFF;
+      text-shadow: 0 0 20px #FF007F, 0 0 40px #00FFFF;
+      pointer-events: none;
+      animation: slapFloat 1s ease-out forwards;
+      z-index: 100;
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    @keyframes slapFloat {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(0.5) rotate(0deg);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-50px) scale(1.2) rotate(var(--rotation, 10deg));
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.8) rotate(var(--rotation, -10deg));
+      }
+    }
+    
+    .milk-splash {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(0,255,255,0.6) 40%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: milkSplash 0.6s ease-out forwards;
+      z-index: 99;
+    }
+    
+    @keyframes milkSplash {
+      0% {
+        transform: scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(3);
+        opacity: 0;
+      }
+    }
+    
+    /* COMPACT CORNER SCORE BOARD - MOBILE */
+    .score-board {
+      position: fixed;
+      top: auto;
+      bottom: 80px;
+      right: 10px;
+      left: auto;
+      transform: none;
+      padding: 0.5rem 1rem;
+      min-width: auto;
+      z-index: 50;
+      background: rgba(0,0,0,0.85);
+      border: 1px solid #00FFFF;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .score-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      color: #FF007F;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .score-value {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      color: #00FFFF;
+      text-shadow: 0 0 20px rgba(0,255,255,0.6);
+      margin-top: 0.25rem;
+    }
+    
+    .global-count,
+    .score-note {
+      display: none;
+    }
+    
+    /* QUOTE BANNER - MOBILE (below cow) */
+    .quote-banner {
+      position: fixed;
+      bottom: 180px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 90vw;
+      text-align: center;
+      z-index: 100;
+      min-height: 60px;
+    }
+    
+    /* DESKTOP LAYOUT */
+    @media (min-width: 768px) {
+      /* Score board below stock ticker */
+      .score-board {
+        top: clamp(160px, 18vh, 240px);
+        right: 20px;
+        bottom: auto;
+        padding: 1rem 2rem;
+        min-width: 200px;
+        border: 2px solid #00FFFF;
+      }
+      
+      .score-value {
+        font-size: 2rem;
+      }
+      
+      .score-label {
+        font-size: 0.7rem;
+      }
+      
+      .global-count {
+        display: block;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 0.8rem;
+        color: #FFD700;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px dashed rgba(255,215,0,0.3);
+      }
+      
+      .score-note {
+        display: block;
+        font-size: 0.6rem;
+        color: #888;
+        font-style: italic;
+        margin-top: 0.25rem;
+      }
+      
+      /* Quote banner to the right of cow */
+      .quote-banner {
+        position: absolute;
+        bottom: auto;
+        top: 50%;
+        left: auto;
+        right: 10%;
+        transform: translateY(-50%);
+        max-width: 250px;
+        text-align: left;
+      }
+      
+      .character-quote {
+        text-align: left;
+        font-size: 0.9rem;
+      }
+    }
+    
+    .character-quote {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+      text-shadow: 0 0 10px currentColor;
+      font-style: italic;
+      opacity: 0;
+      animation: quoteFade 4s ease-in-out;
+      line-height: 1.4;
+    }
+    
+    @keyframes quoteFade {
+      0%, 100% { opacity: 0; transform: translateY(10px); }
+      15%, 85% { opacity: 1; transform: translateY(0); }
+    }
+    
+    .combo-text {
+      position: absolute;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      color: #FF007F;
+      text-shadow: 0 0 20px #FF007F;
+      pointer-events: none;
+      animation: comboPop 0.8s ease-out forwards;
+      z-index: 101;
+    }
+    
+    @keyframes comboPop {
+      0% { opacity: 0; transform: scale(0) rotate(-10deg); }
+      50% { opacity: 1; transform: scale(1.3) rotate(5deg); }
+      100% { opacity: 0; transform: scale(1) rotate(0deg) translateY(-30px); }
+    }
+    
+    .gerchan-svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 20px rgba(0,255,255,0.2));
+    }
+    
+    .instructions {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.95);
+      border: 2px solid #FF007F;
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 400px;
+      text-align: center;
+      z-index: 1000;
+      backdrop-filter: blur(20px);
+    }
+    
+    .instructions h3 {
+      color: #00FFFF;
+      margin-bottom: 1rem;
+    }
+    
+    .instructions p {
+      color: #E0E0E0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .start-btn {
+      background: linear-gradient(45deg, #FF007F, #00FFFF);
+      border: none;
+      color: #000;
+      padding: 1rem 2rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .start-btn:hover {
+      transform: scale(1.05);
+    }
+    
+    .hidden {
+      display: none !important;
+    }
+    
+    /* Override to prevent chaos popups on this page */
+    .chaos-popup,
+    .tier-display {
+      display: none !important;
+      pointer-events: none !important;
+      opacity: 0 !important;
+    }
+    
+    /* High Score Modal */
+    .highscore-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .highscore-content {
+      background: #0a0a0a;
+      border: 2px solid #FFD700;
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 450px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(255,215,0,0.3);
+    }
+    
+    .highscore-content h3 {
+      color: #FFD700;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+    
+    .highscore-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+    
+    .highscore-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      margin: 0.5rem 0;
+      background: rgba(255,215,0,0.1);
+      border: 1px solid rgba(255,215,0,0.3);
+      border-radius: 8px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+    }
+    
+    .highscore-list .rank {
+      color: #FFD700;
+      width: 30px;
+    }
+    
+    .highscore-list .initials {
+      color: #00FFFF;
+      flex: 1;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    
+    .highscore-list .score {
+      color: #FF007F;
+      width: 80px;
+      text-align: right;
+    }
+    
+    .highscore-list li.new-entry {
+      background: rgba(0,255,255,0.15);
+      border-color: #00FFFF;
+      animation: pulse 1s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 10px rgba(0,255,255,0.3); }
+      50% { box-shadow: 0 0 20px rgba(0,255,255,0.6); }
+    }
+    
+    .initials-input {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin: 1.5rem 0;
+    }
+    
+    .initials-input input {
+      width: 50px;
+      height: 60px;
+      font-size: 2rem;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      background: rgba(0,255,255,0.1);
+      border: 2px solid #00FFFF;
+      border-radius: 8px;
+      color: #00FFFF;
+      text-transform: uppercase;
+    }
+    
+    .initials-input input:focus {
+      outline: none;
+      box-shadow: 0 0 15px rgba(0,255,255,0.5);
+    }
+    
+    .modal-btn {
+      background: #FFD700;
+      border: none;
+      color: #000;
+      padding: 0.8rem 2rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 0.5rem;
+      transition: transform 0.2s;
+    }
+    
+    .modal-btn:hover {
+      transform: scale(1.05);
+    }
+    
+    .modal-btn.secondary {
+      background: transparent;
+      border: 2px solid #FF007F;
+      color: #FF007F;
+    }
+    
+    .your-score {
+      font-size: 3rem;
+      color: #00FFFF;
+      text-shadow: 0 0 20px rgba(0,255,255,0.6);
+      margin: 1rem 0;
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    .connection-status {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      font-size: 0.6rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-family: 'Orbitron', sans-serif;
+      z-index: 1000;
+    }
+    
+    .connection-status.online {
+      background: rgba(0,255,0,0.2);
+      color: #00FF00;
+      border: 1px solid #00FF00;
+    }
+    
+    .connection-status.offline {
+      background: rgba(255,0,0,0.2);
+      color: #FF0000;
+      border: 1px solid #FF0000;
+    }
+    
+    /* Rotating status messages for footer counters - matches index.html */
+    .gerchan-footer-counter::after,
+    .live-metrics-counter::after {
+      content: attr(data-status);
+      display: block;
+      color: #00FF00;
+      font-size: 0.65rem;
+      margin-top: 0.3rem;
+      font-style: italic;
+      opacity: 0.9;
+      transition: opacity 0.5s;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      min-height: 1.2em;
+    }
+
+    /* Hide when no status set yet */
+    .gerchan-footer-counter:not([data-status])::after,
+    .live-metrics-counter:not([data-status])::after {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Connection Status -->
+<div class="connection-status offline" id="connStatus">OFFLINE MODE</div>
+
+<!-- Desktop Nav -->
+<nav>
+  <a href="./index.html">Home</a>
+  <a href="./fam.html">Meet the Fam</a>
+  <a href="./propaganda.html">Propaganda</a>
+  <a href="./gulag.html">Gulag</a>
+  <a href="./milk-slap.html">Milk-Slap</a>
+  <a href="./fineprint.html">Fine Print</a>
+  <a href="./careers.html">Careers</a>
+  <a href="./corrupted.html">Investor Relations</a>
+</nav>
+
+<!-- Mobile Nav Wrapper -->
+<div class="mobile-nav-wrapper">
+  <button class="hamburger-btn" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <a href="./index.html">Home</a>
+  <a href="./fam.html">Meet the Fam</a>
+  <a href="./propaganda.html">Propaganda</a>
+  <a href="./gulag.html">Gulag</a>
+  <a href="./milk-slap.html">Milk-Slap</a>
+  <a href="./fineprint.html">Fine Print</a>
+  <a href="./careers.html">Careers</a>
+  <a href="./corrupted.html">Investor Relations</a>
+</div>
+
+<div class="header-disclaimer">
+  <span class="warning-label">⚠️ Approved Under Duress</span>
+  <p>All referenced Gerch-Verse media was approved under conditions of limited compute, degraded output, and immediate regret.</p>
+  <span class="stamp">Further refinement was considered and unanimously rejected.</span>
+</div>
+
+<div class="profit">💰 PROFITS: Q5+</div>
+
+<!-- Score Board -->
+<div class="score-board" id="scoreBoard">
+  <div class="score-label">Slaps Delivered</div>
+  <div class="score-value" id="slapCount">0</div>
+  <div class="global-count" id="globalCount">Global: Connecting...</div>
+  <div class="score-note">*Mediocrates approves all attempts</div>
+</div>
+
+<!-- Instructions Modal -->
+<div class="instructions" id="instructions">
+  <h3>🥛 THE MILK-SLAP CHAMPIONSHIP 🥛</h3>
+  <p>Gerchan's silhouette stands before you. She is patient. She is silent. She is <em>very milkable</em>.</p>
+  <p>Click or tap to deliver hand-slaps. Your score counts toward the global total.</p>
+  <p><strong>High Score:</strong> Top 10 slappers immortalized in the Gerch-Verse Hall of Fame.</p>
+  <button class="start-btn" onclick="startGame()">ACCEPT THE INEVITABLE</button>
+</div>
+
+<!-- High Score Entry Modal -->
+<div class="highscore-modal hidden" id="highscoreModal">
+  <div class="highscore-content">
+    <h3>🏆 HIGH SCORE! 🏆</h3>
+    <p style="color: #888; font-size: 0.8rem;">You have achieved dairy dominance</p>
+    <div class="your-score" id="yourScore">0</div>
+    <p style="color: #E0E0E0; margin-bottom: 1rem;">Enter your initials (3 characters):</p>
+    <div class="initials-input">
+      <input type="text" maxlength="1" id="init1" onkeyup="moveToNext(this, 'init2')" onkeydown="handleBackspace(this, null)">
+      <input type="text" maxlength="1" id="init2" onkeyup="moveToNext(this, 'init3')" onkeydown="handleBackspace(this, 'init1')">
+      <input type="text" maxlength="1" id="init3" onkeyup="submitInitials()" onkeydown="handleBackspace(this, 'init2')">
+    </div>
+    <button class="modal-btn" onclick="submitInitials()">SUBMIT TO THE VOID</button>
+    <button class="modal-btn secondary" onclick="skipHighScore()">DECLINE IMMORTALITY</button>
+  </div>
+</div>
+
+<!-- High Score Display Modal -->
+<div class="highscore-modal hidden" id="leaderboardModal">
+  <div class="highscore-content">
+    <h3>📊 GLOBAL SLAP LEADERBOARD 📊</h3>
+    <ul class="highscore-list" id="highscoreList">
+      <!-- Populated by JS -->
+    </ul>
+    <button class="modal-btn" onclick="closeLeaderboard()">SLAP AGAIN</button>
+  </div>
+</div>
+
+<!-- Game Arena -->
+<div class="game-arena" id="gameArena">
+  
+  <!-- Gerchan Silhouette -->
+  <div class="gerchan-silhouette" id="gerchan" onclick="slap(event)">
+    <svg class="gerchan-svg" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="shadowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="hornGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4d4d4;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#8a8a8a;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#4a4a4a;stop-opacity:1" />
+        </linearGradient>
+        <filter id="eyeGlow" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="4" result="blur"/>
+          <feFlood flood-color="#00FFFF" result="color"/>
+          <feComposite in="color" in2="blur" operator="in" result="glow"/>
+          <feMerge>
+            <feMergeNode in="glow"/>
+            <feMergeNode in="glow"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+        <filter id="udderGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      
+      <!-- Shadow base -->
+      <ellipse cx="100" cy="265" rx="70" ry="20" fill="#050505" opacity="0.8"/>
+      
+      <!-- Legs (mostly hidden by hair) -->
+      <path d="M75 240 L70 270 L85 270 L88 240 Z" fill="#080808"/>
+      <path d="M125 240 L130 270 L115 270 L112 240 Z" fill="#080808"/>
+      
+      <!-- Main body silhouette (simplified, mostly covered) -->
+      <ellipse cx="100" cy="200" rx="45" ry="60" fill="url(#shadowGrad)"/>
+      
+      <!-- Golden udders (prominent, glowing) -->
+      <g filter="url(#udderGlow)">
+        <ellipse cx="100" cy="235" rx="18" ry="22" fill="#FFD700" opacity="0.95"/>
+        <ellipse cx="82" cy="240" rx="12" ry="16" fill="#FFD700" opacity="0.9"/>
+        <ellipse cx="118" cy="240" rx="12" ry="16" fill="#FFD700" opacity="0.9"/>
+        <ellipse cx="95" cy="250" rx="3" ry="5" fill="#FFA500" opacity="0.8"/>
+        <ellipse cx="105" cy="250" rx="3" ry="5" fill="#FFA500" opacity="0.8"/>
+        <ellipse cx="85" cy="252" rx="2.5" ry="4" fill="#FFA500" opacity="0.8"/>
+        <ellipse cx="115" cy="252" rx="2.5" ry="4" fill="#FFA500" opacity="0.8"/>
+      </g>
+      
+      <!-- Head group -->
+      <g transform="translate(100, 95)">
+        <path d="M-50 -30 Q-80 -10 -85 30 Q-90 80 -70 120 Q-60 140 -40 130 L-30 125 Q-55 100 -65 60 Q-70 30 -55 0 Q-45 -20 -30 -35 Z" fill="#050505"/>
+        <path d="M50 -30 Q80 -10 85 30 Q90 80 70 120 Q60 140 40 130 L30 125 Q55 100 65 60 Q70 30 55 0 Q45 -20 30 -35 Z" fill="#050505"/>
+        <path d="M-30 -40 Q-50 -20 -55 20 Q-60 70 -45 110 L-35 105 Q-50 65 -45 25 Q-42 -5 -25 -25 Z" fill="#080808"/>
+        <path d="M30 -40 Q50 -20 55 20 Q60 70 45 110 L35 105 Q50 65 45 25 Q42 -5 25 -25 Z" fill="#080808"/>
+        
+        <path d="M-35 -35 Q-55 -55 -50 -80 Q-45 -100 -30 -90 Q-25 -85 -28 -75 Q-30 -65 -25 -55 Q-20 -45 -12 -30" 
+              fill="url(#hornGrad)" stroke="#333" stroke-width="0.5"/>
+        <path d="M-48 -70 L-44 -68 M-46 -80 L-42 -78 M-40 -60 L-36 -58" stroke="#555" stroke-width="1"/>
+        
+        <path d="M35 -35 Q55 -55 50 -80 Q45 -100 30 -90 Q25 -85 28 -75 Q30 -65 25 -55 Q20 -45 12 -30" 
+              fill="url(#hornGrad)" stroke="#333" stroke-width="0.5"/>
+        <path d="M48 -70 L44 -68 M46 -80 L42 -78 M40 -60 L36 -58" stroke="#555" stroke-width="1"/>
+        
+        <ellipse cx="0" cy="5" rx="42" ry="48" fill="#0a0a0a"/>
+        
+        <ellipse cx="0" cy="35" rx="25" ry="18" fill="#0d0d0d"/>
+        <ellipse cx="-12" cy="32" rx="7" ry="5" fill="#1a1a1a" opacity="0.7"/>
+        <ellipse cx="12" cy="32" rx="7" ry="5" fill="#1a1a1a" opacity="0.7"/>
+        
+        <ellipse cx="-20" cy="0" rx="12" ry="8" fill="#00FFFF" filter="url(#eyeGlow)" opacity="0.95">
+          <animate attributeName="opacity" values="0.95;0.6;0.95" dur="2.5s" repeatCount="indefinite"/>
+          <animate attributeName="ry" values="8;6;8" dur="3s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="20" cy="0" rx="12" ry="8" fill="#00FFFF" filter="url(#eyeGlow)" opacity="0.95">
+          <animate attributeName="opacity" values="0.95;0.6;0.95" dur="2.5s" repeatCount="indefinite"/>
+          <animate attributeName="ry" values="8;6;8" dur="3s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="-20" cy="0" rx="5" ry="3" fill="#000" opacity="0.8"/>
+        <ellipse cx="20" cy="0" rx="5" ry="3" fill="#000" opacity="0.8"/>
+        
+        <ellipse cx="-48" cy="10" rx="10" ry="14" fill="#0a0a0a" transform="rotate(-30)"/>
+        <ellipse cx="48" cy="10" rx="10" ry="14" fill="#0a0a0a" transform="rotate(30)"/>
+        
+        <path d="M-40 -20 Q-60 10 -65 50 Q-70 90 -55 130 L-45 125 Q-60 85 -55 45 Q-52 15 -35 -10 Z" fill="#080808"/>
+        <path d="M40 -20 Q60 10 65 50 Q70 90 55 130 L45 125 Q60 85 55 45 Q52 15 35 -10 Z" fill="#080808"/>
+        <path d="M-35 -10 Q-50 20 -45 60 Q-40 90 -25 110" fill="none" stroke="#0a0a0a" stroke-width="6" stroke-linecap="round"/>
+        <path d="M35 -10 Q50 20 45 60 Q40 90 25 110" fill="none" stroke="#0a0a0a" stroke-width="6" stroke-linecap="round"/>
+        <path d="M-30 -35 Q0 -45 30 -35 Q40 -30 35 -15 Q20 -25 0 -22 Q-20 -25 -35 -15 Q-40 -30 -30 -35" fill="#050505"/>
+      </g>
+      
+      <circle cx="30" cy="150" r="1" fill="#00FFFF" opacity="0.2">
+        <animate attributeName="opacity" values="0.2;0.05;0.2" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="170" cy="180" r="1.5" fill="#FFD700" opacity="0.15">
+        <animate attributeName="opacity" values="0.15;0.03;0.15" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
+  
+  <!-- Quote Banner -->
+  <div class="quote-banner" id="quoteBanner"></div>
+  
+</div>
+
+<!-- Custom Hand Cursor -->
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 20 L50 60 M35 35 L50 20 L65 35 M40 60 Q30 70 35 85 L50 95 L65 85 Q70 70 60 60' fill='%23FF007F' stroke='%2300FFFF' stroke-width='3'/%3E%3C/svg%3E" class="hand-cursor" id="handCursor" alt="slap hand">
+
+<footer>
+  <div class="footer-metrics-container">
+    <div class="gerchan-footer-counter" id="gerchanFooterCounter">
+      <span class="gerchan-label">Gerchan Missing</span>
+      <span class="counter-row">
+        <span class="days-number" id="gerchanDays">0</span>
+        <span class="days-label">Days</span>
+      </span>
+    </div>
+    <div class="live-metrics-counter" id="liveMetricsCounter">
+      <span class="metrics-label">Q5 Operations</span>
+      <span class="metric-row">
+        <span class="metric-value" id="metricValue">∞</span>
+        <span class="metric-unit" id="metricUnit">slaps recorded</span>
+      </span>
+    </div>
+  </div>
+  <p>© 2026 Gerchan Farms et al. All udders—cosmic or otherwise—reserved.</p>
+</footer>
+
+<div class="footer-disclaimer">
+  <p>GPU exhaustion. Token scarcity. Emotional regret. We kept going. It got worse. Stopping was ethical. This is that point.</p>
+</div>
+
+<!-- Mediocrates Slap Score Approver Badge -->
+<div style="position: fixed; bottom: 10px; right: 10px; background: rgba(0,0,0,0.8); border: 1px solid #FFD700; border-radius: 4px; padding: 0.3rem 0.6rem; z-index: 100; display: flex; align-items: center; gap: 0.5rem;">
+  <img src="./images/mediocrates.jpg" alt="Mediocrates" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;">
+  <span style="font-family: 'Orbitron', sans-serif; font-size: 0.6rem; color: #FFD700;">ALL SLAPS APPROVED: EFFORT NOT CONSULTED</span>
+</div>
+
+<script>
+  // ==========================================
+  // GLOBAL SLAP COUNTER & HIGH SCORE SYSTEM
+  // Uses JSONBin.io for free cloud storage
+  // Fallback to localStorage if offline
+  // ==========================================
+  
+  const BIN_ID = '69989539ae596e708f3aa413'; // Replace with your bin ID after creation
+  const API_KEY = '$2a$10$G5HfqFUgfriYeR/kxxaUj.y8dX4cykVlnqE3M8UDfOraAPTLYfTmq'; // Replace with your JSONBin API key
+  const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+  
+  let slaps = 0;
+  let combo = 0;
+  let lastSlapTime = 0;
+  let gameActive = false;
+  let quoteIndex = 0;
+  let globalSlaps = 0;
+  let highScores = [];
+  let isOnline = false;
+  
+  // Default high scores (philosophical entries)
+  const DEFAULT_SCORES = [
+    { initials: 'AMT', score: 999999, date: '2021-12-12' },
+    { initials: 'GAD', score: 888888, date: 'eternal' },
+    { initials: 'DRK', score: 777777, date: 'Q5' },
+    { initials: 'LGT', score: 666666, date: 'compassion' },
+    { initials: 'MED', score: 555555, date: 'acceptable' },
+    { initials: 'GRCH', score: 444444, date: 'inevitable' },
+    { initials: 'RAJ', score: 333333, date: 'after-hours' },
+    { initials: 'STL', score: 222222, date: 'indubitably' },
+    { initials: 'LIZ', score: 111111, date: 'destiny' },
+    { initials: 'MOO', score: 100000, date: 'documentary' }
+  ];
+  
+  // Character quotes
+  const CHARACTER_QUOTES = [
+    { text: "Score: Acceptable. Effort: Not consulted.", author: "Mediocrates, CAP-O", color: "#FFD700" },
+    { text: "The number exists. Its meaning does not.", author: "Mediocrates", color: "#FFD700" },
+    { text: "Tracking implies accountability. We prefer ambiguity.", author: "Mediocrates", color: "#FFD700" },
+    { text: "You have slapped. I have approved. Quality was never present.", author: "Mediocrates", color: "#FFD700" },
+    { text: "Leaderboards are for Q4 companies.", author: "Mediocrates", color: "#FFD700" },
+    { text: "I drink your milk! Insolent cow!", author: "Amit Gaur, CEO", color: "#00FFFF" },
+    { text: "Every slap is a dividend. MOO!", author: "Amit Gaur", color: "#00FFFF" },
+    { text: "Harder! The udders demand discipline!", author: "Amit Gaur", color: "#00FFFF" },
+    { text: "Q5 profits require Q5 intensity!", author: "Amit Gaur", color: "#00FFFF" },
+    { text: "All cows are expendable. Even shadow ones.", author: "Dark Amit", color: "#FF00FF" },
+    { text: "Witness the glory that is Q5!", author: "Dark Amit", color: "#FF00FF" },
+    { text: "Your slaps fuel the profit singularity.", author: "Dark Amit", color: "#FF00FF" },
+    { text: "I shall milk this shadow cow dry!", author: "Dark Amit", color: "#FF00FF" },
+    { text: "FURY MODE DETECTED. CALM DOWN.", author: "Dark Amit", color: "#FF00FF" },
+    { text: "Gadha bless you, my child. Slap gently.", author: "Light Amit", color: "#FFFFFF" },
+    { text: "All cows are meant to be loved... but slapping is acceptable.", author: "Light Amit", color: "#FFFFFF" },
+    { text: "I appreciate your effort, truly.", author: "Light Amit", color: "#FFFFFF" },
+    { text: "Perhaps a hug after the slap?", author: "Light Amit", color: "#FFFFFF" },
+    { text: "I diagnose your slapping as... inevitable.", author: "Lizzie Holmes", color: "#FF007F" },
+    { text: "We detect what isn't there yet: skill.", author: "Lizzie Holmes", color: "#FF007F" },
+    { text: "Your bloodwork shows 47% insolence.", author: "Lizzie Holmes", color: "#FF007F" },
+    { text: "Destiny demands more slaps. Statistically.", author: "Lizzie Holmes", color: "#FF007F" },
+    { text: "Riddle me this: who slaps the slapper?", author: "Leon Cochran", color: "#00FF00" },
+    { text: "Your technique is... legally ambiguous.", author: "Leon Cochran", color: "#00FF00" },
+    { text: "Objection! Overruled! Slap sustained!", author: "Leon Cochran", color: "#00FF00" },
+    { text: "The milk-slap hearsay exception applies.", author: "Leon Cochran", color: "#00FF00" },
+    { text: "Tickle me Texas! That's some slappin'!", author: "Big Tex Wang", color: "#FF4500" },
+    { text: "Everything's bigger in Texas—especially the slaps.", author: "Big Tex Wang", color: "#FF4500" },
+    { text: "Come on Pardner! Slap until you get your very own Gadha!", author: "Big Tex Wang", color: "#FF4500" },
+    { text: "My brisket approves this violence.", author: "Big Tex Wang", color: "#FF4500" },
+    { text: "Sir, your 7 PM slapping is confirmed.", author: "Raj Mehta", color: "#FFA500" },
+    { text: "Sniff my fart, you insolent cow!", author: "Raj Mehta", color: "#FFA500" },
+    { text: "After hours slapping starts at 6!", author: "Raj Mehta", color: "#FFA500" },
+    { text: "Sterling and I will audit your technique.", author: "Raj Mehta", color: "#FFA500" },
+    { text: "Very good, sir—shall I warm the udders?", author: "Sterling Winslow", color: "#C0C0C0" },
+    { text: "Indubitably! That slap was... adequate.", author: "Sterling Winslow", color: "#C0C0C0" },
+    { text: "I rate that slap seven out of ten.", author: "Sterling Winslow", color: "#C0C0C0" },
+    { text: "The bail money is pre-authorized.", author: "Sterling Winslow", color: "#C0C0C0" },
+    { text: "*muffled cosmic moo of despair*", author: "Gadha", color: "#FFD700" },
+    { text: "*existential udder trembling*", author: "Gadha", color: "#FFD700" },
+    { text: "*celestial milk weeping*", author: "Gadha", color: "#FFD700" },
+    { text: "Moo... moo... [translation: why]", author: "Gadha", color: "#FFD700" },
+    { text: "I got the scoop, the slap, and zero shame.", author: "Michael Moo", color: "#8B4513" },
+    { text: "Documenting every slap for the archives!", author: "Michael Moo", color: "#8B4513" },
+    { text: "Pass the chow mein—and the udders.", author: "Michael Moo", color: "#8B4513" },
+    { text: "This will expose the dairy-industrial complex!", author: "Michael Moo", color: "#8B4513" },
+    { text: "I CAN DO WHATEVER I WANT!", author: "Gerchlander", color: "#FF0000" },
+    { text: "Your slaps are WEAK! I demand dominance!", author: "Gerchlander", color: "#FF0000" },
+    { text: "Give me those golden udders!", author: "Gerchlander", color: "#FF0000" },
+    { text: "I WILL SLAP HARDER THAN YOU!", author: "Gerchlander", color: "#FF0000" },
+    { text: "Herro! Xiexie! Slap slap slap!", author: "Eel On Muskmelon", color: "#FF69B4" },
+    { text: "Rururemon! 900K slaps per minute!", author: "Eel On Muskmelon", color: "#FF69B4" },
+    { text: "Gerchmobile slap edition! Drive to Mars!", author: "Eel On Muskmelon", color: "#FF69B4" },
+    { text: "Nihao! Your slapping is... acceptable!", author: "Eel On Muskmelon", color: "#FF69B4" },
+    { text: "Raise those slap prices! Supply and Demand, baby!", author: "Cole Mercer", color: "#9370DB" },
+    { text: "Perform your shareholder duty, slap those prices up!", author: "Cole Mercer", color: "#9370DB" },
+    { text: "Lizzie made me bark for this quote.", author: "Cole Mercer", color: "#9370DB" },
+    { text: "OXYRELIEF for slap-related injuries: $5000/dose.", author: "Cole Mercer", color: "#9370DB" },
+    { text: "Why slap when you can ask respectfully?", author: "Evil Amit", color: "#32CD32" },
+    { text: "Q4 is plenty, you insolent cow.", author: "Evil Amit", color: "#32CD32" },
+    { text: "I know where Gerchan is. I won't tell.", author: "Evil Amit", color: "#32CD32" },
+    { text: "All of my green Nehru suits approve this message.", author: "Evil Amit", color: "#32CD32" },
+    { text: "Call me when you've married a nice celestial cow.", author: "Amit's Mother", color: "#9400D3" },
+    { text: "I was here before the slapping began.", author: "Amit's Mother", color: "#9400D3" },
+    { text: "The platform predates your slaps.", author: "Amit's Mother", color: "#9400D3" },
+    { text: "She was never here. She was never not here.", author: "Amit's Mother", color: "#9400D3" }
+  ];
+  
+  const COMBO_TEXTS = ["INSOLENT!", "MOO!", "Q5!", "MILK!", "GERCH!", "ACCEPTABLE!", "SLAP!", "UDDER!"];
+  
+  // Audio context
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  
+  // ==========================================
+  // DATA PERSISTENCE (JSONBin + localStorage)
+  // ==========================================
+  
+  async function initData() {
+    // Try to load from JSONBin first
+    try {
+      const response = await fetch(API_URL, {
+        headers: { 'X-Master-Key': API_KEY }
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        globalSlaps = data.record.globalSlaps || 0;
+        highScores = data.record.highScores || DEFAULT_SCORES;
+        isOnline = true;
+        updateConnectionStatus(true);
+      } else {
+        throw new Error('API error');
+      }
+    } catch (e) {
+      // Fallback to localStorage
+      console.log('Offline mode - using localStorage');
+      const saved = localStorage.getItem('gerchSlapData');
+      if (saved) {
+        const data = JSON.parse(saved);
+        globalSlaps = data.globalSlaps || 0;
+        highScores = data.highScores || DEFAULT_SCORES;
+      } else {
+        globalSlaps = 0;
+        highScores = [...DEFAULT_SCORES];
+      }
+      isOnline = false;
+      updateConnectionStatus(false);
+    }
+    
+    updateGlobalDisplay();
+  }
+  
+  async function saveData() {
+    const data = { globalSlaps, highScores, lastUpdate: new Date().toISOString() };
+    
+    // Always save to localStorage as backup
+    localStorage.setItem('gerchSlapData', JSON.stringify(data));
+    
+    // Try to save to JSONBin if online
+    if (isOnline) {
+      try {
+        await fetch(API_URL, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Master-Key': API_KEY
+          },
+          body: JSON.stringify(data)
+        });
+      } catch (e) {
+        console.log('Failed to sync to cloud');
+        isOnline = false;
+        updateConnectionStatus(false);
+      }
+    }
+  }
+  
+  function updateConnectionStatus(online) {
+    const status = document.getElementById('connStatus');
+    if (online) {
+      status.textContent = 'GLOBAL SYNC ACTIVE';
+      status.className = 'connection-status online';
+    } else {
+      status.textContent = 'OFFLINE MODE';
+      status.className = 'connection-status offline';
+    }
+  }
+  
+  function updateGlobalDisplay() {
+    document.getElementById('globalCount').textContent = `Global: ${globalSlaps.toLocaleString()}`;
+  }
+  
+  // ==========================================
+  // HIGH SCORE SYSTEM
+  // ==========================================
+  
+  function checkHighScore() {
+    // Check if score beats the lowest on leaderboard
+    const minScore = highScores[highScores.length - 1].score;
+    if (slaps > minScore) {
+      showHighScoreEntry();
+      return true;
+    }
+    return false;
+  }
+  
+  function showHighScoreEntry() {
+    document.getElementById('yourScore').textContent = slaps.toLocaleString();
+    document.getElementById('highscoreModal').classList.remove('hidden');
+    document.getElementById('init1').focus();
+  }
+  
+  function moveToNext(current, nextId) {
+    if (current.value.length === 1 && nextId) {
+      document.getElementById(nextId).focus();
+    }
+  }
+  
+  function handleBackspace(current, prevId) {
+    if (event.key === 'Backspace' && current.value.length === 0 && prevId) {
+      document.getElementById(prevId).focus();
+    }
+  }
+  
+  async function submitInitials() {
+    const i1 = document.getElementById('init1').value || 'X';
+    const i2 = document.getElementById('init2').value || 'X';
+    const i3 = document.getElementById('init3').value || 'X';
+    const initials = (i1 + i2 + i3).toUpperCase().slice(0, 3);
+    
+    // Add new score
+    highScores.push({
+      initials: initials,
+      score: slaps,
+      date: new Date().toLocaleDateString()
+    });
+    
+    // Sort and keep top 10
+    highScores.sort((a, b) => b.score - a.score);
+    highScores = highScores.slice(0, 10);
+    
+    // Save
+    await saveData();
+    
+    // Hide entry, show leaderboard
+    document.getElementById('highscoreModal').classList.add('hidden');
+    showLeaderboard();
+  }
+  
+  function skipHighScore() {
+    document.getElementById('highscoreModal').classList.add('hidden');
+    showLeaderboard();
+  }
+  
+  function showLeaderboard() {
+    const list = document.getElementById('highscoreList');
+    list.innerHTML = '';
+    
+    highScores.forEach((entry, index) => {
+      const li = document.createElement('li');
+      const isNew = entry.score === slaps && entry.initials !== '???';
+      if (isNew) li.classList.add('new-entry');
+      
+      li.innerHTML = `
+        <span class="rank">${index + 1}.</span>
+        <span class="initials">${entry.initials}</span>
+        <span class="score">${entry.score.toLocaleString()}</span>
+      `;
+      list.appendChild(li);
+    });
+    
+    document.getElementById('leaderboardModal').classList.remove('hidden');
+  }
+  
+  function closeLeaderboard() {
+    document.getElementById('leaderboardModal').classList.add('hidden');
+    resetGame();
+  }
+  
+  function resetGame() {
+    slaps = 0;
+    combo = 0;
+    document.getElementById('slapCount').textContent = '0';
+    gameActive = true;
+  }
+  
+  // ==========================================
+  // GAME LOGIC
+  // ==========================================
+  
+  function playMoo() {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    const filter = audioCtx.createBiquadFilter();
+    
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(80, audioCtx.currentTime + 0.3);
+    
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(800, audioCtx.currentTime);
+    filter.frequency.exponentialRampToValueAtTime(200, audioCtx.currentTime + 0.3);
+    
+    gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+    
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(audioCtx.destination);
+    
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.3);
+  }
+  
+  function playSlap() {
+    const bufferSize = audioCtx.sampleRate * 0.1;
+    const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const data = buffer.getChannelData(0);
+    
+    for (let i = 0; i < bufferSize; i++) {
+      data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.1));
+    }
+    
+    const noise = audioCtx.createBufferSource();
+    noise.buffer = buffer;
+    
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = 'highpass';
+    filter.frequency.value = 1000;
+    
+    const gain = audioCtx.createGain();
+    gain.gain.setValueAtTime(0.5, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
+    
+    noise.connect(filter);
+    filter.connect(gain);
+    gain.connect(audioCtx.destination);
+    
+    noise.start();
+  }
+  
+  function playMilkSplash() {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(400, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.2);
+    
+    gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.2);
+    
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.2);
+  }
+  
+  async function startGame() {
+    audioCtx.resume();
+    await initData();
+    
+    document.getElementById('instructions').classList.add('hidden');
+    gameActive = true;
+    showCharacterQuote();
+    
+    setInterval(showCharacterQuote, 4000);
+    setInterval(async () => {
+      if (gameActive) await saveData();
+    }, 10000); // Auto-save every 10 seconds
+  }
+  
+  function showCharacterQuote() {
+    const banner = document.getElementById('quoteBanner');
+    const quote = CHARACTER_QUOTES[quoteIndex % CHARACTER_QUOTES.length];
+    
+    banner.innerHTML = `
+      <div class="character-quote" style="color: ${quote.color};">
+        "${quote.text}"
+        <br><small style="opacity: 0.7;">— ${quote.author}</small>
+      </div>
+    `;
+    
+    const el = banner.querySelector('.character-quote');
+    el.style.animation = 'none';
+    el.offsetHeight;
+    el.style.animation = 'quoteFade 4s ease-in-out';
+    
+    quoteIndex++;
+  }
+  
+  async function slap(e) {
+    if (!gameActive) return;
+    
+    e.preventDefault();
+    const now = Date.now();
+    const gerchan = document.getElementById('gerchan');
+    const rect = gerchan.getBoundingClientRect();
+    
+    const clickX = e.clientX || (e.touches && e.touches[0].clientX);
+    const centerX = rect.left + rect.width / 2;
+    const slapSide = clickX < centerX ? 'left' : 'right';
+    
+    gerchan.classList.remove('slap-left', 'slap-right');
+    void gerchan.offsetHeight;
+    gerchan.classList.add(`slap-${slapSide}`);
+    
+    // Increment both personal and global
+    slaps++;
+    globalSlaps++;
+    
+    document.getElementById('slapCount').textContent = slaps.toLocaleString();
+    updateGlobalDisplay();
+    
+    // Combo system
+    if (now - lastSlapTime < 500) {
+      combo++;
+      if (combo > 2) {
+        showComboText(clickX || rect.left + rect.width/2, (e.clientY || rect.top + rect.height/2));
+      }
+    } else {
+      combo = 0;
+    }
+    lastSlapTime = now;
+    
+    // Audio
+    playSlap();
+    setTimeout(playMilkSplash, 50);
+    if (Math.random() < 0.3) setTimeout(playMoo, 100);
+    
+    // Visuals
+    createSlapEffect(e.clientX, e.clientY, slapSide);
+    createMilkSplash(rect);
+    
+    const hand = document.getElementById('handCursor');
+    hand.classList.add('slap');
+    setTimeout(() => hand.classList.remove('slap'), 150);
+    
+    // Check for frenzy mode
+    if (combo === 10) {
+      const banner = document.getElementById('quoteBanner');
+      banner.innerHTML = `<div class="character-quote" style="color: #FF0000; font-size: 1.3rem; animation: quoteFade 2s ease-in-out;">"FRENZY! THE UDDERS ARE MINE!"<br><small>— Gerchlander, having a moment</small></div>`;
+    }
+    
+    // Periodic save (every 10 slaps)
+    if (slaps % 10 === 0) {
+      await saveData();
+    }
+  }
+  
+  function showComboText(x, y) {
+    const text = COMBO_TEXTS[Math.min(combo - 3, COMBO_TEXTS.length - 1)] || "INSOLENT!";
+    const el = document.createElement('div');
+    el.className = 'combo-text';
+    el.textContent = `${text} x${combo}`;
+    el.style.left = `${x + (Math.random() - 0.5) * 100}px`;
+    el.style.top = `${y - 50}px`;
+    el.style.setProperty('--rotation', `${(Math.random() - 0.5) * 30}deg`);
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 800);
+  }
+  
+  function createSlapEffect(x, y, side) {
+    const words = ["SLAP!", "MOO!", "MILK!", "Q5!", "INSOLENT!", "GERCH!", "UDDER!"];
+    const word = words[Math.floor(Math.random() * words.length)];
+    
+    const el = document.createElement('div');
+    el.className = 'slap-effect';
+    el.textContent = word;
+    el.style.left = `${x}px`;
+    el.style.top = `${y}px`;
+    el.style.setProperty('--rotation', `${side === 'left' ? '-' : ''}${10 + Math.random() * 20}deg`);
+    document.body.appendChild(el);
+    
+    setTimeout(() => el.remove(), 1000);
+  }
+  
+  function createMilkSplash(rect) {
+    const splash = document.createElement('div');
+    splash.className = 'milk-splash';
+    splash.style.left = `${rect.left + rect.width/2 - 50 + (Math.random() - 0.5) * 40}px`;
+    splash.style.top = `${rect.top + rect.height * 0.7 - 50 + (Math.random() - 0.5) * 20}px`;
+    document.body.appendChild(splash);
+    setTimeout(() => splash.remove(), 600);
+  }
+  
+  // Cursor following
+  document.addEventListener('mousemove', (e) => {
+    const hand = document.getElementById('handCursor');
+    if (gameActive && window.innerWidth > 768) {
+      hand.style.display = 'block';
+      hand.style.left = `${e.clientX}px`;
+      hand.style.top = `${e.clientY}px`;
+    }
+  });
+  
+  document.addEventListener('touchmove', (e) => {
+    const hand = document.getElementById('handCursor');
+    if (gameActive) {
+      hand.style.display = 'block';
+      hand.style.left = `${e.touches[0].clientX}px`;
+      hand.style.top = `${e.touches[0].clientY}px`;
+    }
+  }, { passive: true });
+  
+  document.addEventListener('mouseleave', () => {
+    document.getElementById('handCursor').style.display = 'none';
+  });
+  
+  // End game on page hide (check for high score)
+  document.addEventListener('visibilitychange', async () => {
+    if (document.hidden && slaps > 0) {
+      await saveData();
+      if (!document.getElementById('highscoreModal').classList.contains('hidden')) return;
+      if (!document.getElementById('leaderboardModal').classList.contains('hidden')) return;
+      checkHighScore();
+    }
+  });
+  
+  // Prevent chaos from gerchverse.js
+  window.GERCH_CHAOS_DISABLED = true;
+  document.addEventListener('DOMContentLoaded', () => {
+    window.handleClick = function(e) {
+      if (e.target.closest('.gerchan-silhouette') || 
+          e.target.closest('.game-arena') ||
+          e.target.closest('.instructions')) {
+        return;
+      }
+    };
+    window.initQ5Badge = function() {};
+    document.querySelectorAll('.chaos-popup, .tier-display').forEach(el => el.remove());
+  });
+</script>
+
+<script src="./gerchverse.js"></script>
+
+<!-- Emergency fallback for iOS -->
+<script>
+(function() {
+  var DISAPPEARANCE = 1639267200000;
+  var days = Math.floor((Date.now() - DISAPPEARANCE) / 86400000);
+  var attempts = 0;
+  var interval = setInterval(function() {
+    var el = document.getElementById('gerchanDays');
+    if (el) {
+      el.textContent = days;
+      clearInterval(interval);
+    }
+    attempts++;
+    if (attempts > 50) clearInterval(interval);
+  }, 100);
+})();
+</script>
+
+</body>
+</html>
