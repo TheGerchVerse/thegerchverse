@@ -3,169 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerch-Verse | Amit's Mother</title>
-  <link rel="stylesheet" href="./gerchverse.css">
-  <meta name="keywords" content="Gerchan,Gerchan Farms,Gadha,Raj,Sheranos,grchnraj,Lizzie Holmes,memelourde,gerchtothefuture,itsgerchintime,Amit Gaur,Q5,Space Gulag,Big Tex Wang,bigtexwang,sterlingwinslow,leoncochran,The Gerch-Verse,Gerch,Gerchan,The Gerch Verse,Gerch-Verse,Gerch Verse,Cole Mercer,pharma_bro,Dark Amit,darkamit,Light Amit,lightamit,Evil Amit,evilamit,evilgrchnfrms,Gerchlander,gerchlander,Michael Moo,michael.moo,Eel On Muskmelon,eelonmuskmelon,Gadha,gadhamilk,Sterling Winslow,sterlingwinslow,Raj Mehta,grchnraj,Leon Cochran,leoncochran,Amit's Mother">
-  <meta name="description" content="She was never here. She was never not here. Currently eating Whoppers in a laser prison and texting insults.">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://thegerchverse.github.io/thegerchverse/amitsmother.html">
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://thegerchverse.github.io/thegerchverse/sitemap.xml">
-  <meta property="og:image" content="https://thegerchverse.github.io/thegerchverse/images/bg.jpg">
+  <title>Amit's Mother | The Gerch-Verse</title>
+  <meta name="description" content="She was never here. She was never not here. Currently eating Whoppers in a laser prison and texting insults. Have it your way.">
+  <meta name="keywords" content="Amit's Mother,Gerchan Farms origin,Burger King bathroom,Whopper abandonment,Evil Amit,Amit Jr">
+  <meta name="author" content="TheGerchVerse">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thegerchverse.com/amitsmother.html">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://thegerchverse.com/sitemap.xml">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thegerchverse.com/amitsmother.html">
+  <meta property="og:title" content="Amit's Mother | The Gerch-Verse">
+  <meta property="og:description" content="She was never here. She was never not here. Currently eating Whoppers in a laser prison and texting insults. Have it your way.">
+  <meta property="og:image" content="https://thegerchverse.com/images/bg.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:title" content="Gerch-Verse | Amit's Mother">
-  <meta property="og:description" content="I'm sorry about the Burger King bathroom, but McDonald's was closed. Have it your way... ba da ba ba ba!">
+  <meta property="og:site_name" content="The Gerch-Verse">
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <style>
-    body {
-      background: #000;
-      overflow: hidden;
-    }
-    body::before {
-      display: none;
-    }
-    .void-container {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at center, #000428 0%, #000 100%);
-      padding: 2rem;
-      position: relative;
-    }
-    .void-container::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        rgba(0, 255, 255, 0.03) 0px,
-        transparent 1px,
-        transparent 2px,
-        rgba(0, 255, 255, 0.03) 3px
-      );
-      pointer-events: none;
-    }
-    .search-header {
-      font-family: 'Orbitron', sans-serif;
-      color: #FF007F;
-      font-size: clamp(0.8rem, 2vw, 1rem);
-      letter-spacing: 0.3em;
-      margin-bottom: 2rem;
-      text-transform: uppercase;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
-    }
-    .terminal {
-      font-family: 'Courier New', monospace;
-      color: #00FFFF;
-      font-size: clamp(0.7rem, 1.5vw, 0.9rem);
-      line-height: 1.8;
-      max-width: 600px;
-      width: 100%;
-      background: rgba(0, 255, 255, 0.05);
-      border: 1px solid rgba(0, 255, 255, 0.2);
-      border-radius: 8px;
-      padding: 2rem;
-      position: relative;
-    }
-    .terminal-line {
-      opacity: 0;
-      animation: typeIn 0.1s forwards;
-    }
-    .terminal-line:nth-child(1) { animation-delay: 0.5s; }
-    .terminal-line:nth-child(2) { animation-delay: 1.2s; }
-    .terminal-line:nth-child(3) { animation-delay: 2.0s; }
-    .terminal-line:nth-child(4) { animation-delay: 2.8s; }
-    .terminal-line:nth-child(5) { animation-delay: 3.6s; }
-    .terminal-line:nth-child(6) { animation-delay: 4.4s; }
-    .terminal-line:nth-child(7) { animation-delay: 5.2s; }
-    .terminal-line:nth-child(8) { animation-delay: 6.0s; }
-    .terminal-line:nth-child(9) { animation-delay: 6.8s; }
-    @keyframes typeIn {
-      to { opacity: 1; }
-    }
-    .cursor {
-      display: inline-block;
-      width: 8px;
-      height: 1em;
-      background: #00FFFF;
-      animation: blink 1s infinite;
-      vertical-align: middle;
-    }
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
-    }
-    .void-message {
-      margin-top: 3rem;
-      text-align: center;
-      color: #FF007F;
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-      opacity: 0;
-      animation: fadeIn 2s 7.5s forwards;
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-    .void-message p {
-      margin: 0.5rem 0;
-    }
-    .void-message .sub {
-      font-size: 0.7rem;
-      color: #666;
-      margin-top: 1rem;
-    }
-    .return-link {
-      display: inline-block;
-      margin-top: 2rem;
-      color: #00FFFF;
-      text-decoration: none;
-      border: 1px solid #00FFFF;
-      padding: 0.5rem 1.5rem;
-      border-radius: 4px;
-      transition: all 0.3s;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.8rem;
-    }
-    .return-link:hover {
-      background: #00FFFF;
-      color: #000;
-    }
-    .q5-stamp {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      color: rgba(255, 0, 127, 0.3);
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.6rem;
-      transform: rotate(-15deg);
-      border: 2px solid rgba(255, 0, 127, 0.3);
-      padding: 0.5rem;
-      pointer-events: none;
-    }
-    .whopper-badge {
-      position: fixed;
-      top: 2rem;
-      left: 2rem;
-      color: rgba(255, 165, 0, 0.4);
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.6rem;
-      border: 2px solid rgba(255, 165, 0, 0.3);
-      padding: 0.5rem;
-      pointer-events: none;
-      animation: rotate 10s linear infinite;
-    }
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-  </style>
+  <meta name="twitter:title" content="Amit's Mother | The Gerch-Verse">
+  <meta name="twitter:description" content="She was never here. She was never not here. Currently eating Whoppers in a laser prison and texting insults. Have it your way.">
+  <meta name="twitter:image" content="https://thegerchverse.com/images/bg.jpg">
+
+  <link rel="stylesheet" href="./gerchverse.css">
 </head>
 <body>
   <div class="void-container">

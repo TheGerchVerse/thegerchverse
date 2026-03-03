@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://thegerchverse.com/sitemap.xml
+
+# Crawl-delay for polite crawlers
+Crawl-delay: 1
