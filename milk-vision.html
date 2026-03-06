@@ -162,16 +162,6 @@
       border-color: #FFD700;
     }
     
-    .mv-card.chaos {
-      border-color: #FF00FF;
-      animation: chaosPulse 2s infinite;
-    }
-    
-    @keyframes chaosPulse {
-      0%, 100% { box-shadow: 0 0 10px rgba(255,0,255,0.3); }
-      50% { box-shadow: 0 0 25px rgba(255,0,255,0.6); }
-    }
-    
     .mv-thumb {
       width: 100%;
       aspect-ratio: 9/16;
@@ -388,52 +378,6 @@
       animation: pulse 1s infinite;
     }
     
-    /* Chaos Mode */
-    .mv-chaos-header {
-      text-align: center;
-      margin: 2rem 0;
-      padding: 2rem;
-      background: rgba(255,0,255,0.1);
-      border: 2px dashed #FF00FF;
-      border-radius: 12px;
-    }
-    
-    .mv-shuffle-btn {
-      background: linear-gradient(45deg, #FF007F, #FF00FF);
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1rem;
-      font-weight: 900;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      transition: all 0.3s;
-      text-transform: uppercase;
-    }
-    
-    .mv-shuffle-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(255,0,255,0.6);
-    }
-    
-    .mv-chaos-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    
-    .mv-chaos-tag {
-      background: rgba(0,0,0,0.5);
-      border: 1px solid #FF00FF;
-      color: #FF00FF;
-      font-size: 0.7rem;
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-    }
-    
     /* Empty State */
     .mv-empty {
       text-align: center;
@@ -465,29 +409,44 @@
       text-align: center;
     }
     
-    /* INSTANT KILL: Only specific elements, not entire characters */
+    /* ABSOLUTE POPUP KILLER - CSS Layer */
+[class*="mediocrates"],
 [class*="mediocrates-badge"],
+[class*="mediocrates-popup"],
+[id*="mediocrates"],
+[id*="mediocrates-badge"],
+[id*="mediocrates-popup"],
 [class*="q5-certified"],
 [class*="certified-badge"],
-[id*="mediocrates-badge"],
-[id*="q5-certified"] {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  display: none !important;
-  pointer-events: none !important;
-}
-
-/* Kill profits counter on top-right */
-.profit,
+[id*="q5-certified"],
+[id*="certified-badge"],
+[class*="popup"],
+[class*="popup-modal"],
+[id*="popup"],
+[class*="notification"],
+[class*="toast"],
+[class*="alert-box"],
+[class*="banner"],
+[class*="badge"]:not(.mv-card):not(.mv-card-overlay),
+[class*="floating"],
+[class*="tier-display"],
+[class*="gpu-regret"],
+[class*="quality-notice"],
+[class*="compute-warning"],
 [class*="profit-counter"],
+[class*="profit-display"],
 [id*="profit-counter"],
-div[class*="profit"]:not(.mv-card):not(.mv-card-overlay),
+[id*="profit-display"],
+.profit,
 .profit-display,
-#profitDisplay {
+#profitDisplay,
+div[class*="profit"]:not(.mv-card):not(.mv-card-overlay):not(.mv-character-info) {
   opacity: 0 !important;
   visibility: hidden !important;
   display: none !important;
   pointer-events: none !important;
+  position: absolute !important;
+  z-index: -9999 !important;
 }
 
 /* EXPLICIT ALLOW: Mediocrates character section must show */
@@ -903,7 +862,6 @@ div[class*="profit"]:not(.mv-card):not(.mv-card-overlay),
   <button class="mv-tab active" onclick="switchTab('solo', this)">Solo Vids</button>
   <button class="mv-tab" onclick="switchTab('multi', this)">Multi-Character</button>
   <button class="mv-tab" onclick="switchTab('arcs', this)">Story Arcs</button>
-  <button class="mv-tab" onclick="switchTab('chaos', this)">Chaos Mode</button>
 </div>
 
 
@@ -7504,187 +7462,6 @@ charted in Q5 negatives because nobody could tell if it was music or a hostage r
 
 </div>
 
-<!-- CHAOS MODE TAB -->
-<div id="tab-chaos" class="mv-tab-content">
-  
-  <div class="mv-chaos-header">
-    <h3 style="color: #FF00FF; font-family: 'Orbitron', sans-serif; margin: 0 0 1rem 0;">🎲 CANON. BUT UNHINGED. 🎲</h3>
-    <p style="color: #E0E0E0; margin: 0 0 1.5rem 0;">
-      These events happened. We have no memory of approving them.<br>
-      Mediocrates was consulted. He approved without reading.
-    </p>
-    <button class="mv-shuffle-btn" onclick="shuffleChaos()">🔀 SHUFFLE THE DECK</button>
-    <div class="mv-chaos-tags">
-      <span class="mv-chaos-tag">#multiverse</span>
-      <span class="mv-chaos-tag">#nonlinear</span>
-      <span class="mv-chaos-tag">#approved</span>
-      <span class="mv-chaos-tag">#insolent</span>
-    </div>
-  </div>
-  
-  <div class="mv-grid" id="grid-chaos">
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">🐄</span>
-        <span class="mv-tag">🎀</span>
-        <span class="mv-tag">⚖️</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Gadha judges Eel On's flamingo outfit."</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-    
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">👁️</span>
-        <span class="mv-tag">🍜</span>
-        <span class="mv-tag">📡</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Moo eats noodles on live TV while Dark Amit watches."</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-    
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">🦶</span>
-        <span class="mv-tag">💊</span>
-        <span class="mv-tag">🐕</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Cole barks for Lizzie while on OxyRelief."</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-    
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">⚡</span>
-        <span class="mv-tag">🎩</span>
-        <span class="mv-tag">💨</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Dark Amit, Sterling, and Raj walk into a bar. Only Raj leaves."</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-    
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">👶</span>
-        <span class="mv-tag">⏰</span>
-        <span class="mv-tag">😈</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Amit Jr. and Evil Amit have tea. Q6 is not discussed."</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-    
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">👋</span>
-        <span class="mv-tag">🐄</span>
-        <span class="mv-tag">🎀</span>
-        <span class="mv-tag">⚖️</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Amit slaps Gadha while Eel On plays judge and Cole barks the verdict."</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-    
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">👵</span>
-        <span class="mv-tag">📞</span>
-        <span class="mv-tag">😤</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Amit's Mother calls to complain about quarterly profits."</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-    
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">🎯</span>
-        <span class="mv-tag">🐄</span>
-        <span class="mv-tag">🍖</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Gerchlander hunts Gadha for Big Tex's brisket."</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-    
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">⚖️</span>
-        <span class="mv-tag">🎩</span>
-        <span class="mv-tag">💨</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Leon bills Sterling for a riddle he never asked."</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-    
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">🚀</span>
-        <span class="mv-tag">🥛</span>
-        <span class="mv-tag">🎀</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Eel On launches Gadha to Mars 'for milk research.'"</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-    
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">👋</span>
-        <span class="mv-tag">⚡</span>
-        <span class="mv-tag">🪞</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Amit confronts Dark Amit. Light Amit mediates. Chaos ensues."</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-    
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">👍</span>
-        <span class="mv-tag">😴</span>
-        <span class="mv-tag">📋</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Mediocrates approves his own approval. Meta."</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">👍</span>
-        <span class="mv-tag">⚖️</span>
-        <span class="mv-tag">🐄</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Mediocrates, Leon, and Gadha: the unholy trinity of 'sure, why not.'"</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-    <a href="https://sora.chatgpt.com/w/[VIDEO_ID]" target="_blank" rel="noopener" class="mv-card chaos">
-      <div class="mv-placeholder">THUMB<br>SOON</div>
-      <div class="mv-character-tags">
-        <span class="mv-tag">🩸</span>
-        <span class="mv-tag">💊</span>
-        <span class="mv-tag">🦶</span>
-      </div>
-      <div class="mv-card-overlay"><p class="mv-one-liner">"Lizzie and Cole's 'business lunch' lasts 48 hours."</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-  </div>
-  
-  <div class="mv-pagination" id="pagination-chaos">
-    <button class="mv-page-btn" onclick="changePage('chaos', -1)" id="prev-chaos">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-chaos">1</span> / <span id="page-total-chaos">2</span></span>
-    <button class="mv-page-btn" onclick="changePage('chaos', 1)" id="next-chaos">▶</button>
-  </div>
-  
-</div>
-
 <div style="text-align:center;">
   <button id="reportBugBtn">Report a Bug</button>
 </div>
@@ -8146,65 +7923,128 @@ setTimeout(initSmartPagination, 500);
 
 
 <script>
-// PREEMPTIVE DOM INTERCEPTOR: Block chaos popups, mediocrates, AND GPU regret messages
-// NOTE: This only blocks POPUP elements, NOT the chaos section videos
+// ABSOLUTE POPUP BLOCKER - Kill ALL popups, badges, notifications, overlays
 (function() {
+  // List of patterns that indicate a popup/notification element
+  const blockedPatterns = [
+    // Class/ID patterns
+    'mediocrates', 'q5-certified', 'certified-badge', 'popup', 'modal', 'overlay',
+    'notification', 'toast', 'alert-box', 'banner', 'badge', 'floating',
+    'tier-display', 'gpu-regret', 'quality-notice', 'compute-warning',
+    'profit-counter', 'profit-display', 'profit-badge',
+    
+    // Text content patterns (partial matches)
+    'this site has accepted', 'you should too', 'gpu', 'quality', 'regret',
+    'compute', 'token', 'exhaustion', 'approved by mediocrates',
+    'q5 certified', 'certified by', 'profit', 'profits: q'
+  ];
+  
+  // Check if element matches any blocked pattern
+  function shouldBlock(el) {
+    const className = (el.className || '').toLowerCase();
+    const id = (el.id || '').toLowerCase();
+    const text = (el.textContent || '').toLowerCase();
+    const tagName = el.tagName.toLowerCase();
+    
+    // NEVER block these essential elements
+    if (id === 'stockticker' || 
+        className.includes('stock-ticker') ||
+        className.includes('ticker-marquee') ||
+        el.closest('#stockTicker')) {
+      return false;
+    }
+    
+    // Check class names
+    for (const pattern of blockedPatterns) {
+      if (className.includes(pattern)) return true;
+      if (id.includes(pattern)) return true;
+    }
+    
+    // Check text content for specific phrases
+    if (text.includes('this site has accepted') ||
+        text.includes('you should too') ||
+        text.includes('approved by mediocrates') ||
+        text.includes('q5 certified') ||
+        (text.includes('gpu') && text.includes('regret')) ||
+        (text.includes('quality') && text.includes('degraded')) ||
+        (text.includes('token') && text.includes('exhaustion'))) {
+      return true;
+    }
+    
+    // Check for fixed/absolute positioned elements that look like popups
+    const style = window.getComputedStyle(el);
+    const position = style.position;
+    const zIndex = parseInt(style.zIndex) || 0;
+    
+    // Block fixed positioned elements with high z-index (typical popup behavior)
+    if ((position === 'fixed' || position === 'sticky') && zIndex > 100) {
+      // But only if they contain certain keywords
+      const combinedText = (className + ' ' + id + ' ' + text).toLowerCase();
+      const popupKeywords = ['popup', 'modal', 'notification', 'banner', 'toast', 'badge', 'overlay', 'certified', 'approved', 'mediocrates'];
+      for (const kw of popupKeywords) {
+        if (combinedText.includes(kw)) return true;
+      }
+    }
+    
+    return false;
+  }
+  
   // Block popups at the DOM insertion level
   const observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
       mutation.addedNodes.forEach(function(node) {
         if (node.nodeType === 1) { // Element node
-          const el = node;
-          const className = el.className || '';
-          const id = el.id || '';
-          const text = el.textContent || '';
-          
-          // SKIP: Stock ticker must show
-          if (id === 'stockTicker' || 
-              className.includes('ticker-marquee') || 
-              className.includes('stock-ticker') ||
-              el.closest && el.closest('#stockTicker')) {
-            return; // Don't block the ticker
+          if (shouldBlock(node)) {
+            node.remove();
+            console.log('🚫 BLOCKED:', node.className || node.id || node.textContent.substring(0, 40));
           }
           
-          // SKIP: Chaos section videos (mv-card with chaos class inside grid-chaos)
-          if (el.closest && el.closest('#grid-chaos')) {
-            return; // Don't block chaos section videos
-          }
-          
-          // Check for chaos/mediocrates/GPU/tier indicators - ONLY for popup elements
-          const isBlocked = 
-            // Only block actual popup/modal elements, not video cards
-            (className.toLowerCase().includes('chaos-popup') ||
-             className.toLowerCase().includes('mediocrates-popup') ||
-             className.toLowerCase().includes('popup-modal') ||
-             // GPU/Quality regret messages in tier display
-             (className.toLowerCase().includes('tier-display') && 
-              (text.toLowerCase().includes('gpu') ||
-               text.toLowerCase().includes('quality') ||
-               text.toLowerCase().includes('regret') ||
-               text.toLowerCase().includes('compute') ||
-               text.toLowerCase().includes('token') ||
-               text.toLowerCase().includes('exhaustion'))) ||
-             text.toLowerCase().includes('this site has accepted') ||
-             text.toLowerCase().includes('you should too'));
-          
-          if (isBlocked) {
-            el.remove();
-            console.log('🥛 Blocked:', className || id || text.substring(0, 30));
+          // Also check children that were added as part of this node
+          if (node.querySelectorAll) {
+            const children = node.querySelectorAll('*');
+            children.forEach(function(child) {
+              if (shouldBlock(child)) {
+                child.remove();
+                console.log('🚫 BLOCKED child:', child.className || child.id);
+              }
+            });
           }
         }
       });
     });
   });
   
-  // Start observing before anything else runs
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
+  // Start observing
+  if (document.body) {
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  } else {
+    // Wait for body to exist
+    document.addEventListener('DOMContentLoaded', function() {
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    });
+  }
   
-  console.log('🥛 Milk-Vision: Popup interceptor active (chaos videos preserved)');
+  // Also nuke any existing popups immediately
+  function nukeExistingPopups() {
+    const allElements = document.querySelectorAll('*');
+    allElements.forEach(function(el) {
+      if (shouldBlock(el)) {
+        el.remove();
+      }
+    });
+  }
+  
+  // Run immediately and periodically
+  nukeExistingPopups();
+  setInterval(nukeExistingPopups, 500);
+  
+  console.log('🚫 ABSOLUTE POPUP BLOCKER: Active - All popups, badges, and notifications will be destroyed');
 })();
 </script>
 
@@ -8237,7 +8077,7 @@ setTimeout(initSmartPagination, 500);
     const hash = window.location.hash.replace('#', '');
     if (!hash) return;
     
-    const validTabs = ['solo', 'multi', 'arcs', 'chaos'];
+    const validTabs = ['solo', 'multi', 'arcs'];
     if (validTabs.includes(hash)) {
       // Find the tab button and click it
       const tabBtn = document.querySelector(`.mv-tab[onclick*="'${hash}'"]`);
@@ -8283,7 +8123,7 @@ setTimeout(initSmartPagination, 500);
   // Handle hash changes while on page
   window.addEventListener('hashchange', handleHashNavigation);
   
-  console.log('🔗 URL Hash Navigation: Enabled (use #solo, #multi, #arcs, #chaos)');
+  console.log('🔗 URL Hash Navigation: Enabled (use #solo, #multi, #arcs)');
 })();
 </script>
 
@@ -8405,63 +8245,6 @@ setTimeout(initSmartPagination, 500);
   };
   
   console.log('✅ Fixed multi-character filtering loaded');
-})();
-</script>
-
-<!-- FIX CHAOS SECTION PAGINATION -->
-<script>
-(function() {
-  // Ensure chaos section is properly initialized
-  function initChaosSection() {
-    const grid = document.getElementById('grid-chaos');
-    if (!grid) {
-      console.error('Chaos grid not found');
-      return;
-    }
-    
-    const cards = Array.from(grid.querySelectorAll('.mv-card'));
-    console.log('🎲 Chaos section:', cards.length, 'videos found');
-    
-    // Ensure pagination state exists
-    if (typeof paginationState !== 'undefined') {
-      const totalPages = Math.ceil(cards.length / 12) || 1;
-      paginationState['chaos'] = {
-        currentPage: 1,
-        totalPages: totalPages,
-        expanded: false,
-        cards: cards
-      };
-      
-      // Assign data-page attributes
-      cards.forEach((card, index) => {
-        const pageNum = Math.floor(index / 12) + 1;
-        card.setAttribute('data-page', pageNum);
-      });
-      
-      // Show only page 1
-      cards.forEach(card => {
-        const pageNum = parseInt(card.getAttribute('data-page'));
-        card.style.display = pageNum === 1 ? 'block' : 'none';
-      });
-      
-      // Update pagination UI
-      const pageNumEl = document.getElementById('page-num-chaos');
-      const pageTotalEl = document.getElementById('page-total-chaos');
-      if (pageNumEl) pageNumEl.textContent = '1';
-      if (pageTotalEl) pageTotalEl.textContent = totalPages;
-      
-      // Update prev/next buttons
-      const prevBtn = document.getElementById('prev-chaos');
-      const nextBtn = document.getElementById('next-chaos');
-      if (prevBtn) prevBtn.disabled = true;
-      if (nextBtn) nextBtn.disabled = totalPages <= 1;
-      
-      console.log('🎲 Chaos pagination initialized:', totalPages, 'pages');
-    }
-  }
-  
-  // Run after smart pagination initializes
-  setTimeout(initChaosSection, 600);
 })();
 </script>
 
