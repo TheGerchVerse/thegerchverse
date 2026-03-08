@@ -116,21 +116,23 @@
     }
 
     /* ============================================
-       VIDEO GRID - FORCE 6 COLUMNS
+       VIDEO GRID - STRICT SINGLE CELL PLACEMENT
        ============================================ */
     .video-grid { 
-      display: grid !important; 
-      grid-template-columns: repeat(6, 1fr) !important; 
-      gap: 1.25rem !important; 
-      width: 100% !important;
+      display: grid; 
+      grid-template-columns: repeat(6, 1fr); 
+      grid-auto-flow: row; /* FORCE row-by-row placement */
+      grid-auto-rows: auto; /* Let rows size naturally */
+      gap: 1.25rem; 
+      width: 100%;
     }
 
     /* ============================================
-       VIDEO CARD - FORCE VERTICAL STACK
+       VIDEO CARD - STRICT VERTICAL LAYOUT
        ============================================ */
     .video-card { 
-      display: flex !important; 
-      flex-direction: column !important; 
+      display: flex; 
+      flex-direction: column; /* THUMBNAIL ON TOP, CONTENT BELOW */
       background: rgba(0, 0, 0, 0.6); 
       border: 1px solid rgba(255,255,255,0.15); 
       border-radius: 12px; 
@@ -138,8 +140,10 @@
       text-decoration: none; 
       transition: all 0.3s ease; 
       position: relative;
-      width: 100% !important;
-      height: auto !important;
+      width: 100%;
+      /* CRITICAL: Force single column span */
+      grid-column: auto / span 1;
+      grid-row: auto / span 1;
     }
 
     .video-card:hover { 
@@ -150,16 +154,16 @@
     }
 
     /* ============================================
-       CARD MEDIA - FORCE ASPECT RATIO
+       CARD MEDIA - THUMBNAIL SECTION (ALWAYS FIRST)
        ============================================ */
     .card-media { 
       position: relative; 
+      width: 100%;
       aspect-ratio: 9/16; 
       overflow: hidden;
       background: #000;
-      width: 100% !important;
-      flex: none !important;
-      display: block !important;
+      flex-shrink: 0; /* Don't shrink */
+      order: 0; /* Always first in flex container */
     }
 
     .card-media img { 
@@ -167,7 +171,7 @@
       height: 100%; 
       object-fit: cover; 
       transition: transform 0.3s ease;
-      display: block !important;
+      display: block;
     }
 
     .video-card:hover .card-media img {
@@ -205,70 +209,62 @@
     }
 
     /* ============================================
-       CARD CONTENT - FORCE CORRECT ORDER
+       CARD CONTENT - CAPTION SECTION (ALWAYS SECOND)
        ============================================ */
     .card-content {
-      display: flex !important;
-      flex-direction: column !important; /* Stack vertically */
-      justify-content: flex-start !important; /* Align to top */
-      align-items: stretch !important; /* Full width children */
-      padding: 1rem !important;
-      background: rgba(0,0,0,0.4) !important;
-      width: 100% !important;
-      box-sizing: border-box !important;
-      flex: 1 !important;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      background: rgba(0,0,0,0.4);
+      flex: 1; /* Take remaining space */
+      order: 1; /* Always second in flex container */
     }
 
     .card-oneliner {
-      color: #fff !important;
-      font-size: 0.95rem !important;
-      margin: 0 0 0.75rem 0 !important; /* Margin bottom creates space */
-      line-height: 1.4 !important;
-      font-family: 'Rajdhani', sans-serif !important;
-      display: -webkit-box !important;
-      -webkit-line-clamp: 2 !important;
-      -webkit-box-orient: vertical !important;
-      overflow: hidden !important;
-      font-weight: 500 !important;
-      width: 100% !important;
-      order: 1 !important; /* FORCE first visually */
+      color: #fff;
+      font-size: 0.95rem;
+      margin: 0 0 0.75rem 0;
+      line-height: 1.4;
+      font-family: 'Rajdhani', sans-serif;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-weight: 500;
     }
 
     .card-costars-avatars {
-      display: flex !important;
-      gap: 0.5rem !important;
-      flex-wrap: wrap !important;
-      align-items: center !important;
-      width: 100% !important;
-      margin-top: 0 !important; /* No top margin needed with order */
-      order: 2 !important; /* FORCE second visually */
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: auto; /* Push to bottom of content area */
     }
 
     .costar-avatar-link {
-      display: block !important;
-      transition: transform 0.2s ease, filter 0.2s ease !important;
-      text-decoration: none !important;
-      flex-shrink: 0 !important;
+      display: block;
+      transition: transform 0.2s ease, filter 0.2s ease;
+      text-decoration: none;
+      flex-shrink: 0;
     }
 
     .costar-avatar-link:hover {
-      transform: scale(1.15) !important;
-      z-index: 10 !important;
+      transform: scale(1.15);
+      z-index: 10;
     }
 
     .costar-avatar {
-      width: 32px !important;
-      height: 32px !important;
-      border-radius: 50% !important;
-      object-fit: cover !important;
-      border: 2px solid !important;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
-      transition: all 0.2s ease !important;
-      display: block !important;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      transition: all 0.2s ease;
     }
 
     .costar-avatar-link:hover .costar-avatar {
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 10px currentColor !important;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 10px currentColor;
     }
 
     /* ============================================
@@ -350,8 +346,8 @@
        ============================================ */
     @media (max-width: 1200px) { 
       .video-grid { 
-        grid-template-columns: repeat(3, 1fr) !important; 
-        gap: 1rem !important;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 1rem;
       }
       .char-header {
         padding: 1.5rem;
@@ -416,29 +412,29 @@
       .section-title span { font-size: 0.9rem; }
 
       .video-grid { 
-        grid-template-columns: repeat(3, 1fr) !important; 
-        gap: 0.75rem !important; 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 0.75rem; 
       }
 
       .card-media { aspect-ratio: 9/16; }
 
       .video-card { border-radius: 8px; }
 
-      .card-content { padding: 0.5rem !important; }
+      .card-content { padding: 0.5rem; }
 
       .card-oneliner {
-        font-size: 0.75rem !important;
-        line-height: 1.2 !important;
-        -webkit-line-clamp: 2 !important;
-        margin-bottom: 0.5rem !important;
+        font-size: 0.75rem;
+        line-height: 1.2;
+        -webkit-line-clamp: 2;
+        margin-bottom: 0.5rem;
       }
 
-      .card-costars-avatars { gap: 0.35rem !important; }
+      .card-costars-avatars { gap: 0.35rem; }
 
       .costar-avatar {
-        width: 24px !important;
-        height: 24px !important;
-        border-width: 1.5px !important;
+        width: 24px;
+        height: 24px;
+        border-width: 1.5px;
       }
 
       .card-badge {
@@ -464,12 +460,12 @@
     }
 
     @media (max-width: 380px) {
-      .video-grid { gap: 0.5rem !important; }
-      .card-oneliner { font-size: 0.7rem !important; }
+      .video-grid { gap: 0.5rem; }
+      .card-oneliner { font-size: 0.7rem; }
       .costar-avatar {
-        width: 20px !important;
-        height: 20px !important;
-        border-width: 1px !important;
+        width: 20px;
+        height: 20px;
+        border-width: 1px;
       }
     }
 
