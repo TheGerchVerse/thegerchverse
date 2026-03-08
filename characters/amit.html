@@ -115,19 +115,20 @@
       text-shadow: 0 0 10px var(--char-color);
     }
 
-    /* ============================================
-       VIDEO GRID - 6 PER ROW (1 ROW LAYOUT)
+        /* ============================================
+       VIDEO GRID - 6 COLUMNS, STRICT ISOLATION
        ============================================ */
     .video-grid { 
       display: grid; 
       grid-template-columns: repeat(6, 1fr); 
       gap: 1rem; 
       width: 100%;
-      align-items: stretch; /* Stretch all cards to same height */
+      /* CRITICAL: Prevent row height expansion */
+      grid-auto-rows: minmax(0, auto);
     }
 
     /* ============================================
-       VIDEO CARD - VERTICAL STACK (THUMB TOP, CONTENT BOTTOM)
+       VIDEO CARD - BULLETPROOF CONTAINMENT
        ============================================ */
     .video-card { 
       display: flex; 
@@ -140,7 +141,9 @@
       transition: all 0.3s ease; 
       position: relative;
       width: 100%;
-      height: 100%; /* Fill grid cell height */
+      /* CRITICAL: Force strict containment */
+      min-height: 0;
+      contain: content;
     }
 
     .video-card:hover { 
@@ -160,6 +163,7 @@
       overflow: hidden;
       background: #000;
       flex-shrink: 0;
+      flex-grow: 0;
     }
 
     .card-media img { 
@@ -205,7 +209,7 @@
     }
 
     /* ============================================
-       CARD CONTENT - LOCKED BELOW THUMBNAIL
+       CARD CONTENT - LOCKED INSIDE CARD
        ============================================ */
     .card-content {
       display: flex;
@@ -214,27 +218,33 @@
       padding: 0.75rem;
       background: rgba(0,0,0,0.4);
       box-sizing: border-box;
-      flex-grow: 1; /* Fill remaining vertical space */
+      flex-grow: 1;
+      flex-shrink: 0;
+      /* CRITICAL: Trap content inside */
+      min-height: 0;
+      overflow: hidden;
     }
 
     .card-oneliner {
       color: #fff;
-      font-size: 0.95rem;
-      margin: 0 0 0.75rem 0;
-      line-height: 1.4;
+      font-size: 0.9rem;
+      margin: 0 0 0.5rem 0;
+      line-height: 1.3;
       font-family: 'Rajdhani', sans-serif;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       font-weight: 500;
+      word-break: break-word;
     }
 
     .card-costars-avatars {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.4rem;
       flex-wrap: wrap;
       align-items: center;
+      margin-top: auto; /* Push to bottom */
     }
 
     .costar-avatar-link {
@@ -250,8 +260,8 @@
     }
 
     .costar-avatar {
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid;
