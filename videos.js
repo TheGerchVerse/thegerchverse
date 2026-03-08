@@ -471,7 +471,7 @@ const VIDEO_DB = {
     { id: "s_6920aaa606f48191bfd306a01e78b1f8", thumb: "multi-lizzieliquidates.jpg", oneLiner: "Lizzie liquidates.", characters: ["lizzie"], arc: null },
     { id: "s_69214a3188bc819188790c023a5ce4ef", thumb: "multi-ionixbloodscamsuits.jpg", oneLiner: "Ionix: Blood Scam.", characters: ["amit", "lizzie"], arc: null },
     { id: "s_6921d937058481919f1e0e7cdbe8c490", thumb: "multi-lizziedoesntshare.jpg", oneLiner: "Lizzie doesn't share.", characters: ["lizzie"], arc: null },
-    { id: "s_692283ce10908191ab8a0eebf43a1e3f", thumb: "multi-amitlizziemilkgod.jpg", oneLiner: "Amit dreams of ascension.", characters: ["amit"], arc: null },
+    { id: "s_692283ce10908191ab8a0eebf43a1e3f", thumb: "multi-amitlizziemilkgod.jpg", oneLiner: "Amit dreams of ascension.", characters: ["amit", "lizzie"], arc: null },
     { id: "s_6923e3b9968c81919d87a441091e04ea", thumb: "multi-amitraj-happymilk.jpg", oneLiner: "Amit asks Raj for inhalable 'Happy Milk'.", characters: ["amit", "raj"], arc: null },
     { id: "s_6923e62c793c819187d914b1eb379002", thumb: "multi-lizzieamitraj-lizziecurryblast.jpg", oneLiner: "Lizzie Holmes: CurryBlast Owner/CEO'.", characters: ["lizzie", "amit", "raj"], arc: null },
     { id: "s_6923ef51849c8191b16b2e0d64d3c36f", thumb: "multi-curryblastexplained.jpg", oneLiner: "The history of CurryBlast.", characters: ["amit", "raj"], arc: null },

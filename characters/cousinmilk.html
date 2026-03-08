@@ -44,61 +44,7 @@
 
 
 
-    /* Co-star avatar styles */
-    .card-costars-avatars {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 0.75rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .costar-avatar-link {
-      display: block;
-      transition: transform 0.2s ease, filter 0.2s ease;
-      text-decoration: none;
-    }
-
-    .costar-avatar-link:hover {
-      transform: scale(1.15);
-      z-index: 10;
-    }
-
-    .costar-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-      transition: all 0.2s ease;
-    }
-
-    .costar-avatar-link:hover .costar-avatar {
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 10px currentColor;
-    }
-
-    /* Mobile adjustments */
-    @media (max-width: 768px) {
-      .card-costars-avatars {
-        gap: 0.35rem;
-        margin-top: 0.5rem;
-      }
-
-      .costar-avatar {
-        width: 24px;
-        height: 24px;
-        border-width: 1.5px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .costar-avatar {
-        width: 20px;
-        height: 20px;
-        border-width: 1px;
-      }
-    }
+    
 
 
 </head>
