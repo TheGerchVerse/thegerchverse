@@ -1027,21 +1027,10 @@ function convertToJS() {
         cards.forEach((card, i) => {
             const href = card.getAttribute('href') || '';
             
-            // FIXED: Better regex to extract ID from various URL formats
-            // Matches: /p/s_xxxxxxxx or just s_xxxxxxxx in the URL
-            const idMatch = href.match(/[\/p\/]?([a-f0-9]{32})/) || 
-                           href.match(/s_[a-f0-9]+/) ||
-                           href.match(/\/p\/(s_[a-f0-9]+)/);
-            
-            // Extract the ID - handle different match structures
-            let id = 'unknown';
-            if (idMatch) {
-                // If it starts with s_, use it directly, otherwise prepend s_
-                id = idMatch[1] || idMatch[0];
-                if (!id.startsWith('s_') && id.length === 32) {
-                    id = 's_' + id;
-                }
-            }
+            // Extract ID from URL
+            const idMatch = href.match(/\/p\/(s_[a-f0-9]+)/) || 
+                           href.match(/(s_[a-f0-9]{32})/);
+            const id = idMatch ? idMatch[1] : 'unknown';
             
             const img = card.querySelector('img');
             let thumb = '';
@@ -1054,16 +1043,14 @@ function convertToJS() {
             let oneLiner = '';
             const overlay = card.querySelector('.mv-card-overlay, .mv-one-liner, p');
             if (overlay) {
-                // Clean up quotes - remove surrounding quotes if present
+                // Clean up quotes
                 oneLiner = overlay.textContent.replace(/^["']|["']$/g, '').trim();
             }
             
-            let title = oneLiner || `Video ${i+1}`;
-            
-            // For multi-character, try to detect characters
+            // For multi-character, detect characters
             let chars = [];
             if (character === 'multi') {
-                const text = (card.textContent + ' ' + title).toLowerCase();
+                const text = (card.textContent + ' ' + oneLiner).toLowerCase();
                 const charMap = {
                     'amit': 'amit', 'lizzie': 'lizzie', 'leon': 'leon',
                     'big tex': 'bigtex', 'evil': 'evilamit', 'light': 'lightamit',
@@ -1077,10 +1064,7 @@ function convertToJS() {
                 }
             }
             
-            videos.push({
-                id, title, thumb, oneLiner,
-                characters: chars.length > 0 ? chars : undefined
-            });
+            videos.push({ id, thumb, oneLiner, chars });
         });
         
         if (videos.length === 0) {
@@ -1088,16 +1072,24 @@ function convertToJS() {
             return;
         }
         
-        // Generate output
-        let output = videos.map((v, i) => {
-            let str = `  {\n    id: "${v.id}",\n    title: "${v.title}",\n    thumb: "${v.thumb}",\n    oneLiner: "${v.oneLiner}"`;
-            if (v.characters) str += `,\n    characters: [${v.characters.map(c => `"${c}"`).join(', ')}]`;
-            str += `\n  }`;
-            return str;
-        }).join(',\n\n');
+        // Generate output in CLEAN COMPACT FORMAT
+        let output = '';
+        
+        if (character === 'multi') {
+            // Multi-character format with characters array
+            output = videos.map(v => {
+                let str = `{ id: "${v.id}", thumb: "${v.thumb}", oneLiner: "${v.oneLiner}", characters: [${v.chars.map(c => `"${c}"`).join(', ')}], arc: null }`;
+                return str;
+            }).join(',\n      ');
+        } else {
+            // Solo character format
+            output = videos.map(v => {
+                return `{ id: "${v.id}", thumb: "${v.thumb}", oneLiner: "${v.oneLiner}", arc: null }`;
+            }).join(',\n      ');
+        }
         
         outputArea.value = output;
-        showStatus(`✅ Converted ${videos.length} video(s)`, 'success');
+        showStatus(`✅ Converted ${videos.length} video(s) - clean format`, 'success');
         
     } catch (err) {
         showStatus('Error: ' + err.message, 'error');
