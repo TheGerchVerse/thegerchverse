@@ -1,7 +1,7 @@
 // CHARACTER-LOADER.JS - Renders character pages from videos.js
 // ============================================
 
-const VIDEOS_PER_PAGE = 12;
+const VIDEOS_PER_PAGE = 6;
 let currentSoloPage = 1;
 let currentMultiPage = 1;
 
