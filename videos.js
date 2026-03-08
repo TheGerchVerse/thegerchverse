@@ -499,126 +499,126 @@ const CHARACTERS = {
     name: "Amit Gaur",
     handle: "@amitgaur",
     role: "CEO, Gerchan Farms",
-    avatar: "./images/amit.jpg",
+    avatar: "../images/amit.jpg",
     color: "#00FFFF"
   },
   lizzie: {
     name: "Lizzie Holmes",
     handle: "@lizzieholmes",
     role: "Founder, Ionix",
-    avatar: "./images/lizzie.jpg",
+    avatar: "../images/lizzie.jpg",
     color: "#FF007F"
   },
   leon: {
     name: "Leon Cochran",
     handle: "@leoncochran",
     role: "Riddle Attorney",
-    avatar: "./images/leon.jpg",
+    avatar: "../images/leon.jpg",
     color: "#00FF88"
   },
   bigtex: {
     name: "Big Tex Wang",
     handle: "@bigtexwang",
     role: "Cattle Speculator",
-    avatar: "./images/bigtex.jpg",
+    avatar: "../images/bigtex.jpg",
     color: "#FF4444"
   },
   gadha: {
     name: "Gadha",
     handle: "@gadhamilk",
     role: "Celestial Cow Deity",
-    avatar: "./images/gadha.jpg",
+    avatar: "../images/gadha.jpg",
     color: "#FFD700"
   },
   raj: {
     name: "Raj Mehta",
     handle: "@grchnraj",
     role: "Executive Assistant",
-    avatar: "./images/raj.jpg",
+    avatar: "../images/raj.jpg",
     color: "#FF8800"
   },
   sterling: {
     name: "Sterling Winslow",
     handle: "@sterlingwinslow",
     role: "Butler, Chaos Enabler",
-    avatar: "./images/sterling.jpg",
+    avatar: "../images/sterling.jpg",
     color: "#888888"
   },
   eelon: {
     name: "Eel On Muskmelon",
     handle: "@eelonmuskmelon",
     role: "Tech Bro, Flamingo Enthusiast",
-    avatar: "./images/eelon.jpg",
+    avatar: "../images/eelon.jpg",
     color: "#FF66CC"
   },
   cole: {
     name: "Cole Mercer",
     handle: "@pharma_bro",
     role: "OxyRelief Evangelist",
-    avatar: "./images/cole.jpg",
+    avatar: "../images/cole.jpg",
     color: "#44FF44"
   },
   lightamit: {
     name: "Light Amit",
     handle: "@lightamit",
     role: "The Enlightened Path",
-    avatar: "./images/lightamit.jpg",
+    avatar: "../images/lightamit.jpg",
     color: "#FFFFFF"
   },
   darkamit: {
     name: "Dark Amit",
     handle: "@darkamit",
     role: "The Shadow Within",
-    avatar: "./images/darkamit.jpg",
+    avatar: "../images/darkamit.jpg",
     color: "#000000"
   },
   mrsgaur: {
     name: "Mrs. Gaur",
     handle: "@mrsgaur",
     role: "Matriarch",
-    avatar: "./images/mrsgaur.jpg",
+    avatar: "../images/mrsgaur.jpg",
     color: "#FF88AA"
   },
   amitjr: {
     name: "Amit Jr.",
     handle: "@amitjr",
     role: "Heir Apparent",
-    avatar: "./images/amitjr.jpg",
+    avatar: "../images/amitjr.jpg",
     color: "#88CCFF"
   },
   amitsdad: {
     name: "Amit's Dad",
     handle: "@amitsdad",
     role: "The Original Gaur",
-    avatar: "./images/amitsdad.jpg",
+    avatar: "../images/amitsdad.jpg",
     color: "#CC88FF"
   },
   amitssister: {
     name: "Amit's Sister",
     handle: "@amitssister",
     role: "Family Rebel",
-    avatar: "./images/amitssister.jpg",
+    avatar: "../images/amitssister.jpg",
     color: "#FFCC88"
   },
   unclegerch: {
     name: "Uncle Gerch",
     handle: "@unclegerch",
     role: "The Black Sheep",
-    avatar: "./images/unclegerch.jpg",
+    avatar: "../images/unclegerch.jpg",
     color: "#88FFCC"
   },
   cousinmilk: {
     name: "Cousin Milk",
     handle: "@cousinmilk",
     role: "Dairy Distributor",
-    avatar: "./images/cousinmilk.jpg",
+    avatar: "../images/cousinmilk.jpg",
     color: "#CCFF88"
   },
   auntiecream: {
     name: "Auntie Cream",
     handle: "@auntiecream",
     role: "Family Historian",
-    avatar: "./images/auntiecream.jpg",
+    avatar: "../images/auntiecream.jpg",
     color: "#FFAAAA"
   }
 };
