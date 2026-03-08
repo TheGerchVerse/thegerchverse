@@ -680,7 +680,7 @@ const CHARACTERS = {
     handle: "@gerchlander",
     role: "Corporate Tyrant",
     avatar: "../images/gerchlander.jpg",
-    color: "#ff00007b"
+    color: "#FF0000"
   },
   michaelmoo: {
     name: "Michael Moo",
@@ -695,14 +695,14 @@ const CHARACTERS = {
     role: "CAPO (Chief Approvals Philosopher-Officer)",
     avatar: "../images/mediocrates-profile.jpg",
     color: "#ffffff"
-  }
+  },
   amitjr: {
     name: "Amit Jr.",
     handle: "@amitjrq6",
     role: "Son of Amit Gaur, Whistleblower from Q6",
     avatar: "../images/amitjrq6.jpg",
     color: "#808080"
-  }
+  },
   amitsdad: {
     name: "Amit's Dad",
     handle: "@amitsdad",
