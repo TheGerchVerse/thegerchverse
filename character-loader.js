@@ -145,9 +145,10 @@ function renderVideoCard(video, coStars = null) {
   const thumbPath = video.thumb ? `../thumbnails/${video.thumb}` : '';
   const hasThumb = video.thumb && !video.thumb.includes('[VIDEO_ID]');
   
-  // Build co-stars avatar HTML
-  let avatarsHtml = '';
+  // Build co-stars row HTML (separate from card)
+  let coStarsHtml = '';
   if (coStars && coStars.length > 0) {
+    let avatarsHtml = '';
     for (const charKey of coStars) {
       const char = CHARACTERS[charKey];
       if (!char) continue;
@@ -159,33 +160,29 @@ function renderVideoCard(video, coStars = null) {
         </a>
       `;
     }
+    coStarsHtml = `<div class="costar-row">${avatarsHtml}</div>`;
+  } else {
+    // Empty placeholder to maintain spacing
+    coStarsHtml = '<div class="costar-row"></div>';
   }
   
-  // Build card content - MUST be inside the <a> tag
-  const cardContent = `
-    <div class="card-content">
-      <p class="card-oneliner">"${video.oneLiner}"</p>
-      ${avatarsHtml ? `<div class="card-costars-avatars">${avatarsHtml}</div>` : ''}
-    </div>
-  `;
-  
-  // Build thumbnail section
-  const thumbSection = `
-    <div class="card-media">
-      ${hasThumb 
-        ? `<img src="${thumbPath}" alt="${video.oneLiner}" loading="lazy" 
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
-        : ''
-      }
-      <div class="card-placeholder" style="${hasThumb ? 'display:none' : 'display:flex'}">
-        <span>THUMB<br>SOON</span>
+  // Card is just the thumbnail with overlay caption
+  const cardHtml = `
+    <a href="https://sora.chatgpt.com/p/${video.id}" target="_blank" rel="noopener" class="video-card">
+      <div class="card-media">
+        ${hasThumb 
+          ? `<img src="${thumbPath}" alt="${video.oneLiner}" loading="lazy" 
+               onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\\'card-placeholder\\'>THUMB<br>SOON</div>'">`
+          : `<div class="card-placeholder">THUMB<br>SOON</div>`
+        }
       </div>
       <span class="card-badge">↗ Sora</span>
-    </div>
+      <div class="card-caption-overlay">"${video.oneLiner}"</div>
+    </a>
   `;
   
-  // COMPLETE CARD - All content inside the anchor tag
-  return `<a href="https://sora.chatgpt.com/p/${video.id}" target="_blank" rel="noopener" class="video-card">${thumbSection}${cardContent}</a>`;
+  // Return card + co-stars row wrapped together
+  return `<div class="video-cell">${cardHtml}${coStarsHtml}</div>`;
 }
 
 function getMultiVideosForCharacter(charKey) {
