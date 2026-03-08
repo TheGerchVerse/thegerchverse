@@ -1026,8 +1026,22 @@ function convertToJS() {
         
         cards.forEach((card, i) => {
             const href = card.getAttribute('href') || '';
-            const idMatch = href.match(/\/p\/([a-f0-9]+)/);
-            const id = idMatch ? idMatch[1] : 'unknown';
+            
+            // FIXED: Better regex to extract ID from various URL formats
+            // Matches: /p/s_xxxxxxxx or just s_xxxxxxxx in the URL
+            const idMatch = href.match(/[\/p\/]?([a-f0-9]{32})/) || 
+                           href.match(/s_[a-f0-9]+/) ||
+                           href.match(/\/p\/(s_[a-f0-9]+)/);
+            
+            // Extract the ID - handle different match structures
+            let id = 'unknown';
+            if (idMatch) {
+                // If it starts with s_, use it directly, otherwise prepend s_
+                id = idMatch[1] || idMatch[0];
+                if (!id.startsWith('s_') && id.length === 32) {
+                    id = 's_' + id;
+                }
+            }
             
             const img = card.querySelector('img');
             let thumb = '';
@@ -1038,31 +1052,29 @@ function convertToJS() {
             }
             
             let oneLiner = '';
-            const overlay = card.querySelector('.mv-card-overlay, .mv-one-liner');
+            const overlay = card.querySelector('.mv-card-overlay, .mv-one-liner, p');
             if (overlay) {
-                oneLiner = overlay.textContent.replace(/"/g, '\\"').trim();
+                // Clean up quotes - remove surrounding quotes if present
+                oneLiner = overlay.textContent.replace(/^["']|["']$/g, '').trim();
             }
             
             let title = oneLiner || `Video ${i+1}`;
             
-            // Detect characters for multi
+            // For multi-character, try to detect characters
             let chars = [];
             if (character === 'multi') {
-                const text = card.textContent.toLowerCase();
-                if (text.includes('amit')) chars.push('amit');
-                if (text.includes('lizzie')) chars.push('lizzie');
-                if (text.includes('leon')) chars.push('leon');
-                if (text.includes('big tex')) chars.push('bigtex');
-                if (text.includes('evil')) chars.push('evilamit');
-                if (text.includes('light')) chars.push('lightamit');
-                if (text.includes('dark')) chars.push('darkamit');
-                if (text.includes('gerchlander')) chars.push('gerchlander');
-                if (text.includes('gadha')) chars.push('gadha');
-                if (text.includes('raj')) chars.push('raj');
-                if (text.includes('sterling')) chars.push('sterling');
-                if (text.includes('eelon')) chars.push('eelon');
-                if (text.includes('cole')) chars.push('cole');
-                if (text.includes('moo')) chars.push('michaelmoo');
+                const text = (card.textContent + ' ' + title).toLowerCase();
+                const charMap = {
+                    'amit': 'amit', 'lizzie': 'lizzie', 'leon': 'leon',
+                    'big tex': 'bigtex', 'evil': 'evilamit', 'light': 'lightamit',
+                    'dark': 'darkamit', 'gerchlander': 'gerchlander', 'gadha': 'gadha',
+                    'raj': 'raj', 'sterling': 'sterling', 'eelon': 'eelon',
+                    'cole': 'cole', 'moo': 'michaelmoo'
+                };
+                
+                for (const [key, val] of Object.entries(charMap)) {
+                    if (text.includes(key)) chars.push(val);
+                }
             }
             
             videos.push({
@@ -1070,6 +1082,11 @@ function convertToJS() {
                 characters: chars.length > 0 ? chars : undefined
             });
         });
+        
+        if (videos.length === 0) {
+            showStatus('No videos parsed!', 'error');
+            return;
+        }
         
         // Generate output
         let output = videos.map((v, i) => {
