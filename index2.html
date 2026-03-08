@@ -1,9 +1,31 @@
-
-# Create the index2.html - the new clean architecture
-
-index2_html = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+
+<style>
+  /* Force pagination buttons to be clickable */
+  .mv-pagination {
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .mv-pagination button,
+  .mv-pagination a {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 1001;
+    cursor: pointer;
+  }
+  
+  /* Ensure no overlay is blocking */
+  .mv-pagination-container {
+    position: relative;
+    z-index: 999;
+  }
+</style>
+
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Milk-Vision Library v2 | The Gerch-Verse</title>
