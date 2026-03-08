@@ -1,0 +1,1104 @@
+
+# Create the index2.html - the new clean architecture
+
+index2_html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Milk-Vision Library v2 | The Gerch-Verse</title>
+  <link rel="stylesheet" href="./gerchverse.css">
+  
+  <style>
+    /* ============================================
+       MILK-VISION v2.0 - Data-Driven Architecture
+       Clean, scalable, maintainable
+       ============================================ */
+    
+    /* Tab Navigation */
+    .mv-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin: 2rem auto;
+      max-width: 900px;
+      padding: 0 1rem;
+    }
+    
+    .mv-tab {
+      background: rgba(0,255,255,0.08);
+      border: 2px solid #00FFFF;
+      border-radius: 8px;
+      color: #00FFFF;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(0.7rem, 2vw, 0.9rem);
+      font-weight: 600;
+      padding: 0.6rem 1.2rem;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .mv-tab:hover {
+      background: rgba(0,255,255,0.2);
+      box-shadow: 0 0 20px rgba(0,255,255,0.4);
+      transform: translateY(-2px);
+    }
+    
+    .mv-tab.active {
+      background: #FF007F;
+      border-color: #FF007F;
+      color: #000;
+      box-shadow: 0 0 30px rgba(255,0,127,0.6);
+    }
+    
+    /* Tab Content */
+    .mv-tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease-out;
+    }
+    
+    .mv-tab-content.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Character Section Headers */
+    .mv-character-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0 1rem 0;
+      padding: 0.8rem 1.2rem;
+      background: rgba(0,255,255,0.06);
+      border-left: 4px solid #00FFFF;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .mv-character-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #00FFFF;
+      box-shadow: 0 0 15px rgba(0,255,255,0.3);
+    }
+    
+    .mv-character-info h3 {
+      margin: 0;
+      color: #00FFFF;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+    }
+    
+    .mv-character-info .handle {
+      margin: 0.2rem 0 0 0;
+      color: #FF007F;
+      font-size: 0.8rem;
+    }
+    
+    /* Video Grid */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0 2rem 0;
+      padding: 0 1rem;
+      min-height: 200px; /* Prevent collapse during render */
+    }
+    
+    @media (min-width: 768px) {
+      .mv-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .mv-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+      }
+    }
+    
+    /* Video Card */
+    .mv-card {
+      position: relative;
+      background: rgba(0,0,0,0.5);
+      border: 2px solid #00FFFF;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .mv-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(0,255,255,0.4);
+      border-color: #FF007F;
+    }
+    
+    .mv-card.hidden {
+      display: none;
+    }
+    
+    .mv-thumb {
+      width: 100%;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .mv-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0.5rem;
+    }
+    
+    .mv-one-liner {
+      color: #fff;
+      font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+      font-style: italic;
+      line-height: 1.3;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+      margin: 0;
+    }
+    
+    .mv-external {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: rgba(0,0,0,0.7);
+      color: #00FFFF;
+      font-size: 0.6rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid #00FFFF;
+    }
+    
+    .mv-character-tags {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      display: flex;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+    
+    .mv-tag {
+      background: rgba(255,0,127,0.8);
+      color: #000;
+      font-size: 0.55rem;
+      font-weight: 700;
+      padding: 0.15rem 0.3rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+    
+    /* Pagination */
+    .mv-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: rgba(0,255,255,0.05);
+      border-radius: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .mv-page-btn {
+      background: transparent;
+      border: 2px solid #00FFFF;
+      color: #00FFFF;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s;
+      min-width: 44px;
+      min-height: 44px;
+    }
+    
+    .mv-page-btn:hover:not(:disabled) {
+      background: #00FFFF;
+      color: #000;
+    }
+    
+    .mv-page-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      border-color: #666;
+      color: #666;
+    }
+    
+    .mv-page-number {
+      background: transparent;
+      border: 2px solid #00FFFF;
+      color: #00FFFF;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      transition: all 0.3s;
+      min-width: 40px;
+      min-height: 40px;
+    }
+    
+    .mv-page-number:hover:not(.active) {
+      background: rgba(0,255,255,0.2);
+    }
+    
+    .mv-page-number.active {
+      background: #FF007F;
+      border-color: #FF007F;
+      color: #000;
+      box-shadow: 0 0 20px rgba(255,0,127,0.6);
+    }
+    
+    .mv-page-info {
+      color: #E0E0E0;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      margin: 0 0.5rem;
+    }
+    
+    /* Multi-Character Filters */
+    .mv-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin: 1rem 0 2rem 0;
+      padding: 0 1rem;
+    }
+    
+    .mv-filter-chip {
+      background: rgba(0,255,255,0.1);
+      border: 1px solid #00FFFF;
+      border-radius: 20px;
+      color: #00FFFF;
+      cursor: pointer;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 0.75rem;
+      padding: 0.4rem 0.8rem;
+      transition: all 0.3s;
+    }
+    
+    .mv-filter-chip:hover {
+      background: rgba(0,255,255,0.2);
+    }
+    
+    .mv-filter-chip.active {
+      background: #FF007F;
+      border-color: #FF007F;
+      color: #000;
+    }
+    
+    /* Story Arc Timeline */
+    .mv-timeline {
+      position: relative;
+      margin: 2rem 0;
+      padding: 0 1rem;
+    }
+    
+    .mv-timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 60px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #00FFFF, #FF007F, #FFD700);
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    
+    .mv-timeline-glitch {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      display: inline-block;
+      background: rgba(0,0,0,0.9);
+      border: 1px dashed #FF007F;
+      color: #FF007F;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      z-index: 10;
+      animation: glitchText 1s infinite;
+      margin-bottom: 1rem;
+    }
+    
+    @keyframes glitchText {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; transform: translateX(-48%) skewX(-2deg); }
+    }
+    
+    .mv-arc-section {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: rgba(255,215,0,0.05);
+      border: 2px solid #FFD700;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mv-arc-section + .mv-arc-section {
+      margin-top: 3rem;
+    }
+    
+    .mv-arc-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .mv-arc-status {
+      background: #FFD700;
+      color: #000;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 900;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    
+    .mv-arc-status.ongoing {
+      background: #03AC13;
+      color: #fff;
+    }
+    
+    .mv-arc-status.q6 {
+      background: #FF0000;
+      color: #fff;
+      animation: pulse 1s infinite;
+    }
+    
+    /* Empty State */
+    .mv-empty {
+      text-align: center;
+      padding: 3rem;
+      color: #888;
+      font-style: italic;
+      grid-column: 1 / -1;
+    }
+    
+    .mv-empty::before {
+      content: '🥛';
+      display: block;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.5;
+    }
+    
+    /* Thumbnail Placeholder */
+    .mv-placeholder {
+      width: 100%;
+      aspect-ratio: 9/16;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      border: 2px dashed #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      text-align: center;
+    }
+    
+    /* Extended Family Divider */
+    .extended-family-divider {
+      margin: 3rem 0;
+      padding: 1rem;
+      background: rgba(255,0,127,0.1);
+      border: 2px dashed #FF007F;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .extended-family-divider h3 {
+      color: #FF007F;
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    
+    .extended-family-divider p {
+      color: #888;
+      margin: 0.5rem 0 0 0;
+      font-size: 0.8rem;
+    }
+    
+    /* Gadha Disclaimer */
+    .gadha-disclaimer {
+      background: rgba(0, 255, 136, 0.1);
+      border-left: 4px solid #00FF88;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+      color: #E0E0E0;
+    }
+    
+    /* Mobile fixes */
+    @media (max-width: 480px) {
+      .mv-character-header {
+        flex-wrap: wrap;
+      }
+      
+      .mv-character-info {
+        flex: 1 1 100%;
+      }
+      
+      .mv-timeline::before {
+        left: 20px;
+      }
+      
+      .mv-timeline-glitch {
+        left: 20px;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body data-no-popups>
+
+<!-- Desktop Nav -->
+<nav>
+  <a href="./index.html">Home</a>
+  <a href="./fam.html">Meet the Fam</a>
+  <a href="./propaganda.html">Propaganda</a>
+  <a href="./gulag.html">Gulag</a>
+  <a href="./milk-slap.html">Milk-Slap</a>
+  <a href="./milk-vision.html">Milk-Vision</a>
+  <a href="./fineprint.html">Fine Print</a>
+  <a href="./careers.html">Careers</a>
+  <a href="./corrupted.html">Investor Relations</a>
+</nav>
+
+<!-- Mobile Nav Wrapper -->
+<div class="mobile-nav-wrapper">
+  <button class="hamburger-btn" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <a href="./index.html">Home</a>
+  <a href="./fam.html">Meet the Fam</a>
+  <a href="./propaganda.html">Propaganda</a>
+  <a href="./gulag.html">Gulag</a>
+  <a href="./milk-slap.html">Milk-Slap</a>
+  <a href="./milk-vision.html">Milk-Vision</a>
+  <a href="./fineprint.html">Fine Print</a>
+  <a href="./careers.html">Careers</a>
+  <a href="./corrupted.html">Investor Relations</a>
+</div>
+
+<div class="header-disclaimer">
+  <span class="warning-label">⚠️ Approved Under Duress</span>
+  <p>All referenced Gerch-Verse media was approved under conditions of limited compute, degraded output, and immediate regret.</p>
+  <span class="stamp">Further refinement was considered and unanimously rejected.</span>
+</div>
+
+<div class="profit">💰 PROFITS: Q5+</div>
+
+<div class="glass-card" style="max-width: min(900px, 95vw); width: auto; text-align: center; margin: 2rem auto 2rem auto; border: 2px solid rgba(0, 255, 255, 0.4); box-shadow: 0 0 30px rgba(0, 255, 255, 0.2); padding: 0.8rem 1.5rem; display: block; box-sizing: border-box;">
+  <h1 class="page-title" style="text-align: center; margin: 0; font-size: clamp(1.5rem, 4vw, 3rem); background: linear-gradient(45deg, #00FFFF, #FF007F); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(0,255,255,0.5); filter: brightness(1.3); line-height: 1.2; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">🎬 Milk-Vision Library v2 🎬</h1>
+  <p style="color: #FF007F; font-size: 0.8rem; margin: 0.5rem 0 0 0;">Data-Driven Architecture</p>
+</div>
+
+<p style="text-align: center; color: #E0E0E0; margin: 0 auto 2rem auto; font-size: clamp(0.9rem, 2.5vw, 1.1rem); max-width: 700px; font-style: italic;">
+  Every Sora video in the Gerch-Verse. Now powered by clean data architecture. <br>
+  <span style="color: #FF007F;">Adding videos is now 30 seconds instead of 5 minutes.</span> <br>
+  <span style="color: #00FFFF; font-size: 0.75em;">Please enjoy this ad-free experience sponsored by Mercer Pharmaceuticals - A family company</span>
+</p>
+
+<!-- Tab Navigation -->
+<div class="mv-tabs">
+  <button class="mv-tab active" onclick="switchTab('solo')">Solo Vids</button>
+  <button class="mv-tab" onclick="switchTab('multi')">Multi-Character</button>
+  <button class="mv-tab" onclick="switchTab('arcs')">Story Arcs</button>
+</div>
+
+<!-- SOLO VIDS TAB -->
+<div id="tab-solo" class="mv-tab-content active">
+  <!-- Amit Section (MIGRATED - Data Driven) -->
+  <div class="mv-character-header">
+    <img src="./images/amit.jpg" alt="Amit" class="mv-character-avatar">
+    <div class="mv-character-info">
+      <h3>Amit Gaur</h3>
+      <p class="handle">@grchnfrms — CEO, Hand-Slap Innovator</p>
+    </div>
+  </div>
+  <div class="mv-grid" id="grid-amit"></div>
+  <div class="mv-pagination" id="pagination-amit"></div>
+  
+  <!-- Lizzie Section (LEGACY - Still in HTML, to be migrated) -->
+  <div class="mv-character-header">
+    <img src="./images/lizzie.jpg" alt="Lizzie" class="mv-character-avatar">
+    <div class="mv-character-info">
+      <h3>Lizzie Holmes</h3>
+      <p class="handle">@sheranos — Destiny Diagnostician</p>
+    </div>
+  </div>
+  <div class="mv-grid" id="grid-lizzie">
+    <div class="mv-empty">Not yet migrated to v2. See original milk-vision.html</div>
+  </div>
+  
+  <!-- Extended Family Section Divider -->
+  <div class="extended-family-divider">
+    <h3>EXTENDED FAMILY CIRCLE</h3>
+    <p>Associated entities, cosmic anomalies, and liability risks</p>
+  </div>
+  
+  <!-- Gadha Section (LEGACY) -->
+  <div class="mv-character-header">
+    <img src="./images/gadha.jpg" alt="Gadha" class="mv-character-avatar">
+    <div class="mv-character-info">
+      <h3>Gadha</h3>
+      <p class="handle">@gadhamilk — Celestial cow deity</p>
+    </div>
+  </div>
+  <div class="gadha-disclaimer">
+    <p style="margin: 0; font-size: 0.9rem;">
+      <strong style="color: #00FF88;">⚠️ GADHA DISCLOSURE:</strong> 
+      Due to contractual obligations, Gadha's <em>solo</em> features have been capped at Q5 levels. 
+      Check the <a href="#" onclick="switchTab('multi')" style="color: #00FFFF; text-decoration: underline;">MULTI-CHARACTER</a> tab 
+      to witness Gadha's true reign.
+    </p>
+  </div>
+  <div class="mv-grid" id="grid-gadha">
+    <div class="mv-empty">Not yet migrated to v2. See original milk-vision.html</div>
+  </div>
+</div>
+
+<!-- MULTI-CHARACTER TAB -->
+<div id="tab-multi" class="mv-tab-content">
+  <p style="text-align: center; color: #39FF14; margin: 1rem 0;">
+    Videos featuring multiple characters. Filter by who appears.
+  </p>
+  
+  <div class="mv-filters" id="multi-filters">
+    <!-- Filters injected by JS -->
+  </div>
+  
+  <div class="mv-grid" id="grid-multi"></div>
+  <div class="mv-pagination" id="pagination-multi"></div>
+</div>
+
+<!-- STORY ARCS TAB -->
+<div id="tab-arcs" class="mv-tab-content">
+  <div class="mv-timeline">
+    <div class="mv-timeline-glitch">⚠️ TIMELINE INSTABILITY DETECTED</div>
+    <p style="text-align: center; color: #888; margin: 1rem 0;">
+      Story arcs across the multiverse. Some videos appear in multiple arcs due to quantum narrative drift.
+    </p>
+    
+    <div id="arcs-container">
+      <!-- Arcs injected by JS -->
+    </div>
+  </div>
+</div>
+
+<footer style="margin-top: 3rem;">
+  <p>© 2026 Gerchan Farms et al. All udders—cosmic or otherwise—reserved.</p>
+  <p style="color: #666; font-size: 0.8rem; margin-top: 0.5rem;">
+    Milk-Vision v2.0 - Data-driven architecture. Migration in progress.
+  </p>
+</footer>
+
+<!-- Scripts -->
+<script src="./videos.js"></script>
+<script>
+// ============================================
+// MILK-VISION v2.0 RENDERING ENGINE
+// ============================================
+
+// State management
+const state = {
+  solo: {
+    amit: { page: 1, perPage: 12 }
+  },
+  multi: { 
+    page: 1, 
+    perPage: 12, 
+    filter: 'all' 
+  },
+  arcs: {}
+};
+
+// ============================================
+// CORE RENDER FUNCTIONS
+// ============================================
+
+/**
+ * Render a paginated video grid
+ * @param {Array} videos - Array of video objects
+ * @param {string} containerId - ID of grid container
+ * @param {string} paginationId - ID of pagination container
+ * @param {Object} options - {page, perPage, filterFn, showCharacters}
+ */
+function renderVideoGrid(videos, containerId, paginationId, options = {}) {
+  const container = document.getElementById(containerId);
+  const paginationContainer = document.getElementById(paginationId);
+  
+  if (!container) {
+    console.warn(`Container #${containerId} not found`);
+    return;
+  }
+  
+  // Apply filter if provided
+  let filteredVideos = videos;
+  if (options.filterFn) {
+    filteredVideos = videos.filter(options.filterFn);
+  }
+  
+  // Pagination
+  const perPage = options.perPage || 12;
+  const currentPage = options.page || 1;
+  const totalPages = Math.ceil(filteredVideos.length / perPage) || 1;
+  const start = (currentPage - 1) * perPage;
+  const pageVideos = filteredVideos.slice(start, start + perPage);
+  
+  // Render grid
+  if (pageVideos.length === 0) {
+    container.innerHTML = '<div class="mv-empty">No videos found. Try adjusting filters.</div>';
+  } else {
+    container.innerHTML = pageVideos.map(v => renderVideoCard(v, options.showCharacters)).join('');
+  }
+  
+  // Render pagination
+  if (paginationContainer) {
+    renderPagination(currentPage, totalPages, filteredVideos.length, paginationId, (newPage) => {
+      // Update state and re-render
+      if (containerId === 'grid-multi') {
+        state.multi.page = newPage;
+        renderMultiGrid();
+      } else if (containerId.startsWith('grid-')) {
+        const charKey = containerId.replace('grid-', '');
+        if (state.solo[charKey]) {
+          state.solo[charKey].page = newPage;
+          renderSoloGrid(charKey);
+        }
+      }
+    });
+  }
+}
+
+/**
+ * Render a single video card HTML
+ */
+function renderVideoCard(video, showCharacters = false) {
+  const hasThumb = video.thumb && !video.thumb.includes('[');
+  const thumbHtml = hasThumb 
+    ? `<img src="./thumbnails/${video.thumb}" class="mv-thumb" alt="${video.oneLiner}">`
+    : `<div class="mv-placeholder">THUMB<br>SOON</div>`;
+  
+  const tagsHtml = showCharacters && video.characters 
+    ? `<div class="mv-character-tags">${video.characters.map(c => 
+        `<span class="mv-tag">${CHARACTERS[c]?.handle.replace('@', '') || c}</span>`
+      ).join('')}</div>`
+    : '';
+  
+  return `
+    <a href="https://sora.chatgpt.com/p/${video.id}" target="_blank" rel="noopener" class="mv-card">
+      ${thumbHtml}
+      <div class="mv-card-overlay">
+        <p class="mv-one-liner">"${video.oneLiner}"</p>
+      </div>
+      <span class="mv-external">↗ Sora</span>
+      ${tagsHtml}
+    </a>
+  `;
+}
+
+/**
+ * Render pagination controls
+ */
+function renderPagination(currentPage, totalPages, totalItems, containerId, onPageChange) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  
+  let html = `
+    <button class="mv-page-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="(${onPageChange.toString()})(${currentPage - 1})">◀</button>
+    <span class="mv-page-info">${totalItems} videos • Page ${currentPage} / ${totalPages}</span>
+    <button class="mv-page-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="(${onPageChange.toString()})(${currentPage + 1})">▶</button>
+  `;
+  
+  // Page numbers for smaller sets
+  if (totalPages <= 7) {
+    html = '<div style="display:flex; gap:0.3rem; align-items:center;">';
+    html += `<button class="mv-page-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="(${onPageChange.toString()})(${currentPage - 1})">◀</button>`;
+    
+    for (let i = 1; i <= totalPages; i++) {
+      html += `<button class="mv-page-number ${i === currentPage ? 'active' : ''}" onclick="(${onPageChange.toString()})(${i})">${i}</button>`;
+    }
+    
+    html += `<button class="mv-page-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="(${onPageChange.toString()})(${currentPage + 1})">▶</button>`;
+    html += '</div>';
+  }
+  
+  container.innerHTML = html;
+}
+
+// ============================================
+// TAB-SPECIFIC RENDERERS
+// ============================================
+
+/**
+ * Render solo character grid
+ */
+function renderSoloGrid(characterKey) {
+  const videos = VIDEO_DB.solo[characterKey] || [];
+  const charState = state.solo[characterKey] || { page: 1, perPage: 12 };
+  
+  renderVideoGrid(
+    videos, 
+    `grid-${characterKey}`, 
+    `pagination-${characterKey}`,
+    { page: charState.page, perPage: charState.perPage }
+  );
+}
+
+/**
+ * Render multi-character grid with filters
+ */
+function renderMultiGrid() {
+  const videos = VIDEO_DB.multi || [];
+  const filter = state.multi.filter;
+  
+  const filterFn = filter === 'all' 
+    ? null 
+    : (v) => v.characters && v.characters.includes(filter);
+  
+  renderVideoGrid(
+    videos,
+    'grid-multi',
+    'pagination-multi',
+    { 
+      page: state.multi.page, 
+      perPage: state.multi.perPage,
+      filterFn: filterFn,
+      showCharacters: true
+    }
+  );
+}
+
+/**
+ * Render filter chips for multi-character
+ */
+function renderMultiFilters() {
+  const container = document.getElementById('multi-filters');
+  if (!container) return;
+  
+  // Build filter list from characters that appear in multi videos
+  const activeChars = new Set();
+  VIDEO_DB.multi.forEach(v => {
+    if (v.characters) v.characters.forEach(c => activeChars.add(c));
+  });
+  
+  let html = `<button class="mv-filter-chip ${state.multi.filter === 'all' ? 'active' : ''}" onclick="setMultiFilter('all')">ALL</button>`;
+  
+  activeChars.forEach(charKey => {
+    const char = CHARACTERS[charKey];
+    if (char) {
+      html += `<button class="mv-filter-chip ${state.multi.filter === charKey ? 'active' : ''}" onclick="setMultiFilter('${charKey}')">${char.handle}</button>`;
+    }
+  });
+  
+  container.innerHTML = html;
+}
+
+/**
+ * Render story arcs
+ */
+function renderArcs() {
+  const container = document.getElementById('arcs-container');
+  if (!container) return;
+  
+  let html = '';
+  
+  Object.entries(VIDEO_DB.arcs).forEach(([arcKey, arc]) => {
+    const statusClass = arc.status === 'q6' ? 'q6' : (arc.status === 'ongoing' ? 'ongoing' : '');
+    const videos = arc.videoIds.map(id => {
+      // Find video in multi or solo
+      let video = VIDEO_DB.multi.find(v => v.id === id);
+      if (!video) {
+        Object.values(VIDEO_DB.solo).forEach(charVideos => {
+          if (!video) video = charVideos.find(v => v.id === id);
+        });
+      }
+      return video;
+    }).filter(Boolean);
+    
+    html += `
+      <div class="mv-arc-section" id="arc-${arcKey}">
+        <div class="mv-arc-header">
+          <h3 style="color: #FFD700; margin: 0; font-family: 'Orbitron', sans-serif;">${arc.title}</h3>
+          <span class="mv-arc-status ${statusClass}">${arc.status}</span>
+        </div>
+        <p style="color: #888; margin: 0 0 1rem 0; font-size: 0.9rem;">${arc.description}</p>
+        <div class="mv-grid" style="grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));">
+          ${videos.map(v => renderVideoCard(v, true)).join('')}
+          ${videos.length === 0 ? '<div class="mv-empty" style="padding: 1rem;">Arc videos loading...</div>' : ''}
+        </div>
+      </div>
+    `;
+  });
+  
+  container.innerHTML = html;
+}
+
+// ============================================
+// USER INTERACTION HANDLERS
+// ============================================
+
+function switchTab(tabName) {
+  // Update tab buttons
+  document.querySelectorAll('.mv-tab').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  // Update content
+  document.querySelectorAll('.mv-tab-content').forEach(content => content.classList.remove('active'));
+  document.getElementById(`tab-${tabName}`).classList.add('active');
+  
+  // Render if needed
+  if (tabName === 'multi' && state.multi.page === 1) {
+    renderMultiFilters();
+    renderMultiGrid();
+  } else if (tabName === 'arcs') {
+    renderArcs();
+  }
+}
+
+function setMultiFilter(charKey) {
+  state.multi.filter = charKey;
+  state.multi.page = 1;
+  renderMultiFilters();
+  renderMultiGrid();
+}
+
+// ============================================
+// INITIALIZATION
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Render Amit's grid (migrated character)
+  renderSoloGrid('amit');
+  
+  // Multi filters are rendered on tab switch
+  // Arcs are rendered on tab switch
+  
+  console.log('[Milk-Vision v2] Initialized with data-driven architecture');
+  console.log(`[Milk-Vision v2] Amit videos loaded: ${VIDEO_DB.solo.amit.length}`);
+  console.log(`[Milk-Vision v2] Multi videos loaded: ${VIDEO_DB.multi.length}`);
+  console.log(`[Milk-Vision v2] Arcs defined: ${Object.keys(VIDEO_DB.arcs).length}`);
+});
+</script>
+
+
+
+# Create a migration helper tool
+
+migration_helper = '''// ============================================
+// MIGRATION HELPER - Convert HTML to JS Data
+// ============================================
+// 
+// HOW TO USE:
+// 1. Open your current milk-vision.html
+// 2. Copy the HTML block for one character's videos
+// 3. Paste it into the htmlInput textarea below
+// 4. Click "Convert to JS"
+// 5. Copy the output and paste into videos.js
+//
+// This saves you from manually retyping every video object
+
+const MigrationHelper = {
+  /**
+   * Parse HTML video cards and convert to JS objects
+   */
+  parseHtmlToJs(htmlString, characterKey) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+    const cards = doc.querySelectorAll('a.mv-card');
+    
+    const videos = [];
+    
+    cards.forEach(card => {
+      const href = card.getAttribute('href');
+      const img = card.querySelector('img.mv-thumb');
+      const overlay = card.querySelector('.mv-one-liner');
+      
+      // Extract ID from Sora URL
+      const idMatch = href.match(/p\/(s_[a-f0-9]+)/);
+      const id = idMatch ? idMatch[1] : null;
+      
+      // Extract thumbnail filename
+      const thumbSrc = img ? img.getAttribute('src') : '';
+      const thumbMatch = thumbSrc.match(/thumbnails\/(.*?)(\\.jpg|\\.png)?$/);
+      const thumb = thumbMatch ? thumbMatch[1] + (thumbMatch[2] || '.jpg') : 'placeholder.jpg';
+      
+      // Extract one-liner (remove quotes if present)
+      let oneLiner = overlay ? overlay.textContent.trim() : '';
+      oneLiner = oneLiner.replace(/^["']|["']$/g, '');
+      
+      if (id) {
+        videos.push({
+          id: id,
+          thumb: thumb,
+          oneLiner: oneLiner,
+          arc: null // You'll need to manually add arcs later
+        });
+      }
+    });
+    
+    return videos;
+  },
+  
+  /**
+   * Generate the JS code string
+   */
+  generateJsCode(videos, characterKey) {
+    const lines = videos.map((v, i) => {
+      const comma = i < videos.length - 1 ? ',' : '';
+      return `      { id: "${v.id}", thumb: "${v.thumb}", oneLiner: "${v.oneLiner}", arc: ${v.arc ? '"' + v.arc + '"' : 'null'} }${comma}`;
+    });
+    
+    return `// ${characterKey.toUpperCase()} - Migrated ${videos.length} videos
+    ${characterKey}: [
+${lines.join('\\n')}
+    ],`;
+  },
+  
+  /**
+   * Create a UI for the migration helper
+   */
+  createUI() {
+    const div = document.createElement('div');
+    div.innerHTML = `
+      <div style="position: fixed; top: 10px; right: 10px; background: rgba(0,0,0,0.95); border: 2px solid #FF007F; border-radius: 8px; padding: 1rem; z-index: 10000; max-width: 400px; font-family: monospace; font-size: 12px;">
+        <h3 style="color: #FF007F; margin: 0 0 1rem 0;">🛠️ Migration Helper</h3>
+        
+        <div style="margin-bottom: 1rem;">
+          <label style="color: #00FFFF; display: block; margin-bottom: 0.3rem;">Character Key:</label>
+          <select id="mig-character" style="width: 100%; background: #111; color: #00FFFF; border: 1px solid #00FFFF; padding: 0.3rem;">
+            <option value="amit">amit</option>
+            <option value="lizzie">lizzie</option>
+            <option value="leon">leon</option>
+            <option value="bigtex">bigtex</option>
+            <option value="gadha">gadha</option>
+            <option value="raj">raj</option>
+            <option value="sterling">sterling</option>
+            <option value="eelon">eelon</option>
+            <option value="cole">cole</option>
+            <option value="lightamit">lightamit</option>
+            <option value="darkamit">darkamit</option>
+            <option value="evilamit">evilamit</option>
+            <option value="gerchlander">gerchlander</option>
+            <option value="moo">moo</option>
+            <option value="mediocrates">mediocrates</option>
+            <option value="amitjr">amitjr</option>
+            <option value="amitsmother">amitsmother</option>
+            <option value="oletex">oletex</option>
+          </select>
+        </div>
+        
+        <div style="margin-bottom: 1rem;">
+          <label style="color: #00FFFF; display: block; margin-bottom: 0.3rem;">Paste HTML:</label>
+          <textarea id="mig-input" style="width: 100%; height: 150px; background: #111; color: #0F0; border: 1px solid #00FFFF; padding: 0.3rem; font-family: monospace; font-size: 10px;" placeholder="Paste HTML video cards here..."></textarea>
+        </div>
+        
+        <button onclick="MigrationHelper.convert()" style="width: 100%; background: #FF007F; color: #000; border: none; padding: 0.5rem; cursor: pointer; font-weight: bold; margin-bottom: 1rem;">
+          CONVERT TO JS
+        </button>
+        
+        <div style="margin-bottom: 1rem;">
+          <label style="color: #00FFFF; display: block; margin-bottom: 0.3rem;">Output (copy to videos.js):</label>
+          <textarea id="mig-output" style="width: 100%; height: 150px; background: #111; color: #FFD700; border: 1px solid #FFD700; padding: 0.3rem; font-family: monospace; font-size: 10px;" readonly></textarea>
+        </div>
+        
+        <button onclick="this.parentElement.remove()" style="width: 100%; background: #333; color: #888; border: 1px solid #666; padding: 0.3rem; cursor: pointer;">
+          Close Helper
+        </button>
+      </div>
+    `;
+    document.body.appendChild(div);
+  },
+  
+  convert() {
+    const character = document.getElementById('mig-character').value;
+    const input = document.getElementById('mig-input').value;
+    const output = document.getElementById('mig-output');
+    
+    try {
+      const videos = this.parseHtmlToJs(input, character);
+      const jsCode = this.generateJsCode(videos, character);
+      output.value = jsCode;
+      console.log(`[Migration Helper] Converted ${videos.length} videos for ${character}`);
+    } catch (e) {
+      output.value = `ERROR: ${e.message}`;
+      console.error(e);
+    }
+  }
+};
+
+// Auto-create UI if on index2.html
+if (window.location.href.includes('index2')) {
+  // Add a button to launch the helper
+  const btn = document.createElement('button');
+  btn.textContent = '🛠️ Open Migration Helper';
+  btn.style.cssText = 'position: fixed; bottom: 10px; right: 10px; background: #FF007F; color: #000; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; z-index: 9999; font-weight: bold;';
+  btn.onclick = () => MigrationHelper.createUI();
+  document.body.appendChild(btn);
+}
+
+// Make available globally
+window.MigrationHelper = MigrationHelper;
+'''
+
+print("Migration helper created")
+print("\nTo use:")
+print("1. Add this script to index2.html (before closing </body>)")
+print("2. Click '🛠️ Open Migration Helper' button")
+print("3. Paste HTML from old milk-vision.html")
+print("4. Get JS code to paste into videos.js")
+
+
+
+
+</body>
+</html>'''
+
+print("index2.html created")
+print(f"File size estimate: {len(index2_html)} characters")
+print("\nKey features:")
+print("- Data-driven video rendering from videos.js")
+print("- Amit's 36 videos fully migrated (first 3 pages)")
+print("- Multi-character filter system")
+print("- Story arc timeline with auto-lookup")
+print("- Pagination component (reusable)")
+print("- Clean separation: HTML shell + JS data + render engine")
