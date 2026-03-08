@@ -1173,27 +1173,27 @@ function initGerchanFooterCounter() {
   let headlinePool = [...MARQUEE_HEADLINES];
 
   function getNextShuffledBatch(count) {
-  // Refill and shuffle if pool is low
+  // Refill if pool is low
   if (headlinePool.length < count) {
     headlinePool = [...MARQUEE_HEADLINES];
-    
-    // Fisher-Yates shuffle
+  }
+  
+  // Always shuffle with Q6 protection
+  for (let i = headlinePool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [headlinePool[i], headlinePool[j]] = [headlinePool[j], headlinePool[i]];
+  }
+  
+  // Reroll if first headline is the Q6 one (avoid predictable start)
+  const q6Headline = "GRCHN: CEO Amit Gaur announces Q6 earnings will be 'transcendent'";
+  let attempts = 0;
+  while (headlinePool[0] === q6Headline && attempts < 10) {
+    // Reshuffle
     for (let i = headlinePool.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [headlinePool[i], headlinePool[j]] = [headlinePool[j], headlinePool[i]];
     }
-    
-    // Reroll if first headline is the Q6 one (avoid predictable start)
-    const q6Headline = "GRCHN: CEO Amit Gaur announces Q6 earnings will be 'transcendent'";
-    let attempts = 0;
-    while (headlinePool[0] === q6Headline && attempts < 10) {
-      // Reshuffle
-      for (let i = headlinePool.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [headlinePool[i], headlinePool[j]] = [headlinePool[j], headlinePool[i]];
-      }
-      attempts++;
-    }
+    attempts++;
   }
   
   return headlinePool.splice(0, count);
@@ -1411,7 +1411,7 @@ function initGerchanFooterCounter() {
       if (!marquee) return;
       
       const isMobile = window.innerWidth <= 768;
-      const batchSize = isMobile ? 2 : MARQUEE_HEADLINES.length;
+      const batchSize = isMobile ? 10 : 20;
       const batch = getNextShuffledBatch(batchSize);
       const tape = batch.join(" &nbsp;&nbsp;&nbsp; 🔹 &nbsp;&nbsp;&nbsp; ");
       
