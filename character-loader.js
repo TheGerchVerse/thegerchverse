@@ -190,15 +190,14 @@ function renderVideoCard(video, coStars = null) {
     }).join('');
   }
   
-  // ALWAYS include co-stars div (even if empty) for consistent flex behavior
-  // DOM order: avatars first (will appear LAST visually due to column-reverse)
-  //            one-liner second (will appear FIRST visually)
+  // DOM ORDER: one-liner FIRST, then avatars
+  // CSS will force visual order: one-liner on top, avatars below
   const cardContentHtml = `
     <div class="card-content">
+      <p class="card-oneliner">"${video.oneLiner}"</p>
       <div class="card-costars-avatars">
         ${avatarsHtml}
       </div>
-      <p class="card-oneliner">"${video.oneLiner}"</p>
     </div>
   `;
   
