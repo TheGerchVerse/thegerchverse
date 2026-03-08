@@ -572,7 +572,7 @@ const VIDEO_DB = {
 const CHARACTERS = {
   amit: {
     name: "Amit Gaur",
-    handle: "@amitgaur",
+    handle: "@grchnfrms",
     role: "CEO, Gerchan Farms",
     avatar: "../images/amit.jpg",
     color: "#00FFFF"
