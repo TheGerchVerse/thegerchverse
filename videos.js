@@ -452,16 +452,6 @@ const VIDEO_DB = {
   // MULTI-CHARACTER VIDEOS
   // ============================================
   multi: [
-    { id: "s_6925f4a8b5c08191a2d3e4f5g6h7i8j9", thumb: "multi-amit-lizzie-partnership.jpg", oneLiner: "Amit and Lizzie form a partnership.", characters: ["amit", "lizzie"] },
-    { id: "s_6926g5b9c6d19191b3e4f5g6h7i8j9k0", thumb: "multi-amit-leon-courtroom.jpg", oneLiner: "Amit faces Leon in court.", characters: ["amit", "leon"] },
-    { id: "s_6927h6c0d7e29191c4f5g6h7i8j9k0l1", thumb: "multi-amit-bigtex-deal.jpg", oneLiner: "Big Tex secures a deal with Amit.", characters: ["amit", "bigtex"] },
-    { id: "s_6928i7d1e8f39191d5g6h7i8j9k0l1m2", thumb: "multi-amit-gadha-blessing.jpg", oneLiner: "Gadha blesses Amit's empire.", characters: ["amit", "gadha"] },
-    { id: "s_6929j8e2f9g49191e6h7i8j9k0l1m2n3", thumb: "multi-raj-sterling-service.jpg", oneLiner: "Raj and Sterling at the service.", characters: ["raj", "sterling"] },
-    { id: "s_6930k9f3g0h59191f7i8j9k0l1m2n3o4", thumb: "multi-eelon-cole-tech.jpg", oneLiner: "Eel-On and Cole discuss tech.", characters: ["eelon", "cole"] },
-    { id: "s_6931l0g4h1i69191g8j9k0l1m2n3o4p5", thumb: "multi-light-dark-amit-battle.jpg", oneLiner: "Light Amit vs Dark Amit.", characters: ["lightamit", "darkamit"] },
-    { id: "s_6932m1h5i2j79191h9k0l1m2n3o4p5q6", thumb: "multi-mrsgaur-amitjr-family.jpg", oneLiner: "Family dinner at the Gaurs.", characters: ["mrsgaur", "amitjr", "amit"] },
-    { id: "s_6933n2i6j3k89191i0l1m2n3o4p5q6r7", thumb: "multi-amit-dad-sister-reunion.jpg", oneLiner: "Gaur family reunion.", characters: ["amit", "amitsdad", "amitssister"] },
-    { id: "s_6934o3j7k4l99191j1m2n3o4p5q6r7s8", thumb: "multi-all-hands-meeting.jpg", oneLiner: "Gerchan Farms all-hands meeting.", characters: ["amit", "lizzie", "leon", "bigtex", "raj", "sterling"] },
     { id: "s_691e3e3d12fc8191903bf77d9e9a4a32", thumb: "multi-amit-lizzie-conference-01.jpg", oneLiner: "Amit threatens Lizzie Pt 1.", characters: ["amit", "lizzie"], arc: null },
     { id: "s_691e4637e8d481919caf9f595280aec3", thumb: "multi-amit-lizzie-conference-02.jpg", oneLiner: "Amit threatens Lizzie Pt 2.", characters: ["amit", "lizzie"], arc: null },
     { id: "s_69176069389c819181523caacd4547cf", thumb: "multi-amit-gadha-gerchblast.jpg", oneLiner: "Gerch Blast.", characters: [], arc: null },
