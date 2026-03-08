@@ -631,21 +631,35 @@ const CHARACTERS = {
     handle: "@pharma_bro",
     role: "OxyRelief Evangelist",
     avatar: "../images/cole.jpg",
-    color: "#44FF44"
+    color: "#5786bc"
   },
   lightamit: {
     name: "Light Amit",
     handle: "@lightamit",
     role: "The Enlightened Path",
     avatar: "../images/lightamit.jpg",
-    color: "#FFFFFF"
+    color: "#fbdd55"
   },
   darkamit: {
     name: "Dark Amit",
     handle: "@darkamit",
     role: "The Shadow Within",
     avatar: "../images/darkamit.jpg",
-    color: "#000000"
+    color: "#6433d5"
+  },
+  amitsmother: {
+    name: "Amit's Mother",
+    handle: "@amitsmother",
+    role: "Immortal Architect, Neglectful Parent",
+    avatar: "../images/amitsmother.jpg",
+    color: "#0e864a"
+  },
+  evilamit: {
+    name: "Evil Amit",
+    handle: "@evilgrchnfrms",
+    role: "The Manageable Choice",
+    avatar: "../images/evilamit.jpg",
+    color: "#00FF00"
   },
   mrsgaur: {
     name: "Mrs. Gaur",
@@ -654,13 +668,41 @@ const CHARACTERS = {
     avatar: "../images/mrsgaur.jpg",
     color: "#FF88AA"
   },
+  oletexwang: {
+    name: "Ole' Tex Wang",
+    handle: "@oletexwang",
+    role: "Big Tex Wang's Father, Wang Clan Patriarch",
+    avatar: "../images/oletexwang.jpg",
+    color: "#df4e14"
+  },
+  gerchlander: {
+    name: "Gerchlander",
+    handle: "@gerchlander",
+    role: "Corporate Tyrant",
+    avatar: "../images/gerchlander.jpg",
+    color: "#ff00007b"
+  },
+  michaelmoo: {
+    name: "Michael Moo",
+    handle: "@michael.moo",
+    role: "Investigative Journalist",
+    avatar: "../images/michaelmoo.jpg",
+    color: "#FFA500"
+  },
+  mediocrates: {
+    name: "Mediocrates",
+    handle: "@medi0cr4t3s",
+    role: "CAPO (Chief Approvals Philosopher-Officer)",
+    avatar: "../images/mediocrates-profile.jpg",
+    color: "#ffffff"
+  }
   amitjr: {
     name: "Amit Jr.",
-    handle: "@amitjr",
-    role: "Q6 Whistleblower",
-    avatar: "../images/amitjr.jpg",
-    color: "#88CCFF"
-  },
+    handle: "@amitjrq6",
+    role: "Son of Amit Gaur, Whistleblower from Q6",
+    avatar: "../images/amitjrq6.jpg",
+    color: "#808080"
+  }
   amitsdad: {
     name: "Amit's Dad",
     handle: "@amitsdad",
@@ -694,7 +736,7 @@ const CHARACTERS = {
     handle: "@auntiecream",
     role: "Family Historian",
     avatar: "../images/auntiecream.jpg",
-    color: "#FFAAAA"
+    color: "#741010"
   }
 };
 
