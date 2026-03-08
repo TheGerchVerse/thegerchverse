@@ -1,15 +1,10 @@
 // CHARACTER-LOADER.JS - Renders character pages from videos.js
-// This script powers all individual character pages
 // ============================================
 
-// Configuration
 const VIDEOS_PER_PAGE = 12;
-
-// Page state
 let currentSoloPage = 1;
 let currentMultiPage = 1;
 
-// Get character key from URL or data attribute
 function getCharacterKey() {
   const bodyKey = document.body.dataset.character;
   if (bodyKey) return bodyKey;
@@ -19,9 +14,6 @@ function getCharacterKey() {
   return match ? match[1] : null;
 }
 
-// ============================================
-// INITIALIZE CHARACTER PAGE
-// ============================================
 function initCharacterPage() {
   const charKey = getCharacterKey();
   
@@ -42,9 +34,6 @@ function initCharacterPage() {
   document.title = `${character.name} | Gerch-Verse`;
 }
 
-// ============================================
-// RENDER HEADER
-// ============================================
 function renderHeader(character) {
   const headerEl = document.getElementById('character-header');
   if (!headerEl) return;
@@ -66,9 +55,6 @@ function renderHeader(character) {
   document.documentElement.style.setProperty('--char-color', character.color);
 }
 
-// ============================================
-// RENDER SOLO VIDEOS
-// ============================================
 function renderSoloVideos(videos, charKey) {
   const gridEl = document.getElementById('solo-videos-grid');
   const paginationEl = document.getElementById('solo-pagination');
@@ -88,7 +74,12 @@ function renderSoloVideos(videos, charKey) {
   const endIdx = startIdx + VIDEOS_PER_PAGE;
   const visibleVideos = videos.slice(startIdx, endIdx);
   
-  gridEl.innerHTML = visibleVideos.map(video => renderVideoCard(video)).join('');
+  // Build HTML string properly
+  let html = '';
+  for (const video of visibleVideos) {
+    html += renderVideoCard(video);
+  }
+  gridEl.innerHTML = html;
   
   if (paginationEl) {
     if (totalPages > 1) {
@@ -104,9 +95,6 @@ function renderSoloVideos(videos, charKey) {
   }
 }
 
-// ============================================
-// RENDER MULTI VIDEOS
-// ============================================
 function renderMultiVideos(videos, charKey) {
   const sectionEl = document.getElementById('multi-videos-section');
   const gridEl = document.getElementById('multi-videos-grid');
@@ -128,10 +116,13 @@ function renderMultiVideos(videos, charKey) {
   const endIdx = startIdx + VIDEOS_PER_PAGE;
   const visibleVideos = videos.slice(startIdx, endIdx);
   
-  gridEl.innerHTML = visibleVideos.map(video => {
+  // Build HTML string properly
+  let html = '';
+  for (const video of visibleVideos) {
     const coStars = video.characters.filter(c => c !== charKey);
-    return renderVideoCard(video, coStars);
-  }).join('');
+    html += renderVideoCard(video, coStars);
+  }
+  gridEl.innerHTML = html;
   
   if (paginationEl) {
     if (totalPages > 1) {
@@ -148,60 +139,59 @@ function renderMultiVideos(videos, charKey) {
 }
 
 // ============================================
-// RENDER VIDEO CARD - BULLETPROOF STRUCTURE
+// RENDER VIDEO CARD - FIXED STRUCTURE
 // ============================================
 function renderVideoCard(video, coStars = null) {
   const thumbPath = video.thumb ? `../thumbnails/${video.thumb}` : '';
   const hasThumb = video.thumb && !video.thumb.includes('[VIDEO_ID]');
   
+  // Build co-stars avatar HTML
   let avatarsHtml = '';
   if (coStars && coStars.length > 0) {
-    avatarsHtml = coStars.map(charKey => {
+    for (const charKey of coStars) {
       const char = CHARACTERS[charKey];
-      if (!char) return '';
-      return `
+      if (!char) continue;
+      avatarsHtml += `
         <a href="./${charKey}.html" class="costar-avatar-link" title="${char.name}">
           <img src="${char.avatar}" alt="${char.name}" class="costar-avatar" 
                onerror="this.src='../images/default-avatar.jpg'"
                style="border-color: ${char.color}">
         </a>
       `;
-    }).join('');
+    }
   }
   
-  // CRITICAL: One-liner FIRST in DOM, avatars SECOND
-  // CSS order:1 on one-liner, order:2 on avatars forces visual order
-  return `
-    <a href="https://sora.chatgpt.com/p/${video.id}" target="_blank" rel="noopener" class="video-card">
-      <div class="card-media">
-        ${hasThumb 
-          ? `<img src="${thumbPath}" alt="${video.oneLiner}" loading="lazy" 
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
-          : ''
-        }
-        <div class="card-placeholder" style="${hasThumb ? 'display:none' : 'display:flex'}">
-          <span>THUMB<br>SOON</span>
-        </div>
-        <span class="card-badge">↗ Sora</span>
-      </div>
-      <div class="card-content">
-        <p class="card-oneliner">"${video.oneLiner}"</p>
-        ${avatarsHtml ? `<div class="card-costars-avatars">${avatarsHtml}</div>` : ''}
-      </div>
-    </a>
+  // Build card content - MUST be inside the <a> tag
+  const cardContent = `
+    <div class="card-content">
+      <p class="card-oneliner">"${video.oneLiner}"</p>
+      ${avatarsHtml ? `<div class="card-costars-avatars">${avatarsHtml}</div>` : ''}
+    </div>
   `;
+  
+  // Build thumbnail section
+  const thumbSection = `
+    <div class="card-media">
+      ${hasThumb 
+        ? `<img src="${thumbPath}" alt="${video.oneLiner}" loading="lazy" 
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+        : ''
+      }
+      <div class="card-placeholder" style="${hasThumb ? 'display:none' : 'display:flex'}">
+        <span>THUMB<br>SOON</span>
+      </div>
+      <span class="card-badge">↗ Sora</span>
+    </div>
+  `;
+  
+  // COMPLETE CARD - All content inside the anchor tag
+  return `<a href="https://sora.chatgpt.com/p/${video.id}" target="_blank" rel="noopener" class="video-card">${thumbSection}${cardContent}</a>`;
 }
 
-// ============================================
-// GET MULTI VIDEOS FOR CHARACTER
-// ============================================
 function getMultiVideosForCharacter(charKey) {
   return VIDEO_DB.multi.filter(video => video.characters.includes(charKey));
 }
 
-// ============================================
-// CHANGE SOLO PAGE
-// ============================================
 function changeSoloPage(direction) {
   const charKey = getCharacterKey();
   const videos = VIDEO_DB.solo[charKey] || [];
@@ -215,9 +205,6 @@ function changeSoloPage(direction) {
   document.getElementById('solo-videos-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ============================================
-// CHANGE MULTI PAGE
-// ============================================
 function changeMultiPage(direction) {
   const charKey = getCharacterKey();
   const videos = getMultiVideosForCharacter(charKey);
@@ -231,9 +218,6 @@ function changeMultiPage(direction) {
   document.getElementById('multi-videos-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ============================================
-// INITIALIZE ON DOM READY
-// ============================================
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initCharacterPage);
 } else {
