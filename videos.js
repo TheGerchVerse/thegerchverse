@@ -240,7 +240,6 @@ const VIDEO_DB = {
       { id: "s_6972492aacd88191a341381cbbc8b0d2", thumb: "amit-dark-amit-concept-02", oneLiner: "Dark Amit Concept Ver 2.", arc: null },
     ],
     
-    // Other characters (to be migrated)
     lizzie: [
       // Page 1
       { id: "s_6925d4046970819181ade1af335553cf", thumb: "solo-lizzie-ionix-intro", oneLiner: "This is Ionix.", arc: null },
@@ -257,17 +256,155 @@ const VIDEO_DB = {
       { id: "s_6945e67dd9548191b1e6349a8c141971", thumb: "solo-lizzie-market-shenanigans", oneLiner: "Lizzie plans to tank Gerchan Farms.", arc: null },
       
       // Page 2
+    ],
+    leon: [
+      // Page 1
+      { id: "s_6931bf0e9b548191b4bc2389993291c6", thumb: "solo-leon-intro", oneLiner: "Who is Leon Cochran?", arc: null },
+      { id: "s_696974a2de1c819182f58d34e6cdade0", thumb: "solo-leon-billboard-ad", oneLiner: "Leon's billboard ad.", arc: null },
+      { id: "s_6923f563d1dc8191933afe757ccfd50d", thumb: "solo-leon-cart-defense", oneLiner: "Leon's cart defense.", arc: null },
+      { id: "s_692610bed5a881918710813439b36237", thumb: "solo-leon-immersive-realism", oneLiner: "Leon cites 'immersive realism'.", arc: null },
+      { id: "s_6926690ce67c819187b2b5425ae3f5da", thumb: "solo-leon-golden-ticket", oneLiner: "Leon's 'fine print' defense.", arc: null },
+      { id: "s_6926753df8c48191b005df80669e9398", thumb: "solo-leon-engineered-traps", oneLiner: "Engineered traps.", arc: null },
+      { id: "s_692a8474bcd88191b858b59d912d8201", thumb: "solo-leon-iceberg-vindicated", oneLiner: "The iceberg was not guilty.", arc: null },
+      { id: "s_69535b3bf7e881919b88d1d06132b124", thumb: "solo-leon-riddlers-ballad", oneLiner: "A Riddler's Ballad.", arc: null },
+      { id: "s_692e026b7f348191834a694ea16a694e", thumb: "solo-leon-courtroom-playset", oneLiner: "Leon Cochran Courtroom Playset.", arc: null },
+      { id: "s_695a0a39c8d481918172982b33047a92", thumb: "solo-leon-riddle-me-this-music-video", oneLiner: "Dance with Leon: 'Riddle me This'.", arc: null },
+      { id: "s_6969e4a525788191b3fe9cfdb4f4b2be", thumb: "solo-leon-riddle-me-this-classroom", oneLiner: "Riddle me this: Classroom edition.", arc: null },
+      { id: "s_6987ad2524b081919723cc25b8336ce5", thumb: "solo-leon-airport-guitar", oneLiner: "Airport shredding.", arc: null },
+    ],
 
+    bigtex: [
+      // Page 1
+      { id: "s_693275f1a98c81919a83c0596dc000b1", thumb: "solo-bigtex-whiskey-wins", oneLiner: "Big Tex shows his whiskey tolerance.", arc: null },
+      { id: "s_69327aab3db0819190c47cd98e9f34de", thumb: "solo-bigtex-texan-diplomacy", oneLiner: "This is Texan diplomacy.", arc: null },
+      { id: "s_69329689fde481919ba30e84ed9a10bd", thumb: "solo-bigtex-texas-pride", oneLiner: "Texas Pride.", arc: null },
+      { id: "s_69329689fde481919ba30e84ed9a10bd", thumb: "solo-bigtex-quality-control", oneLiner: "Quality control.", arc: null },
+      { id: "s_69345520cd308191ba0e7640fe0bb285", thumb: "solo-bigtex-deals", oneLiner: "Big Tex secures the deals.", arc: null },
+      { id: "s_6935180f2d6481918a0d5835a42f3eea", thumb: "solo-bigtex-redrooster-flight", oneLiner: "Tickle me Texas! Big Tex takes to the skies.", arc: null },
+      { id: "s_6935302aa35881918233d7a98de8de73", thumb: "solo-bigtex-action-figure", oneLiner: "Big Tex Wang action figure.", arc: null },
+      { id: "s_6935f25769e081919daceadfba82e949", thumb: "solo-bigtex-redrooster-energy", oneLiner: "Red Rooster Energy Drink - For the thirsty.", arc: null },
+      { id: "s_693acc6eb61881919623e37ac1dee645", thumb: "solo-bigtex-ride-rooster", oneLiner: "Let's go for a ride.", arc: null },
+      { id: "s_693ae02a550481918071f9cecd1f25cd", thumb: "solo-bigtext-riding-rooster-truck", oneLiner: "Coffee hot. Deals hotter.", arc: null },
+      { id: "s_693b259b09d481919eefe0c7daf4087f", thumb: "solo-bigtex-redrooster-golf-club", oneLiner: "Red Rooster Ranch Golf Club.", arc: null },
+      { id: "s_693e7f0771a081919dc3a09fa09e5064", thumb: "solo-bigtex-monstertruck", oneLiner: "Monster truck riding.", arc: null },
+      
+      // Page 2
+    ],
 
-
+    gadha: [
+      // Page 1
+      { id: "s_694960034c78819191ca6a13de9fcd14", thumb: "solo-gadha-origins", oneLiner: "Golden udder milk origins.", arc: null },
+      { id: "s_694c67839a0c819189d57fcd1b441452", thumb: "solo-gadha-merry-gerchmas", oneLiner: "Merry Gerchmas.", arc: null },
+      { id: "s_69ac6aa61fe48191b4ad48e03c7d5fc9", thumb: "solo-gadha-kneel", oneLiner: "Kneel.", arc: null },
+      { id: "s_69659801d5d88191b28cd2928edb86f9", thumb: "solo-gadha-drone-show", oneLiner: "Gadha in the skies.", arc: null },
+      { id: "s_6967015ef5c88191858a1bf702a3ba5e", thumb: "solo-gadha-divine-bovine", oneLiner: "The divine bovine.", arc: null },
+      { id: "s_6967a8875910819194cceade0276232a", thumb: "solo-gadha-before-time", oneLiner: "Before there was time...", arc: null },
+      { id: "s_6967fdbe08948191946b6cc0c427787f", thumb: "solo-gadha-council", oneLiner: "The council of Gadha(s).", arc: null },
+      { id: "s_696832da01d48191b16283ad0211f6e6", thumb: "solo-gadha-the-destroyer", oneLiner: "Gadha the Destroyer.", arc: null },
+      { id: "s_69711b1ab1008191b3a23e0fc2d6c084", thumb: "solo-gadha-milk-prophecy", oneLiner: "Milk prophecy.", arc: null },
+      { id: "s_6971836571cc8191916d4b44834689bb", thumb: "solo-gadha-stockholm-syndrome", oneLiner: "Stockholm Syndrome.", arc: null },
+      { id: "s_69754040f6b08191a52f0588e054fc46", thumb: "solo-gadha-blessing", oneLiner: "Gadha's blessing.", arc: null },
+      { id: "s_6962a6216f9c8191aa85ebe5cedbb039", thumb: "solo-gadha-gigantified", oneLiner: "Gadha gigantified.", arc: null },
+      
+      // Page 2
+      { id: "s_69654bccf474819196c9711b1fedec25", thumb: "solo-gadha-hidden-boss", oneLiner: "Gadha hidden boss.", arc: null },
+    ],
+   
+    raj: [
+      // Page 1
+      { id: "s_693bd1f0bf8c8191a470f0f73c13ed21", thumb: "solo-raj-party-insolence", oneLiner: "Raj embracing his inner insolence at the holiday party.", arc: null },
+      { id: "s_693cc9ffd730819196c58ba9485a4b3f", thumb: "solo-raj-happy-milk", oneLiner: "Raj finds Amit's secret stash of 'Happy Milk'.", arc: null },
+      { id: "s_693dee560f888191a34a0c4756ccc9fc", thumb: "solo-raj-party-all-night", oneLiner: "Raj goes out and parties all night.", arc: null },
+      { id: "s_6945cad2efb48191b89a22924ef5167b", thumb: "solo-raj-misbehave", oneLiner: "Raj misbehaves in front of major shareholders.", arc: null },
+      { id: "s_694aa4748f5c819193810d2e28bb83e5", thumb: "solo-raj-keep-it-in", oneLiner: "Can\'t keep it in.", arc: null },
+      { id: "s_695381e48a8881919b710f8bea03d45a", thumb: "solo-raj-q5-rap", oneLiner: "Raj spittin' fire about Q5.", arc: null },
+      { id: "s_695ae7f6e4f8819197e1d506b62c4f69", thumb: "solo-raj-pegasus-grooming", oneLiner: "Raj tending to Amit's pegasus.", arc: null },
+      { id: "s_69644713d29881918888f75a5c0e0964", thumb: "solo-raj-gadha-bell", oneLiner: "The Gadha Bell.", arc: null },
+      { id: "s_69648834c5688191a10e7bcf6976cd36", thumb: "solo-raj-golden-gadha-milk", oneLiner: "Golden Gadha Milk.", arc: null },
+      { id: "s_696494801970819186981a69282caa24", thumb: "solo-raj-free-billy", oneLiner: "Free Billy.", arc: null },
+      { id: "s_69653ee0b6e08191abf8280b49de59c9", thumb: "solo-raj-gadha-milk-trailer", oneLiner: "Gadha Milk.", arc: null },
+      { id: "s_6966a1440de88191b30c3c7e8dd1264b", thumb: "solo-raj-free-sex-tonight", oneLiner: "Raj gets a special phone number.", arc: null },
       
     ],
-    leon: [],
-    bigtex: [],
-    gadha: [],
-    raj: [],
-    sterling: [],
-    eelon: [],
+
+/*
+╔════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                            ║
+║           ███████╗ ████████╗ ███████╗ ██████╗  ██╗      ██╗ ███╗   ██╗  ██████╗            ║
+║           ██╔════╝ ╚══██╔══╝ ██╔════╝ ██╔══██╗ ██║      ██║ ████╗  ██║ ██╔════╝            ║
+║           ███████╗    ██║    █████╗   ██████╔╝ ██║      ██║ ██╔██╗ ██║ ██║  ███╗           ║
+║           ╚════██║    ██║    ██╔══╝   ██╔══██╗ ██║      ██║ ██║╚██╗██║ ██║   ██║           ║
+║           ███████║    ██║    ███████╗ ██║  ██║ ███████╗ ██║ ██║ ╚████║ ╚██████╔╝           ║
+║           ╚══════╝    ╚═╝    ╚══════╝ ╚═╝  ╚═╝ ╚══════╝ ╚═╝ ╚═╝  ╚═══╝  ╚═════╝            ║
+║════════════════════════════════════════════════════════════════════════════════════════════║
+║                            S T E R L I N G    W I N S L O W                                ║
+╚════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+    sterling: [
+      // Page 1
+      { id: "s_695a2b3c82e48191ba7674af3c2327e6", thumb: "solo-sterling-black-pegasus", oneLiner: "Sterling tending to Leon's black pegasus.", arc: null },
+      { id: "s_695be947d5848191b5b8a7f26a771ca0", thumb: "solo-sterling-skate-champ", oneLiner: "Sterling shows how it's done.", arc: null },
+      { id: "s_696c293aada88191aa4e041bc0595068", thumb: "solo-sterling-indubitably", oneLiner: "Indubitably.", arc: null },
+      { id: "s_6995e8cbec1081918dc65a7f39a9593d", thumb: "solo-sterling-cleaning", oneLiner: "Sterling cleans his estate.", arc: null },
+      { id: "s_69ac9d4b30588191ad612add470c0bd6", thumb: "solo-sterling-spill-tea", oneLiner: "Sterling is not a fan of tea time.", arc: null },
+      { id: "s_69ac9d838c3081918033d6c6c7ea4d85", thumb: "solo-sterling-fertilizer", oneLiner: "Fixing the lawn.", arc: null },
+      { id: "s_69ac9da0d2308191a0d0db6fbfe6661d", thumb: "solo-sterling-warm-hands", oneLiner: "Sterling warms up his hands.", arc: null },
+      { id: "s_69ac9f6c8c988191ac0b3bf9cbc103c1", thumb: "solo-sterling-late-for-work", oneLiner: "Late for work.", arc: null },
+      { id: "s_69acbf8acda481919c51573332d4434c", thumb: "solo-sterling-humble-man-of-service", oneLiner: "Humble man of service.", arc: null },
+      { id: "s_69acc057d4ec8191b6c855a50c2109d7", thumb: "solo-sterling-festivities", oneLiner: "Commencing festivities.", arc: null },
+    ],
+
+      // Page 2
+    
+
+/* EEL-ON MUSKMELON
+╔════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                        ║
+║             ███████╗ ███████╗ ██╗                     ██████╗  ███╗   ██╗              ║
+║             ██╔════╝ ██╔════╝ ██║                    ██╔═══██╗ ████╗  ██║              ║
+║             █████╗   █████╗   ██║       ███████╗     ██║   ██║ ██╔██╗ ██║              ║
+║             ██╔══╝   ██╔══╝   ██║       ╚══════╝     ██║   ██║ ██║╚██╗██║              ║
+║             ███████╗ ███████╗ ███████╗               ╚██████╔╝ ██║ ╚████║              ║
+║             ╚══════╝ ╚══════╝ ╚══════╝                ╚═════╝  ╚═╝  ╚═══╝              ║
+║════════════════════════════════════════════════════════════════════════════════════════║
+║                          E E L  --  O N   M U S K M E L O N                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════╝
+*/  
+    eelon: [
+      // Page 1
+      { id: "s_69691ef2b65881919155feaa13e2576a", thumb: "solo-eelon-intro", oneLiner: "Meet Eel-On Muskmelon, sales executive of Gerch Motors.", arc: null },
+      { id: "s_69695324a52c81919481c1c4cf259669", thumb: "solo-eelon-sales-charm", oneLiner: "Eel-On working his sales charm on the elderly.", arc: null },
+      { id: "s_696951522538819191ac341ff16cc5d5", thumb: "solo-eelon-bust-a-move", oneLiner: "Eel-On showing off his moves..", arc: null },
+      { id: "s_69696a8a8bcc819184b83a0f1bb63ffe", thumb: "solo-eelon-shopping-tourguide", oneLiner: "Eel-On leads a shopping tour.", arc: null },
+      { id: "s_69696a5f910c81919145c3516dcd36cd", thumb: "solo-eelon-lost-at-the-mall", oneLiner: "Eel-On gets lost at the mall.", arc: null },
+      { id: "s_696962f235a48191a280eae6c47bfa60", thumb: "solo-eelon-drums-up-the-beat", oneLiner: "Eel-On drums up the beat.", arc: null },
+      { id: "s_696965680b588191b2b34091a528b1ad", thumb: "solo-eelon-singing-lonely", oneLiner: "Eel-On sings about loneliness.", arc: null },
+      { id: "s_69696cbc07748191859ed956b1abc7bf", thumb: "solo-eelon-gerchmilk", oneLiner: "Eel-On enjoying some Gerch Milk.", arc: null },
+      { id: "s_696a45b539f08191910cd1b51e7f6137", thumb: "solo-eelon-upset", oneLiner: "Eel-On seems upset.", arc: null },
+      { id: "s_696a59b9d5b88191aaf2fa95d6572218", thumb: "solo-eelon-morning-dance", oneLiner: "Eel-On goes dancing in the morning.", arc: null },
+      { id: "s_696a5bd0863c8191b1d4e2f53e82afba", thumb: "solo-eelon-hotel-offsite", oneLiner: "Gerchan Farms and subsidiaries offsite.", arc: null },
+      { id: "s_696a89c6125c8191878d0f83a60f512f", thumb: "solo-eelon-loves-berries-cream", oneLiner: "Eel-On loves berries and cream..", arc: null },
+      
+      // Page 2
+      { id: "s_696ab591bc28819198ec46655f4f869e", thumb: "solo-eelon-love-music", oneLiner: "Eel-On sure loves his music.", arc: null },
+      { id: "s_696ad6104384819188398beda1de4161", thumb: "solo-eelon-gerchmotors-crash-test", oneLiner: "Crash test at Gerch Motors.", arc: null },
+      { id: "s_696af642776c8191a6a673831520e2d4", thumb: "solo-eelon-guzheng-solo", oneLiner: "Eel-On guzheng solo.", arc: null },
+      { id: "s_696afb7f4cbc819191663690df742913", thumb: "solo-eelon-shaving", oneLiner: "Eel-On in self-grooming commercial.", arc: null },
+      { id: "s_696bd2db48808191b28ec8cf859c7939", thumb: "solo-eelon-singing", oneLiner: "Eel-On loves singing tunes.", arc: null },
+      { id: "s_696c4ebaf8848191b2c2115a478e011e", thumb: "solo-eelon-virexora-commercial", oneLiner: "Virexora commercial.", arc: null },
+      { id: "s_696c73f4bc648191bc11061f84698375", thumb: "solo-eelon-dance-to-the-beat", oneLiner: "Eel-On dancing to the beat.", arc: null },
+      { id: "s_696c77df47c88191ae05fd507e857fe8", thumb: "solo-eelon-soccer", oneLiner: "Eel-On interrupts a game.", arc: null },
+      { id: "s_696d6b926c2c819180aa0080bf2c3b3b", thumb: "solo-eelon-trust-test", oneLiner: "Trust me.", arc: null },
+      { id: "s_696d73069c148191b65acd3a6e19a17e", thumb: "solo-eelon-protest-peace", oneLiner: "Eel-On spreads the message of peace.", arc: null },
+      { id: "s_696e3f3b7f9081918148648ae8f28556", thumb: "solo-eelon-dinner", oneLiner: "Eel-On gettingn ready to go out.", arc: null },
+      { id: "s_696e4b5df4348191850f762459033383", thumb: "solo-eelon-music-video", oneLiner: "Eel-On music video.", arc: null },
+      
+      // Page 3
+      { id: "s_696e8d2087408191bd595790bb6f302b", thumb: "solo-eelon-morning-routine", oneLiner: "Eel-On's morning routine..", arc: null },
+      { id: "s_696e9eff1f0c819194c003c0501ddcaa", thumb: "solo-eelon-vegas-strip", oneLiner: "Eel-On at the Vegas Strip.", arc: null },
+      { id: "s_69701ec650fc8191b523f58de79f9ff5", thumb: "solo-eelon-dance-bedroom", oneLiner: "Eel-On loves dancing all day long.", arc: null },
+      { id: "s_6971189c98e481919156c9ef7cb586cb", thumb: "solo-eelon-smart-speaker", oneLiner: "Difficulties with smart speakers.", arc: null }
+    ],
     cole: [],
     lightamit: [],
     darkamit: [],
