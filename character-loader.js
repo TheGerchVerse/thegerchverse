@@ -146,13 +146,9 @@ function renderMultiVideos(videos, charKey) {
   const endIdx = startIdx + VIDEOS_PER_PAGE;
   const visibleVideos = videos.slice(startIdx, endIdx);
   
-  // Render cards with co-stars
+  // Render cards with co-star avatars
   gridEl.innerHTML = visibleVideos.map(video => {
-    const coStars = video.characters
-      .filter(c => c !== charKey)
-      .map(c => CHARACTERS[c]?.name || c)
-      .join(', ');
-    
+    const coStars = video.characters.filter(c => c !== charKey);
     return renderVideoCard(video, coStars);
   }).join('');
   
@@ -178,6 +174,28 @@ function renderVideoCard(video, coStars = null) {
   const thumbPath = video.thumb ? `../thumbnails/${video.thumb}` : '';
   const hasThumb = video.thumb && !video.thumb.includes('[VIDEO_ID]');
   
+  // Build co-stars avatar HTML if there are co-stars
+  let coStarsHtml = '';
+  if (coStars && coStars.length > 0) {
+    const avatarsHtml = coStars.map(charKey => {
+      const char = CHARACTERS[charKey];
+      if (!char) return '';
+      return `
+        <a href="./${charKey}.html" class="costar-avatar-link" title="${char.name}">
+          <img src="${char.avatar}" alt="${char.name}" class="costar-avatar" 
+               onerror="this.src='../images/default-avatar.jpg'"
+               style="border-color: ${char.color}">
+        </a>
+      `;
+    }).join('');
+    
+    coStarsHtml = `
+      <div class="card-costars-avatars">
+        ${avatarsHtml}
+      </div>
+    `;
+  }
+  
   return `
     <a href="https://sora.chatgpt.com/p/${video.id}" target="_blank" rel="noopener" class="video-card">
       <div class="card-media">
@@ -193,7 +211,7 @@ function renderVideoCard(video, coStars = null) {
       </div>
       <div class="card-content">
         <p class="card-oneliner">"${video.oneLiner}"</p>
-        ${coStars ? `<p class="card-costars">with ${coStars}</p>` : ''}
+        ${coStarsHtml}
       </div>
     </a>
   `;
