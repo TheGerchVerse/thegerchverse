@@ -13,52 +13,53 @@
       padding-top: 100px; 
       max-width: 1400px; 
       margin: 0 auto; 
-      padding-left: 1rem; 
-      padding-right: 1rem; 
+      padding-left: 1.5rem; 
+      padding-right: 1.5rem; 
     }
 
+    /* Header - Color matched */
     .char-header { 
       display: flex; 
       align-items: center; 
-      gap: 1.5rem; 
-      margin-bottom: 2rem; 
-      padding: 1.5rem; 
+      gap: 2rem; 
+      margin-bottom: 2.5rem; 
+      padding: 2rem; 
       background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%); 
       border: 2px solid var(--char-color); 
-      border-radius: 16px; 
-      box-shadow: 0 0 30px rgba(0,0,0,0.5), inset 0 0 30px rgba(0,0,0,0.2), 0 0 15px var(--char-color); 
+      border-radius: 20px; 
+      box-shadow: 0 0 40px rgba(0,0,0,0.5), inset 0 0 30px rgba(0,0,0,0.2), 0 0 20px var(--char-color); 
     }
 
     .char-avatar { 
-      width: 120px; 
-      height: 120px; 
+      width: 140px; 
+      height: 140px; 
       border-radius: 50%; 
       object-fit: cover; 
-      border: 3px solid var(--char-color); 
-      box-shadow: 0 0 25px var(--char-color); 
+      border: 4px solid var(--char-color); 
+      box-shadow: 0 0 30px var(--char-color); 
       flex-shrink: 0;
     }
 
     .char-info h1 { 
       font-family: 'Orbitron', sans-serif; 
-      font-size: 2.2rem; 
+      font-size: 2.5rem; 
       color: var(--char-color); 
-      margin: 0 0 0.3rem 0; 
+      margin: 0 0 0.4rem 0; 
       text-shadow: 0 0 20px var(--char-color), 0 0 40px var(--char-color); 
       letter-spacing: 1px;
     }
 
     .char-handle { 
       color: #aaa; 
-      font-size: 1rem; 
-      margin: 0 0 0.2rem 0; 
+      font-size: 1.1rem; 
+      margin: 0 0 0.3rem 0; 
       font-family: 'Rajdhani', sans-serif;
     }
 
     .char-role { 
       color: #888; 
-      font-size: 0.95rem; 
-      margin: 0 0 0.8rem 0; 
+      font-size: 1rem; 
+      margin: 0 0 1rem 0; 
       font-family: 'Rajdhani', sans-serif;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -72,23 +73,24 @@
 
     .char-stats .stat { 
       background: rgba(0, 0, 0, 0.5); 
-      padding: 0.5rem 1rem; 
-      border-radius: 20px; 
-      font-size: 0.85rem; 
+      padding: 0.6rem 1.2rem; 
+      border-radius: 25px; 
+      font-size: 0.9rem; 
       color: var(--char-color); 
-      border: 1px solid var(--char-color); 
+      border: 2px solid var(--char-color); 
       font-family: 'Rajdhani', sans-serif;
       font-weight: 600;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
+    /* Video Section Container - Color matched border */
     .video-section { 
-      margin-bottom: 2.5rem; 
+      margin-bottom: 3rem; 
       background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
       border: 2px solid var(--char-color);
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4), inset 0 0 20px rgba(0,0,0,0.1), 0 0 10px var(--char-color);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4), inset 0 0 30px rgba(0,0,0,0.1), 0 0 15px var(--char-color);
     }
 
     .section-header { 
@@ -96,35 +98,37 @@
       align-items: center; 
       justify-content: space-between; 
       margin-bottom: 1.5rem; 
-      padding-bottom: 0.75rem; 
+      padding-bottom: 1rem; 
       border-bottom: 2px solid var(--char-color);
     }
 
     .section-title { 
       font-family: 'Orbitron', sans-serif; 
-      font-size: 1.4rem; 
+      font-size: 1.6rem; 
       color: #fff; 
       margin: 0;
-      text-shadow: 0 0 10px var(--char-color);
+      text-shadow: 0 0 15px var(--char-color);
     }
 
     .section-title span { 
       color: var(--char-color); 
-      font-size: 1.1rem;
-      margin-left: 0.5rem;
+      font-size: 1.2rem;
+      margin-left: 0.75rem;
       text-shadow: 0 0 10px var(--char-color);
     }
 
+    /* DESKTOP: Larger thumbnails - 6 columns with bigger cards */
     .video-grid { 
       display: grid; 
       grid-template-columns: repeat(6, 1fr); 
-      gap: 1rem; 
+      gap: 1.25rem; 
     }
 
+    /* Desktop video cards - larger */
     .video-card { 
       background: rgba(0, 0, 0, 0.6); 
-      border: 1px solid rgba(255,255,255,0.1); 
-      border-radius: 10px; 
+      border: 1px solid rgba(255,255,255,0.15); 
+      border-radius: 12px; 
       overflow: hidden; 
       text-decoration: none; 
       transition: all 0.3s ease; 
@@ -133,9 +137,9 @@
     }
 
     .video-card:hover { 
-      transform: translateY(-5px) scale(1.02); 
+      transform: translateY(-6px) scale(1.03); 
       border-color: var(--char-color); 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px var(--char-color); 
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 25px var(--char-color); 
       z-index: 10;
     }
 
@@ -166,37 +170,37 @@
       justify-content: center; 
       color: var(--char-color); 
       font-family: 'Orbitron', sans-serif; 
-      font-size: 0.7rem; 
+      font-size: 0.8rem; 
       text-align: center; 
-      padding: 0.5rem;
+      padding: 0.75rem;
       opacity: 0.7;
     }
 
     .card-badge { 
       position: absolute; 
-      top: 5px; 
-      right: 5px; 
+      top: 8px; 
+      right: 8px; 
       background: var(--char-color); 
       color: #000; 
-      padding: 0.15rem 0.4rem; 
-      border-radius: 3px; 
-      font-size: 0.65rem; 
+      padding: 0.2rem 0.5rem; 
+      border-radius: 4px; 
+      font-size: 0.7rem; 
       font-weight: 800; 
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
 
     .card-content { 
-      padding: 0.6rem; 
+      padding: 1rem; 
       background: rgba(0,0,0,0.4);
     }
 
     .card-oneliner { 
       color: #fff; 
-      font-size: 0.8rem; 
+      font-size: 0.95rem; 
       margin: 0; 
-      line-height: 1.3; 
+      line-height: 1.4; 
       font-family: 'Rajdhani', sans-serif;
       display: -webkit-box;
       -webkit-line-clamp: 2;
@@ -207,8 +211,8 @@
 
     .card-costars { 
       color: var(--char-color); 
-      font-size: 0.7rem; 
-      margin: 0.3rem 0 0 0; 
+      font-size: 0.8rem; 
+      margin: 0.4rem 0 0 0; 
       opacity: 0.9; 
       font-family: 'Rajdhani', sans-serif;
       white-space: nowrap;
@@ -217,26 +221,27 @@
       font-weight: 600;
     }
 
+    /* Pagination - Color matched */
     .pagination { 
       display: flex; 
       justify-content: center; 
       align-items: center; 
-      gap: 1rem; 
-      margin-top: 1.5rem; 
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      gap: 1.25rem; 
+      margin-top: 2rem; 
+      padding-top: 1.5rem;
+      border-top: 2px solid rgba(255,255,255,0.1);
     }
 
     .page-btn { 
       background: rgba(0, 0, 0, 0.5); 
       border: 2px solid var(--char-color); 
       color: var(--char-color); 
-      padding: 0.6rem 1.2rem; 
-      border-radius: 8px; 
+      padding: 0.75rem 1.5rem; 
+      border-radius: 10px; 
       cursor: pointer; 
       font-family: 'Orbitron', sans-serif; 
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.9rem;
+      font-weight: 700;
       transition: all 0.2s ease; 
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -245,8 +250,8 @@
     .page-btn:hover:not(:disabled) { 
       background: var(--char-color); 
       color: #000; 
-      box-shadow: 0 0 20px var(--char-color);
-      transform: translateY(-2px);
+      box-shadow: 0 0 25px var(--char-color);
+      transform: translateY(-3px);
     }
 
     .page-btn:disabled { 
@@ -259,7 +264,7 @@
     .page-info { 
       color: #aaa; 
       font-family: 'Rajdhani', sans-serif; 
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -272,7 +277,7 @@
       font-style: italic; 
       font-family: 'Rajdhani', sans-serif;
       grid-column: 1 / -1;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
     .error-message { 
@@ -284,23 +289,26 @@
       font-family: 'Orbitron', sans-serif;
       text-align: center;
       padding: 2rem;
-      font-size: 1.1rem;
-      text-shadow: 0 0 10px var(--char-color);
+      font-size: 1.2rem;
+      text-shadow: 0 0 15px var(--char-color);
     }
 
-    @media (max-width: 1024px) { 
+    /* TABLET: 3 columns */
+    @media (max-width: 1200px) { 
       .video-grid { 
         grid-template-columns: repeat(3, 1fr); 
-        gap: 0.875rem;
+        gap: 1rem;
       }
       .char-header {
-        padding: 1.25rem;
+        padding: 1.5rem;
+        gap: 1.5rem;
       }
       .video-section {
-        padding: 1.25rem;
+        padding: 1.5rem;
       }
     }
 
+    /* MOBILE: Compact 3 columns (keep the good mobile style) */
     @media (max-width: 768px) { 
       .char-page {
         padding-left: 0.75rem;
@@ -314,6 +322,7 @@
         padding: 1rem;
         gap: 1rem;
         margin-bottom: 1.5rem;
+        border-radius: 16px;
       } 
 
       .char-avatar { 
@@ -326,13 +335,28 @@
         font-size: 1.6rem; 
       }
 
+      .char-handle {
+        font-size: 0.95rem;
+      }
+
+      .char-role {
+        font-size: 0.85rem;
+      }
+
       .char-stats {
         justify-content: center;
+      }
+
+      .char-stats .stat {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
       }
 
       .video-section {
         padding: 1rem;
         margin-bottom: 1.5rem;
+        border-radius: 16px;
+        border-width: 1px;
       }
 
       .section-header {
@@ -344,9 +368,19 @@
         font-size: 1.1rem;
       }
 
+      .section-title span {
+        font-size: 0.9rem;
+      }
+
+      /* Mobile: 3 columns compact */
       .video-grid { 
         grid-template-columns: repeat(3, 1fr); 
         gap: 0.5rem; 
+      }
+
+      /* Compact mobile cards */
+      .video-card {
+        border-radius: 8px;
       }
 
       .card-content {
@@ -375,11 +409,13 @@
         gap: 0.75rem;
         margin-top: 1rem;
         padding-top: 0.75rem;
+        border-top-width: 1px;
       }
 
       .page-btn {
         padding: 0.5rem 1rem;
         font-size: 0.75rem;
+        border-width: 1px;
       }
 
       .page-info {
