@@ -443,82 +443,23 @@
       display: none !important;
     }
 
-    /* Co-star Avatars */
-    .costar-avatars {
+        /* Co-star avatar styles */
+    .card-content {
       display: flex;
-      align-items: center;
-      gap: 0.35rem;
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
+      flex-direction: column;
     }
 
-    .costar-avatar-link {
-      display: inline-block;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 2px solid var(--char-color);
-      transition: all 0.2s ease;
-      flex-shrink: 0;
+    .card-oneliner {
+      order: 1;
     }
 
-    .costar-avatar-link:hover {
-      transform: scale(1.15);
-      box-shadow: 0 0 10px var(--char-color);
-      z-index: 5;
-    }
-
-    .costar-avatar-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .costar-more {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.6);
-      border: 2px solid var(--char-color);
-      color: var(--char-color);
-      font-size: 0.7rem;
-      font-weight: 700;
-      font-family: 'Orbitron', sans-serif;
-      cursor: help;
-      flex-shrink: 0;
-    }
-
-    /* Mobile adjustments for co-star avatars */
-    @media (max-width: 768px) {
-      .costar-avatars {
-        gap: 0.25rem;
-        margin-top: 0.35rem;
-      }
-
-      .costar-avatar-link,
-      .costar-more {
-        width: 22px;
-        height: 22px;
-        border-width: 1px;
-      }
-
-      .costar-more {
-        font-size: 0.6rem;
-      }
-    }
-
-    /* Co-star avatar styles */
     .card-costars-avatars {
       display: flex;
       gap: 0.5rem;
       margin-top: 0.75rem;
       flex-wrap: wrap;
       align-items: center;
+      order: 2;
     }
 
     .costar-avatar-link {

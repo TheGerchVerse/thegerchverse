@@ -196,6 +196,14 @@ function renderVideoCard(video, coStars = null) {
     `;
   }
   
+  // Build card content - ensure proper order: one-liner first, then co-stars
+  const cardContentHtml = `
+    <div class="card-content">
+      <p class="card-oneliner">"${video.oneLiner}"</p>
+      ${coStarsHtml}
+    </div>
+  `;
+  
   return `
     <a href="https://sora.chatgpt.com/p/${video.id}" target="_blank" rel="noopener" class="video-card">
       <div class="card-media">
@@ -209,10 +217,7 @@ function renderVideoCard(video, coStars = null) {
         </div>
         <span class="card-badge">↗ Sora</span>
       </div>
-      <div class="card-content">
-        <p class="card-oneliner">"${video.oneLiner}"</p>
-        ${coStarsHtml}
-      </div>
+      ${cardContentHtml}
     </a>
   `;
 }
