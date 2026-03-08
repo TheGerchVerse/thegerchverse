@@ -192,10 +192,10 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
 
-    /* Card content with co-star avatars - ORDERED */
+    /* Card content - FORCE correct order with column-reverse */
     .card-content {
       display: flex;
-      flex-direction: column;
+      flex-direction: column-reverse; /* REVERSE: avatars first in DOM appear last visually */
       padding: 1rem;
       background: rgba(0,0,0,0.4);
     }
@@ -211,16 +211,15 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
       font-weight: 500;
-      order: 1;
     }
 
     .card-costars-avatars {
       display: flex;
       gap: 0.5rem;
-      margin-top: 0.75rem;
+      margin-bottom: 0.75rem; /* Changed from margin-top to margin-bottom since we're reversed */
       flex-wrap: wrap;
       align-items: center;
-      order: 2;
+      min-height: 0; /* Collapse when empty */
     }
 
     .costar-avatar-link {
@@ -428,7 +427,7 @@
 
       .card-costars-avatars {
         gap: 0.35rem;
-        margin-top: 0.5rem;
+        margin-bottom: 0.5rem; /* Changed from margin-top to margin-bottom */
       }
 
       .costar-avatar {

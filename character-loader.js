@@ -174,10 +174,10 @@ function renderVideoCard(video, coStars = null) {
   const thumbPath = video.thumb ? `../thumbnails/${video.thumb}` : '';
   const hasThumb = video.thumb && !video.thumb.includes('[VIDEO_ID]');
   
-  // Build co-stars avatar HTML if there are co-stars
-  let coStarsHtml = '';
+  // Build co-stars avatar HTML
+  let avatarsHtml = '';
   if (coStars && coStars.length > 0) {
-    const avatarsHtml = coStars.map(charKey => {
+    avatarsHtml = coStars.map(charKey => {
       const char = CHARACTERS[charKey];
       if (!char) return '';
       return `
@@ -188,19 +188,17 @@ function renderVideoCard(video, coStars = null) {
         </a>
       `;
     }).join('');
-    
-    coStarsHtml = `
+  }
+  
+  // ALWAYS include co-stars div (even if empty) for consistent flex behavior
+  // DOM order: avatars first (will appear LAST visually due to column-reverse)
+  //            one-liner second (will appear FIRST visually)
+  const cardContentHtml = `
+    <div class="card-content">
       <div class="card-costars-avatars">
         ${avatarsHtml}
       </div>
-    `;
-  }
-  
-  // Build card content - ensure proper order: one-liner first, then co-stars
-  const cardContentHtml = `
-    <div class="card-content">
       <p class="card-oneliner">"${video.oneLiner}"</p>
-      ${coStarsHtml}
     </div>
   `;
   
