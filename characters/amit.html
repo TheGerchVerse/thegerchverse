@@ -17,7 +17,6 @@
       padding-right: 1.5rem; 
     }
 
-    /* Header - Color matched */
     .char-header { 
       display: flex; 
       align-items: center; 
@@ -83,7 +82,6 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
-    /* Video Section Container - Color matched border */
     .video-section { 
       margin-bottom: 3rem; 
       background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
@@ -117,23 +115,31 @@
       text-shadow: 0 0 10px var(--char-color);
     }
 
-    /* DESKTOP: 6 columns, taller aspect ratio for bigger thumbnails */
+    /* ============================================
+       VIDEO GRID - FORCE 6 COLUMNS
+       ============================================ */
     .video-grid { 
-      display: grid; 
-      grid-template-columns: repeat(6, 1fr); 
-      gap: 1.25rem; 
+      display: grid !important; 
+      grid-template-columns: repeat(6, 1fr) !important; 
+      gap: 1.25rem !important; 
+      width: 100% !important;
     }
 
-    /* Desktop video cards - TALLER aspect ratio (9:16 instead of 16:9) */
+    /* ============================================
+       VIDEO CARD - FORCE VERTICAL STACK
+       ============================================ */
     .video-card { 
+      display: flex !important; 
+      flex-direction: column !important; 
       background: rgba(0, 0, 0, 0.6); 
       border: 1px solid rgba(255,255,255,0.15); 
       border-radius: 12px; 
       overflow: hidden; 
       text-decoration: none; 
       transition: all 0.3s ease; 
-      display: block; 
       position: relative;
+      width: 100% !important;
+      height: auto !important;
     }
 
     .video-card:hover { 
@@ -143,12 +149,17 @@
       z-index: 10;
     }
 
-    /* Desktop: TALL aspect ratio (9:16) for bigger vertical thumbnails */
+    /* ============================================
+       CARD MEDIA - FORCE ASPECT RATIO
+       ============================================ */
     .card-media { 
       position: relative; 
       aspect-ratio: 9/16; 
       overflow: hidden;
       background: #000;
+      width: 100% !important;
+      flex: none !important;
+      display: block !important;
     }
 
     .card-media img { 
@@ -156,6 +167,7 @@
       height: 100%; 
       object-fit: cover; 
       transition: transform 0.3s ease;
+      display: block !important;
     }
 
     .video-card:hover .card-media img {
@@ -192,63 +204,76 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
 
-    /* Card content - FORCE correct order with column-reverse */
+    /* ============================================
+       CARD CONTENT - FORCE CORRECT ORDER
+       ============================================ */
     .card-content {
-      display: flex;
-      flex-direction: column-reverse; /* REVERSE: avatars first in DOM appear last visually */
-      padding: 1rem;
-      background: rgba(0,0,0,0.4);
+      display: flex !important;
+      flex-direction: column !important; /* Stack vertically */
+      justify-content: flex-start !important; /* Align to top */
+      align-items: stretch !important; /* Full width children */
+      padding: 1rem !important;
+      background: rgba(0,0,0,0.4) !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      flex: 1 !important;
     }
 
     .card-oneliner {
-      color: #fff;
-      font-size: 0.95rem;
-      margin: 0;
-      line-height: 1.4;
-      font-family: 'Rajdhani', sans-serif;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      font-weight: 500;
+      color: #fff !important;
+      font-size: 0.95rem !important;
+      margin: 0 0 0.75rem 0 !important; /* Margin bottom creates space */
+      line-height: 1.4 !important;
+      font-family: 'Rajdhani', sans-serif !important;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 2 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
+      font-weight: 500 !important;
+      width: 100% !important;
+      order: 1 !important; /* FORCE first visually */
     }
 
     .card-costars-avatars {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 0.75rem; /* Changed from margin-top to margin-bottom since we're reversed */
-      flex-wrap: wrap;
-      align-items: center;
-      min-height: 0; /* Collapse when empty */
+      display: flex !important;
+      gap: 0.5rem !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      width: 100% !important;
+      margin-top: 0 !important; /* No top margin needed with order */
+      order: 2 !important; /* FORCE second visually */
     }
 
     .costar-avatar-link {
-      display: block;
-      transition: transform 0.2s ease, filter 0.2s ease;
-      text-decoration: none;
-      flex-shrink: 0;
+      display: block !important;
+      transition: transform 0.2s ease, filter 0.2s ease !important;
+      text-decoration: none !important;
+      flex-shrink: 0 !important;
     }
 
     .costar-avatar-link:hover {
-      transform: scale(1.15);
-      z-index: 10;
+      transform: scale(1.15) !important;
+      z-index: 10 !important;
     }
 
     .costar-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-      transition: all 0.2s ease;
+      width: 32px !important;
+      height: 32px !important;
+      border-radius: 50% !important;
+      object-fit: cover !important;
+      border: 2px solid !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+      transition: all 0.2s ease !important;
+      display: block !important;
     }
 
     .costar-avatar-link:hover .costar-avatar {
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 10px currentColor;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 10px currentColor !important;
     }
 
-    /* Pagination - Color matched */
+    /* ============================================
+       PAGINATION
+       ============================================ */
     .pagination { 
       display: flex; 
       justify-content: center; 
@@ -320,11 +345,13 @@
       text-shadow: 0 0 15px var(--char-color);
     }
 
-    /* TABLET: 3 columns, still tall */
+    /* ============================================
+       TABLET BREAKPOINT
+       ============================================ */
     @media (max-width: 1200px) { 
       .video-grid { 
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 1rem !important;
       }
       .char-header {
         padding: 1.5rem;
@@ -335,7 +362,9 @@
       }
     }
 
-    /* MOBILE: 3 columns x 2 rows = 6 videos, TALL aspect ratio */
+    /* ============================================
+       MOBILE BREAKPOINT
+       ============================================ */
     @media (max-width: 768px) { 
       .char-page {
         padding-left: 0.75rem;
@@ -362,18 +391,10 @@
         font-size: 1.6rem; 
       }
 
-      .char-handle {
-        font-size: 0.95rem;
-      }
+      .char-handle { font-size: 0.95rem; }
+      .char-role { font-size: 0.85rem; }
 
-      .char-role {
-        font-size: 0.85rem;
-      }
-
-      .char-stats {
-        justify-content: center;
-      }
-
+      .char-stats { justify-content: center; }
       .char-stats .stat {
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
@@ -391,49 +412,33 @@
         padding-bottom: 0.5rem;
       }
 
-      .section-title {
-        font-size: 1.1rem;
-      }
+      .section-title { font-size: 1.1rem; }
+      .section-title span { font-size: 0.9rem; }
 
-      .section-title span {
-        font-size: 0.9rem;
-      }
-
-      /* Mobile: 3 columns, 6 videos per page (3x2) */
       .video-grid { 
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 0.75rem; 
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 0.75rem !important; 
       }
 
-      /* Mobile: Keep TALL aspect ratio (9:16) for bigger thumbnails */
-      .card-media {
-        aspect-ratio: 9/16;
-      }
+      .card-media { aspect-ratio: 9/16; }
 
-      /* Compact mobile cards */
-      .video-card {
-        border-radius: 8px;
-      }
+      .video-card { border-radius: 8px; }
 
-      .card-content {
-        padding: 0.5rem;
-      }
+      .card-content { padding: 0.5rem !important; }
 
       .card-oneliner {
-        font-size: 0.75rem;
-        line-height: 1.2;
-        -webkit-line-clamp: 2;
+        font-size: 0.75rem !important;
+        line-height: 1.2 !important;
+        -webkit-line-clamp: 2 !important;
+        margin-bottom: 0.5rem !important;
       }
 
-      .card-costars-avatars {
-        gap: 0.35rem;
-        margin-bottom: 0.5rem; /* Changed from margin-top to margin-bottom */
-      }
+      .card-costars-avatars { gap: 0.35rem !important; }
 
       .costar-avatar {
-        width: 24px;
-        height: 24px;
-        border-width: 1.5px;
+        width: 24px !important;
+        height: 24px !important;
+        border-width: 1.5px !important;
       }
 
       .card-badge {
@@ -447,7 +452,6 @@
         gap: 0.75rem;
         margin-top: 1rem;
         padding-top: 0.75rem;
-        border-top-width: 1px;
       }
 
       .page-btn {
@@ -456,24 +460,16 @@
         border-width: 1px;
       }
 
-      .page-info {
-        font-size: 0.8rem;
-      }
+      .page-info { font-size: 0.8rem; }
     }
 
     @media (max-width: 380px) {
-      .video-grid {
-        gap: 0.5rem;
-      }
-
-      .card-oneliner {
-        font-size: 0.7rem;
-      }
-
+      .video-grid { gap: 0.5rem !important; }
+      .card-oneliner { font-size: 0.7rem !important; }
       .costar-avatar {
-        width: 20px;
-        height: 20px;
-        border-width: 1px;
+        width: 20px !important;
+        height: 20px !important;
+        border-width: 1px !important;
       }
     }
 

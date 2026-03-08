@@ -11,11 +11,9 @@ let currentMultiPage = 1;
 
 // Get character key from URL or data attribute
 function getCharacterKey() {
-  // Try to get from data attribute on body
   const bodyKey = document.body.dataset.character;
   if (bodyKey) return bodyKey;
   
-  // Fallback: extract from URL path
   const path = window.location.pathname;
   const match = path.match(/\/characters\/(\w+)\.html/);
   return match ? match[1] : null;
@@ -38,16 +36,9 @@ function initCharacterPage() {
   const soloVideos = VIDEO_DB.solo[charKey] || [];
   const multiVideos = getMultiVideosForCharacter(charKey);
   
-  // Render header
   renderHeader(character);
-  
-  // Render solo videos
   renderSoloVideos(soloVideos, charKey);
-  
-  // Render multi videos
   renderMultiVideos(multiVideos, charKey);
-  
-  // Update page title
   document.title = `${character.name} | Gerch-Verse`;
 }
 
@@ -72,7 +63,6 @@ function renderHeader(character) {
     </div>
   `;
   
-  // Apply character color theme
   document.documentElement.style.setProperty('--char-color', character.color);
 }
 
@@ -85,8 +75,6 @@ function renderSoloVideos(videos, charKey) {
   const countEl = document.getElementById('solo-count');
   
   if (!gridEl) return;
-  
-  // Update count
   if (countEl) countEl.textContent = videos.length;
   
   if (videos.length === 0) {
@@ -95,16 +83,13 @@ function renderSoloVideos(videos, charKey) {
     return;
   }
   
-  // Calculate pagination
   const totalPages = Math.ceil(videos.length / VIDEOS_PER_PAGE);
   const startIdx = (currentSoloPage - 1) * VIDEOS_PER_PAGE;
   const endIdx = startIdx + VIDEOS_PER_PAGE;
   const visibleVideos = videos.slice(startIdx, endIdx);
   
-  // Render cards
   gridEl.innerHTML = visibleVideos.map(video => renderVideoCard(video)).join('');
   
-  // Render pagination
   if (paginationEl) {
     if (totalPages > 1) {
       paginationEl.style.display = 'flex';
@@ -129,8 +114,6 @@ function renderMultiVideos(videos, charKey) {
   const countEl = document.getElementById('multi-count');
   
   if (!sectionEl || !gridEl) return;
-  
-  // Update count
   if (countEl) countEl.textContent = videos.length;
   
   if (videos.length === 0) {
@@ -140,19 +123,16 @@ function renderMultiVideos(videos, charKey) {
   
   sectionEl.style.display = 'block';
   
-  // Calculate pagination
   const totalPages = Math.ceil(videos.length / VIDEOS_PER_PAGE);
   const startIdx = (currentMultiPage - 1) * VIDEOS_PER_PAGE;
   const endIdx = startIdx + VIDEOS_PER_PAGE;
   const visibleVideos = videos.slice(startIdx, endIdx);
   
-  // Render cards with co-star avatars
   gridEl.innerHTML = visibleVideos.map(video => {
     const coStars = video.characters.filter(c => c !== charKey);
     return renderVideoCard(video, coStars);
   }).join('');
   
-  // Render pagination
   if (paginationEl) {
     if (totalPages > 1) {
       paginationEl.style.display = 'flex';
@@ -168,13 +148,12 @@ function renderMultiVideos(videos, charKey) {
 }
 
 // ============================================
-// RENDER VIDEO CARD
+// RENDER VIDEO CARD - BULLETPROOF STRUCTURE
 // ============================================
 function renderVideoCard(video, coStars = null) {
   const thumbPath = video.thumb ? `../thumbnails/${video.thumb}` : '';
   const hasThumb = video.thumb && !video.thumb.includes('[VIDEO_ID]');
   
-  // Build co-stars avatar HTML
   let avatarsHtml = '';
   if (coStars && coStars.length > 0) {
     avatarsHtml = coStars.map(charKey => {
@@ -190,17 +169,8 @@ function renderVideoCard(video, coStars = null) {
     }).join('');
   }
   
-  // DOM ORDER: one-liner FIRST, then avatars
-  // CSS will force visual order: one-liner on top, avatars below
-  const cardContentHtml = `
-    <div class="card-content">
-      <p class="card-oneliner">"${video.oneLiner}"</p>
-      <div class="card-costars-avatars">
-        ${avatarsHtml}
-      </div>
-    </div>
-  `;
-  
+  // CRITICAL: One-liner FIRST in DOM, avatars SECOND
+  // CSS order:1 on one-liner, order:2 on avatars forces visual order
   return `
     <a href="https://sora.chatgpt.com/p/${video.id}" target="_blank" rel="noopener" class="video-card">
       <div class="card-media">
@@ -214,7 +184,10 @@ function renderVideoCard(video, coStars = null) {
         </div>
         <span class="card-badge">↗ Sora</span>
       </div>
-      ${cardContentHtml}
+      <div class="card-content">
+        <p class="card-oneliner">"${video.oneLiner}"</p>
+        ${avatarsHtml ? `<div class="card-costars-avatars">${avatarsHtml}</div>` : ''}
+      </div>
     </a>
   `;
 }
