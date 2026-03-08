@@ -589,7 +589,7 @@ const CHARACTERS = {
     handle: "@leoncochran",
     role: "Riddle Attorney",
     avatar: "../images/leon.jpg",
-    color: "#00FF88"
+    color: "#099fdf"
   },
   bigtex: {
     name: "Big Tex Wang",
@@ -657,7 +657,7 @@ const CHARACTERS = {
   amitjr: {
     name: "Amit Jr.",
     handle: "@amitjr",
-    role: "Heir Apparent",
+    role: "Q6 Whistleblower",
     avatar: "../images/amitjr.jpg",
     color: "#88CCFF"
   },

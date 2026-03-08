@@ -17,7 +17,6 @@
       padding-right: 1.5rem; 
     }
 
-    /* Header - Color matched */
     .char-header { 
       display: flex; 
       align-items: center; 
@@ -83,7 +82,6 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
-    /* Video Section Container - Color matched border */
     .video-section { 
       margin-bottom: 3rem; 
       background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
@@ -117,9 +115,6 @@
       text-shadow: 0 0 10px var(--char-color);
     }
 
-    /* ============================================
-       VIDEO GRID - 6 COLUMNS
-       ============================================ */
     .video-grid { 
       display: grid; 
       grid-template-columns: repeat(6, 1fr); 
@@ -127,18 +122,12 @@
       width: 100%;
     }
 
-    /* ============================================
-       VIDEO CELL - WRAPS CARD + COSTARS
-       ============================================ */
     .video-cell {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    /* ============================================
-       VIDEO CARD - THUMBNAIL WITH OVERLAY
-       ============================================ */
     .video-card { 
       display: block;
       position: relative;
@@ -218,9 +207,6 @@
       overflow: hidden;
     }
 
-    /* ============================================
-       COSTAR ROW - BELOW THUMBNAIL
-       ============================================ */
     .costar-row {
       display: flex;
       justify-content: center;
@@ -249,7 +235,6 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
 
-    /* Pagination - Color matched */
     .pagination { 
       display: flex; 
       justify-content: center; 
@@ -321,7 +306,6 @@
       text-shadow: 0 0 15px var(--char-color);
     }
 
-    /* TABLET: 3 columns, still tall */
     @media (max-width: 1200px) { 
       .video-grid { 
         grid-template-columns: repeat(3, 1fr); 
@@ -336,7 +320,6 @@
       }
     }
 
-    /* MOBILE: 3 columns x 2 rows = 6 videos, TALL aspect ratio */
     @media (max-width: 768px) { 
       .char-page {
         padding-left: 0.75rem;
@@ -400,18 +383,15 @@
         font-size: 0.9rem;
       }
 
-      /* Mobile: 3 columns, 6 videos per page (3x2) */
       .video-grid { 
         grid-template-columns: repeat(3, 1fr); 
         gap: 0.75rem; 
       }
 
-      /* Mobile: Keep TALL aspect ratio (9:16) for bigger thumbnails */
       .card-media {
         aspect-ratio: 9/16;
       }
 
-      /* Compact mobile cards */
       .video-card {
         border-radius: 8px;
       }
@@ -469,10 +449,6 @@
     #multi-videos-section[style*="display: none"] {
       display: none !important;
     }
-
-    
-
-
   </style>
 </head>
 <body data-character="amitjr">
@@ -491,8 +467,18 @@
   </nav>
 
   <main class="char-page">
-    <div id="character-header" class="char-header">
-      <div class="loading">Loading character...</div>
+    <!-- Hardcoded header matching amit.html structure -->
+    <div class="char-header">
+      <img src="../images/amitjrq6.jpg" alt="Amit Jr." class="char-avatar">
+      <div class="char-info">
+        <h1>Amit Jr.</h1>
+        <p class="char-handle">@amitjrq6</p>
+        <p class="char-role">Son of Amit Gaur, Whistleblower from Q6</p>
+        <div class="char-stats">
+          <span class="stat" id="solo-stat">0 Solo Videos</span>
+          <span class="stat" id="multi-stat">0 Multi Videos</span>
+        </div>
+      </div>
     </div>
 
     <section class="video-section">
@@ -520,6 +506,151 @@
   </footer>
 
   <script src="../videos.js"></script>
-  <script src="../character-loader.js"></script>
+  <script>
+    // Inline character loader for Amit Jr.
+    (function() {
+      const CHARACTER_ID = 'amitjr';
+      const ITEMS_PER_PAGE = 12;
+      
+      let soloVideos = [];
+      let multiVideos = [];
+      let currentSoloPage = 1;
+      let currentMultiPage = 1;
+
+      function init() {
+        if (typeof VIDEO_DB === 'undefined') {
+          document.getElementById('solo-videos-grid').innerHTML = '<div class="error-message">Error: Video database not loaded</div>';
+          return;
+        }
+
+        // Get solo videos
+        soloVideos = VIDEO_DB.solo[CHARACTER_ID] || [];
+        
+        // Get multi videos where this character appears
+        multiVideos = (VIDEO_DB.multi || []).filter(video => 
+          video.characters && video.characters.includes(CHARACTER_ID)
+        );
+
+        // Update stats in header
+        document.getElementById('solo-stat').textContent = soloVideos.length + ' Solo Videos';
+        document.getElementById('multi-stat').textContent = multiVideos.length + ' Multi Videos';
+
+        renderSoloVideos();
+        renderMultiVideos();
+      }
+
+      function renderSoloVideos() {
+        const grid = document.getElementById('solo-videos-grid');
+        const count = document.getElementById('solo-count');
+        const pagination = document.getElementById('solo-pagination');
+        
+        count.textContent = soloVideos.length;
+
+        if (soloVideos.length === 0) {
+          grid.innerHTML = '<div class="empty-message">No solo videos found</div>';
+          pagination.style.display = 'none';
+          return;
+        }
+
+        const totalPages = Math.ceil(soloVideos.length / ITEMS_PER_PAGE);
+        const start = (currentSoloPage - 1) * ITEMS_PER_PAGE;
+        const pageVideos = soloVideos.slice(start, start + ITEMS_PER_PAGE);
+
+        grid.innerHTML = pageVideos.map(video => createVideoCard(video)).join('');
+        
+        if (totalPages > 1) {
+          pagination.style.display = 'flex';
+          pagination.innerHTML = `
+            <button class="page-btn" ${currentSoloPage === 1 ? 'disabled' : ''} onclick="changeSoloPage(-1)">← Prev</button>
+            <span class="page-info">Page ${currentSoloPage} of ${totalPages}</span>
+            <button class="page-btn" ${currentSoloPage === totalPages ? 'disabled' : ''} onclick="changeSoloPage(1)">Next →</button>
+          `;
+        } else {
+          pagination.style.display = 'none';
+        }
+      }
+
+      function renderMultiVideos() {
+        const section = document.getElementById('multi-videos-section');
+        const grid = document.getElementById('multi-videos-grid');
+        const count = document.getElementById('multi-count');
+        const pagination = document.getElementById('multi-pagination');
+
+        count.textContent = multiVideos.length;
+
+        if (multiVideos.length === 0) {
+          section.style.display = 'none';
+          return;
+        }
+
+        section.style.display = 'block';
+        
+        const totalPages = Math.ceil(multiVideos.length / ITEMS_PER_PAGE);
+        const start = (currentMultiPage - 1) * ITEMS_PER_PAGE;
+        const pageVideos = multiVideos.slice(start, start + ITEMS_PER_PAGE);
+
+        grid.innerHTML = pageVideos.map(video => createVideoCard(video, true)).join('');
+        
+        if (totalPages > 1) {
+          pagination.style.display = 'flex';
+          pagination.innerHTML = `
+            <button class="page-btn" ${currentMultiPage === 1 ? 'disabled' : ''} onclick="changeMultiPage(-1)">← Prev</button>
+            <span class="page-info">Page ${currentMultiPage} of ${totalPages}</span>
+            <button class="page-btn" ${currentMultiPage === totalPages ? 'disabled' : ''} onclick="changeMultiPage(1)">Next →</button>
+          `;
+        } else {
+          pagination.style.display = 'none';
+        }
+      }
+
+      function createVideoCard(video, isMulti = false) {
+        const costars = isMulti && video.characters ? video.characters.filter(c => c !== CHARACTER_ID) : [];
+        
+        let costarHtml = '';
+        if (costars.length > 0 && typeof CHARACTERS !== 'undefined') {
+          costarHtml = '<div class="costar-row">' + costars.map(charId => {
+            const char = CHARACTERS[charId];
+            if (!char) return '';
+            return `<a href="./${charId}.html" class="costar-avatar-link" title="${char.name}">
+              <img src="${char.avatar}" alt="${char.name}" class="costar-avatar" style="border-color: ${char.color || '#fff'}">
+            </a>`;
+          }).join('') + '</div>';
+        }
+
+        return `
+          <div class="video-cell">
+            <a href="https://sora.chatgpt.com/v/${video.id}" target="_blank" rel="noopener" class="video-card">
+              <div class="card-media">
+                ${video.thumb ? 
+                  `<img src="../thumbs/${video.thumb}" alt="${video.oneLiner || 'Video thumbnail'}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-placeholder\\'>SORA</div>'">` : 
+                  '<div class="card-placeholder">SORA</div>'
+                }
+              </div>
+              <div class="card-caption-overlay">${video.oneLiner || 'Untitled'}</div>
+              <span class="card-badge">SORA</span>
+            </a>
+            ${costarHtml}
+          </div>
+        `;
+      }
+
+      window.changeSoloPage = function(delta) {
+        currentSoloPage += delta;
+        renderSoloVideos();
+      };
+
+      window.changeMultiPage = function(delta) {
+        currentMultiPage += delta;
+        renderMultiVideos();
+      };
+
+      // Initialize when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
 </body>
 </html>
