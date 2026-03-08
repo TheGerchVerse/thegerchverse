@@ -1269,7 +1269,7 @@ function initGerchanFooterCounter() {
     return { status: 'OPEN', message: 'OPEN' };
   }
 
-  function function createTickerHTML(prices) {
+  function createTickerHTML(prices) {
   const marketStatus = getMarketStatus();
   const isMobile = window.innerWidth <= 768;
   const batchSize = isMobile ? 10 : 20;  // Shows 10 headlines on mobile, 20 on desktop
