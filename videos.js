@@ -579,7 +579,7 @@ const CHARACTERS = {
   },
   lizzie: {
     name: "Lizzie Holmes",
-    handle: "@lizzieholmes",
+    handle: "@sheranos",
     role: "Founder, Ionix",
     avatar: "../images/lizzie.jpg",
     color: "#FF007F"
@@ -661,14 +661,7 @@ const CHARACTERS = {
     avatar: "../images/evilamit.jpg",
     color: "#00FF00"
   },
-  mrsgaur: {
-    name: "Mrs. Gaur",
-    handle: "@mrsgaur",
-    role: "Matriarch",
-    avatar: "../images/mrsgaur.jpg",
-    color: "#FF88AA"
-  },
-  oletexwang: {
+    oletexwang: {
     name: "Ole' Tex Wang",
     handle: "@oletexwang",
     role: "Big Tex Wang's Father, Wang Clan Patriarch",
@@ -703,41 +696,6 @@ const CHARACTERS = {
     avatar: "../images/amitjrq6.jpg",
     color: "#808080"
   },
-  amitsdad: {
-    name: "Amit's Dad",
-    handle: "@amitsdad",
-    role: "The Original Gaur",
-    avatar: "../images/amitsdad.jpg",
-    color: "#CC88FF"
-  },
-  amitssister: {
-    name: "Amit's Sister",
-    handle: "@amitssister",
-    role: "Family Rebel",
-    avatar: "../images/amitssister.jpg",
-    color: "#FFCC88"
-  },
-  unclegerch: {
-    name: "Uncle Gerch",
-    handle: "@unclegerch",
-    role: "The Black Sheep",
-    avatar: "../images/unclegerch.jpg",
-    color: "#88FFCC"
-  },
-  cousinmilk: {
-    name: "Cousin Milk",
-    handle: "@cousinmilk",
-    role: "Dairy Distributor",
-    avatar: "../images/cousinmilk.jpg",
-    color: "#CCFF88"
-  },
-  auntiecream: {
-    name: "Auntie Cream",
-    handle: "@auntiecream",
-    role: "Family Historian",
-    avatar: "../images/auntiecream.jpg",
-    color: "#741010"
-  }
 };
 
 // Export for use in other scripts
