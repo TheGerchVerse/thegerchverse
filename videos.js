@@ -289,7 +289,7 @@ const VIDEO_DB = {
       { id: "s_69abd016968c81918bb0eefa2210633e", thumb: "solo-oletex.bulltame", oneLiner: "Tamed in 60 seconds.", arc: null },
       { id: "s_69abd15369a88191b46fe605a163b197", thumb: "solo-oletex-20-tons-of-thunder", oneLiner: "20 tons of thunder.", arc: null },
       { id: "s_69ac4fd8ac68819193b640529fc46352", thumb: "solo-oletex-red-rooster-whiskey", oneLiner: "Red Rooster Whiskey.", arc: null },
-      { id: "s_69ac518636808191b1c01e43e6e64c70", thumb: "solo-oletex-red-rooster-coffee", oneLiner: "Red Rooster Coffee.", arc: null }
+      { id: "s_69ac518636808191b1c01e43e6e64c70", thumb: "solo-oletex-red-rooster-coffee", oneLiner: "Red Rooster Coffee.", arc: null },
     ],
 
 
