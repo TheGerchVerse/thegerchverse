@@ -418,8 +418,10 @@ const VIDEO_DB = {
       { id: "s_69ac9f6c8c988191ac0b3bf9cbc103c1", thumb: "solo-sterling-late-for-work.jpg", oneLiner: "Late for work.", arc: null },
       { id: "s_69acbf8acda481919c51573332d4434c", thumb: "solo-sterling-humble-man-of-service.jpg", oneLiner: "Humble man of service.", arc: null },
       { id: "s_69acc057d4ec8191b6c855a50c2109d7", thumb: "solo-sterling-festivities.jpg", oneLiner: "Commencing festivities.", arc: null },
+      { id: "s_69adb3e828648191b875bb9eb04acb49", thumb: "solo-sterling-lord-winslow.jpg", oneLiner: "Lord Winslow.", arc: null },
     ],
 
+    
 /*
 ╔════════════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                        ║
