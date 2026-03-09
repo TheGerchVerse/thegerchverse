@@ -29,421 +29,6 @@
 
   <link rel="stylesheet" href="../gerchverse.css">
   <style>
-    :root { --char-color: #00FFFF; }
-
-    /* HIDE ALL POPUPS/MODALS */
-    .chaos-popup,
-    #insolentCowModal,
-    #bugModal,
-    .modal,
-    .popup,
-    [id*="modal"],
-    [class*="modal"],
-    [id*="popup"],
-    [class*="popup"] {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-
-    .char-page { 
-      padding-top: 100px; 
-      max-width: 1400px; 
-      margin: 0 auto; 
-      padding-left: 1.5rem; 
-      padding-right: 1.5rem; 
-    }
-
-    .char-header { 
-      display: flex; 
-      align-items: center; 
-      gap: 2rem; 
-      margin-bottom: 2.5rem; 
-      padding: 2rem; 
-      background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%); 
-      border: 2px solid var(--char-color); 
-      border-radius: 20px; 
-      box-shadow: 0 0 40px rgba(0,0,0,0.5), inset 0 0 30px rgba(0,0,0,0.2), 0 0 20px var(--char-color); 
-    }
-
-    .char-avatar { 
-      width: 140px; 
-      height: 140px; 
-      border-radius: 50%; 
-      object-fit: cover; 
-      border: 4px solid var(--char-color); 
-      box-shadow: 0 0 30px var(--char-color); 
-      flex-shrink: 0;
-    }
-
-    .char-info h1 { 
-      font-family: 'Orbitron', sans-serif; 
-      font-size: 2.5rem; 
-      color: var(--char-color); 
-      margin: 0 0 0.4rem 0; 
-      text-shadow: 0 0 20px var(--char-color), 0 0 40px var(--char-color); 
-      letter-spacing: 1px;
-    }
-
-    .char-handle { 
-      color: #aaa; 
-      font-size: 1.1rem; 
-      margin: 0 0 0.3rem 0; 
-      font-family: 'Rajdhani', sans-serif;
-    }
-
-    .char-role { 
-      color: #888; 
-      font-size: 1rem; 
-      margin: 0 0 1rem 0; 
-      font-family: 'Rajdhani', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .char-stats { 
-      display: flex; 
-      gap: 1rem; 
-      flex-wrap: wrap;
-    }
-
-    .char-stats .stat { 
-      background: rgba(0, 0, 0, 0.5); 
-      padding: 0.6rem 1.2rem; 
-      border-radius: 25px; 
-      font-size: 0.9rem; 
-      color: var(--char-color); 
-      border: 2px solid var(--char-color); 
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 600;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    }
-
-    .video-section { 
-      margin-bottom: 3rem; 
-      background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
-      border: 2px solid var(--char-color);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 0 30px rgba(0,0,0,0.4), inset 0 0 30px rgba(0,0,0,0.1), 0 0 15px var(--char-color);
-    }
-
-    .section-header { 
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between; 
-      margin-bottom: 1.5rem; 
-      padding-bottom: 1rem; 
-      border-bottom: 2px solid var(--char-color);
-    }
-
-    .section-title { 
-      font-family: 'Orbitron', sans-serif; 
-      font-size: 1.6rem; 
-      color: #fff; 
-      margin: 0;
-      text-shadow: 0 0 15px var(--char-color);
-    }
-
-    .section-title span { 
-      color: var(--char-color); 
-      font-size: 1.2rem;
-      margin-left: 0.75rem;
-      text-shadow: 0 0 10px var(--char-color);
-    }
-
-    .video-grid { 
-      display: grid; 
-      grid-template-columns: repeat(6, 1fr); 
-      gap: 1rem; 
-      width: 100%;
-    }
-
-    .video-card { 
-      display: block;
-      position: relative;
-      background: rgba(0, 0, 0, 0.6); 
-      border: 1px solid rgba(255,255,255,0.15); 
-      border-radius: 12px; 
-      overflow: hidden; 
-      text-decoration: none; 
-      transition: all 0.3s ease;
-      aspect-ratio: 9/16;
-    }
-
-    .video-card:hover { 
-      transform: translateY(-6px) scale(1.03); 
-      border-color: var(--char-color); 
-      box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 25px var(--char-color); 
-      z-index: 10;
-    }
-
-    .card-media { 
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .card-media img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      display: block;
-    }
-
-    .card-caption-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 0.75rem;
-      background: linear-gradient(transparent, rgba(0,0,0,0.9));
-      color: #fff;
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 0.9rem;
-      line-height: 1.3;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .card-badge { 
-      position: absolute; 
-      top: 8px; 
-      right: 8px; 
-      background: var(--char-color); 
-      color: #000; 
-      padding: 0.2rem 0.5rem; 
-      border-radius: 4px; 
-      font-size: 0.7rem; 
-      font-weight: 800; 
-      text-transform: uppercase;
-      z-index: 2;
-    }
-
-    .costar-row {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-      min-height: 36px;
-    }
-
-    .costar-avatar-link {
-      display: block;
-      transition: transform 0.2s ease;
-      text-decoration: none;
-    }
-
-    .costar-avatar-link:hover {
-      transform: scale(1.2);
-    }
-
-    .costar-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    }
-
-    .pagination { 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      gap: 1.25rem; 
-      margin-top: 2rem; 
-      padding-top: 1.5rem;
-      border-top: 2px solid rgba(255,255,255,0.1);
-    }
-
-    .page-btn { 
-      background: rgba(0, 0, 0, 0.5); 
-      border: 2px solid var(--char-color); 
-      color: var(--char-color); 
-      padding: 0.75rem 1.5rem; 
-      border-radius: 10px; 
-      cursor: pointer; 
-      font-family: 'Orbitron', sans-serif; 
-      font-size: 0.9rem;
-      font-weight: 700;
-      transition: all 0.2s ease; 
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .page-btn:hover:not(:disabled) { 
-      background: var(--char-color); 
-      color: #000; 
-      box-shadow: 0 0 25px var(--char-color);
-      transform: translateY(-3px);
-    }
-
-    .page-btn:disabled { 
-      opacity: 0.3; 
-      cursor: not-allowed; 
-      border-color: #444;
-      color: #666;
-    }
-
-    .page-info { 
-      color: #aaa; 
-      font-family: 'Rajdhani', sans-serif; 
-      font-size: 1rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .empty-message, .error-message { 
-      text-align: center; 
-      padding: 3rem; 
-      color: #888; 
-      font-style: italic; 
-      font-family: 'Rajdhani', sans-serif;
-      grid-column: 1 / -1;
-      font-size: 1.1rem;
-    }
-
-    .error-message { 
-      color: #ff4444; 
-    }
-
-    .loading {
-      color: var(--char-color);
-      font-family: 'Orbitron', sans-serif;
-      text-align: center;
-      padding: 2rem;
-      font-size: 1.2rem;
-      text-shadow: 0 0 15px var(--char-color);
-    }
-
-    @media (max-width: 1200px) { 
-      .video-grid { 
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 1rem;
-      }
-      .char-header {
-        padding: 1.5rem;
-        gap: 1.5rem;
-      }
-      .video-section {
-        padding: 1.5rem;
-      }
-    }
-
-    @media (max-width: 768px) { 
-      .char-page {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-        padding-top: 85px;
-      }
-
-      .char-header { 
-        flex-direction: column; 
-        text-align: center; 
-        padding: 1rem;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-        border-radius: 16px;
-      } 
-
-      .char-avatar { 
-        width: 90px; 
-        height: 90px; 
-        border-width: 2px;
-      } 
-
-      .char-info h1 { 
-        font-size: 1.6rem; 
-      }
-
-      .char-handle { font-size: 0.95rem; }
-      .char-role { font-size: 0.85rem; }
-
-      .char-stats { justify-content: center; }
-      .char-stats .stat {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
-      }
-
-      .video-section {
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        border-radius: 16px;
-        border-width: 1px;
-      }
-
-      .section-header {
-        margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
-      }
-
-      .section-title { font-size: 1.1rem; }
-      .section-title span { font-size: 0.9rem; }
-
-      .video-grid { 
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 0.75rem; 
-      }
-
-      .card-media { aspect-ratio: 9/16; }
-
-      .video-card { border-radius: 8px; }
-
-      .card-caption-overlay {
-        font-size: 0.75rem;
-        padding: 0.5rem;
-      }
-
-      .costar-avatar {
-        width: 24px;
-        height: 24px;
-        border-width: 1.5px;
-      }
-
-      .card-badge {
-        font-size: 0.6rem;
-        padding: 0.15rem 0.35rem;
-        top: 4px;
-        right: 4px;
-      }
-
-      .pagination {
-        gap: 0.75rem;
-        margin-top: 1rem;
-        padding-top: 0.75rem;
-      }
-
-      .page-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.75rem;
-        border-width: 1px;
-      }
-
-      .page-info { font-size: 0.8rem; }
-    }
-
-    @media (max-width: 380px) {
-      .video-grid { gap: 0.5rem; }
-      .card-caption-overlay { font-size: 0.7rem; }
-      .costar-avatar {
-        width: 20px;
-        height: 20px;
-        border-width: 1px;
-      }
-    }
-
-    #multi-videos-section[style*="display: none"] {
-      display: none !important;
-    }
-  
     /* SMART PAGINATION SYSTEM */
     .pagination {
       display: flex;
@@ -569,9 +154,6 @@
       z-index: 9999;
       box-shadow: 0 -10px 40px rgba(0,0,0,0.9), 0 0 30px rgba(255,215,0,0.4);
       -webkit-transform: translateX(-50%) translateY(-8px);
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      pointer-events: none;
     }
 
     .jump-dropdown.open {
@@ -579,13 +161,6 @@
       visibility: visible;
       transform: translateX(-50%) translateY(0);
       -webkit-transform: translateX(-50%) translateY(0);
-      pointer-events: auto;
-    }
-
-    .jump-dropdown.open {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-50%) translateY(0);
     }
 
     .jump-option {
@@ -637,6 +212,7 @@
       gap: 0.5rem;
       transition: all 0.2s ease;
       white-space: nowrap;
+      position: relative;
     }
 
     .mobile-page-btn:hover {
@@ -677,9 +253,6 @@
       z-index: 9999;
       box-shadow: 0 -10px 40px rgba(0,0,0,0.9), 0 0 30px rgba(0, 255, 255, 0.3);
       -webkit-transform: translateX(-50%) translateY(-8px);
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      pointer-events: none;
     }
 
     .mobile-dropdown.open {
@@ -687,32 +260,6 @@
       visibility: visible;
       transform: translateX(-50%) translateY(0);
       -webkit-transform: translateX(-50%) translateY(0);
-      pointer-events: auto;
-    }
-
-    /* iOS Safari specific fixes */
-    @supports (-webkit-touch-callout: none) {
-      .mobile-dropdown {
-        position: fixed;
-        bottom: auto;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) translateY(20px);
-        -webkit-transform: translate(-50%, -50%) translateY(20px);
-        max-height: 60vh;
-        width: 140px;
-      }
-
-      .mobile-dropdown.open {
-        transform: translate(-50%, -50%) translateY(0);
-        -webkit-transform: translate(-50%, -50%) translateY(0);
-      }
-    }
-
-    .mobile-dropdown.open {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-50%) translateY(0);
     }
 
     .mobile-option {
@@ -740,6 +287,27 @@
       background: rgba(0, 255, 255, 0.3);
       color: var(--char-color);
       font-weight: 700;
+    }
+
+    /* iOS Safari specific fixes */
+    @supports (-webkit-touch-callout: none) {
+      .mobile-dropdown,
+      .jump-dropdown {
+        position: fixed;
+        bottom: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        -webkit-transform: translate(-50%, -50%) scale(0.9);
+        max-height: 60vh;
+        width: 160px;
+      }
+
+      .mobile-dropdown.open,
+      .jump-dropdown.open {
+        transform: translate(-50%, -50%) scale(1);
+        -webkit-transform: translate(-50%, -50%) scale(1);
+      }
     }
 
     /* Responsive */
@@ -962,7 +530,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
     init() {
       this.render();
-      this.attachEvents();
     }
 
     getVisiblePages() {
@@ -971,61 +538,37 @@ window.addEventListener('DOMContentLoaded', function() {
       const pages = [];
 
       if (total <= 7) {
-        // Show all pages
         for (let i = 1; i <= total; i++) pages.push(i);
       } else {
-        // Always show first 3
         pages.push(1, 2, 3);
-
-        // Calculate middle window
         let start = Math.max(4, current - 1);
         let end = Math.min(total - 2, current + 1);
-
-        // Add ellipsis if neededif (start > 4) pages.push('...');
-
-        // Add middle pages
+        if (start > 4) pages.push('...');
         for (let i = start; i <= end; i++) {
           if (!pages.includes(i)) pages.push(i);
         }
-
-        // Add ellipsis before last pages if needed
         if (end < total - 2) pages.push('...');
-
-        // Always show last 2
         if (!pages.includes(total - 1)) pages.push(total - 1);
         if (!pages.includes(total)) pages.push(total);
       }
-
       return pages;
     }
 
     getJumpPages() {
       const pages = [];
       const increment = this.jumpIncrement;
-
-      // Always include page 1
       pages.push(1);
-
-      // Add increment pages
       for (let i = increment; i < this.totalPages; i += increment) {
         if (!pages.includes(i)) pages.push(i);
       }
-
-      // Always include last page
-      if (!pages.includes(this.totalPages)) {
-        pages.push(this.totalPages);
-      }
-
-      // Add current page and neighbors if not already included
+      if (!pages.includes(this.totalPages)) pages.push(this.totalPages);
       for (let i = Math.max(1, this.currentPage - 1); i <= Math.min(this.totalPages, this.currentPage + 1); i++) {
         if (!pages.includes(i)) {
-          // Insert in sorted order
           const insertIndex = pages.findIndex(p => p > i);
           if (insertIndex === -1) pages.push(i);
           else pages.splice(insertIndex, 0, i);
         }
       }
-
       return pages.sort((a, b) => a - b);
     }
 
@@ -1043,14 +586,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
       // Desktop Pagination
       html += '<div class="desktop-pagination" style="display: flex; align-items: center; gap: 0.4rem;">';
-
-      // Prev button
       html += `<button class="page-btn arrow" ${this.currentPage === 1 ? 'disabled' : ''} data-page="${this.currentPage - 1}">◀ Prev</button>`;
-
-      // Page info text
       html += `<span style="color: #888; font-family: Rajdhani, sans-serif; font-size: 0.9rem; margin: 0 0.5rem; text-transform: uppercase;">Page ${this.currentPage} / ${this.totalPages}</span>`;
-
-      // Page buttons
       visiblePages.forEach(page => {
         if (page === '...') {
           html += '<span class="page-ellipsis">...</span>';
@@ -1059,42 +596,30 @@ window.addEventListener('DOMContentLoaded', function() {
           html += `<button class="page-btn ${isActive}" data-page="${page}">${page}</button>`;
         }
       });
-
-      // Next button
       html += `<button class="page-btn arrow" ${this.currentPage === this.totalPages ? 'disabled' : ''} data-page="${this.currentPage + 1}">Next ▶</button>`;
-
-      // Jump dropdown
       html += '<div class="jump-container">';
-      html += '<button class="jump-btn">Jump</button>';
+      html += '<button class="jump-btn" type="button">Jump</button>';
       html += '<div class="jump-dropdown">';
       jumpPages.forEach(page => {
         const isCurrent = page === this.currentPage ? 'current' : '';
-        html += `<button class="jump-option ${isCurrent}" data-page="${page}">${page}</button>`;
+        html += `<button class="jump-option ${isCurrent}" data-page="${page}" type="button">${page}</button>`;
       });
       html += '</div></div>';
-
       html += '</div>';
 
-      // Mobile Pagination (Compact)
+      // Mobile Pagination
       html += '<div class="mobile-page-selector">';
-
-      // Prev button
       html += `<button class="page-btn arrow" ${this.currentPage === 1 ? 'disabled' : ''} data-page="${this.currentPage - 1}">◀</button>`;
-
-      // Page selector dropdown
-      html += '<button class="mobile-page-btn">';
+      html += '<button class="mobile-page-btn" type="button">';
       html += `<span>Page <span class="current-page">${this.currentPage}</span> / ${this.totalPages}</span>`;
       html += '</button>';
       html += '<div class="mobile-dropdown">';
       jumpPages.forEach(page => {
         const isCurrent = page === this.currentPage ? 'current' : '';
-        html += `<button class="mobile-option ${isCurrent}" data-page="${page}">${page}</button>`;
+        html += `<button class="mobile-option ${isCurrent}" data-page="${page}" type="button">${page}</button>`;
       });
       html += '</div>';
-
-      // Next button
       html += `<button class="page-btn arrow" ${this.currentPage === this.totalPages ? 'disabled' : ''} data-page="${this.currentPage + 1}">▶</button>`;
-
       html += '</div>';
 
       this.container.innerHTML = html;
@@ -1104,11 +629,10 @@ window.addEventListener('DOMContentLoaded', function() {
     attachEvents() {
       const self = this;
 
-      // Page buttons (desktop and mobile)
+      // Page buttons
       this.container.querySelectorAll('.page-btn[data-page]').forEach(btn => {
         btn.addEventListener('click', function(e) {
           e.preventDefault();
-          e.stopPropagation();
           const page = parseInt(this.dataset.page);
           if (page && page !== self.currentPage && page >= 1 && page <= self.totalPages) {
             self.goToPage(page);
@@ -1127,26 +651,27 @@ window.addEventListener('DOMContentLoaded', function() {
         }
       });
 
-      // Make container focusable for keyboard nav
       this.container.setAttribute('tabindex', '0');
 
-      // Jump dropdown toggle (desktop)
+      // Jump dropdown (desktop)
       const jumpBtn = this.container.querySelector('.jump-btn');
       const jumpDropdown = this.container.querySelector('.jump-dropdown');
       if (jumpBtn && jumpDropdown) {
-        const toggleJumpDropdown = function(e) {
+        jumpBtn.addEventListener('click', function(e) {
           e.preventDefault();
           e.stopPropagation();
-          jumpBtn.classList.toggle('open');
-          jumpDropdown.classList.toggle('open');
-        };
+          const isOpen = jumpDropdown.classList.contains('open');
+          document.querySelectorAll('.jump-dropdown, .mobile-dropdown').forEach(d => d.classList.remove('open'));
+          document.querySelectorAll('.jump-btn, .mobile-page-btn').forEach(b => b.classList.remove('open'));
+          if (!isOpen) {
+            jumpDropdown.classList.add('open');
+            jumpBtn.classList.add('open');
+          }
+        });
 
-        jumpBtn.addEventListener('click', toggleJumpDropdown);
-        jumpBtn.addEventListener('touchend', toggleJumpDropdown);
-
-        // Jump options
         jumpDropdown.querySelectorAll('.jump-option').forEach(opt => {
-          opt.addEventListener('click', function() {
+          opt.addEventListener('click', function(e) {
+            e.stopPropagation();
             const page = parseInt(this.dataset.page);
             jumpBtn.classList.remove('open');
             jumpDropdown.classList.remove('open');
@@ -1157,28 +682,32 @@ window.addEventListener('DOMContentLoaded', function() {
         });
       }
 
-      // Mobile dropdown toggle (click + touch for iOS)
+      // Mobile dropdown
       const mobileBtn = this.container.querySelector('.mobile-page-btn');
       const mobileDropdown = this.container.querySelector('.mobile-dropdown');
       if (mobileBtn && mobileDropdown) {
-        const toggleMobileDropdown = function(e) {
+        const toggleDropdown = function(e) {
           e.preventDefault();
           e.stopPropagation();
-          mobileBtn.classList.toggle('open');
-          mobileDropdown.classList.toggle('open');
+          const isOpen = mobileDropdown.classList.contains('open');
+          document.querySelectorAll('.jump-dropdown, .mobile-dropdown').forEach(d => d.classList.remove('open'));
+          document.querySelectorAll('.jump-btn, .mobile-page-btn').forEach(b => b.classList.remove('open'));
+          if (!isOpen) {
+            mobileDropdown.classList.add('open');
+            mobileBtn.classList.add('open');
+          }
         };
 
-        mobileBtn.addEventListener('click', toggleMobileDropdown);
-        mobileBtn.addEventListener('touchend', toggleMobileDropdown);
-
-        // Prevent double-firing on some devices
-        mobileBtn.addEventListener('touchstart', function(e) {
+        mobileBtn.addEventListener('click', toggleDropdown);
+        mobileBtn.addEventListener('touchend', function(e) {
           e.preventDefault();
-        }, { passive: false });
+          e.stopPropagation();
+          toggleDropdown(e);
+        });
 
-        // Mobile options
         mobileDropdown.querySelectorAll('.mobile-option').forEach(opt => {
-          opt.addEventListener('click', function() {
+          opt.addEventListener('click', function(e) {
+            e.stopPropagation();
             const page = parseInt(this.dataset.page);
             mobileBtn.classList.remove('open');
             mobileDropdown.classList.remove('open');
@@ -1191,30 +720,25 @@ window.addEventListener('DOMContentLoaded', function() {
 
       // Close dropdowns when clicking outside
       document.addEventListener('click', function() {
-        self.container.querySelectorAll('.jump-btn, .jump-dropdown, .mobile-page-btn, .mobile-dropdown').forEach(el => {
-          el.classList.remove('open');
-        });
+        document.querySelectorAll('.jump-dropdown, .mobile-dropdown').forEach(d => d.classList.remove('open'));
+        document.querySelectorAll('.jump-btn, .mobile-page-btn').forEach(b => b.classList.remove('open'));
       });
 
-      // Escape key to close dropdowns
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
-          self.container.querySelectorAll('.jump-btn, .jump-dropdown, .mobile-page-btn, .mobile-dropdown').forEach(el => {
-            el.classList.remove('open');
-          });
+          document.querySelectorAll('.jump-dropdown, .mobile-dropdown').forEach(d => d.classList.remove('open'));
+          document.querySelectorAll('.jump-btn, .mobile-page-btn').forEach(b => b.classList.remove('open'));
         }
       });
-    }goToPage(page) {
+    }
+
+    goToPage(page) {
       this.currentPage = page;
       this.render();
       this.onPageChange(page);
-
-      // Only scroll if pagination is not visible, and scroll minimally
       const rect = this.container.getBoundingClientRect();
       const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
-
       if (!isVisible) {
-        // Scroll just enough to bring pagination into view
         this.container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     }
@@ -1227,10 +751,7 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Expose to global scope for character-loader.js
   window.SmartPagination = SmartPagination;
-
-  // Helper to initialize pagination for a section
   window.initSmartPagination = function(containerId, options) {
     return new SmartPagination(containerId, options);
   };
