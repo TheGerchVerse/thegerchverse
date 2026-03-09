@@ -400,6 +400,16 @@ const VIDEO_DB = {
       { id: "s_69724cdd09408191e9t2v2u4s8r5w9v5", thumb: "solo-darkamit-concept-12.jpg", oneLiner: "Dark Amit Concept Ver 12.", arc: null },
     ],
 
+// EVIL AMIT. - 12 videos
+    evilamit: [
+      { id: "s_699608f5971c8191baa5ba0349a3faea", thumb: "solo-evilamit-eliminate-q5.jpg", oneLiner: "Evil Amit proposes something new.", arc: null },
+      { id: "s_69963ddda6a08191ab8ca1553626c35d", thumb: "solo-evilamit-share.jpg", oneLiner: "Evil Amit shares with the community.", arc: null },
+      { id: "s_699cf6f041808191b02b40ba3396f4e5", thumb: "solo-evil-amit-powers-awaken.jpg", oneLiner: "Evil Amit's powers awaken.", arc: null },
+      { id: "s_699e643826508191acca4fc6f2c7764b", thumb: "solo-evilamit-pto-approved.jpg", oneLiner: "PTO approved.", arc: null },
+      { id: "s_699f483e68188191aa86b3b8a3bf7e58", thumb: "solo-evilamit-debtfree.jpg", oneLiner: "Evil Amit frees us from debt.", arc: null },
+    ],
+
+
     // AMIT JR. - 12 videos
     amitjr: [
       { id: "s_69724dba22a08191f0g5i5h7f1e8j2i8", thumb: "solo-amitjr-concept-01.jpg", oneLiner: "Amit Jr. Concept Ver 1.", arc: null },
