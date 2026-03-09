@@ -386,10 +386,12 @@ const VIDEO_DB = {
 
     // DARK AMIT - 12 videos
     darkamit: [
-      { id: "s_69739c72d81c8191868d8338543b5262", thumb: "solo-darkamit-intro", oneLiner: "All cows are expendable.", arc: null },
-      { id: "s_6977f37ef9c48191ae7bdb5eecb62427", thumb: "solo-darkamit-enter-dark-amit", oneLiner: "Enter Dark Amit.", arc: null },
-      { id: "s_6974114df4dc8191a24afc7a51d020dc", thumb: "solo-darkamit-on-the-hunt-for-insolence", oneLiner: "On the hunt for insolence..", arc: null },
-      { id: "s_69a32c45e2908191b49b49040efc939e", thumb: "solo-dark-amit.sneeze-pugzley", oneLiner: "Bless you. feat @lofoandpu.pugzley", arc: null },
+      { id: "s_69739c72d81c8191868d8338543b5262", thumb: "solo-darkamit-intro.jpg", oneLiner: "All cows are expendable.", arc: null },
+      { id: "s_6977f37ef9c48191ae7bdb5eecb62427", thumb: "solo-darkamit-enter-dark-amit.jpg", oneLiner: "Enter Dark Amit.", arc: null },
+      { id: "s_6974114df4dc8191a24afc7a51d020dc", thumb: "solo-darkamit-on-the-hunt-for-insolence.jpg", oneLiner: "On the hunt for insolence..", arc: null },
+      { id: "s_69a32c45e2908191b49b49040efc939e", thumb: "solo-dark-amit.sneeze-pugzley.jpg", oneLiner: "Bless you. feat @lofoandpu.pugzley", arc: null },
+      { id: "s_69ad397bc8548191a2d451a7dbf5cd62", thumb: "solo-darkamit-navigation-builds-character.jpg", oneLiner: "Bless you. feat @lofoandpu.pugzley", arc: null },
+      { id: "s_69ae51cb0b288191a1d46b39aab698e8", thumb: "solo-darkamit-acoustics.jpg", oneLiner: "Good acoustic sensitivity.", arc: null },
     ],
 
 // EVIL AMIT. - 12 videos
@@ -567,14 +569,14 @@ const CHARACTERS = {
   bigtex: {
     name: "Big Tex Wang",
     handle: "@bigtexwang",
-    role: "Cattle Speculator",
+    role: "Ranch Overlord, Gadha Enthusiast",
     avatar: "../images/bigtex.jpg",
     color: "#FF4444"
   },
   gadha: {
     name: "Gadha",
     handle: "@gadhamilk",
-    role: "Celestial Cow Deity",
+    role: "Divine Bovine, Space Prisoner",
     avatar: "../images/gadha.jpg",
     color: "#FFD700"
   },
@@ -595,7 +597,7 @@ const CHARACTERS = {
   eelon: {
     name: "Eel On Muskmelon",
     handle: "@eelonmuskmelon",
-    role: "Tech Bro, Flamingo Enthusiast",
+    role: "EV Sales Exec, Flamingo Enthusiast",
     avatar: "../images/eelon.jpg",
     color: "#FF66CC"
   },
@@ -644,7 +646,7 @@ const CHARACTERS = {
   gerchlander: {
     name: "Gerchlander",
     handle: "@gerchlander",
-    role: "Corporate Tyrant",
+    role: "Super Toddler, Corporate Demigod",
     avatar: "../images/gerchlander.jpg",
     color: "#FF0000"
   },
@@ -665,7 +667,7 @@ const CHARACTERS = {
   amitjr: {
     name: "Amit Jr.",
     handle: "@amitjrq6",
-    role: "Son of Amit Gaur, Whistleblower from Q6",
+    role: "Son of Amit, Whistleblower from Q6",
     avatar: "../images/amitjrq6.jpg",
     color: "#808080"
   },
