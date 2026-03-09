@@ -386,18 +386,10 @@ const VIDEO_DB = {
 
     // DARK AMIT - 12 videos
     darkamit: [
-      { id: "s_69724c22c408191f2i1k1j3h7g4l8k4", thumb: "solo-darkamit-concept-01.jpg", oneLiner: "Dark Amit Concept Ver 1.", arc: null },
-      { id: "s_69724c33d108191a9j2l2k4i8h5m9l5", thumb: "solo-darkamit-concept-02.jpg", oneLiner: "Dark Amit Concept Ver 2.", arc: null },
-      { id: "s_69724c44e808191b6k3m3l5j9i6n0m6", thumb: "solo-darkamit-concept-03.jpg", oneLiner: "Dark Amit Concept Ver 3.", arc: null },
-      { id: "s_69724c55f508191c3l4n4m6k0j7o1n7", thumb: "solo-darkamit-concept-04.jpg", oneLiner: "Dark Amit Concept Ver 4.", arc: null },
-      { id: "s_69724c66a208191d0m5o5n7l1k8p2o8", thumb: "solo-darkamit-concept-05.jpg", oneLiner: "Dark Amit Concept Ver 5.", arc: null },
-      { id: "s_69724c77b908191e7n6p6o8m2l9q3p9", thumb: "solo-darkamit-concept-06.jpg", oneLiner: "Dark Amit Concept Ver 6.", arc: null },
-      { id: "s_69724c88c608191f4o7q7p9n3m0r4q0", thumb: "solo-darkamit-concept-07.jpg", oneLiner: "Dark Amit Concept Ver 7.", arc: null },
-      { id: "s_69724c99d308191a1p8r8q0o4n1s5r1", thumb: "solo-darkamit-concept-08.jpg", oneLiner: "Dark Amit Concept Ver 8.", arc: null },
-      { id: "s_69724caaa008191b8q9s9r1p5o2t6s2", thumb: "solo-darkamit-concept-09.jpg", oneLiner: "Dark Amit Concept Ver 9.", arc: null },
-      { id: "s_69724cbb6d808191c5r0t0s2q6p3u7t3", thumb: "solo-darkamit-concept-10.jpg", oneLiner: "Dark Amit Concept Ver 10.", arc: null },
-      { id: "s_69724ccc3b608191d2s1u1t3r7q4v8u4", thumb: "solo-darkamit-concept-11.jpg", oneLiner: "Dark Amit Concept Ver 11.", arc: null },
-      { id: "s_69724cdd09408191e9t2v2u4s8r5w9v5", thumb: "solo-darkamit-concept-12.jpg", oneLiner: "Dark Amit Concept Ver 12.", arc: null },
+      { id: "s_69739c72d81c8191868d8338543b5262", thumb: "solo-darkamit-intro", oneLiner: "All cows are expendable.", arc: null },
+      { id: "s_6977f37ef9c48191ae7bdb5eecb62427", thumb: "solo-darkamit-enter-dark-amit", oneLiner: "Enter Dark Amit.", arc: null },
+      { id: "s_6974114df4dc8191a24afc7a51d020dc", thumb: "solo-darkamit-on-the-hunt-for-insolence", oneLiner: "On the hunt for insolence..", arc: null },
+      { id: "s_69a32c45e2908191b49b49040efc939e", thumb: "solo-dark-amit.sneeze-pugzley", oneLiner: "Bless you. feat @lofoandpu.pugzley", arc: null },
     ],
 
 // EVIL AMIT. - 12 videos
