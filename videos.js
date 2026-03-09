@@ -545,8 +545,8 @@ const VIDEO_DB = {
     { id: "s_696e748bfca48191bebf697db565ab39", thumb: "multi-eelonreprimanded.jpg", oneLiner: "Eelon getting an earful.", characters: ["eelon", "amit"], arc: null },
     { id: "s_696eb606ab2c81918368282f7659e96b", thumb: "multi-coleamit-debate.jpg", oneLiner: "Cole argues with Amit over pricing", characters: ["amit", "cole"], arc: null },
     { id: "s_69a709bc66ac8191a78f94964f8e5304", thumb: "multi-evilamit-mediocrates-stressless-parenthood.jpg", oneLiner: "The key to stressless parenthood.", characters: ["evilamit", "mediocrates"], arc: null },
-    { id: "s_69a1a543e390819196ea0c1034c84423", thumb: "amitjr-bkrescue", oneLiner: "Music Video: Burger King Rescue.", characters: ["amitjr", "lightamit", "amitsmother"], arc: null },
-    { id: "s_69a5a97112308191ac18e93b8739164f", thumb: "amitjr-bkrescue-onice", oneLiner: "Burger King Rescue: On Ice (Kinda).", characters: ["amitjr", "lightamit", "amitsmother"], arc: null },
+    { id: "s_69a1a543e390819196ea0c1034c84423", thumb: "amitjr-bkrescue.jpg", oneLiner: "Music Video: Burger King Rescue.", characters: ["amitjr", "lightamit", "amitsmother"], arc: null },
+    { id: "s_69a5a97112308191ac18e93b8739164f", thumb: "amitjr-bkrescue-onice.jpg", oneLiner: "Burger King Rescue: On Ice (Kinda).", characters: ["amitjr", "lightamit", "amitsmother"], arc: null },
     { id: "s_69a642e88f048191a4a10493cd4f8099", thumb: "multi-amitjrmother-timelesslove.jpg", oneLiner: "Timeless Love.", characters: ["amitjr", "amitsmother"], arc: null },
     { id: "s_69a51590e61481918f196d1acae8e742", thumb: "multi-offsitemumbai.jpg", oneLiner: "Gerchan Farms Mumbai Offsite.", characters: ["amit", "amitjr", "lightamit", "darkamit", "amitsmother", "raj", "evilamit"], arc: null },
 
