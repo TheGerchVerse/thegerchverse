@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../gerchverse.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --char-color: #df4d14; }
+    :root { --char-color: #df4e14; }
 
     .char-page { 
       padding-top: 100px; 
@@ -453,7 +453,7 @@
     }
   </style>
 </head>
-<body data-character="oletex">
+<body data-character="oletexwang">
   <nav class="main-nav">
     <a href="../index.html" class="logo">
       <span class="logo-icon">🥛</span>
@@ -509,9 +509,9 @@
 
   <script src="../videos.js"></script>
   <script>
-    // Inline character loader for Ole' Tex
+    // Inline character loader for Ole' Tex Wang
     (function() {
-      const CHARACTER_ID = 'oletex';
+      const CHARACTER_ID = 'oletexwang';
       const ITEMS_PER_PAGE = 12;
       
       let soloVideos = [];
@@ -525,12 +525,12 @@
           return;
         }
 
-        // Get solo videos
-        soloVideos = VIDEO_DB.solo[CHARACTER_ID] || [];
+        // Get solo videos - check both 'oletexwang' and 'oletex' keys
+        soloVideos = VIDEO_DB.solo[CHARACTER_ID] || VIDEO_DB.solo['oletex'] || [];
         
         // Get multi videos where this character appears
         multiVideos = (VIDEO_DB.multi || []).filter(video => 
-          video.characters && video.characters.includes(CHARACTER_ID)
+          video.characters && (video.characters.includes(CHARACTER_ID) || video.characters.includes('oletex'))
         );
 
         // Update stats in header
@@ -606,7 +606,7 @@
       }
 
       function createVideoCard(video, isMulti = false) {
-        const costars = isMulti && video.characters ? video.characters.filter(c => c !== CHARACTER_ID) : [];
+        const costars = isMulti && video.characters ? video.characters.filter(c => c !== CHARACTER_ID && c !== 'oletex') : [];
         
         let costarHtml = '';
         if (costars.length > 0 && typeof CHARACTERS !== 'undefined') {
@@ -624,7 +624,7 @@
             <a href="https://sora.chatgpt.com/v/${video.id}" target="_blank" rel="noopener" class="video-card">
               <div class="card-media">
                 ${video.thumb ? 
-                  `<img src="../thumbs/${video.thumb}" alt="${video.oneLiner || 'Video thumbnail'}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-placeholder\\'>SORA</div>'">` : 
+                  `<img src="../thumbnails/${video.thumb}" alt="${video.oneLiner || 'Video thumbnail'}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-placeholder\\'>SORA</div>'">` : 
                   '<div class="card-placeholder">SORA</div>'
                 }
               </div>
