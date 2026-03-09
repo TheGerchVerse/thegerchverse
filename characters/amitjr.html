@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../gerchverse.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --char-color: #88CCFF; }
+    :root { --char-color: #808080; }
 
     .char-page { 
       padding-top: 100px; 
@@ -397,22 +397,6 @@
         border-radius: 8px;
       }
 
-      .card-content {
-        padding: 0.5rem;
-      }
-
-      .card-oneliner {
-        font-size: 0.75rem;
-        line-height: 1.2;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-      }
-
-      .card-costars {
-        font-size: 0.65rem;
-        margin-top: 0.2rem;
-      }
-
       .card-badge {
         font-size: 0.6rem;
         padding: 0.15rem 0.35rem;
@@ -442,10 +426,6 @@
       .video-grid {
         gap: 0.5rem;
       }
-
-      .card-oneliner {
-        font-size: 0.7rem;
-      }
     }
 
     #multi-videos-section[style*="display: none"] {
@@ -469,7 +449,6 @@
   </nav>
 
   <main class="char-page">
-    <!-- Hardcoded header matching amit.html structure -->
     <div class="char-header">
       <img src="../images/amitjrq6.jpg" alt="Amit Jr." class="char-avatar">
       <div class="char-info">
@@ -509,7 +488,6 @@
 
   <script src="../videos.js"></script>
   <script>
-    // Inline character loader for Amit Jr.
     (function() {
       const CHARACTER_ID = 'amitjr';
       const ITEMS_PER_PAGE = 12;
@@ -525,15 +503,12 @@
           return;
         }
 
-        // Get solo videos
         soloVideos = VIDEO_DB.solo[CHARACTER_ID] || [];
         
-        // Get multi videos where this character appears
         multiVideos = (VIDEO_DB.multi || []).filter(video => 
           video.characters && video.characters.includes(CHARACTER_ID)
         );
 
-        // Update stats in header
         document.getElementById('solo-stat').textContent = soloVideos.length + ' Solo Videos';
         document.getElementById('multi-stat').textContent = multiVideos.length + ' Multi Videos';
 
@@ -624,7 +599,7 @@
             <a href="https://sora.chatgpt.com/v/${video.id}" target="_blank" rel="noopener" class="video-card">
               <div class="card-media">
                 ${video.thumb ? 
-                  `<img src="../thumbs/${video.thumb}" alt="${video.oneLiner || 'Video thumbnail'}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-placeholder\\'>SORA</div>'">` : 
+                  `<img src="../thumbnails/${video.thumb}" alt="${video.oneLiner || 'Video thumbnail'}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-placeholder\\'>SORA</div>'">` : 
                   '<div class="card-placeholder">SORA</div>'
                 }
               </div>
@@ -646,7 +621,6 @@
         renderMultiVideos();
       };
 
-      // Initialize when DOM is ready
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
       } else {
