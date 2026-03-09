@@ -277,7 +277,7 @@ const VIDEO_DB = {
     ],
 
 // OLE' TEX WANG - 13 videos
-    oletexwang: [
+    oletex: [
       { id: "s_69ab574d36d08191a33b9b9a90457058", thumb: "solo-oletex-intro", oneLiner: "Name's Ole' Tex Wang.", arc: null },
       { id: "s_69ab577bba84819188904d71e8419e1e", thumb: "solo-oletex-tradition-of-gadha", oneLiner: "The Gadha Tradition.", arc: null },
       { id: "s_69ab7d44f0408191853817bd6ae3dbe4", thumb: "solo-oletex-square-dance", oneLiner: "Ole' Tex knows his steps.", arc: null },
