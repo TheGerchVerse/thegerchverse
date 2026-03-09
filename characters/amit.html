@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Amit Gaur | The Gerch-Verse</title>
-  <meta name="description" content="Amit Gaur - CEO of Gerchan Farms. Milk Evangelist. Inventor of the hand-slapped dairy method.">
-  <meta name="keywords" content="Amit Gaur,Gerchan Farms,Gerch-Verse,CEO,Milk Evangelist">
+  <meta name="description" content="CEO of Gerchan Farms and inventor of the hand-slapped dairy method (patent pending).">
+  <meta name="keywords" content="Amit Gaur,Gerchan Farms,Gerch-Verse">
   <meta name="author" content="TheGerchVerse">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://thegerchverse.com/characters/amit.html">
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thegerchverse.com/characters/amit.html">
   <meta property="og:title" content="Amit Gaur | The Gerch-Verse">
-  <meta property="og:description" content="CEO of Gerchan Farms. Milk Evangelist. Inventor of the hand-slapped dairy method.">
+  <meta property="og:description" content="CEO of Gerchan Farms and inventor of the hand-slapped dairy method (patent pending).">
   <meta property="og:image" content="https://thegerchverse.com/images/amit.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -24,12 +24,28 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Amit Gaur | The Gerch-Verse">
-  <meta name="twitter:description" content="CEO of Gerchan Farms. Milk Evangelist. Inventor of the hand-slapped dairy method.">
+  <meta name="twitter:description" content="CEO of Gerchan Farms and inventor of the hand-slapped dairy method (patent pending).">
   <meta name="twitter:image" content="https://thegerchverse.com/images/amit.jpg">
 
   <link rel="stylesheet" href="../gerchverse.css">
   <style>
     :root { --char-color: #00FFFF; }
+
+    /* HIDE ALL POPUPS/MODALS */
+    .chaos-popup,
+    #insolentCowModal,
+    #bugModal,
+    .modal,
+    .popup,
+    [id*="modal"],
+    [class*="modal"],
+    [id*="popup"],
+    [class*="popup"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
 
     .char-page { 
       padding-top: 100px; 
@@ -548,6 +564,29 @@
     if (attempts > 50) clearInterval(interval);
   }, 100);
 })();
+</script>
+
+<!-- DISABLE ALL POPUPS -->
+<script>
+// Override popup functions to prevent them from showing
+window.addEventListener('DOMContentLoaded', function() {
+  // Disable chaos popups
+  window.showChaosPopup = function() { return false; };
+  window.createChaosPopup = function() { return false; };
+  window.spawnChaosPopup = function() { return false; };
+
+  // Disable insolent cow modal
+  window.showInsolentCow = function() { return false; };
+  window.triggerInsolentCow = function() { return false; };
+
+  // Disable any modal showing functions
+  window.showModal = function() { return false; };
+  window.openModal = function() { return false; };
+
+  // Remove any existing popups/modals from DOM
+  var popups = document.querySelectorAll('.chaos-popup, #insolentCowModal, #bugModal, .modal, .popup');
+  popups.forEach(function(p) { p.remove(); });
+});
 </script>
 
 </body>
