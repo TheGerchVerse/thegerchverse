@@ -533,7 +533,8 @@ const VIDEO_DB = {
       { id: "s_6974114df4dc8191a24afc7a51d020dc", thumb: "solo-darkamit-on-the-hunt-for-insolence.jpg", oneLiner: "On the hunt for insolence..", arc: null },
       { id: "s_69a32c45e2908191b49b49040efc939e", thumb: "solo-dark-amit.sneeze-pugzley.jpg", oneLiner: "Bless you. feat @lofoandpu.pugzley", arc: null },
       { id: "s_69ad397bc8548191a2d451a7dbf5cd62", thumb: "solo-darkamit-navigation-builds-character.jpg", oneLiner: "Bless you. feat @lofoandpu.pugzley", arc: null },
-      { id: "s_69ae51cb0b288191a1d46b39aab698e8", thumb: "solo-darkamit-acoustics.jpg", oneLiner: "Good acoustic sensitivity.", arc: null },
+      { id: "s_69ae59ac63788191ae5a41ea26053ef7", thumb: "solo-darkamit-childhood-trauma-as-a-service.jpg", oneLiner: "Childhood Trauma as a Service.", arc: null },
+      
     ],
 
 /*
