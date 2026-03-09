@@ -354,7 +354,7 @@ const VIDEO_DB = {
       { id: "s_69701ec650fc8191b523f58de79f9ff5", thumb: "solo-eelon-dance-bedroom.jpg", oneLiner: "Eel-On loves dancing all day long.", arc: null },
       { id: "s_6971189c98e481919156c9ef7cb586cb", thumb: "solo-eelon-smart-speaker.jpg", oneLiner: "Difficulties with smart speakers.", arc: null },
     ],
-
+ 
     // COLE MERCER - 9 videos
     cole: [
       { id: "s_696ec8ef8a00819191b2db8ae8d70be8", thumb: "solo-cole-intro.jpg", oneLiner: "Cole hikes the price of OxyRelief.", arc: null },
@@ -367,6 +367,28 @@ const VIDEO_DB = {
       { id: "s_699fb59bd0688191bbc1657071d99746", thumb: "solo-cole-salad-pugzley-mba-treats.jpg", oneLiner: "Making MBA word salad treats with @lofoandpu.pugzley.", arc: null },
       { id: "s_69aafbd0f18c8191b4e0af1c6881e8df", thumb: "solo-cole-scarcity-is-culture.jpg", oneLiner: "Scarcity is culture.", arc: null },
     ],
+
+
+    // EVIL AMIT. - 12 videos
+    evilamit: [
+      { id: "s_699608f5971c8191baa5ba0349a3faea", thumb: "solo-evilamit-eliminate-q5.jpg", oneLiner: "Evil Amit proposes something new.", arc: null },
+      { id: "s_69963ddda6a08191ab8ca1553626c35d", thumb: "solo-evilamit-share.jpg", oneLiner: "Evil Amit shares with the community.", arc: null },
+      { id: "s_699cf6f041808191b02b40ba3396f4e5", thumb: "solo-evil-amit-powers-awaken.jpg", oneLiner: "Evil Amit's powers awaken.", arc: null },
+      { id: "s_699e643826508191acca4fc6f2c7764b", thumb: "solo-evilamit-pto-approved.jpg", oneLiner: "PTO approved.", arc: null },
+      { id: "s_699f483e68188191aa86b3b8a3bf7e58", thumb: "solo-evilamit-debtfree.jpg", oneLiner: "Evil Amit frees us from debt.", arc: null },
+    ],
+
+
+    // DARK AMIT - 12 videos
+    darkamit: [
+      { id: "s_69739c72d81c8191868d8338543b5262", thumb: "solo-darkamit-intro.jpg", oneLiner: "All cows are expendable.", arc: null },
+      { id: "s_6977f37ef9c48191ae7bdb5eecb62427", thumb: "solo-darkamit-enter-dark-amit.jpg", oneLiner: "Enter Dark Amit.", arc: null },
+      { id: "s_6974114df4dc8191a24afc7a51d020dc", thumb: "solo-darkamit-on-the-hunt-for-insolence.jpg", oneLiner: "On the hunt for insolence..", arc: null },
+      { id: "s_69a32c45e2908191b49b49040efc939e", thumb: "solo-dark-amit.sneeze-pugzley.jpg", oneLiner: "Bless you. feat @lofoandpu.pugzley", arc: null },
+      { id: "s_69ad397bc8548191a2d451a7dbf5cd62", thumb: "solo-darkamit-navigation-builds-character.jpg", oneLiner: "Bless you. feat @lofoandpu.pugzley", arc: null },
+      { id: "s_69ae51cb0b288191a1d46b39aab698e8", thumb: "solo-darkamit-acoustics.jpg", oneLiner: "Good acoustic sensitivity.", arc: null },
+    ],
+
 
     // LIGHT AMIT - 12 videos
     lightamit: [
@@ -384,40 +406,59 @@ const VIDEO_DB = {
       { id: "s_69acfa48e84c8191b5b2db9d1df3b466", thumb: "solo-lightamit-meetings-too.jpg", oneLiner: "Meetings, too.", arc: null },
     ],
 
-    // DARK AMIT - 12 videos
-    darkamit: [
-      { id: "s_69739c72d81c8191868d8338543b5262", thumb: "solo-darkamit-intro.jpg", oneLiner: "All cows are expendable.", arc: null },
-      { id: "s_6977f37ef9c48191ae7bdb5eecb62427", thumb: "solo-darkamit-enter-dark-amit.jpg", oneLiner: "Enter Dark Amit.", arc: null },
-      { id: "s_6974114df4dc8191a24afc7a51d020dc", thumb: "solo-darkamit-on-the-hunt-for-insolence.jpg", oneLiner: "On the hunt for insolence..", arc: null },
-      { id: "s_69a32c45e2908191b49b49040efc939e", thumb: "solo-dark-amit.sneeze-pugzley.jpg", oneLiner: "Bless you. feat @lofoandpu.pugzley", arc: null },
-      { id: "s_69ad397bc8548191a2d451a7dbf5cd62", thumb: "solo-darkamit-navigation-builds-character.jpg", oneLiner: "Bless you. feat @lofoandpu.pugzley", arc: null },
-      { id: "s_69ae51cb0b288191a1d46b39aab698e8", thumb: "solo-darkamit-acoustics.jpg", oneLiner: "Good acoustic sensitivity.", arc: null },
+    // GERCHLANDER - 12 videos
+    gerchlander: [
+      { id: "s_697afd5de60081919be838408bd4efa5", thumb: "solo-gerchlander-do-whatever-i-want.jpg", oneLiner: "I can do whatever I want.", arc: null },
+      { id: "s_69a2856e792c8191acbe3b711e7d29ac", thumb: "solo-gerchlander-speed-demo.jpg", oneLiner: "Speed demonstration.", arc: null },
+      { id: "s_697b88964b3c8191bffe6a0e083bd18d", thumb: "solo-gerchlander-destroy-battleships.jpg", oneLiner: "Gerchlander having some fun.", arc: null },
+      { id: "s_6989ff596d2c8191970e559f7f807490", thumb: "solo-gerchlander-origins.jpg", oneLiner: "Gerchlander origins.", arc: null },
+      { id: "s_69a7c3d9f7608191a7f4827a5f24d294", thumb: "solo-gerchlander-jog.jpg", oneLiner: "Gerchlander goes for a jog.", arc: null },
     ],
 
-// EVIL AMIT. - 12 videos
-    evilamit: [
-      { id: "s_699608f5971c8191baa5ba0349a3faea", thumb: "solo-evilamit-eliminate-q5.jpg", oneLiner: "Evil Amit proposes something new.", arc: null },
-      { id: "s_69963ddda6a08191ab8ca1553626c35d", thumb: "solo-evilamit-share.jpg", oneLiner: "Evil Amit shares with the community.", arc: null },
-      { id: "s_699cf6f041808191b02b40ba3396f4e5", thumb: "solo-evil-amit-powers-awaken.jpg", oneLiner: "Evil Amit's powers awaken.", arc: null },
-      { id: "s_699e643826508191acca4fc6f2c7764b", thumb: "solo-evilamit-pto-approved.jpg", oneLiner: "PTO approved.", arc: null },
-      { id: "s_699f483e68188191aa86b3b8a3bf7e58", thumb: "solo-evilamit-debtfree.jpg", oneLiner: "Evil Amit frees us from debt.", arc: null },
+
+    // MICHAEL MOO - 12 videos
+    michaelmoo: [
+      { id: "s_69824d68357c8191baf63e233158f447", thumb: "solo-moo-eats-facts.jpg", oneLiner: "Hungry for the facts.", arc: null },
+      { id: "s_698183361fe48191a19cee6028efb869", thumb: "solo-moo-putting-pieces-together.jpg", oneLiner: "Moo investigates the Gaur family.", arc: null },
+      { id: "s_698e2a5be27c81919b209b7aa913321c", thumb: "solo-moo-snooping.jpg", oneLiner: "Today's outfit? Room service.", arc: null },
+      { id: "s_699cb345935c819195cad9855f4531eb", thumb: "solo-moo-hungry.jpg", oneLiner: "Michael Moo is hungry.", arc: null },
+    ],
+
+    // MEDIOCRATES. - 12 videos
+    mediocrates: [
+      { id: "s_69a376f195ec8191a4876d646889aaa9", thumb: "mediocrates-plainbagels.jpg", oneLiner: "Mediocrates brings plain bagels to an office potluck.", arc: null },
+      { id: "s_69a30c58bd248191a8e85062ed3dc90b", thumb: "mediocrates-midisbest.jpg", oneLiner: "The beauty in 'mid'.", arc: null },
+      { id: "s_69a4064082d48191a1f795173d89e31c", thumb: "mediocrates-potatosalad.jpg", oneLiner: "Potato salad.", arc: null },
+      { id: "s_69a52c6187b08191a955e67ea437ab9c", thumb: "mediocrates-vanilla.jpg", oneLiner: "Vanilla is the way.", arc: null },
+      { id: "s_69a5b9a2f00c8191b257d16ac13f221f", thumb: "mediocrates-restaurant-rating.jpg", oneLiner: "Mediocrates likes what he sees.", arc: null },
+      { id: "s_69a7523b58408191957ae8f3d96cfd59", thumb: "mediocrates-normalcy-speech.jpg", oneLiner: "Premium Normal.", arc: null },
+      { id: "s_69a7dae43f38819196af5eeedccd928b", thumb: "mediocrates-spud-water.jpg", oneLiner: "Potluck again.", arc: null },
+      { id: "s_69aa3e10b3b08191a71b69fb7cd7301e", thumb: "solo-mediocrates-raise.jpg", oneLiner: "Industry standards.", arc: null },
+      { id: "s_69aa4325bf648191be1d9685216166a1", thumb: "solo-mediocrates-pointa-to-pointb.jpg", oneLiner: "Point A to Point B.", arc: null },
+      { id: "s_69aa51d41ef881919ddd62016fcb5548", thumb: "solo-mediocrates-meets-expectations.jpg", oneLiner: "Meets Expectations.", arc: null },
     ],
 
 
     // AMIT JR. - 12 videos
     amitjr: [
-      { id: "s_69724dba22a08191f0g5i5h7f1e8j2i8", thumb: "solo-amitjr-concept-01.jpg", oneLiner: "Amit Jr. Concept Ver 1.", arc: null },
-      { id: "s_69724dcbf0808191a7h6j6i8g2f9k3j9", thumb: "solo-amitjr-concept-02.jpg", oneLiner: "Amit Jr. Concept Ver 2.", arc: null },
-      { id: "s_69724ddc9e608191b4i7k7j9h3g0l4k0", thumb: "solo-amitjr-concept-03.jpg", oneLiner: "Amit Jr. Concept Ver 3.", arc: null },
-      { id: "s_69724ded6c408191c1j8l8k0i4h1m5l1", thumb: "solo-amitjr-concept-04.jpg", oneLiner: "Amit Jr. Concept Ver 4.", arc: null },
-      { id: "s_69724dfe3a208191d8k9m9l1j5i2n6m2", thumb: "solo-amitjr-concept-05.jpg", oneLiner: "Amit Jr. Concept Ver 5.", arc: null },
-      { id: "s_69724e0f08008191e5l0n0m2k6j3o7n3", thumb: "solo-amitjr-concept-06.jpg", oneLiner: "Amit Jr. Concept Ver 6.", arc: null },
-      { id: "s_69724e20d5e08191f2m1o1n3l7k4p8o4", thumb: "solo-amitjr-concept-07.jpg", oneLiner: "Amit Jr. Concept Ver 7.", arc: null },
-      { id: "s_69724e31a3c08191a9n2p2o4m8l5q9p5", thumb: "solo-amitjr-concept-08.jpg", oneLiner: "Amit Jr. Concept Ver 8.", arc: null },
-      { id: "s_69724e4271a08191b6o3q3p5n9m6r0q6", thumb: "solo-amitjr-concept-09.jpg", oneLiner: "Amit Jr. Concept Ver 9.", arc: null },
-      { id: "s_69724e533f808191c3p4r4q6o0n7s1r7", thumb: "solo-amitjr-concept-10.jpg", oneLiner: "Amit Jr. Concept Ver 10.", arc: null },
-      { id: "s_69724e640d608191d0q5s5r7p1o8t2s8", thumb: "solo-amitjr-concept-11.jpg", oneLiner: "Amit Jr. Concept Ver 11.", arc: null },
-      { id: "s_69724e75db408191e7r6t6s8q2p9u3t9", thumb: "solo-amitjr-concept-12.jpg", oneLiner: "Amit Jr. Concept Ver 12.", arc: null },
+      { id: "s_699beec67d58819195edfdc366b74e54", thumb: "arc-q6warning-00.jpg", oneLiner: "The arrival from Q6", arc: null },
+      { id: "s_692b139cc8388191a9d4706446630413", thumb: "amitjrq6-historylesson.jpg", oneLiner: "History Lesson from Q6!", arc: null },
+      { id: "s_69a13db926388191820562facb5a7f60", thumb: "amitjr-shrink.jpg", oneLiner: "Papa gave me strength.", arc: null },
+      { id: "s_69a157a85ee48191afa3b90d1f8af0d4", thumb: "amitjr-letitout.jpg", oneLiner: "Letin' it all out.", arc: null },
+      { id: "s_69a1a543e390819196ea0c1034c84423", thumb: "amitjr-bkrescue.jpg", oneLiner: "Music Video: Burger King Rescue.", arc: null },
+      { id: "s_69a5a97112308191ac18e93b8739164f", thumb: "amitjr-bkrescue-onice.jpg", oneLiner: "Burger King Rescue: On Ice (Kinda).", arc: null },
+      { id: "s_69a642e88f048191a4a10493cd4f8099", thumb: "multi-amitjrmother-timelesslove.jpg", oneLiner: "Timeless Love.", arc: null },
+      { id: "s_69a45ca66bec81918df17bb6b821f98b", thumb: "amitjr-q6trauma.jpg", oneLiner: "Amit Jr. Q6 recounts his traumatic memories.", arc: null },
+    ],
+
+
+    // AMIT's MOTHER - 12 videos
+    amitsmother: [
+      { id: "s_699f56dc830c8191868fe203fb6bea30", thumb: "solo-amitsmother-closed.jpg", oneLiner: "Closed.", arc: null },
+      { id: "s_69a4750eb13c8191ad90370680a02542", thumb: "solo-amitsmother-the-real-truth.jpg", oneLiner: "The unfiltered, real, dirty truth.", arc: null },
+      { id: "s_69a9931e7ae88191a24d8a8a6819b09c", thumb: "solo-amitsmother-the-power-of-mother.jpg", oneLiner: "The power of mother.", arc: null },
+      { id: "s_69aa1b0df2988191a64a92b33a030efa", thumb: "solo-amitsmother-always-locked.jpg", oneLiner: "Locked.", arc: null },
+      { id: "s_69ab03065d10819198327c3533af8400", thumb: "solo-amitsmother-spectacular.jpg", oneLiner: "Spectacular.", arc: null },
     ],
 
     
