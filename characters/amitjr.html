@@ -2,10 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amit Jr. | Gerch-Verse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Amit Jr. | The Gerch-Verse</title>
+  <meta name="description" content="Time-traveling son of Amit from the Q6 Profits Apocalypse timeline.">
+  <meta name="keywords" content="Amit Jr.,Gerchan Farms,Gerch-Verse">
+  <meta name="author" content="TheGerchVerse">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thegerchverse.com/characters/amitjr.html">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://thegerchverse.com/sitemap.xml">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thegerchverse.com/characters/amitjr.html">
+  <meta property="og:title" content="Amit Jr. | The Gerch-Verse">
+  <meta property="og:description" content="Time-traveling son of Amit from the Q6 Profits Apocalypse timeline.">
+  <meta property="og:image" content="https://thegerchverse.com/images/amitjrq6.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="The Gerch-Verse">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Amit Jr. | The Gerch-Verse">
+  <meta name="twitter:description" content="Time-traveling son of Amit from the Q6 Profits Apocalypse timeline.">
+  <meta name="twitter:image" content="https://thegerchverse.com/images/amitjrq6.jpg">
+
   <link rel="stylesheet" href="../gerchverse.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root { --char-color: #808080; }
 
@@ -122,23 +144,16 @@
       width: 100%;
     }
 
-    .video-cell {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
     .video-card { 
       display: block;
       position: relative;
-      width: 100%;
-      aspect-ratio: 9/16;
       background: rgba(0, 0, 0, 0.6); 
       border: 1px solid rgba(255,255,255,0.15); 
       border-radius: 12px; 
       overflow: hidden; 
       text-decoration: none; 
       transition: all 0.3s ease;
+      aspect-ratio: 9/16;
     }
 
     .video-card:hover { 
@@ -162,18 +177,22 @@
       display: block;
     }
 
-    .card-placeholder { 
-      width: 100%; 
-      height: 100%; 
-      background: linear-gradient(135deg, #1a1a2e 0%, #0d1117 100%); 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      color: var(--char-color); 
-      font-family: 'Orbitron', sans-serif; 
-      font-size: 0.8rem; 
-      text-align: center; 
+    .card-caption-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
       padding: 0.75rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.9));
+      color: #fff;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .card-badge { 
@@ -190,28 +209,10 @@
       z-index: 2;
     }
 
-    .card-caption-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 0.75rem;
-      background: linear-gradient(transparent, rgba(0,0,0,0.9));
-      color: #fff;
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 0.85rem;
-      line-height: 1.3;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
     .costar-row {
       display: flex;
       justify-content: center;
-      gap: 0.4rem;
+      gap: 0.5rem;
       margin-top: 0.5rem;
       flex-wrap: wrap;
       min-height: 36px;
@@ -228,8 +229,8 @@
     }
 
     .costar-avatar {
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid;
@@ -347,18 +348,10 @@
         font-size: 1.6rem; 
       }
 
-      .char-handle {
-        font-size: 0.95rem;
-      }
+      .char-handle { font-size: 0.95rem; }
+      .char-role { font-size: 0.85rem; }
 
-      .char-role {
-        font-size: 0.85rem;
-      }
-
-      .char-stats {
-        justify-content: center;
-      }
-
+      .char-stats { justify-content: center; }
       .char-stats .stat {
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
@@ -376,25 +369,27 @@
         padding-bottom: 0.5rem;
       }
 
-      .section-title {
-        font-size: 1.1rem;
-      }
-
-      .section-title span {
-        font-size: 0.9rem;
-      }
+      .section-title { font-size: 1.1rem; }
+      .section-title span { font-size: 0.9rem; }
 
       .video-grid { 
         grid-template-columns: repeat(3, 1fr); 
         gap: 0.75rem; 
       }
 
-      .card-media {
-        aspect-ratio: 9/16;
+      .card-media { aspect-ratio: 9/16; }
+
+      .video-card { border-radius: 8px; }
+
+      .card-caption-overlay {
+        font-size: 0.75rem;
+        padding: 0.5rem;
       }
 
-      .video-card {
-        border-radius: 8px;
+      .costar-avatar {
+        width: 24px;
+        height: 24px;
+        border-width: 1.5px;
       }
 
       .card-badge {
@@ -408,7 +403,6 @@
         gap: 0.75rem;
         margin-top: 1rem;
         padding-top: 0.75rem;
-        border-top-width: 1px;
       }
 
       .page-btn {
@@ -417,14 +411,16 @@
         border-width: 1px;
       }
 
-      .page-info {
-        font-size: 0.8rem;
-      }
+      .page-info { font-size: 0.8rem; }
     }
 
     @media (max-width: 380px) {
-      .video-grid {
-        gap: 0.5rem;
+      .video-grid { gap: 0.5rem; }
+      .card-caption-overlay { font-size: 0.7rem; }
+      .costar-avatar {
+        width: 20px;
+        height: 20px;
+        border-width: 1px;
       }
     }
 
@@ -434,199 +430,125 @@
   </style>
 </head>
 <body data-character="amitjr">
-  <nav class="main-nav">
-    <a href="../index.html" class="logo">
-      <span class="logo-icon">🥛</span>
-      <span class="logo-text">GERCH<span class="highlight">-VERSE</span></span>
-    </a>
-    <div class="nav-links">
-      <a href="../index.html">Home</a>
-      <a href="../fam.html">The Fam</a>
-      <a href="../milk-vision.html">Milk Vision</a>
-      <a href="../gulag.html">Gulag</a>
-      <a href="../careers.html">Careers</a>
+
+<!-- Desktop Nav -->
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../fam.html">Meet the Fam</a>
+  <a href="../propaganda.html">Propaganda</a>
+  <a href="../gulag.html">Gulag</a>
+  <a href="../milk-slap.html">Milk-Slap</a>
+  <a href="../fineprint.html">Fine Print</a>
+  <a href="../careers.html">Careers</a>
+  <a href="../corrupted.html">Investor Relations</a>
+</nav>
+
+<!-- Mobile Nav Wrapper -->
+<div class="mobile-nav-wrapper">
+  <button class="hamburger-btn" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>
+
+<!-- Mobile Menu (slides from left) -->
+<div class="mobile-menu">
+  <a href="../index.html">Home</a>
+  <a href="../fam.html">Meet the Fam</a>
+  <a href="../propaganda.html">Propaganda</a>
+  <a href="../gulag.html">Gulag</a>
+  <a href="../milk-slap.html">Milk-Slap</a>
+  <a href="../fineprint.html">Fine Print</a>
+  <a href="../careers.html">Careers</a>
+  <a href="../corrupted.html">Investor Relations</a>
+</div>
+
+<div class="header-disclaimer">
+  <span class="warning-label">⚠️ Approved Under Duress</span>
+  <p>All referenced Gerch-Verse media was approved under conditions of limited compute, degraded output, and immediate regret.</p>
+  <span class="stamp">Further refinement was considered and unanimously rejected.</span>
+</div>
+
+<div class="profit">💰 PROFITS: Q5+</div>
+
+<main class="char-page">
+  <div id="character-header" class="char-header">
+    <div class="loading">Loading character...</div>
+  </div>
+
+  <section class="video-section">
+    <div class="section-header">
+      <h2 class="section-title">Solo Videos <span id="solo-count">0</span></h2>
     </div>
-  </nav>
+    <div id="solo-videos-grid" class="video-grid"></div>
+    <div id="solo-pagination" class="pagination" style="display: none;"></div>
+  </section>
 
-  <main class="char-page">
-    <div class="char-header">
-      <img src="../images/amitjrq6.jpg" alt="Amit Jr." class="char-avatar">
-      <div class="char-info">
-        <h1>Amit Jr.</h1>
-        <p class="char-handle">@amitjrq6</p>
-        <p class="char-role">Son of Amit Gaur, Whistleblower from Q6</p>
-        <div class="char-stats">
-          <span class="stat" id="solo-stat">0 Solo Videos</span>
-          <span class="stat" id="multi-stat">0 Multi Videos</span>
-        </div>
-      </div>
+  <section id="multi-videos-section" class="video-section" style="display: none;">
+    <div class="section-header">
+      <h2 class="section-title">Multi-Character Videos <span id="multi-count">0</span></h2>
+    </div>
+    <div id="multi-videos-grid" class="video-grid"></div>
+    <div id="multi-pagination" class="pagination" style="display: none;"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-metrics-container">
+
+    <!-- Gerchan Counter -->
+    <div class="gerchan-footer-counter" id="gerchanFooterCounter">
+      <span class="gerchan-label">Gerchan Missing</span>
+      <span class="counter-row">
+        <span class="days-number" id="gerchanDays">0</span>
+        <span class="days-label">Days</span>
+      </span>
     </div>
 
-    <section class="video-section">
-      <div class="section-header">
-        <h2 class="section-title">Solo Videos <span id="solo-count">0</span></h2>
-      </div>
-      <div id="solo-videos-grid" class="video-grid"></div>
-      <div id="solo-pagination" class="pagination" style="display: none;"></div>
-    </section>
+    <!-- Live Metrics Counter -->
+    <div class="live-metrics-counter" id="liveMetricsCounter">
+      <span class="metrics-label">Q5 Operations</span>
+      <span class="metric-row">
+        <span class="metric-value" id="metricValue">∞</span>
+        <span class="metric-unit" id="metricUnit">cows milked</span>
+      </span>
+    </div>
 
-    <section id="multi-videos-section" class="video-section" style="display: none;">
-      <div class="section-header">
-        <h2 class="section-title">Multi-Character Videos <span id="multi-count">0</span></h2>
-      </div>
-      <div id="multi-videos-grid" class="video-grid"></div>
-      <div id="multi-pagination" class="pagination" style="display: none;"></div>
-    </section>
-  </main>
+  </div>
 
-  <footer class="main-footer" style="margin-top: 3rem; padding: 1.5rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-    <p style="color: #666; font-size: 0.9rem;">&copy; 2025 Gerch-Verse. All udders reserved.</p>
-    <p style="color: #444; font-size: 0.75rem; margin-top: 0.5rem;">
-      <a href="../fam.html" style="color: var(--char-color); text-decoration: none; font-family: 'Orbitron', sans-serif;">← Back to The Fam</a>
-    </p>
-  </footer>
+  <p>© 2026 Gerchan Farms et al. All udders—cosmic or otherwise—reserved.</p>
+</footer>
 
-  <script src="../videos.js"></script>
-  <script>
-    (function() {
-      const CHARACTER_ID = 'amitjr';
-      const ITEMS_PER_PAGE = 12;
-      
-      let soloVideos = [];
-      let multiVideos = [];
-      let currentSoloPage = 1;
-      let currentMultiPage = 1;
+<div class="footer-disclaimer">
+  <p>GPU exhaustion. Token scarcity. Emotional regret. We kept going. It got worse. Stopping was ethical. This is that point.</p>
+</div>
 
-      function init() {
-        if (typeof VIDEO_DB === 'undefined') {
-          document.getElementById('solo-videos-grid').innerHTML = '<div class="error-message">Error: Video database not loaded</div>';
-          return;
-        }
+<script src="../gerchverse.js"></script>
+<script src="../videos.js"></script>
+<script src="../character-loader.js"></script>
 
-        soloVideos = VIDEO_DB.solo[CHARACTER_ID] || [];
-        
-        multiVideos = (VIDEO_DB.multi || []).filter(video => 
-          video.characters && video.characters.includes(CHARACTER_ID)
-        );
+<!-- Emergency fallback for iOS -->
+<script>
+(function() {
+  // Hardcoded calculation for Dec 12, 2021
+  var DISAPPEARANCE = 1639267200000;
+  var days = Math.floor((Date.now() - DISAPPEARANCE) / 86400000);
 
-        document.getElementById('solo-stat').textContent = soloVideos.length + ' Solo Videos';
-        document.getElementById('multi-stat').textContent = multiVideos.length + ' Multi Videos';
+  // Try to update for 5 seconds
+  var attempts = 0;
+  var interval = setInterval(function() {
+    var el = document.getElementById('gerchanDays');
+    if (el) {
+      el.textContent = days;
+      clearInterval(interval);
+      console.log('[Emergency] Set days to:', days);
+    }
+    attempts++;
+    if (attempts > 50) clearInterval(interval);
+  }, 100);
+})();
+</script>
 
-        renderSoloVideos();
-        renderMultiVideos();
-      }
-
-      function renderSoloVideos() {
-        const grid = document.getElementById('solo-videos-grid');
-        const count = document.getElementById('solo-count');
-        const pagination = document.getElementById('solo-pagination');
-        
-        count.textContent = soloVideos.length;
-
-        if (soloVideos.length === 0) {
-          grid.innerHTML = '<div class="empty-message">No solo videos found</div>';
-          pagination.style.display = 'none';
-          return;
-        }
-
-        const totalPages = Math.ceil(soloVideos.length / ITEMS_PER_PAGE);
-        const start = (currentSoloPage - 1) * ITEMS_PER_PAGE;
-        const pageVideos = soloVideos.slice(start, start + ITEMS_PER_PAGE);
-
-        grid.innerHTML = pageVideos.map(video => createVideoCard(video)).join('');
-        
-        if (totalPages > 1) {
-          pagination.style.display = 'flex';
-          pagination.innerHTML = `
-            <button class="page-btn" ${currentSoloPage === 1 ? 'disabled' : ''} onclick="changeSoloPage(-1)">← Prev</button>
-            <span class="page-info">Page ${currentSoloPage} of ${totalPages}</span>
-            <button class="page-btn" ${currentSoloPage === totalPages ? 'disabled' : ''} onclick="changeSoloPage(1)">Next →</button>
-          `;
-        } else {
-          pagination.style.display = 'none';
-        }
-      }
-
-      function renderMultiVideos() {
-        const section = document.getElementById('multi-videos-section');
-        const grid = document.getElementById('multi-videos-grid');
-        const count = document.getElementById('multi-count');
-        const pagination = document.getElementById('multi-pagination');
-
-        count.textContent = multiVideos.length;
-
-        if (multiVideos.length === 0) {
-          section.style.display = 'none';
-          return;
-        }
-
-        section.style.display = 'block';
-        
-        const totalPages = Math.ceil(multiVideos.length / ITEMS_PER_PAGE);
-        const start = (currentMultiPage - 1) * ITEMS_PER_PAGE;
-        const pageVideos = multiVideos.slice(start, start + ITEMS_PER_PAGE);
-
-        grid.innerHTML = pageVideos.map(video => createVideoCard(video, true)).join('');
-        
-        if (totalPages > 1) {
-          pagination.style.display = 'flex';
-          pagination.innerHTML = `
-            <button class="page-btn" ${currentMultiPage === 1 ? 'disabled' : ''} onclick="changeMultiPage(-1)">← Prev</button>
-            <span class="page-info">Page ${currentMultiPage} of ${totalPages}</span>
-            <button class="page-btn" ${currentMultiPage === totalPages ? 'disabled' : ''} onclick="changeMultiPage(1)">Next →</button>
-          `;
-        } else {
-          pagination.style.display = 'none';
-        }
-      }
-
-      function createVideoCard(video, isMulti = false) {
-        const costars = isMulti && video.characters ? video.characters.filter(c => c !== CHARACTER_ID) : [];
-        
-        let costarHtml = '';
-        if (costars.length > 0 && typeof CHARACTERS !== 'undefined') {
-          costarHtml = '<div class="costar-row">' + costars.map(charId => {
-            const char = CHARACTERS[charId];
-            if (!char) return '';
-            return `<a href="./${charId}.html" class="costar-avatar-link" title="${char.name}">
-              <img src="${char.avatar}" alt="${char.name}" class="costar-avatar" style="border-color: ${char.color || '#fff'}">
-            </a>`;
-          }).join('') + '</div>';
-        }
-
-        return `
-          <div class="video-cell">
-            <a href="https://sora.chatgpt.com/v/${video.id}" target="_blank" rel="noopener" class="video-card">
-              <div class="card-media">
-                ${video.thumb ? 
-                  `<img src="../thumbnails/${video.thumb}" alt="${video.oneLiner || 'Video thumbnail'}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-placeholder\\'>SORA</div>'">` : 
-                  '<div class="card-placeholder">SORA</div>'
-                }
-              </div>
-              <div class="card-caption-overlay">${video.oneLiner || 'Untitled'}</div>
-              <span class="card-badge">SORA</span>
-            </a>
-            ${costarHtml}
-          </div>
-        `;
-      }
-
-      window.changeSoloPage = function(delta) {
-        currentSoloPage += delta;
-        renderSoloVideos();
-      };
-
-      window.changeMultiPage = function(delta) {
-        currentMultiPage += delta;
-        renderMultiVideos();
-      };
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-      } else {
-        init();
-      }
-    })();
-  </script>
 </body>
 </html>
