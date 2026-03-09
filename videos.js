@@ -278,18 +278,18 @@ const VIDEO_DB = {
 
 // OLE' TEX WANG - 13 videos
     oletex: [
-      { id: "s_69ab574d36d08191a33b9b9a90457058", thumb: "solo-oletex-intro", oneLiner: "Name's Ole' Tex Wang.", arc: null },
-      { id: "s_69ab577bba84819188904d71e8419e1e", thumb: "solo-oletex-tradition-of-gadha", oneLiner: "The Gadha Tradition.", arc: null },
-      { id: "s_69ab7d44f0408191853817bd6ae3dbe4", thumb: "solo-oletex-square-dance", oneLiner: "Ole' Tex knows his steps.", arc: null },
-      { id: "s_69abacf2c104819188ae947b35147ea2", thumb: "solo-oletex-rooster-reds", oneLiner: "Rooster Reds.", arc: null },
-      { id: "s_69ab83449ee8819190c6cbb9fc5fa77c", thumb: "solo-oletex-crude", oneLiner: "Crude acquisition.", arc: null },
-      { id: "s_69ab800d90348191ac110bd31df199a6", thumb: "solo-oletex-devil-challenge", oneLiner: "The devil's challenge.", arc: null },
-      { id: "s_69ab6c0363308191b951b175737f4ebd", thumb: "solo-oletex-gadawars01", oneLiner: "(Backstory) The Wang Saga: Gadha Wars Pt.1", arc: null },
-      { id: "s_69ab7a5dba6481919a463f7db6dc1ed6", thumb: "solo-oletex-gadawars02", oneLiner: "(Backstory) The Wang Saga: Gadha Wars Pt.2", arc: null },
-      { id: "s_69abd016968c81918bb0eefa2210633e", thumb: "solo-oletex.bulltame", oneLiner: "Tamed in 60 seconds.", arc: null },
-      { id: "s_69abd15369a88191b46fe605a163b197", thumb: "solo-oletex-20-tons-of-thunder", oneLiner: "20 tons of thunder.", arc: null },
-      { id: "s_69ac4fd8ac68819193b640529fc46352", thumb: "solo-oletex-red-rooster-whiskey", oneLiner: "Red Rooster Whiskey.", arc: null },
-      { id: "s_69ac518636808191b1c01e43e6e64c70", thumb: "solo-oletex-red-rooster-coffee", oneLiner: "Red Rooster Coffee.", arc: null },
+      { id: "s_69ab574d36d08191a33b9b9a90457058", thumb: "solo-oletex-intro.jpg", oneLiner: "Name's Ole' Tex Wang.", arc: null },
+      { id: "s_69ab577bba84819188904d71e8419e1e", thumb: "solo-oletex-tradition-of-gadha.jpg", oneLiner: "The Gadha Tradition.", arc: null },
+      { id: "s_69ab7d44f0408191853817bd6ae3dbe4", thumb: "solo-oletex-square-dance.jpg", oneLiner: "Ole' Tex knows his steps.", arc: null },
+      { id: "s_69abacf2c104819188ae947b35147ea2", thumb: "solo-oletex-rooster-reds.jpg", oneLiner: "Rooster Reds.", arc: null },
+      { id: "s_69ab83449ee8819190c6cbb9fc5fa77c", thumb: "solo-oletex-crude.jpg", oneLiner: "Crude acquisition.", arc: null },
+      { id: "s_69ab800d90348191ac110bd31df199a6", thumb: "solo-oletex-devil-challenge.jpg", oneLiner: "The devil's challenge.", arc: null },
+      { id: "s_69ab6c0363308191b951b175737f4ebd", thumb: "solo-oletex-gadawars01.jpg", oneLiner: "(Backstory) The Wang Saga: Gadha Wars Pt.1", arc: null },
+      { id: "s_69ab7a5dba6481919a463f7db6dc1ed6", thumb: "solo-oletex-gadawars02.jpg", oneLiner: "(Backstory) The Wang Saga: Gadha Wars Pt.2", arc: null },
+      { id: "s_69abd016968c81918bb0eefa2210633e", thumb: "solo-oletex.bulltame.jpg", oneLiner: "Tamed in 60 seconds.", arc: null },
+      { id: "s_69abd15369a88191b46fe605a163b197", thumb: "solo-oletex-20-tons-of-thunder.jpg", oneLiner: "20 tons of thunder.", arc: null },
+      { id: "s_69ac4fd8ac68819193b640529fc46352", thumb: "solo-oletex-red-rooster-whiskey.jpg", oneLiner: "Red Rooster Whiskey.", arc: null },
+      { id: "s_69ac518636808191b1c01e43e6e64c70", thumb: "solo-oletex-red-rooster-coffee.jpg", oneLiner: "Red Rooster Coffee.", arc: null },
     ],
 
 
