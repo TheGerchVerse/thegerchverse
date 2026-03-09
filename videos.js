@@ -784,7 +784,7 @@ const VIDEO_DB = {
     { id: "s_69a5a97112308191ac18e93b8739164f", thumb: "amitjr-bkrescue-onice.jpg", oneLiner: "BK Rescue: On Ice.", characters: ["amitjr", "lightamit", "amitsmother"], arc: null },
     { id: "s_69a642e88f048191a4a10493cd4f8099", thumb: "multi-amitjrmother-timelesslove.jpg", oneLiner: "Timeless Love.", characters: ["amitjr", "amitsmother"], arc: null },
     { id: "s_69a51590e61481918f196d1acae8e742", thumb: "multi-offsitemumbai.jpg", oneLiner: "Mumbai Offsite.", characters: ["amit", "amitjr", "lightamit", "darkamit", "amitsmother", "raj", "evilamit"], arc: null },
-
+    { id: "s_69acc3404578819184c7d827d645c7e9", thumb: "multi-sterling-leon-tardiness.jpg", oneLiner: "Tardiness", characters: ["leon", "sterling"], arc: null },
 
 
 
