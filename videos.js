@@ -546,14 +546,14 @@ const CHARACTERS = {
   amit: {
     name: "Amit Gaur",
     handle: "@grchnfrms",
-    role: "CEO, Gerchan Farms",
+    role: "CEO, Gerchan Farms, Milk Evangelist",
     avatar: "../images/amit.jpg",
     color: "#00FFFF"
   },
   lizzie: {
     name: "Lizzie Holmes",
     handle: "@sheranos",
-    role: "Founder, Ionix",
+    role: "CEO, Ionix, Destiny Diagnostician",
     avatar: "../images/lizzie.jpg",
     color: "#FF007F"
   },
