@@ -370,18 +370,18 @@ const VIDEO_DB = {
 
     // LIGHT AMIT - 12 videos
     lightamit: [
-      { id: "s_69724b5c7a708191a8f7c6f88f7c4b1e", thumb: "solo-lightamit-concept-01.jpg", oneLiner: "Light Amit Concept Ver 1.", arc: null },
-      { id: "s_69724b6d0b208191a5a4d4f7e9c8d2f3", thumb: "solo-lightamit-concept-02.jpg", oneLiner: "Light Amit Concept Ver 2.", arc: null },
-      { id: "s_69724b7e9c908191b2e8a3c5d7f6e1a4", thumb: "solo-lightamit-concept-03.jpg", oneLiner: "Light Amit Concept Ver 3.", arc: null },
-      { id: "s_69724b8f2d408191c9f7b2d4e8a5c0b5", thumb: "solo-lightamit-concept-04.jpg", oneLiner: "Light Amit Concept Ver 4.", arc: null },
-      { id: "s_69724b9a8e108191d6a1c3b5f9e4d2c6", thumb: "solo-lightamit-concept-05.jpg", oneLiner: "Light Amit Concept Ver 5.", arc: null },
-      { id: "s_69724bab3f808191e3b8d4c6a0f7e1d7", thumb: "solo-lightamit-concept-06.jpg", oneLiner: "Light Amit Concept Ver 6.", arc: null },
-      { id: "s_69724bbc0c508191f0c5e5d7b1a8f2e8", thumb: "solo-lightamit-concept-07.jpg", oneLiner: "Light Amit Concept Ver 7.", arc: null },
-      { id: "s_69724bcd9d208191a7d6f6e8c2b9g3f9", thumb: "solo-lightamit-concept-08.jpg", oneLiner: "Light Amit Concept Ver 8.", arc: null },
-      { id: "s_69724bde4e908191b4e7g7f9d3c0h4g0", thumb: "solo-lightamit-concept-09.jpg", oneLiner: "Light Amit Concept Ver 9.", arc: null },
-      { id: "s_69724bef1f608191c1f8h8g0e4d1i5h1", thumb: "solo-lightamit-concept-10.jpg", oneLiner: "Light Amit Concept Ver 10.", arc: null },
-      { id: "s_69724c00a008191d8g9i9h1f5e2j6i2", thumb: "solo-lightamit-concept-11.jpg", oneLiner: "Light Amit Concept Ver 11.", arc: null },
-      { id: "s_69724c11b708191e5h0j0i2g6f3k7j3", thumb: "solo-lightamit-concept-12.jpg", oneLiner: "Light Amit Concept Ver 12.", arc: null },
+      { id: "s_6973a8e98b3c8191ab954afaac900612", thumb: "solo-lightamit-intro.jpg", oneLiner: "All cows are meant to be loved.", arc: null },
+      { id: "s_6977f35aa694819190b4a69fa090fda8", thumb: "solo-enter-light-amit.jpg", oneLiner: "Enter Light Amit.", arc: null },
+      { id: "s_69818d42eeac8191bd41188e721344bb", thumb: "solo-lightamit-hallelujah.jpg", oneLiner: "Hallelujah.", arc: null },
+      { id: "s_698799b6921c81919768ad66e08e02b2", thumb: "solo-lightamit-defender.jpg", oneLiner: "Defender of the people.", arc: null },
+      { id: "s_698a0c57748c8191b887b7cd6ce92262", thumb: "solo-lightamit-protects.jpg", oneLiner: "Light Amit protects.", arc: null },
+      { id: "s_69acf1df5e00819189013fe42d7fdd49", thumb: "solo-lightamit-already-arrived.jpg", oneLiner: "We have already arrived.", arc: null },
+      { id: "s_69acf42588f48191924b3b30f314f38d", thumb: "solo-lightamit-profound-wisdom.jpg", oneLiner: "Profound wisdom.", arc: null },
+      { id: "s_69acf5eeaff4819192eb8cdab39740e5", thumb: "solo-lightamit-weather-teaches-patience.jpg", oneLiner: "Weather teaches patience.", arc: null },
+      { id: "s_69acf66227d0819181556fff77ecc1a7", thumb: "solo-lightamit-strength-is-relative.jpg", oneLiner: "Strength is relative.", arc: null },
+      { id: "s_69acf6c4066c8191aad952fbaf854a19", thumb: "solo-lightamit-expectation-suffering.jpg", oneLiner: "Expectation leads to suffering.", arc: null },
+      { id: "s_69acf8bde7b8819184b54e58a7ce4505", thumb: "solo-lightamit-healing-takes-time.jpg", oneLiner: "Healing takes time.", arc: null },
+      { id: "s_69acfa48e84c8191b5b2db9d1df3b466", thumb: "solo-lightamit-meetings-too.jpg", oneLiner: "Meetings, too.", arc: null },
     ],
 
     // DARK AMIT - 12 videos
