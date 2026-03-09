@@ -276,6 +276,23 @@ const VIDEO_DB = {
       { id: "s_69654bccf474819196c9711b1fedec25", thumb: "solo-gadha-hidden-boss.jpg", oneLiner: "Gadha hidden boss.", arc: null },
     ],
 
+// OLE' TEX WANG - 13 videos
+    oletexwang: [
+      { id: "s_69ab574d36d08191a33b9b9a90457058", thumb: "solo-oletex-intro", oneLiner: "Name's Ole' Tex Wang.", arc: null },
+      { id: "s_69ab577bba84819188904d71e8419e1e", thumb: "solo-oletex-tradition-of-gadha", oneLiner: "The Gadha Tradition.", arc: null },
+      { id: "s_69ab7d44f0408191853817bd6ae3dbe4", thumb: "solo-oletex-square-dance", oneLiner: "Ole' Tex knows his steps.", arc: null },
+      { id: "s_69abacf2c104819188ae947b35147ea2", thumb: "solo-oletex-rooster-reds", oneLiner: "Rooster Reds.", arc: null },
+      { id: "s_69ab83449ee8819190c6cbb9fc5fa77c", thumb: "solo-oletex-crude", oneLiner: "Crude acquisition.", arc: null },
+      { id: "s_69ab800d90348191ac110bd31df199a6", thumb: "solo-oletex-devil-challenge", oneLiner: "The devil's challenge.", arc: null },
+      { id: "s_69ab6c0363308191b951b175737f4ebd", thumb: "solo-oletex-gadawars01", oneLiner: "(Backstory) The Wang Saga: Gadha Wars Pt.1", arc: null },
+      { id: "s_69ab7a5dba6481919a463f7db6dc1ed6", thumb: "solo-oletex-gadawars02", oneLiner: "(Backstory) The Wang Saga: Gadha Wars Pt.2", arc: null },
+      { id: "s_69abd016968c81918bb0eefa2210633e", thumb: "solo-oletex.bulltame", oneLiner: "Tamed in 60 seconds.", arc: null },
+      { id: "s_69abd15369a88191b46fe605a163b197", thumb: "solo-oletex-20-tons-of-thunder", oneLiner: "20 tons of thunder.", arc: null },
+      { id: "s_69ac4fd8ac68819193b640529fc46352", thumb: "solo-oletex-red-rooster-whiskey", oneLiner: "Red Rooster Whiskey.", arc: null },
+      { id: "s_69ac518636808191b1c01e43e6e64c70", thumb: "solo-oletex-red-rooster-coffee", oneLiner: "Red Rooster Coffee.", arc: null }
+    ],
+
+
     // RAJ MEHTA - 12 videos
     raj: [
       { id: "s_693bd1f0bf8c8191a470f0f73c13ed21", thumb: "solo-raj-party-insolence.jpg", oneLiner: "Raj embracing his inner insolence at the holiday party.", arc: null },
@@ -383,22 +400,6 @@ const VIDEO_DB = {
       { id: "s_69724cdd09408191e9t2v2u4s8r5w9v5", thumb: "solo-darkamit-concept-12.jpg", oneLiner: "Dark Amit Concept Ver 12.", arc: null },
     ],
 
-    // MRS. GAUR - 12 videos
-    mrsgaur: [
-      { id: "s_69724cee7c208191f6u3w3v5t9s6x0w6", thumb: "solo-mrsgaur-concept-01.jpg", oneLiner: "Mrs. Gaur Concept Ver 1.", arc: null },
-      { id: "s_69724cff4a008191a3v4x4w6u0t7y1x7", thumb: "solo-mrsgaur-concept-02.jpg", oneLiner: "Mrs. Gaur Concept Ver 2.", arc: null },
-      { id: "s_69724d1017e08191b0w5y5x7v1u8z2y8", thumb: "solo-mrsgaur-concept-03.jpg", oneLiner: "Mrs. Gaur Concept Ver 3.", arc: null },
-      { id: "s_69724d21e5c08191c7x6z6y8w2v9a3z9", thumb: "solo-mrsgaur-concept-04.jpg", oneLiner: "Mrs. Gaur Concept Ver 4.", arc: null },
-      { id: "s_69724d32b3a08191d4y7a7z9x3w0b4a0", thumb: "solo-mrsgaur-concept-05.jpg", oneLiner: "Mrs. Gaur Concept Ver 5.", arc: null },
-      { id: "s_69724d4381808191e1z8b8a0y4x1c5b1", thumb: "solo-mrsgaur-concept-06.jpg", oneLiner: "Mrs. Gaur Concept Ver 6.", arc: null },
-      { id: "s_69724d544f608191f8a9c9b1z5y2d6c2", thumb: "solo-mrsgaur-concept-07.jpg", oneLiner: "Mrs. Gaur Concept Ver 7.", arc: null },
-      { id: "s_69724d651d408191a5b0d0c2a6z3e7d3", thumb: "solo-mrsgaur-concept-08.jpg", oneLiner: "Mrs. Gaur Concept Ver 8.", arc: null },
-      { id: "s_69724d76eb208191b2c1e1d3b7a4f8e4", thumb: "solo-mrsgaur-concept-09.jpg", oneLiner: "Mrs. Gaur Concept Ver 9.", arc: null },
-      { id: "s_69724d87b9008191c9d2f2e4c8b5g9f5", thumb: "solo-mrsgaur-concept-10.jpg", oneLiner: "Mrs. Gaur Concept Ver 10.", arc: null },
-      { id: "s_69724d9886e08191d6e3g3f5d9c6h0g6", thumb: "solo-mrsgaur-concept-11.jpg", oneLiner: "Mrs. Gaur Concept Ver 11.", arc: null },
-      { id: "s_69724da954c08191e3f4h4g6e0d7i1h7", thumb: "solo-mrsgaur-concept-12.jpg", oneLiner: "Mrs. Gaur Concept Ver 12.", arc: null },
-    ],
-
     // AMIT JR. - 12 videos
     amitjr: [
       { id: "s_69724dba22a08191f0g5i5h7f1e8j2i8", thumb: "solo-amitjr-concept-01.jpg", oneLiner: "Amit Jr. Concept Ver 1.", arc: null },
@@ -415,37 +416,7 @@ const VIDEO_DB = {
       { id: "s_69724e75db408191e7r6t6s8q2p9u3t9", thumb: "solo-amitjr-concept-12.jpg", oneLiner: "Amit Jr. Concept Ver 12.", arc: null },
     ],
 
-    // AMIT'S DAD - 12 videos
-    amitsdad: [
-      { id: "s_69724e86a9208191f4s7u7t9r3q0v4u0", thumb: "solo-amitsdad-concept-01.jpg", oneLiner: "Amit's Dad Concept Ver 1.", arc: null },
-      { id: "s_69724e9777008191a1t8v8u0s4r1w5v1", thumb: "solo-amitsdad-concept-02.jpg", oneLiner: "Amit's Dad Concept Ver 2.", arc: null },
-      { id: "s_69724ea844e08191b8u9w9v1t5s2x6w2", thumb: "solo-amitsdad-concept-03.jpg", oneLiner: "Amit's Dad Concept Ver 3.", arc: null },
-      { id: "s_69724eb912c08191c5v0x0w2u6t3y7x3", thumb: "solo-amitsdad-concept-04.jpg", oneLiner: "Amit's Dad Concept Ver 4.", arc: null },
-      { id: "s_69724eeca008191d2w1y1x3v7u4z8y4", thumb: "solo-amitsdad-concept-05.jpg", oneLiner: "Amit's Dad Concept Ver 5.", arc: null },
-      { id: "s_69724efd6de08191e9x2z2y4w8v5a9z5", thumb: "solo-amitsdad-concept-06.jpg", oneLiner: "Amit's Dad Concept Ver 6.", arc: null },
-      { id: "s_69724f0e3bc08191f6y3a3z5x9w6b0a6", thumb: "solo-amitsdad-concept-07.jpg", oneLiner: "Amit's Dad Concept Ver 7.", arc: null },
-      { id: "s_69724f1f09a08191a3z4b4a6y0x7c1b7", thumb: "solo-amitsdad-concept-08.jpg", oneLiner: "Amit's Dad Concept Ver 8.", arc: null },
-      { id: "s_69724f2fd7808191b0a5c5b7z1y8d2c8", thumb: "solo-amitsdad-concept-09.jpg", oneLiner: "Amit's Dad Concept Ver 9.", arc: null },
-      { id: "s_69724f40a5608191c7b6d6c8a2z9e3d9", thumb: "solo-amitsdad-concept-10.jpg", oneLiner: "Amit's Dad Concept Ver 10.", arc: null },
-      { id: "s_69724f5173408191d4c7e7d9b3a0f4e0", thumb: "solo-amitsdad-concept-11.jpg", oneLiner: "Amit's Dad Concept Ver 11.", arc: null },
-      { id: "s_69724f6241208191e1d8f8e0c4b1g5f1", thumb: "solo-amitsdad-concept-12.jpg", oneLiner: "Amit's Dad Concept Ver 12.", arc: null },
-    ],
-
-    // AMIT'S SISTER - 12 videos
-    amitssister: [
-      { id: "s_69724f730f008191f8e9g9f1d5c2h6g2", thumb: "solo-amitssister-concept-01.jpg", oneLiner: "Amit's Sister Concept Ver 1.", arc: null },
-      { id: "s_69724f83dce08191a5f0h0g2e6d3i7h3", thumb: "solo-amitssister-concept-02.jpg", oneLiner: "Amit's Sister Concept Ver 2.", arc: null },
-      { id: "s_69724f94aac08191b2g1i1h3f7e4j8i4", thumb: "solo-amitssister-concept-03.jpg", oneLiner: "Amit's Sister Concept Ver 3.", arc: null },
-      { id: "s_69724fa578808191c9h2j2i4g8f5k9j5", thumb: "solo-amitssister-concept-04.jpg", oneLiner: "Amit's Sister Concept Ver 4.", arc: null },
-      { id: "s_69724fb646608191d6i3k3j5h9g6l0k6", thumb: "solo-amitssister-concept-05.jpg", oneLiner: "Amit's Sister Concept Ver 5.", arc: null },
-      { id: "s_69724fc714408191e3j4l4k6i0h7m1l7", thumb: "solo-amitssister-concept-06.jpg", oneLiner: "Amit's Sister Concept Ver 6.", arc: null },
-      { id: "s_69724fd7e2208191f0k5m5l7j1i8n2m8", thumb: "solo-amitssister-concept-07.jpg", oneLiner: "Amit's Sister Concept Ver 7.", arc: null },
-      { id: "s_69724fe8b0008191a7l6n6m8k2j9o3n9", thumb: "solo-amitssister-concept-08.jpg", oneLiner: "Amit's Sister Concept Ver 8.", arc: null },
-      { id: "s_69724ff97de08191b4m7o7n9l3k0p4o0", thumb: "solo-amitssister-concept-09.jpg", oneLiner: "Amit's Sister Concept Ver 9.", arc: null },
-      { id: "s_6972500a4bc08191c1n8p8o0m4l1q5p1", thumb: "solo-amitssister-concept-10.jpg", oneLiner: "Amit's Sister Concept Ver 10.", arc: null },
-      { id: "s_6972501b19a08191d8o9q9p1n5m2r6q2", thumb: "solo-amitssister-concept-11.jpg", oneLiner: "Amit's Sister Concept Ver 11.", arc: null },
-      { id: "s_6972502be7808191e5p0r0q2o6n3s7r3", thumb: "solo-amitssister-concept-12.jpg", oneLiner: "Amit's Sister Concept Ver 12.", arc: null },
-    ],
+    
   },
 
   // ============================================
@@ -479,7 +450,7 @@ const VIDEO_DB = {
     { id: "s_692b129cd7688191960c585a1e7fae2c", thumb: "multi-amitlizziehadafarm.jpg", oneLiner: "Amit Gaur had a farm.", characters: ["amit", "lizzie"], arc: null },
     { id: "s_692dac364b34819190f2c04df50bce2d", thumb: "multi-amitraj-wagyu.jpg", oneLiner: "A5 Wagyu.", characters: ["amit", "raj"], arc: null },
     { id: "s_692ea07503c8819190c050b6a19e0dcc", thumb: "multi-amitlizzieberghain.jpg", oneLiner: "Trouble at Berghain.", characters: ["lizzie", "amit"], arc: null },
-    { id: "s_692f3aa249ac819198d78af1e4163810", thumb: "multi-amitleon-reporters.jpg", oneLiner: "Leon to the rescue.", characters: ["leon"], arc: null },
+    { id: "s_692f3aa249ac819198d78af1e4163810", thumb: "multi-amitleon-reporters.jpg", oneLiner: "Leon to the rescue.", characters: ["leon", "amit"], arc: null },
     { id: "s_693059a61b3c8191b4b4cc9d5e0c7646", thumb: "multi-leonamitlizzie-flight01.jpg", oneLiner: "Unregistered flight court hearing Pt.1.", characters: ["amit", "lizzie", "leon"], arc: null },
     { id: "s_693059d1d5b881918b3889dfbe62c39c", thumb: "multi-leonamitlizzie-flight02.jpg", oneLiner: "Unregistered flight court hearing Pt.2.", characters: ["amit", "lizzie", "leon"], arc: null },
     { id: "s_6930614036988191825148feb8c57ee9", thumb: "multi-leonamitlizzie-flight03.jpg", oneLiner: "Unregistered flight court hearing Pt.3.", characters: ["amit", "lizzie", "leon"], arc: null },
@@ -524,7 +495,7 @@ const VIDEO_DB = {
     { id: "s_69691f28e3e081918f4841983e08365b", thumb: "multi-topsaleseelon.jpg", oneLiner: "Gerch Motors Top Sales", characters: ["amit", "eelon"], arc: null },
     { id: "s_696ab4b34c408191818260258db868f3", thumb: "multi-milkoff.jpg", oneLiner: "The milk-off.", characters: ["amit", "bigtex"], arc: null },
     { id: "s_696d2f729910819197dcec1a22369113", thumb: "multi-gerchverse-casino.jpg", oneLiner: "Gerch-Verse Casino.", characters: ["amit", "bigtex", "lizzie"], arc: null },
-    { id: "s_696d30283b608191b58baa7317a4d647", thumb: "multi-eelon-amit-poker.jpg", oneLiner: "Eelon's poker loss.", characters: ["eelon"], arc: null },
+    { id: "s_696d30283b608191b58baa7317a4d647", thumb: "multi-eelon-amit-poker.jpg", oneLiner: "Eelon's poker loss.", characters: ["eelon", "amit"], arc: null },
     { id: "s_696d7cee89dc81918371fa11a5ac1e21", thumb: "multi-gerchmotors-trial.jpg", oneLiner: "Leon defends Gerch Motors.", characters: ["leon", "amit", "eelon"], arc: null },
     { id: "s_696e748bfca48191bebf697db565ab39", thumb: "multi-eelonreprimanded.jpg", oneLiner: "Eelon getting an earful.", characters: ["eelon", "amit"], arc: null },
     { id: "s_696eb606ab2c81918368282f7659e96b", thumb: "multi-coleamit-debate.jpg", oneLiner: "Cole argues with Amit over pricing", characters: ["amit", "cole"], arc: null },
