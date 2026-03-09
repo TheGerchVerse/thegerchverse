@@ -81,14 +81,19 @@ function renderSoloVideos(videos, charKey) {
   }
   gridEl.innerHTML = html;
   
-  if (paginationEl) {
+    if (paginationEl) {
     if (totalPages > 1) {
       paginationEl.style.display = 'flex';
-      paginationEl.innerHTML = `
-        <button class="page-btn" onclick="changeSoloPage(-1)" ${currentSoloPage === 1 ? 'disabled' : ''}>◀ Prev</button>
-        <span class="page-info">Page ${currentSoloPage} of ${totalPages}</span>
-        <button class="page-btn" onclick="changeSoloPage(1)" ${currentSoloPage === totalPages ? 'disabled' : ''}>Next ▶</button>
-      `;
+      // Use SmartPagination
+      window.soloPagination = new SmartPagination('solo-pagination', {
+        currentPage: currentSoloPage,
+        totalPages: totalPages,
+        onPageChange: (page) => {
+          currentSoloPage = page;
+          renderSoloVideos(videos, charKey);
+          document.getElementById('solo-videos-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
     } else {
       paginationEl.style.display = 'none';
     }
@@ -127,11 +132,16 @@ function renderMultiVideos(videos, charKey) {
   if (paginationEl) {
     if (totalPages > 1) {
       paginationEl.style.display = 'flex';
-      paginationEl.innerHTML = `
-        <button class="page-btn" onclick="changeMultiPage(-1)" ${currentMultiPage === 1 ? 'disabled' : ''}>◀ Prev</button>
-        <span class="page-info">Page ${currentMultiPage} of ${totalPages}</span>
-        <button class="page-btn" onclick="changeMultiPage(1)" ${currentMultiPage === totalPages ? 'disabled' : ''}>Next ▶</button>
-      `;
+      // Use SmartPagination
+      window.multiPagination = new SmartPagination('multi-pagination', {
+        currentPage: currentMultiPage,
+        totalPages: totalPages,
+        onPageChange: (page) => {
+          currentMultiPage = page;
+          renderMultiVideos(videos, charKey);
+          document.getElementById('multi-videos-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
     } else {
       paginationEl.style.display = 'none';
     }
