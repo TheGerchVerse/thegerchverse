@@ -18,13 +18,13 @@
   <meta property="og:title" content="Milk-Vision Library | The Gerch-Verse">
   <meta property="og:description" content="Every Sora video in the Gerch-Verse, cataloged and paginated. Solo character studies, multi-being chaos, story arcs with timeline glitches.">
   <meta name="twitter:card" content="summary_large_image">
-  
+
   <style>
     /* ============================================
-       MILK-VISION LIBRARY v1.0
-       The Q5 Cinematic Archive
+       MILK-VISION LIBRARY v2.0
+       The Q5 Cinematic Archive - JS Powered
        ============================================ */
-    
+
     /* Tab Navigation */
     .mv-tabs {
       display: flex;
@@ -35,7 +35,7 @@
       max-width: 900px;
       padding: 0 1rem;
     }
-    
+
     .mv-tab {
       background: rgba(0,255,255,0.08);
       border: 2px solid #00FFFF;
@@ -50,35 +50,35 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    
+
     .mv-tab:hover {
       background: rgba(0,255,255,0.2);
       box-shadow: 0 0 20px rgba(0,255,255,0.4);
       transform: translateY(-2px);
     }
-    
+
     .mv-tab.active {
       background: #FF007F;
       border-color: #FF007F;
       color: #000;
       box-shadow: 0 0 30px rgba(255,0,127,0.6);
     }
-    
+
     /* Tab Content */
     .mv-tab-content {
       display: none;
       animation: fadeIn 0.4s ease-out;
     }
-    
+
     .mv-tab-content.active {
       display: block;
     }
-    
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
+
     /* Character Section Headers */
     .mv-character-header {
       display: flex;
@@ -90,7 +90,7 @@
       border-left: 4px solid #00FFFF;
       border-radius: 0 8px 8px 0;
     }
-    
+
     .mv-character-avatar {
       width: 50px;
       height: 50px;
@@ -99,20 +99,20 @@
       border: 2px solid #00FFFF;
       box-shadow: 0 0 15px rgba(0,255,255,0.3);
     }
-    
+
     .mv-character-info h3 {
       margin: 0;
       color: #00FFFF;
       font-family: 'Orbitron', sans-serif;
       font-size: 1.1rem;
     }
-    
+
     .mv-character-info .handle {
       margin: 0.2rem 0 0 0;
       color: #FF007F;
       font-size: 0.8rem;
     }
-    
+
     /* Video Grid */
     .mv-grid {
       display: grid;
@@ -121,20 +121,20 @@
       margin: 1rem 0 2rem 0;
       padding: 0 1rem;
     }
-    
+
     @media (min-width: 768px) {
       .mv-grid {
         grid-template-columns: repeat(6, 1fr);
       }
     }
-    
+
     @media (max-width: 480px) {
       .mv-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 0.8rem;
       }
     }
-    
+
     /* Video Card */
     .mv-card {
       position: relative;
@@ -147,28 +147,28 @@
       text-decoration: none;
       display: block;
     }
-    
+
     .mv-card:hover {
       transform: translateY(-5px) scale(1.02);
       box-shadow: 0 10px 30px rgba(0,255,255,0.4);
       border-color: #FF007F;
     }
-    
+
     .mv-card.multi-character {
       border-color: #FF007F;
     }
-    
+
     .mv-card.story-arc {
       border-color: #FFD700;
     }
-    
+
     .mv-thumb {
       width: 100%;
       aspect-ratio: 9/16;
       object-fit: cover;
       display: block;
     }
-    
+
     .mv-card-overlay {
       position: absolute;
       inset: 0;
@@ -178,7 +178,7 @@
       justify-content: flex-end;
       padding: 0.5rem;
     }
-    
+
     .mv-one-liner {
       color: #fff;
       font-size: clamp(0.65rem, 1.5vw, 0.75rem);
@@ -187,7 +187,7 @@
       text-shadow: 0 2px 4px rgba(0,0,0,0.8);
       margin: 0;
     }
-    
+
     .mv-external {
       position: absolute;
       top: 5px;
@@ -199,7 +199,7 @@
       border-radius: 4px;
       border: 1px solid #00FFFF;
     }
-    
+
     .mv-character-tags {
       position: absolute;
       top: 5px;
@@ -208,7 +208,7 @@
       gap: 0.3rem;
       flex-wrap: wrap;
     }
-    
+
     .mv-tag {
       background: rgba(255,0,127,0.8);
       color: #000;
@@ -218,7 +218,7 @@
       border-radius: 3px;
       text-transform: uppercase;
     }
-    
+
     /* Pagination */
     .mv-pagination {
       display: flex;
@@ -230,7 +230,7 @@
       background: rgba(0,255,255,0.05);
       border-radius: 8px;
     }
-    
+
     .mv-page-btn {
       background: transparent;
       border: 2px solid #00FFFF;
@@ -242,25 +242,25 @@
       border-radius: 6px;
       transition: all 0.3s;
     }
-    
+
     .mv-page-btn:hover:not(:disabled) {
       background: #00FFFF;
       color: #000;
     }
-    
+
     .mv-page-btn:disabled {
       opacity: 0.3;
       cursor: not-allowed;
       border-color: #666;
       color: #666;
     }
-    
+
     .mv-page-info {
       color: #E0E0E0;
       font-family: 'Orbitron', sans-serif;
       font-size: 0.85rem;
     }
-    
+
     /* Multi-Character Filters */
     .mv-filters {
       display: flex;
@@ -270,7 +270,7 @@
       margin: 1rem 0 2rem 0;
       padding: 0 1rem;
     }
-    
+
     .mv-filter-chip {
       background: rgba(0,255,255,0.1);
       border: 1px solid #00FFFF;
@@ -282,36 +282,36 @@
       padding: 0.4rem 0.8rem;
       transition: all 0.3s;
     }
-    
+
     .mv-filter-chip:hover {
       background: rgba(0,255,255,0.2);
     }
-    
+
     .mv-filter-chip.active {
       background: #FF007F;
       border-color: #FF007F;
       color: #000;
     }
-    
+
     /* Story Arc Timeline */
     .mv-timeline {
       position: relative;
       margin: 2rem 0;
       padding: 0 1rem;
     }
-    
+
     .mv-timeline::before {
       content: '';
       position: absolute;
       left: 50%;
-      top: 60px; /* Start below the glitch element */
+      top: 60px;
       bottom: 0;
       width: 2px;
       background: linear-gradient(to bottom, #00FFFF, #FF007F, #FFD700);
       transform: translateX(-50%);
       z-index: 1;
     }
-    
+
     .mv-timeline-glitch {
       position: relative;
       left: 50%;
@@ -328,12 +328,12 @@
       animation: glitchText 1s infinite;
       margin-bottom: 1rem;
     }
-    
+
     @keyframes glitchText {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.7; transform: translateX(-48%) skewX(-2deg); }
     }
-    
+
     .mv-arc-section {
       margin: 2rem 0;
       padding: 1.5rem;
@@ -348,14 +348,15 @@
     .mv-arc-section + .mv-arc-section {
       margin-top: 3rem;
     }
-    
+
     .mv-arc-header {
       display: flex;
       align-items: center;
       gap: 1rem;
       margin-bottom: 1rem;
+      flex-wrap: wrap;
     }
-    
+
     .mv-arc-status {
       background: #FFD700;
       color: #000;
@@ -366,18 +367,18 @@
       border-radius: 4px;
       text-transform: uppercase;
     }
-    
+
     .mv-arc-status.ongoing {
       background: #03AC13;
       color: #fff;
     }
-    
+
     .mv-arc-status.q6 {
       background: #FF0000;
       color: #fff;
       animation: pulse 1s infinite;
     }
-    
+
     /* Empty State */
     .mv-empty {
       text-align: center;
@@ -385,7 +386,7 @@
       color: #888;
       font-style: italic;
     }
-    
+
     .mv-empty::before {
       content: '🥛';
       display: block;
@@ -393,7 +394,7 @@
       margin-bottom: 1rem;
       opacity: 0.5;
     }
-    
+
     /* Thumbnail Placeholder */
     .mv-placeholder {
       width: 100%;
@@ -408,27 +409,24 @@
       font-size: 0.7rem;
       text-align: center;
     }
-    
-    /* Popups disabled in gerchverse.js - no CSS blocking needed */
 
-/* Push quote below the timeline glitch */
-.mv-timeline-glitch + p,
-.mv-timeline-glitch ~ p,
-#tab-arcs > p {
-  margin-top: 1rem !important;
-  position: relative;
-  z-index: 1;
-  padding-top: 0;
-}
+    /* Push quote below the timeline glitch */
+    .mv-timeline-glitch + p,
+    .mv-timeline-glitch ~ p,
+    #tab-arcs > p {
+      margin-top: 1rem !important;
+      position: relative;
+      z-index: 1;
+      padding-top: 0;
+    }
 
-/* Give the glitch its own space */
-.mv-timeline-glitch {
-  position: relative !important;
-  margin-bottom: 0.5rem !important;
-  display: inline-block !important;
-}
-    
-  
+    /* Give the glitch its own space */
+    .mv-timeline-glitch {
+      position: relative !important;
+      margin-bottom: 0.5rem !important;
+      display: inline-block !important;
+    }
+
     /* Mobile fixes for title */
     @media (max-width: 480px) {
       .glass-card {
@@ -454,290 +452,332 @@
       }
     }
 
-  
-/* ============================================
-   SMART PAGINATION SYSTEM v1.0
-   Auto-detects all .mv-grid elements
-   ============================================ */
+    /* Smart Pagination Container */
+    .mv-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: rgba(0,255,255,0.05);
+      border-radius: 8px;
+      flex-wrap: wrap;
+    }
 
-/* Smart Pagination Container */
-.mv-pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 1.5rem 0;
-  padding: 1rem;
-  background: rgba(0,255,255,0.05);
-  border-radius: 8px;
-  flex-wrap: wrap;
-}
+    /* Prev/Next Buttons */
+    .mv-page-btn {
+      background: transparent;
+      border: 2px solid #00FFFF;
+      color: #00FFFF;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* Prev/Next Buttons */
-.mv-page-btn {
-  background: transparent;
-  border: 2px solid #00FFFF;
-  color: #00FFFF;
-  cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.9rem;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  min-width: 44px;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .mv-page-btn:hover:not(:disabled) {
+      background: #00FFFF;
+      color: #000;
+      box-shadow: 0 0 20px rgba(0,255,255,0.5);
+      transform: translateY(-2px);
+    }
 
-.mv-page-btn:hover:not(:disabled) {
-  background: #00FFFF;
-  color: #000;
-  box-shadow: 0 0 20px rgba(0,255,255,0.5);
-  transform: translateY(-2px);
-}
+    .mv-page-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      border-color: #666;
+      color: #666;
+    }
 
-.mv-page-btn:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-  border-color: #666;
-  color: #666;
-}
+    /* Page Number Buttons */
+    .mv-page-number {
+      background: transparent;
+      border: 2px solid #00FFFF;
+      color: #00FFFF;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      min-width: 40px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* Page Number Buttons */
-.mv-page-number {
-  background: transparent;
-  border: 2px solid #00FFFF;
-  color: #00FFFF;
-  cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  min-width: 40px;
-  min-height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .mv-page-number:hover:not(.active):not(.ellipsis) {
+      background: rgba(0,255,255,0.2);
+      box-shadow: 0 0 15px rgba(0,255,255,0.4);
+      transform: translateY(-2px);
+    }
 
-.mv-page-number:hover:not(.active):not(.ellipsis) {
-  background: rgba(0,255,255,0.2);
-  box-shadow: 0 0 15px rgba(0,255,255,0.4);
-  transform: translateY(-2px);
-}
+    /* Active Page (Magenta) */
+    .mv-page-number.active {
+      background: #FF007F;
+      border-color: #FF007F;
+      color: #000;
+      box-shadow: 0 0 20px rgba(255,0,127,0.6);
+      font-weight: 700;
+    }
 
-/* Active Page (Magenta) */
-.mv-page-number.active {
-  background: #FF007F;
-  border-color: #FF007F;
-  color: #000;
-  box-shadow: 0 0 20px rgba(255,0,127,0.6);
-  font-weight: 700;
-}
+    /* Ellipsis Button */
+    .mv-page-number.ellipsis {
+      border-color: #666;
+      color: #888;
+      cursor: pointer;
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
 
-/* Ellipsis Button */
-.mv-page-number.ellipsis {
-  border-color: #666;
-  color: #888;
-  cursor: pointer;
-  font-size: 1rem;
-  letter-spacing: 2px;
-}
+    .mv-page-number.ellipsis:hover {
+      border-color: #00FFFF;
+      color: #00FFFF;
+      background: rgba(0,255,255,0.1);
+    }
 
-.mv-page-number.ellipsis:hover {
-  border-color: #00FFFF;
-  color: #00FFFF;
-  background: rgba(0,255,255,0.1);
-}
+    /* Page Info Display */
+    .mv-page-info {
+      color: #E0E0E0;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      margin: 0 0.5rem;
+      white-space: nowrap;
+    }
 
-/* Page Info Display */
-.mv-page-info {
-  color: #E0E0E0;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.85rem;
-  margin: 0 0.5rem;
-  white-space: nowrap;
-}
+    /* Jump Dropdown Button */
+    .mv-jump-btn {
+      background: transparent;
+      border: 2px solid #FFD700;
+      color: #FFD700;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      min-height: 40px;
+    }
 
-/* Jump Dropdown Button */
-.mv-jump-btn {
-  background: transparent;
-  border: 2px solid #FFD700;
-  color: #FFD700;
-  cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  min-height: 40px;
-}
+    .mv-jump-btn:hover {
+      background: rgba(255,215,0,0.2);
+      box-shadow: 0 0 15px rgba(255,215,0,0.4);
+    }
 
-.mv-jump-btn:hover {
-  background: rgba(255,215,0,0.2);
-  box-shadow: 0 0 15px rgba(255,215,0,0.4);
-}
+    .mv-jump-btn .arrow {
+      font-size: 0.6rem;
+      transition: transform 0.3s ease;
+    }
 
-.mv-jump-btn .arrow {
-  font-size: 0.6rem;
-  transition: transform 0.3s ease;
-}
+    .mv-jump-btn.open .arrow {
+      transform: rotate(180deg);
+    }
 
-.mv-jump-btn.open .arrow {
-  transform: rotate(180deg);
-}
+    /* Jump Dropdown Menu */
+    .mv-jump-dropdown {
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      background: rgba(0,0,0,0.95);
+      border: 2px solid #FFD700;
+      border-radius: 8px;
+      padding: 0.5rem;
+      min-width: 80px;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 100;
+      display: none;
+      box-shadow: 0 -10px 30px rgba(255,215,0,0.3);
+    }
 
-/* Jump Dropdown Menu */
-.mv-jump-dropdown {
-  position: absolute;
-  bottom: 100%;
-  right: 0;
-  background: rgba(0,0,0,0.95);
-  border: 2px solid #FFD700;
-  border-radius: 8px;
-  padding: 0.5rem;
-  min-width: 80px;
-  max-height: 200px;
-  overflow-y: auto;
-  z-index: 100;
-  display: none;
-  box-shadow: 0 -10px 30px rgba(255,215,0,0.3);
-}
+    .mv-jump-dropdown.open {
+      display: block;
+      animation: slideUp 0.2s ease-out;
+    }
 
-.mv-jump-dropdown.open {
-  display: block;
-  animation: slideUp 0.2s ease-out;
-}
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .mv-jump-option {
+      background: transparent;
+      border: none;
+      color: #FFD700;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      padding: 0.5rem;
+      width: 100%;
+      text-align: center;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
 
-.mv-jump-option {
-  background: transparent;
-  border: none;
-  color: #FFD700;
-  cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.8rem;
-  padding: 0.5rem;
-  width: 100%;
-  text-align: center;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-}
+    .mv-jump-option:hover {
+      background: rgba(255,215,0,0.2);
+    }
 
-.mv-jump-option:hover {
-  background: rgba(255,215,0,0.2);
-}
+    /* Pagination Numbers Container */
+    .mv-page-numbers {
+      display: flex;
+      gap: 0.3rem;
+      align-items: center;
+    }
 
-/* Pagination Numbers Container */
-.mv-page-numbers {
-  display: flex;
-  gap: 0.3rem;
-  align-items: center;
-}
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .mv-pagination {
+        position: relative;
+        padding: 0.8rem 0.5rem;
+        gap: 0.3rem;
+      }
 
-/* Mobile Responsive Styles */
-@media (max-width: 768px) {
-  .mv-pagination {
-    position: relative;
-    padding: 0.8rem 0.5rem;
-    gap: 0.3rem;
-  }
-  
-  .mv-page-numbers {
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    max-width: calc(100vw - 120px);
-    padding-right: 20px;
-    mask-image: linear-gradient(to right, black 85%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
-  }
-  
-  .mv-page-numbers::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .mv-page-number {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.6rem;
-    min-width: 36px;
-    min-height: 36px;
-    flex-shrink: 0;
-  }
-  
-  .mv-page-btn {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-    min-width: 40px;
-    min-height: 40px;
-  }
-  
-  .mv-page-info {
-    font-size: 0.75rem;
-    order: -1;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Jump button below on mobile */
-  .mv-jump-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 0.5rem;
-  }
-  
-  .mv-jump-dropdown {
-    bottom: auto;
-    top: 100%;
-    right: 50%;
-    transform: translateX(50%);
-    box-shadow: 0 10px 30px rgba(255,215,0,0.3);
-  }
-}
+      .mv-page-numbers {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        max-width: calc(100vw - 120px);
+        padding-right: 20px;
+        mask-image: linear-gradient(to right, black 85%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+      }
 
-@media (max-width: 480px) {
-  .mv-page-numbers {
-    max-width: calc(100vw - 100px);
-  }
-  
-  .mv-page-number {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.5rem;
-    min-width: 32px;
-    min-height: 32px;
-  }
-  
-  .mv-page-btn {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.6rem;
-  }
-}
+      .mv-page-numbers::-webkit-scrollbar {
+        display: none;
+      }
 
-/* Jump wrapper for positioning */
-.mv-jump-wrapper {
-  position: relative;
-}
+      .mv-page-number {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.6rem;
+        min-width: 36px;
+        min-height: 36px;
+        flex-shrink: 0;
+      }
 
-/* All pages expanded mode (after clicking ellipsis) */
-.mv-page-numbers.expanded .mv-page-number.ellipsis {
-  display: none;
-}
+      .mv-page-btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+        min-width: 40px;
+        min-height: 40px;
+      }
 
-</style>
+      .mv-page-info {
+        font-size: 0.75rem;
+        order: -1;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Jump button below on mobile */
+      .mv-jump-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+      }
+
+      .mv-jump-dropdown {
+        bottom: auto;
+        top: 100%;
+        right: 50%;
+        transform: translateX(50%);
+        box-shadow: 0 10px 30px rgba(255,215,0,0.3);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .mv-page-numbers {
+        max-width: calc(100vw - 100px);
+      }
+
+      .mv-page-number {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.5rem;
+        min-width: 32px;
+        min-height: 32px;
+      }
+
+      .mv-page-btn {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+      }
+    }
+
+    /* Jump wrapper for positioning */
+    .mv-jump-wrapper {
+      position: relative;
+    }
+
+    /* All pages expanded mode (after clicking ellipsis) */
+    .mv-page-numbers.expanded .mv-page-number.ellipsis {
+      display: none;
+    }
+
+    /* Story Arcs Title Banner */
+    .mv-arcs-banner {
+      text-align: center;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,0,127,0.1) 100%);
+      border: 3px solid #FFD700;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mv-arcs-banner::before {
+      content: '🎬';
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      opacity: 0.5;
+    }
+
+    .mv-arcs-banner::after {
+      content: '🎬';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      opacity: 0.5;
+    }
+
+    .mv-arcs-banner h2 {
+      margin: 0;
+      color: #FFD700;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 20px rgba(255,215,0,0.5);
+    }
+
+    .mv-arcs-banner p {
+      margin: 0.5rem 0 0 0;
+      color: #FF007F;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body data-no-popups>
 
@@ -796,1153 +836,40 @@
 
 <!-- Tab Navigation -->
 <div class="mv-tabs">
-    <button class="mv-tab" onclick="switchTab('arcs', this)">Story Arcs</button>
+  <button class="mv-tab active" onclick="switchTab('solo', this)">Solo</button>
+  <button class="mv-tab" onclick="switchTab('multi', this)">Multi</button>
+  <button class="mv-tab" onclick="switchTab('arcs', this)">Story Arcs</button>
 </div>
 
+<!-- SOLO TAB -->
+<div id="tab-solo" class="mv-tab-content active">
+  <div id="solo-container"></div>
+</div>
 
+<!-- MULTI TAB -->
+<div id="tab-multi" class="mv-tab-content">
+  <div class="mv-filters" id="multi-filters"></div>
+  <div id="multi-container"></div>
+</div>
 
-<!-- STORY ARCS TAB
-╔════════════════════════════════════════════════════════════════════════════════════════════════╗
-║                                                                                                ║
-║  ███████╗ ████████╗  ██████╗  ██████╗  ██╗   ██╗        █████╗   ██████╗    ██████╗  ███████╗  ║
-║  ██╔════╝ ╚══██╔══╝ ██╔═══██╗ ██╔══██╗ ╚██╗ ██╔╝       ██╔══██╗  ██╔══██╗  ██╔════╝  ██╔════╝  ║
-║  ███████╗    ██║    ██║   ██║ ██████╔╝  ╚████╔╝        ███████║  ██████╔╝  ██║       ███████╗  ║
-║  ╚════██║    ██║    ██║   ██║ ██╔══██╗   ╚██╔╝         ██╔══██║  ██╔══██╗  ██║       ╚════██║  ║
-║  ███████║    ██║    ╚██████╔╝ ██║  ██║    ██║          ██║  ██║  ██║  ██║  ╚██████╗  ███████║  ║
-║  ╚══════╝    ╚═╝     ╚═════╝  ╚═╝  ╚═╝    ╚═╝          ╚═╝  ╚═╝  ╚═╝  ╚═╝   ╚═════╝  ╚══════╝  ║
-║════════════════════════════════════════════════════════════════════════════════════════════════║
-║                                     S T O R Y     A R C S                                      ║
-╚════════════════════════════════════════════════════════════════════════════════════════════════╝ 
--->
-
+<!-- STORY ARCS TAB -->
 <div id="tab-arcs" class="mv-tab-content">
-  
+
   <div class="mv-timeline">
     <div class="mv-timeline-glitch">⚠️ LINEARITY INTEGRITY: 47.3%</div>
   </div>
-  
+
   <p style="text-align: center; color: #39FF14; margin: 1rem 0; font-style: italic;">
     "Events generally occur in order. Except when they don't. Q5 is a flat circle."
   </p>
 
-
-
-<!-- ARC: Where is Gerchan? -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: Where is Gerchan?</h3>
-      <span class="mv-arc-status">ONGOING</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      Gerchan has not posted in a while. This has been interpreted as evidence. What follows is a growing library of documentaries, multilingual trailers, podcasts, police interviews, and increasingly intense speculation. Big Tex convenes Gen Z analysts to unpack the digital silence. Meanwhile, Michael Moo has been actively investigating, presenting color-coded suspicion charts from his command center and compiling timelines that grow more detailed by the day. He also produced the riveting multilingual investigative documentary Gerchanheit 7-11 – Where Is Gerchan? There are theories. Answers remain pending. Content does not.
-    </p>
-    <div class="mv-grid" id="grid-arc-missing">
-      <a href="https://sora.chatgpt.com/p/s_694ce36d120c819198db46970ca8004f" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Tex and Lizzie have questions."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_695c8eef0a4881918a48ce3f06fd56e4" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Tex begins actively investigating."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_695cbb2fe49481919557ae2e6f5b0aa6" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Tex continues questioning."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_695e984a227081919d81b0fe851ae646" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing04.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Tex hosts a podcast with the youth sleuths of today."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_695e90ad0948819184e3d09e1cb35d91" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing05.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"'Anonymous' eyewitness accounts'."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_695da27808a881918e2a60fb8bd76c27" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing06.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Michael Moo starts investigating."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_695dac928d288191aea7c6f80aa6de3f" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing07.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gerchanheit: 7-11 - Trailer A.)"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_695e819c667c8191946b29755540e138" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing08.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gerchanheit: 7-11 - Trailer B."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_695eb3c61d488191aba1f301f8ae8f35" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing09.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Released footage from Amit's questioning."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_695e9dd9562481919112bec40aafff0b" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing10.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gerchanheit 7-11 - Main Trailer."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_695eb4c4774881919e4483674ffa3e3d" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing11.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gerchanheit 7-11 - Main Trailer Spanish Ver."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-     <a href="https://sora.chatgpt.com/p/s_695f5a1ab7e081918a8474cc55d01164" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing12.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gerchanheit 7-11 - Main Trailer Brazil PT Ver."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <!-- Page 2 (12 cards) -->
-      <a href="https://sora.chatgpt.com/p/s_696338ca450481919c7d6900d0405d1b" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing13.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gerchanheit 7-11 - Main Trailer German Ver."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_696339a5adb08191ae59de127abeaee6" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing14.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gerchanheit 7-11 - Main Trailer Russian Ver."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69633a602c608191999c05016edc839b" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing15.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gerchanheit 7-11 - Main Trailer Japanese Ver."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69633b14b98c819183776a0c8ed19eb0" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-missing16.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gerchanheit 7-11 - Main Trailer Chinese (Trad.) Ver."</p></div>
-        <span class="mv-external">↗ Sora</span>          
-      </a>
-    </div>
-    <div class="mv-pagination" id="pagination-arc-missing">
-    <button class="mv-page-btn" onclick="changePage('arc-missing', -1)" id="prev-arc-missing">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-missing">1</span> / <span id="page-total-arc-missing">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-missing', 1)" id="next-arc-missing">▶</button>
-  </div>
+  <!-- Flashy Story Arcs Banner -->
+  <div class="mv-arcs-banner">
+    <h2>📽️ The Cinematic Universe 📽️</h2>
+    <p>"Where continuity goes to die and profits go to multiply"</p>
   </div>
 
-  
-  <!-- ARC: Insolence Overload -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: Insolence Overload</h3>
-      <span class="mv-arc-status">COMPLETE</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      Too much insolence takes a potentially deadly toll on Amit.
-    </p>
-    <div class="mv-grid" id="grid-arc-insolence">
-      <a href="https://sora.chatgpt.com/p/s_6932288f5a308191be65148153bf1754" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-toomuchinsolence-01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Amit's Collapse. MNN Reports."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693106237f4081919cb6e2bb4f10b6ea" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-toomuchinsolence-02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Reporters catch Lizzie as she leaves the hospital."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69310a48ac288191a465bc70bfb9d57c" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-toomuchinsolence-03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Leon not fond of reporters."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-    </div>
-    <div class="mv-pagination" id="pagination-arc-insolence">
-    <button class="mv-page-btn" onclick="changePage('arc-insolence', -1)" id="prev-arc-insolence">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-insolence">1</span> / <span id="page-total-arc-insolence">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-insolence', 1)" id="next-arc-insolence">▶</button>
-  </div>
-  </div>
-
- <!-- ARC: Executive Flight Assets -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: Executive Flight Assets</h3>
-      <span class="mv-arc-status">COMPLETE</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      Not a story arc, but in our defense, Mediocrates approved. Our core Gerch-Verse family members have special 'vehicles'. Here's some footage of them in action.
-    </p>
-    <div class="mv-grid" id="grid-arc-executive-flight-assets">
-      <a href="https://sora.chatgpt.com/p/s_69723174fad88191b80179d58e510a9f" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-executive-flight-assets-01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Amit: Pegasus."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69723473fd088191a1afc323fe5bf52a" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-executive-flight-assets-02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Leon: Black Pegasus"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6972345733a08191a2f8cd219120d8c5" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-executive-flight-assets-03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Lizzie: Phoenix"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6972343d821c8191b8819cd87f42ad4d" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-executive-flight-assets-04.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Tex: Red Rooster (DUH)."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-    </div>
-    <div class="mv-pagination" id="pagination-arc-executive-flight-assets">
-    <button class="mv-page-btn" onclick="changePage('arc-executive-flight-assets', -1)" id="prev-arc-executive-flight-assets">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-executive-flight-assets">1</span> / <span id="page-total-arc-executive-flight-assets">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-executive-flight-assets', 1)" id="next-arc-executive-flight-assets">▶</button>
-  </div>
-  </div> 
-
-
-  <!-- Arc: Lizzie the Snitch -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: Lizzie the Snitch</h3>
-      <span class="mv-arc-status">COMPLETE</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      He steals the milk. Lizzie steals the moment. The arrest steals the ending.
-    </p>
-    <div class="mv-grid" id="grid-arc-snitch">
-      <a href="https://sora.chatgpt.com/p/s_6923ed35d1cc8191bfec3b78382c5df5" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-grandlarceny-00.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Hacker for hire."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_691265aa499c81918bad7e7826a6646f" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-grandlarceny-01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Midnight prototype raid."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6923ee03ebcc8191a4f4bb94438f5123" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-grandlarceny-02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gloves. Crates. Trunk slam. Lizzie rewinds once."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69164791dbc48191a28b97fdd644b50c" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-grandlarceny-03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"The board tries to wrangle their CEO."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6923dcdacfc081918b4076a09536dee8" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-grandlarceny-04.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"The arrest."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-    </div>
-    <div class="mv-pagination" id="pagination-arc-snitch">
-    <button class="mv-page-btn" onclick="changePage('arc-snitch', -1)" id="prev-arc-snitch">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-snitch">1</span> / <span id="page-total-arc-snitch">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-snitch', 1)" id="next-arc-snitch">▶</button>
-  </div>
-  </div>
-
-
-
-  <!-- Arc: Bloodline Error -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: Bloodline Error</h3>
-      <span class="mv-arc-status ongoing">ONGOING — 1639+ DAYS</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      Ionix Labs: redefining accuracy. Turns out dairy is thicker than blood.
-    </p>
-    <div class="mv-grid" id="grid-arc-bloodline">
-      <a href="https://sora.chatgpt.com/p/s_691e9c1138d88191a35080733b640a1a" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-bloodline-01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Biological Relation: High."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_691f699c51f081919d82376dd8469237" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-bloodline-02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Birth Control."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_691fa08857148191a2c2b0b6dc640be9" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-bloodline-03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"The Accent Slips."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_691ffa86d2808191893639d22cf7ddcf" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-bloodline-04.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Lactose Interference."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-    </div>
-    <div class="mv-pagination" id="pagination-arc-bloodline">
-    <button class="mv-page-btn" onclick="changePage('arc-bloodline', -1)" id="prev-arc-bloodline">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-bloodline">1</span> / <span id="page-total-arc-bloodline">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-bloodline', 1)" id="next-arc-bloodline">▶</button>
-  </div>
-  </div>
-
-
-  <!-- Arc: Q6 Profits Apocalypse -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: Q6 Profits Apocalypse</h3>
-      <span class="mv-arc-status q6">TEMPORAL VIOLATION</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-    Amit Jr. arrives from the future. Warnings screamed. Warnings ignored. The gulag opens for time-travelers. 
-    Amit rushes to the future to investigate.  
-    </p>
-    <div class="mv-grid" id="grid-arc-q6">
-      <a href="https://sora.chatgpt.com/p/s_699beec67d58819195edfdc366b74e54" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-q6warning-00.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"The arrival."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6918be0246808191aeb73a7d5ff07d04" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-q6warning-01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Warning ignored. Express to gulag"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_691bbd4893f0819188f666dca233fe22" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-q6warning-02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Rich forever."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_691def3490048191881cb2e07a29c312" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-q6warning-03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Nightmarish landscape."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_691e0e8ed6408191a3e768064b6efebf" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-q6warning-04.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Amit Jr. leads reparations demands."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-    </div>
-    <div class="mv-pagination" id="pagination-arc-q6">
-    <button class="mv-page-btn" onclick="changePage('arc-q6', -1)" id="prev-arc-q6">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-q6">1</span> / <span id="page-total-arc-q6">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-q6', 1)" id="next-arc-q6">▶</button>
-  </div>
-  </div>
-
-<!-- Arc: Gerchfinity Wars: Doomsday -->
-<div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: Gerchfinity Wars: Doomsday</h3>
-      <span class="mv-arc-status q6">Status: Beats Us 🤷</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      Continuity is a suggestion, not a promise. We open inside one of Amit's many suspiciously identical space fortresses as 
-      certain familiar names are flagged "hostile," which feels biased but on-brand. Leadership decisions are made loudly. 
-      Very loudly. From there, the timeline clocks out. Scenes overlap. Cause and effect stop returning emails. 
-      Portals open at the worst possible moments, and family therapy is replaced with cosmic escalation.
-      Oh — remember Amit Jr. came from Q6? Yes, that's why child Amit was left in the Burger King bathroom in the first place.
-      Let's also not forget Amit did the same to Jr. because that's how we learn best - from our parents. But that will be a tale
-      for another time. Preventative anti–Q6 Profits Apocalypse strategy. So… that clearly didn't work.
-      This arc is simply the next attempt to stop Q6 before it monetizes reality itself. Are these events sequential? Parallel? 
-      A quality control error? Officially: cosmic instability. Unofficially: Doomsday runs on vibes and refuses refunds. Oh, and
-      some of the thumbnails were edited to look better than they actually do. But that's just a theory. A Q6 theory.
-    </p>
-    <div class="mv-grid" id="grid-arc-doomsday">
-      <a href="https://sora.chatgpt.com/p/s_699ccdd2597881918d5d35e6d091f40a" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-doomsday01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Hostiles Flagged"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_699ce0bc47008191b16f5c13d41768f0" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-doomsday02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"The cast of the Gerch-Verse wait with bated breath."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_699f387cc0a481918f98efcc11bae250" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-doomsday03a.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"(Ver 1) Amit sees mama for the first time since Burger King."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_699f43e0451c8191827959137254b7da" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-doomsday03b.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"(Ver 2) Amit loses it."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_699cf173e64c8191a74383a120ecbe32" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-doomsday04.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Dark Amit and Light Amit collide."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_699cfee98a0481918e1883045e887ea7" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-doomsday05.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"The siege rages on."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69a236f1f6108191be1a5dab144634c6" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-doomsday06.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Abandoned-by-mama Amit clashes with kept-by-mama Evil Amit."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-    </div>
-    <div class="mv-pagination" id="pagination-arc-doomsday">
-    <button class="mv-page-btn" onclick="changePage('arc-doomsday', -1)" id="prev-arc-doomsday">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-doomsday">1</span> / <span id="page-total-arc-doomsday">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-doomsday', 1)" id="next-arc-doomsday">▶</button>
-  </div>
-  </div>
-
-
-
-
-
-  <!-- Arc: F∞ (F Infinity): Speedway of Insolencium -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: F∞ (F Infinity): Speedway of Insolencium</h3>
-      <span class="mv-arc-status q6">COMPLETE</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      In F∞, the engines run on premium fuel and unpasteurized insolence. Lap times fall. Moral standards fall faster. Ethics spin at Turn One.
-    </p>
-    <div class="mv-grid" id="grid-arc-finfinity">
-      <a href="https://sora.chatgpt.com/p/s_6918bba3b41c81918923feb393b012c1" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-f-infinity01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"The Profit Formula."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_691fd41ef42c81919efc2da9036bba01" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-f-infinity02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Legacy vs Destiny."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6923e1a515c481919a9f1d5994ca5f47" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-f-infinity03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Osaka Drift: Legacy vs Destiny."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693910d605c88191b62298b26bdaa435" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-f-infinity04.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Legacy on Fire."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6954d7894874819186e758aa3ed3ab45" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-f-infinity05a.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Race of Gods."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6954d70ab644819180fdf67c2e3621dd" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-f-infinity05b.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Race of Gods V2."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-    </div>
-    <div class="mv-pagination" id="pagination-arc-finfinity">
-    <button class="mv-page-btn" onclick="changePage('arc-finfinity', -1)" id="prev-arc-finfinity">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-finfinity">1</span> / <span id="page-total-arc-finfinity">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-finfinity', 1)" id="next-arc-finfinity">▶</button>
-  </div>
-  </div>
-  <!-- Arc: Milk Wars: Plant-Based Reckoning. -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: Milk Wars: Plant-Based Reckoning.</h3>
-      <span class="mv-arc-status q6">ONGOING — 3891+ DAYS</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      Facing declining margins, Amit deploys the Trojan Cow strategy against unsuspecting vegan farms. The midnight ambush ignites a dairy war, forcing Lizzie — minority stakeholder, maximum fury — to descend in flames and blood bombs. Their clash levels the land, but from the ashes hatches a phoenix, turning destruction into defiant renewal.
-    </p>
-    <div class="mv-grid" id="grid-arc-milkwars">
-      <a href="https://sora.chatgpt.com/p/s_69264dbb2eac81918100f0246ab7923c" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-milkwars01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Profits Down. Culprit? Vegan Cheese Farmers."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69265481b0f48191845686256725e950" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-milkwars02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Deploy the Trojan Cow."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69265b5e8f9c8191a7a1c376ed52e3ec" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-milkwars03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Minority Stakeholder Fury."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_692867ad12fc81919f7d83be73695379" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-milkwars04.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"There will be blood. Maybe 2%."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_692c6e3ebb188191a4d681752dfbdcea" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-milkwars05.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Lizzie's fiery counter-assult."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6929a8a85c90819189225b72c7bd1e3d" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-milkwars06.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Zord battle: Dairy Legacy vs Plant-based Destiny."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6954d70ab644819180fdf67c2e3621dd" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-milkwars07.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"The Aftermath. Time to Rebuild"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6954d70ab644819180fdf67c2e3621dd" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-milkwars08.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Rise from the ashes. Rebirth."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-    </div>
-    <div class="mv-pagination" id="pagination-arc-milkwars">
-    <button class="mv-page-btn" onclick="changePage('arc-milkwars', -1)" id="prev-arc-milkwars">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-milkwars">1</span> / <span id="page-total-arc-milkwars">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-milkwars', 1)" id="next-arc-milkwars">▶</button>
-  </div>
-  </div>
-  
-
-<!-- ARC: Toy Commercials -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: Toy Commercials</h3>
-      <span class="mv-arc-status">STATUS: Manageable</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      We asked for approval. Mediocrates was conflicted. "Is this... responsible?" he whispered. Amit's Mother materialized: 
-      "Manageable. That's how parents like their kids." Mediocrates lit up—finally, a moral framework he could disappoint. 
-      He signed. A generation learned that joy comes in blister packs, and "some assembly required" means you're already 
-      working for us, tiny consumer.
-    </p>
-    <div class="mv-grid" id="grid-arc-toys">
-      <a href="https://sora.chatgpt.com/p/s_691bbd63e69c819199931f768eea3136" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-toys-amit.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Visionary Executive Action Figure - insolence not included."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_691f505e9d748191aae19d2b73fdec12" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-toys-lizzie.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Ionix Blood Analyzer."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_692e026b7f348191834a694ea16a694e" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-toys-leon.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Leon Cochran Courtroom Play Set."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6935302aa35881918233d7a98de8de73" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-toys-bigtex.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Tex Wang Action Figure."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69ab6507421c8191bb1714aa0ee18c18" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-toys-raj-sterling.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Raj & Sterling: Service Command Play Set."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69ab73c1886c8191935dbfc06a5b1cbd" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-toys-amitmom.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"'Have it Your Way' Play Set."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69ab74e7a4ac8191aacb9f79392191c9" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-toys-pharma-bro.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Pharma Bro Action Figure."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      
-
-
-
-    </div>
-    <div class="mv-pagination" id="pagination-arc-toys">
-    <button class="mv-page-btn" onclick="changePage('arc-toys', -1)" id="prev-arc-toys">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-toys">1</span> / <span id="page-total-arc-toys">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-toys', 1)" id="next-arc-toys">▶</button>
-  </div>
-  </div>
-
-
-
-  
-  
-  <!-- ARC: The Gerch Clone Pipeline. -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: The Gerch Clone Pipeline.</h3>
-      <span class="mv-arc-status q6">ONGOING — 3891+ DAYS</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      Lizzie “rescues” Gerch clones at midnight and reroutes them through Leon-built shell companies into her rawhide side hustle. CEO by day, off-book slaughter by night. Raj gives the all-clear whenever Amit visits his space gulag. Tex buys the carcasses for brisket and calls it fair trade. Amit preaches that cows are holy—except the “insolent” ones he owns. Somewhere between sacred doctrine and smoked brisket, the supply chain starts asking questions.
-    </p>
-    <div class="mv-grid" id="grid-arc-clones">
-      <a href="https://sora.chatgpt.com/p/s_693bbebc4d58819184f1951242d0e75f" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-clonepipeline-01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Raj gives Lizzie a call."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_692c701f638881918e350cb0885f581b" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-clonepipeline-02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Lizzie sneaks in undetected."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_692da25bae5081918efe21274df02951" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-clonepipeline-03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Rawhide Lizzie."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_692de95bc33881918605bdbaf48bbdbc" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-clonepipeline-04.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Total Anonymity - Leon leads."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693342d857f88191bc587269213525cf" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-clonepipeline-05.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Tex wants a piece."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6933c43ab3a08191a8741c7b5ae08081" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-clonepipeline-06.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Amit snoops around."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6935ab1ea4b4819181ca008e7295a1fe" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-clonepipeline-07.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Tex warns Lizzie."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693cac5ab94081919bfc634d26e42032" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-clonepipeline-08.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Amit doesn't agree with beef."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693cd07450a88191b04ec8bec6c5c61e" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-clonepipeline-09.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"No 'beef' between us."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693c3855d3448191a0ea51bb38ccf42f" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-clonepipeline-10.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Time to duke it out."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      
-    </div>
-    <div class="mv-pagination" id="pagination-arc-clones">
-    <button class="mv-page-btn" onclick="changePage('arc-clones', -1)" id="prev-arc-clones">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-clones">1</span> / <span id="page-total-arc-clones">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-clones', 1)" id="next-arc-clones">▶</button>
-  </div>
-  </div>
-  
-  
-  
-  
-  <!-- ARC: The Gadha Saga. -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: The Gadha Saga.</h3>
-      <span class="mv-arc-status q6">COMPLETE FOR NOW</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      Big Tex asks if Lizzie has ever spotted Gadha during her midnight Gerch cow raids at Gerchan Farms Butchery. She tells Big Tex that Gadha is always kept locked up in Amit's space Gulag. Big Tex, determined, sets out to secure that divine bovine to grill up some fine brisket.
-    </p>
-    <div class="mv-grid" id="grid-arc-gadha">
-      <a href="https://sora.chatgpt.com/p/s_6934fc83913c8191abddfe479d6f066e" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-gadhasaga-01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Tex asks Lizzie about Gadha. Duh, Amit's space gulag."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693494240fec8191ad97af4bf4b58ca9" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-gadhasaga-02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Tex begs Leon. Leon can't help."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69349827ce4c8191ae2dfa8459543278" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-gadhasaga-03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Leon lays out the facts to Big Tex."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693512f2b49481919eb7e1b6303444ef" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-gadhasaga-04.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Tex lifts off."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693521967fa481918baaa3e6dd27fa88" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-gadhasaga-05.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Amit is alerted."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6935293571b88191bd09577674757629" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-gadhasaga-06.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"The space chase begins."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693665e120548191b2a900ced2cc6f40" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-gadhasaga-07.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Raj begs Lizzie to diagnose Amit's destiny."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6938c5ae23788191b0b25b782f6ff352" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-gadhasaga-08.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Unexpected transmission."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6938c5d49004819196bdfeb0a066ca6a" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-gadhasaga-09.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Lucky break. Lucky Amit."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6938deca915881918f6ddc5d5e0830fb" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-gadhasaga-10.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Tex trades beef and hospitaly for oil."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-    </div>
-    <div class="mv-pagination" id="pagination-arc-gadha">
-    <button class="mv-page-btn" onclick="changePage('arc-gadha', -1)" id="prev-arc-gadha">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-gadha">1</span> / <span id="page-total-arc-gadha">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-gadha', 1)" id="next-arc-gadha">▶</button>
-  </div>
-  </div>
-
-
-  <!-- Arc: Raj's Past -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: Raj's Past</h3>
-      <span class="mv-arc-status ongoing">COMPLETE - HIRED</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      A brief history on the origins of the beloved Raj Mehta and how he found purpose at Gerchan Farms and came to be Amit's Executive Assistant
-    </p>
-    <div class="mv-grid" id="grid-arc-raj">
-      <a href="https://sora.chatgpt.com/p/s_693d04781e7c8191b519d04b1cc18032" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-rajorigin-01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Leaving home."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693e57d4b4948191ab5ac74587d6e266" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-rajorigin-02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Now Hiring."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693ed5752e288191bafe471c157290c6" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-rajorigin-03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Boarding to Mumbai."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693f163785348191855265c8848e8d17" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-rajorigin-04.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"The interview."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693f1952053c8191bf9ce90c353bce7d" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-rajorigin-05.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"The retroactive update."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-    </div>
-    <div class="mv-pagination" id="pagination-arc-raj">
-    <button class="mv-page-btn" onclick="changePage('arc-raj', -1)" id="prev-arc-raj">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-raj">1</span> / <span id="page-total-arc-raj">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-raj', 1)" id="next-arc-raj">▶</button>
-  </div>
-  </div>
-
-
-<!-- Arc: Insolencium -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: Insolencium</h3>
-      <span class="mv-arc-status ongoing">COMPLETE - Gerchlander Neutralized and Compliant</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      Amit discovers Insolencium, a rare and potent element that can neutralize Gerchlander's insolence. 
-      He instinctively knows that this is Gerchlander's only weakness (prob because his good pal YogaFlex Luthor Chakravarthy told him), and fortifies not only his space gulag with this
-      glowing green matter, but infuses into his own blood as well. Gerchlander ventures to Amit's space gulag to pillage some
-      Gadha Golden Udder Milk...but Amit is more-than-ready...The result? Total dominion over Gerchlander.
-    </p>
-    <div class="mv-grid" id="grid-arc-insolencium">
-      <a href="https://sora.chatgpt.com/p/s_697c00a28e6081919b412c7781e5f6de" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-insolencium01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"The discovery & the transfusion."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_697c384c7bdc8191b0eab2548c033fb6" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-insolencium02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Setting the trap."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_697d548de4f881918a7d4aa4f846e3a2" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-insolencium03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Owned."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-    </div>
-    <div class="mv-pagination" id="pagination-arc-insolencium">
-    <button class="mv-page-btn" onclick="changePage('arc-insolencium', -1)" id="prev-arc-insolencium">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-insolencium">1</span> / <span id="page-total-arc-insolencium">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-insolencium', 1)" id="next-arc-insolencium">▶</button>
-  </div>
-  </div>
-
-
-  
-  <!-- ARC: Unsupervised Global Expansion -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: Unsupervised Global Expansion</h3>
-      <span class="mv-arc-status">COMPLETE</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      At some point, we decided the Land of the Rising Sun needed more Gerch-Verse. What followed was a flurry of toy commercials, retro tokusatsu-style hero battles, space tourism promotions, and at least one extremely serious truck advertisement. Some of it aired. Some of it probably shouldn’t have. All of it exists. Consider this our lovingly disorganized archive of neon ambition and aggressively subtitled optimism. We regret nothing, except maybe the exploding robot budget.
-    </p>
-    <div class="mv-grid" id="grid-arc-expansion">
-      <a href="https://sora.chatgpt.com/p/s_6918bae15d8881919274ff0b23ea08ef" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Amit defends Japan against Godzilla."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693e81a46ce881919cfb8db8152b32e7" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"TV Commercial for Gerch clone brisket."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693e81c579648191a130e12cd867a5d0" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Amit Gaur: Nehru Suit Ranger."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693efa7e0e888191a0ac481ce7bfc568" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun04.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Tex Wang Ranger."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693efadaca248191a4a8b38b1fa562ae" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun05.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Lizzie Holmes Ranger."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_693efd6f7fcc81919abc4fd625a936d6" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun06.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Leon Cochran: Legal Suit Ranger."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69430b2924f881919feb0aae407d4d7f" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun07.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Law Office of Leon Cochran Ad 1."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69431350e77c819183d7436996971215" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun08.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Law Office of Leon Cochran Ad 2."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6954808fe98481919c16596539e115b2" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun09.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gadha Gulag Space Tours."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_696472165b7c8191849a2c5002cd7532" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun10.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Q5 Profits Banzai Classroom."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6965f7c899508191a0a02627e4b60513" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun11.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Red Rooster Space Tours."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-     <a href="https://sora.chatgpt.com/p/s_6969c4e2f6a481918832a4b35af2bc15" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun12.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gigantamax G150."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <!-- Page 2 (12 cards) -->
-      <a href="https://sora.chatgpt.com/p/s_697c0717608c8191b0509b8dca67026f" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun13.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Cole Mercer - Pharma Bro Ranger."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69823f58737881919aa20c4196b99f04" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun14.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Kids Insolent Cow Meal."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6983e3de54048191a426eba58620fb09" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun15.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Red Rooster Ranch Steakhouse."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_699cefd0e2808191ac128741c3c2b69a" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun16.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Evil Amit Ranger."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_699cfdfa413881918e02b0b623ea65f9" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun17.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gerch Motors Gigantamax X1500."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69a7cbab67788191bb02a956e5fe4f76" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun18.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Gargantamax 5000."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69abd46b31088191b542d388a1fa46d5" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun19.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Ole' Tex Wang Ranger."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69accf3866e48191a73678e52ae1be6d" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun20.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Indubitable Butler Ranger."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69adb849d0d88191a5d5ca7b33d39798" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-risingsun21.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Raj Ranger."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-
-
-
-
-    </div>
-    <div class="mv-pagination" id="pagination-arc-expansion">
-    <button class="mv-page-btn" onclick="changePage('arc-expansion', -1)" id="prev-arc-expansion">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-expansion">1</span> / <span id="page-total-arc-expansion">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-expansion', 1)" id="next-arc-expansion">▶</button>
-  </div>
-  </div>
-
-
-  <!-- Arc: ASMR Collection -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC(?): ASMR Break Time</h3>
-      <span class="mv-arc-status ongoing">STILL RECORDING</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-      ASMR relaxation collection. Not a story arc until we deem it so. Approval from Mediocrates was recommended but ignored.
-    </p>
-    <div class="mv-grid" id="grid-arc-asmr">
-      <a href="https://sora.chatgpt.com/p/s_693e68e7225081918cdacfb4c1999000" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-asmr01.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Amit."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6955eaa20edc8191a4fd5b730284fd4b" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-asmr02.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Raj."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69531962cc148191840c0ec0136451e4" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-asmr03.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Leon."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6955ed4b89348191baf59b3b3009d641" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-asmr04.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Sterling."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_695320d783388191849b42e3d1255093" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-asmr05.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Tex."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69532681ec7c8191a15944205f83c031" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-asmr06.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Lizzie."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-    </div>
-    <div class="mv-pagination" id="pagination-arc-asmr">
-    <button class="mv-page-btn" onclick="changePage('arc-asmr', -1)" id="prev-arc-asmr">◀</button>
-    <span class="mv-page-info">Page <span id="page-num-arc-asmr">1</span> / <span id="page-total-arc-asmr">1</span></span>
-    <button class="mv-page-btn" onclick="changePage('arc-asmr', 1)" id="next-arc-asmr">▶</button>
-  </div>
-  </div>
-
-<!-- Arc: Music Videos -->
-  <div class="mv-arc-section">
-    <div class="mv-arc-header">
-      <h3 style="margin: 0; color: #FF00FF; font-family: 'Orbitron', sans-serif;">ARC: Music Videos</h3>
-      <span class="mv-arc-status" style="background: #FF00FF; color: #000;">MEDIOCRATES DISAPPROVES (BUT SECRETLY BOBS HEAD)</span>
-    </div>
-    <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
-  <strong>FILE UNDER:</strong> "Not a story arc." Mediocrates raged for forty-five minutes, then track seven changed 
-  his mind.
-<br>
-These aren't arcs. These are cries for help. Zero training, fax-machine vocals, temporal-rift Auto-Tune. One track 
-charted in Q5 negatives because nobody could tell if it was music or a hostage recording.<br><br>
-  
-  <strong>Official:</strong> Belongs nowhere. <strong>Actual:</strong> Needed shelf space. Not art. Pathology 
-  with a beat.
-  <br>
-  <em><span style="color: #FFFF00;">Warning:</span> May cause spontaneous choreography, hearing damage, 
-    and urges to invest in Q6. You could do this too—and shouldn't.</em>
-  </p>
-    <div class="mv-grid" id="grid-arc-musicvideos">
-      <a href="https://sora.chatgpt.com/p/s_692be9b9fda08191b1b96da78975b0e9" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-rawhide-hearts.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Rawhide Hearts"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69535b3bf7e881919b88d1d06132b124" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/solo-leon-riddlers-ballad.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"A Riddler's Ballad"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_695c02634ba48191a657b5f054b8ad6f" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-i-own-the-pulse.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"I Own the Pulse."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>      
-      <a href="https://sora.chatgpt.com/p/s_69647b418bf08191ae096b49de7ae3ed" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-sunset-gold.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Sunset Gold"</p></div>
-        <span class="mv-external">↗ Sora</span>  
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69a673b7ea14819186b8c1d485d2e1c8" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-big-wheels-turnin.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Big Wheels Turnin'"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_697f87fda9548191852a7c1af29f695a" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-dont-grow.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Don't grow"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69a642e88f048191a4a10493cd4f8099" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-timeless-love.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Timeless Love"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a> 
-      <a href="https://sora.chatgpt.com/p/s_6990cd6226588191a11f1dec17a51b8d" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-voices-of-destiny.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Voices of Destiny"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6993abc42bcc819181dfc4fec29b603d" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-riddle-me-this-love.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Riddle me this Love"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69a51590e61481918f196d1acae8e742" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-move-like-mumbai.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Move like Mumbai"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69a5a97112308191ac18e93b8739164f" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-ill-rise.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"I'll Rise"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69a8dbe045b881919f8c8ddc3a44d380" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-transcendant-farewell.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Transcendant Farewell"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>      
-<!-- Page 2 (12 cards) -->
-      <a href="https://sora.chatgpt.com/p/s_695a0a39c8d481918172982b33047a92" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/solo-leon-riddle-me-this-music-video.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Riddle me This"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_696965680b588191b2b34091a528b1ad" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/solo-eelon-singing-lonely.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Somebody to Love Me"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6977f4f780cc8191bc0ae145e229eb10" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-engine-in-the-open-sky.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Engine in the Open Sky"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6969e4a525788191b3fe9cfdb4f4b2be" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/solo-leon-riddle-me-this-classroom.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Riddlin' in the classroom"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69837fc9b1f08191b018966c235af0f6" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-your-eyes-speak.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Speak With Your Eyes."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69a3f6c097cc8191be8c03340f5191c4" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-sax-it-to-me.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Sax it to me."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>      
-      <a href="https://sora.chatgpt.com/p/s_69a157a85ee48191afa3b90d1f8af0d4" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-strings-on-me.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Strings on Me"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69a68a20ff048191a1696b6d60820a01" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-music-videos-a-breeze-that-knows-my-name.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"A Breeze that Knows My Name"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_6997c30c7d248191a936d2340437f3ac" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-sunshine-eelon.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Sunshine"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_699b88289b348191bcad23d74b9bb9e4" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-my-desire.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"My Desire"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_699687197f148191b627a45ef02babd8" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-riddle-me-to-the-moon.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Riddle me to the Moon. (And Back)"</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69a3eb54b29881919b038e50e9152917" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-eelon-violin.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Eel-On tries the violin."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-<!-- Page 3 (12 cards) -->
-      <a href="https://sora.chatgpt.com/p/s_69990df04bd8819199f0a330d9f3fd53" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/arc-musicvideos-evilamit-q4-on-ice.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Q4 On Ice."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69ab03065d10819198327c3533af8400" target="_blank" rel="noopener" class="mv-card story-arc">
-        <img src="./thumbnails/solo-amitsmother-spectacular.jpg" class="mv-thumb" alt="description">
-        <div class="mv-card-overlay"><p class="mv-one-liner">"Spectacular."</p></div>
-        <span class="mv-external">↗ Sora</span>
-      </a>
-       <a href="https://sora.chatgpt.com/p/s_698ea2890d808191853e919b9c2a3d53" target="_blank" rel="noopener" class="mv-card">
-       <img src="./thumbnails/solo-cole-quarterly-prophets.jpg" class="mv-thumb" alt="description">
-       <div class="mv-card-overlay"><p class="mv-one-liner">"Quarterly prophets (of profits)."</p></div>
-       <span class="mv-external">↗ Sora</span>
-      </a>
-      <a href="https://sora.chatgpt.com/p/s_69ace9879b7c819190476e7d86e86bd3" target="_blank" rel="noopener" class="mv-card">
-       <img src="./thumbnails/arc-musicvideos-mommy-hips-dont-lie.jpg" class="mv-thumb" alt="description">
-       <div class="mv-card-overlay"><p class="mv-one-liner">"Mommy's Hips Don't Lie."</p></div>
-       <span class="mv-external">↗ Sora</span>
-      </a>
-
-
-    </div>
-    <div class="mv-pagination" id="pagination-arc-musicvideos">
-      <button class="mv-page-btn" onclick="changePage('arc-musicvideos', -1)" id="prev-arc-musicvideos">◀</button>
-      <span class="mv-page-info">Page <span id="page-num-arc-musicvideos">1</span> / <span id="page-total-arc-musicvideos">1</span></span>
-      <button class="mv-page-btn" onclick="changePage('arc-musicvideos', 1)" id="next-arc-musicvideos">▶</button>
-    </div>
-    </div>
-
-
-
-
-
-
-
-
-
+  <div id="arcs-container"></div>
 </div>
 
 <div style="text-align:center;">
@@ -1952,12 +879,12 @@ charted in Q5 negatives because nobody could tell if it was music or a hostage r
 <div id="bugModal">
   <div id="bugModalContent">
     <h3>REPORT INSOLENCE</h3>
-    
+
     <div style="margin-bottom:1rem;">
       <label style="color:#888; font-size:0.8rem; display:block; margin-bottom:0.3rem;">Describe your insolence:</label>
       <textarea style="width:100%; background: rgba(0,255,255,0.05); border:1px solid #00FFFF; color:#00FFFF; padding:0.5rem; font-family:inherit; resize:none;" rows="3" placeholder="The bug is that I expected quality..."></textarea>
     </div>
-    
+
     <div style="margin-bottom:1rem;">
       <label style="color:#888; font-size:0.8rem; display:block; margin-bottom:0.3rem;">Which quarter did this occur in?</label>
       <select style="width:100%; background: rgba(0,255,255,0.05); border:1px solid #00FFFF; color:#00FFFF; padding:0.5rem;">
@@ -1969,17 +896,17 @@ charted in Q5 negatives because nobody could tell if it was music or a hostage r
         <option>Q6 (Temporal Violation)</option>
       </select>
     </div>
-    
+
     <div style="margin-bottom:1.5rem;">
       <label style="color:#888; font-size:0.8rem; display:block; margin-bottom:0.3rem;">
         <input type="checkbox" style="margin-right:0.5rem;"> Have you tried being more acceptable?
       </label>
     </div>
-    
+
     <button onclick="submitBug()" style="width:100%; background:#00FFFF; color:#000; border:none; padding:0.8rem; font-family:'Orbitron',sans-serif; font-weight:700; cursor:pointer; border-radius:4px;">
       SUBMIT TO VOID
     </button>
-    
+
     <div id="bugSpinner" style="display:none; text-align:center; margin-top:1rem;">
       <div style="width:30px; height:30px; border:3px solid #333; border-top-color:#FF007F; border-radius:50%; animation:spin 1s linear infinite; margin:0 auto;"></div>
       <p style="color:#888; font-size:0.7rem; margin-top:0.5rem;">Forwarding to the abyss...</p>
@@ -1989,7 +916,7 @@ charted in Q5 negatives because nobody could tell if it was music or a hostage r
 
 <footer>
   <div class="footer-metrics-container">
-    
+
     <!-- Gerchan Counter -->
     <div class="gerchan-footer-counter" id="gerchanFooterCounter">
       <span class="gerchan-label">Gerchan Missing</span>
@@ -1998,7 +925,7 @@ charted in Q5 negatives because nobody could tell if it was music or a hostage r
         <span class="days-label">Days</span>
       </span>
     </div>
-    
+
     <!-- Live Metrics Counter -->
     <div class="live-metrics-counter" id="liveMetricsCounter">
       <span class="metrics-label">Q5 Operations</span>
@@ -2007,9 +934,9 @@ charted in Q5 negatives because nobody could tell if it was music or a hostage r
         <span class="metric-unit" id="metricUnit">videos archived</span>
       </span>
     </div>
-    
+
   </div>
-  
+
   <p>© 2026 Gerchan Farms et al. All udders—cosmic or otherwise—reserved.</p>
 </footer>
 
@@ -2017,343 +944,447 @@ charted in Q5 negatives because nobody could tell if it was music or a hostage r
   <p>GPU exhaustion. Token scarcity. Emotional regret. We kept going. It got worse. Stopping was ethical. This is that point.</p>
 </div>
 
+<script src="./videos.js"></script>
 <script src="./gerchverse.js"></script>
 
-<!-- Smart Pagination System -->
+<!-- Milk-Vision Library Rendering Engine -->
 <script>
 // ============================================
-// SMART PAGINATION SYSTEM v1.0
-// Auto-detects all .mv-grid elements
+// MILK-VISION LIBRARY v2.0
+// JavaScript-Powered Video Archive
 // ============================================
 
-// Configuration
-const SMART_PAGE_SIZE = 12; // Videos per page
-
-// Store pagination state for each grid
+const SMART_PAGE_SIZE = 12;
 const paginationState = {};
 
-/**
- * Initialize smart pagination for ALL grids on the page
- * Auto-detects .mv-grid elements without hardcoded list
- */
-function initSmartPagination() {
-  const allGrids = document.querySelectorAll('.mv-grid');
-  
-  allGrids.forEach(grid => {
-    const gridId = grid.id.replace('grid-', '');
-    if (gridId) {
-      initPaginationForGrid(gridId);
-    }
+// ============================================
+// TAB SWITCHING
+// ============================================
+function switchTab(tabName, clickedBtn) {
+  // Hide all tabs
+  document.querySelectorAll('.mv-tab-content').forEach(tab => {
+    tab.classList.remove('active');
   });
-  
-  console.log(`🥛 Smart Pagination: Initialized for ${allGrids.length} grids`);
+  document.querySelectorAll('.mv-tab').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  // Show selected tab
+  const targetTab = document.getElementById('tab-' + tabName);
+  if (targetTab) targetTab.classList.add('active');
+  if (clickedBtn) clickedBtn.classList.add('active');
+
+  // Initialize content if needed
+  if (tabName === 'solo' && !document.getElementById('solo-container').dataset.loaded) {
+    renderSoloVideos();
+    document.getElementById('solo-container').dataset.loaded = 'true';
+  } else if (tabName === 'multi' && !document.getElementById('multi-container').dataset.loaded) {
+    renderMultiVideos();
+    document.getElementById('multi-container').dataset.loaded = 'true';
+  } else if (tabName === 'arcs' && !document.getElementById('arcs-container').dataset.loaded) {
+    renderArcs();
+    document.getElementById('arcs-container').dataset.loaded = 'true';
+  }
+
+  // Update URL hash
+  history.replaceState(null, null, '#' + tabName);
 }
 
-/**
- * Initialize pagination for a specific grid
- */
+// ============================================
+// SOLO VIDEOS RENDERING
+// ============================================
+function renderSoloVideos() {
+  const container = document.getElementById('solo-container');
+  if (!container || !VIDEO_DB.solo) return;
+
+  let html = '';
+
+  Object.keys(VIDEO_DB.solo).forEach(charKey => {
+    const char = CHARACTERS[charKey];
+    const videos = VIDEO_DB.solo[charKey];
+
+    if (!char || !videos || videos.length === 0) return;
+
+    // Character header
+    html += `
+      <div class="mv-character-header">
+        <img src="${char.avatar}" alt="${char.name}" class="mv-character-avatar">
+        <div class="mv-character-info">
+          <h3>${char.name}</h3>
+          <p class="handle">${char.handle}</p>
+        </div>
+      </div>
+      <div class="mv-grid" id="grid-solo-${charKey}">
+    `;
+
+    // Video cards
+    videos.forEach(video => {
+      html += createVideoCard(video, 'solo');
+    });
+
+    html += '</div>';
+
+    // Pagination
+    html += `
+      <div class="mv-pagination" id="pagination-solo-${charKey}">
+        <button class="mv-page-btn" onclick="changePage('solo-${charKey}', -1)" id="prev-solo-${charKey}">◀</button>
+        <span class="mv-page-info">Page <span id="page-num-solo-${charKey}">1</span> / <span id="page-total-solo-${charKey}">1</span></span>
+        <button class="mv-page-btn" onclick="changePage('solo-${charKey}', 1)" id="next-solo-${charKey}">▶</button>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+
+  // Initialize pagination for each character
+  Object.keys(VIDEO_DB.solo).forEach(charKey => {
+    initPaginationForGrid('solo-' + charKey);
+  });
+}
+
+// ============================================
+// MULTI VIDEOS RENDERING
+// ============================================
+let selectedMultiChars = new Set(['all']);
+
+function renderMultiVideos() {
+  const container = document.getElementById('multi-container');
+  const filtersContainer = document.getElementById('multi-filters');
+
+  if (!container || !VIDEO_DB.multi) return;
+
+  // Render filters
+  let filtersHtml = '<button class="mv-filter-chip active" onclick="filterMulti('all', this)">ALL</button>';
+  Object.keys(CHARACTERS).forEach(charKey => {
+    const char = CHARACTERS[charKey];
+    filtersHtml += `<button class="mv-filter-chip" onclick="filterMulti('${charKey}', this)">${char.name}</button>`;
+  });
+  filtersContainer.innerHTML = filtersHtml;
+
+  // Render grid
+  renderMultiGrid(VIDEO_DB.multi);
+}
+
+function renderMultiGrid(videos) {
+  const container = document.getElementById('multi-container');
+
+  let html = '<div class="mv-grid" id="grid-multi">';
+  videos.forEach(video => {
+    html += createVideoCard(video, 'multi');
+  });
+  html += '</div>';
+
+  // Pagination
+  html += `
+    <div class="mv-pagination" id="pagination-multi">
+      <button class="mv-page-btn" onclick="changePage('multi', -1)" id="prev-multi">◀</button>
+      <span class="mv-page-info">Page <span id="page-num-multi">1</span> / <span id="page-total-multi">1</span></span>
+      <button class="mv-page-btn" onclick="changePage('multi', 1)" id="next-multi">▶</button>
+    </div>
+  `;
+
+  container.innerHTML = html;
+  initPaginationForGrid('multi');
+}
+
+function filterMulti(character, clickedChip) {
+  const allChips = document.querySelectorAll('.mv-filter-chip');
+
+  if (character === 'all') {
+    selectedMultiChars.clear();
+    selectedMultiChars.add('all');
+    allChips.forEach(chip => chip.classList.remove('active'));
+    clickedChip.classList.add('active');
+    renderMultiGrid(VIDEO_DB.multi);
+    return;
+  }
+
+  selectedMultiChars.delete('all');
+
+  if (selectedMultiChars.has(character)) {
+    selectedMultiChars.delete(character);
+    clickedChip.classList.remove('active');
+  } else {
+    selectedMultiChars.add(character);
+    clickedChip.classList.add('active');
+  }
+
+  // Remove active from ALL button
+  allChips.forEach(chip => {
+    if (chip.textContent === 'ALL') chip.classList.remove('active');
+  });
+
+  if (selectedMultiChars.size === 0) {
+    selectedMultiChars.add('all');
+    allChips.forEach(chip => {
+      if (chip.textContent === 'ALL') chip.classList.add('active');
+    });
+  }
+
+  // Filter videos
+  const filtered = VIDEO_DB.multi.filter(video => {
+    if (selectedMultiChars.has('all')) return true;
+    return video.characters && video.characters.some(c => selectedMultiChars.has(c));
+  });
+
+  renderMultiGrid(filtered);
+}
+
+// ============================================
+// STORY ARCS RENDERING
+// ============================================
+function renderArcs() {
+  const container = document.getElementById('arcs-container');
+  if (!container || !VIDEO_DB.arcs) return;
+
+  let html = '';
+
+  VIDEO_DB.arcs.forEach(arc => {
+    const statusClass = arc.status.toLowerCase().includes('ongoing') ? 'ongoing' : 
+                       arc.status.toLowerCase().includes('temporal') || arc.status.toLowerCase().includes('q6') ? 'q6' : '';
+
+    html += `
+      <div class="mv-arc-section">
+        <div class="mv-arc-header">
+          <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">${arc.title}</h3>
+          <span class="mv-arc-status ${statusClass}">${arc.status}</span>
+        </div>
+        <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">${arc.description}</p>
+        <div class="mv-grid" id="grid-arc-${arc.id}">
+    `;
+
+    arc.videos.forEach(video => {
+      html += createVideoCard(video, 'story-arc');
+    });
+
+    html += '</div>';
+
+    // Pagination
+    html += `
+      <div class="mv-pagination" id="pagination-arc-${arc.id}">
+        <button class="mv-page-btn" onclick="changePage('arc-${arc.id}', -1)" id="prev-arc-${arc.id}">◀</button>
+        <span class="mv-page-info">Page <span id="page-num-arc-${arc.id}">1</span> / <span id="page-total-arc-${arc.id}">1</span></span>
+        <button class="mv-page-btn" onclick="changePage('arc-${arc.id}', 1)" id="next-arc-${arc.id}">▶</button>
+      </div>
+    `;
+
+    html += '</div>';
+  });
+
+  container.innerHTML = html;
+
+  // Initialize pagination for each arc
+  VIDEO_DB.arcs.forEach(arc => {
+    initPaginationForGrid('arc-' + arc.id);
+  });
+}
+
+// ============================================
+// VIDEO CARD CREATOR
+// ============================================
+function createVideoCard(video, type) {
+  const cardClass = type === 'multi' ? 'mv-card multi-character' : 
+                    type === 'story-arc' ? 'mv-card story-arc' : 'mv-card';
+
+  return `
+    <a href="https://sora.chatgpt.com/p/${video.id}" target="_blank" rel="noopener" class="${cardClass}">
+      <img src="./thumbnails/${video.thumb}" class="mv-thumb" alt="${video.oneLiner}">
+      <div class="mv-card-overlay"><p class="mv-one-liner">"${video.oneLiner}"</p></div>
+      <span class="mv-external">↗ Sora</span>
+    </a>
+  `;
+}
+
+// ============================================
+// PAGINATION SYSTEM
+// ============================================
 function initPaginationForGrid(gridId) {
   const grid = document.getElementById(`grid-${gridId}`);
   const paginationContainer = document.getElementById(`pagination-${gridId}`);
-  
+
   if (!grid || !paginationContainer) return;
-  
+
   const cards = Array.from(grid.querySelectorAll('.mv-card'));
   const totalPages = Math.ceil(cards.length / SMART_PAGE_SIZE) || 1;
-  
-  // Store state
+
   paginationState[gridId] = {
     currentPage: 1,
     totalPages: totalPages,
-    expanded: false, // Track if ellipsis was clicked
+    expanded: false,
     cards: cards
   };
-  
-  // Assign data-page attributes to cards
+
   cards.forEach((card, index) => {
     const pageNum = Math.floor(index / SMART_PAGE_SIZE) + 1;
     card.setAttribute('data-page', pageNum);
   });
-  
-  // Build the pagination UI
+
   buildPaginationUI(gridId, paginationContainer);
-  
-  // Show first page
   showPage(gridId, 1);
 }
 
-/**
- * Build the complete pagination UI with page numbers
- */
 function buildPaginationUI(gridId, container) {
   const state = paginationState[gridId];
   const totalPages = state.totalPages;
-  
-  // Clear existing content except keep the basic structure
-  const prevBtn = container.querySelector(`#prev-${gridId}`);
-  const nextBtn = container.querySelector(`#next-${gridId}`);
-  const pageInfo = container.querySelector('.mv-page-info');
-  
-  // Create the page numbers container
-  let pageNumbersContainer = container.querySelector('.mv-page-numbers');
-  if (!pageNumbersContainer) {
-    pageNumbersContainer = document.createElement('div');
-    pageNumbersContainer.className = 'mv-page-numbers';
-    pageNumbersContainer.id = `page-numbers-${gridId}`;
-    
-    // Insert between prev and next buttons
-    if (nextBtn) {
-      container.insertBefore(pageNumbersContainer, nextBtn);
-    } else {
-      container.appendChild(pageNumbersContainer);
-    }
-  }
-  
-  // Create jump button wrapper if doesn't exist
-  let jumpWrapper = container.querySelector('.mv-jump-wrapper');
-  if (!jumpWrapper && totalPages > 5) {
-    jumpWrapper = document.createElement('div');
-    jumpWrapper.className = 'mv-jump-wrapper';
-    jumpWrapper.innerHTML = `
-      <button class="mv-jump-btn" id="jump-btn-${gridId}" onclick="toggleJumpDropdown('${gridId}')">
-        Jump <span class="arrow">▼</span>
-      </button>
-      <div class="mv-jump-dropdown" id="jump-dropdown-${gridId}"></div>
+
+  let html = `
+    <button class="mv-page-btn" onclick="changePage('${gridId}', -1)" id="prev-${gridId}">◀</button>
+    <div class="mv-page-numbers" id="page-numbers-${gridId}"></div>
+    <span class="mv-page-info">Page <span id="page-num-${gridId}">1</span> / <span id="page-total-${gridId}">${totalPages}</span></span>
+    <button class="mv-page-btn" onclick="changePage('${gridId}', 1)" id="next-${gridId}">▶</button>
+  `;
+
+  if (totalPages > 5) {
+    html += `
+      <div class="mv-jump-wrapper">
+        <button class="mv-jump-btn" id="jump-btn-${gridId}" onclick="toggleJumpDropdown('${gridId}')">
+          Jump <span class="arrow">▼</span>
+        </button>
+        <div class="mv-jump-dropdown" id="jump-dropdown-${gridId}"></div>
+      </div>
     `;
-    container.appendChild(jumpWrapper);
-    
-    // Populate jump dropdown
+  }
+
+  container.innerHTML = html;
+
+  if (totalPages > 5) {
     populateJumpDropdown(gridId);
   }
-  
-  // Generate page number buttons
+
   generatePageButtons(gridId);
-  
-  // Update prev/next button handlers
-  if (prevBtn) {
-    prevBtn.onclick = () => changeSmartPage(gridId, -1);
-  }
-  if (nextBtn) {
-    nextBtn.onclick = () => changeSmartPage(gridId, 1);
-  }
 }
 
-/**
- * Generate page number buttons with ellipsis logic
- */
 function generatePageButtons(gridId) {
   const container = document.getElementById(`page-numbers-${gridId}`);
   if (!container) return;
-  
+
   const state = paginationState[gridId];
   const totalPages = state.totalPages;
   const currentPage = state.currentPage;
   const expanded = state.expanded;
-  
+
   let html = '';
-  
+
   if (totalPages <= 7 || expanded) {
-    // Show all pages
     for (let i = 1; i <= totalPages; i++) {
-      html += createPageButton(gridId, i, i === currentPage);
+      html += `<button class="mv-page-number ${i === currentPage ? 'active' : ''}" onclick="goToPage('${gridId}', ${i})">${i}</button>`;
     }
   } else {
-    // Smart ellipsis display
-    // Always show: 1, 2, 3 ... current-1, current, current+1 ... last-2, last-1, last
-    
     const showStart = [1, 2, 3];
     const showEnd = [totalPages - 2, totalPages - 1, totalPages];
-    
-    // Pages around current
     const aroundCurrent = [];
+
     for (let i = Math.max(1, currentPage - 1); i <= Math.min(totalPages, currentPage + 1); i++) {
       if (!showStart.includes(i) && !showEnd.includes(i)) {
         aroundCurrent.push(i);
       }
     }
-    
-    // Build the sequence
+
     const pages = [];
-    
-    // Start pages
     showStart.forEach(p => pages.push(p));
-    
-    // Ellipsis before current if needed
+
     const needsBeforeEllipsis = aroundCurrent.length > 0 && aroundCurrent[0] > 4;
-    if (needsBeforeEllipsis) {
-      pages.push('...');
-    }
-    
-    // Pages around current
+    if (needsBeforeEllipsis) pages.push('...');
+
     aroundCurrent.forEach(p => pages.push(p));
-    
-    // Ellipsis after current if needed
+
     const needsAfterEllipsis = aroundCurrent.length > 0 && aroundCurrent[aroundCurrent.length - 1] < totalPages - 3;
-    if (needsAfterEllipsis) {
-      pages.push('...');
-    }
-    
-    // End pages (avoid duplicates)
+    if (needsAfterEllipsis) pages.push('...');
+
     showEnd.forEach(p => {
-      if (!pages.includes(p)) {
-        pages.push(p);
-      }
+      if (!pages.includes(p)) pages.push(p);
     });
-    
-    // Generate buttons
+
     pages.forEach(page => {
       if (page === '...') {
         html += `<button class="mv-page-number ellipsis" onclick="expandEllipsis('${gridId}')">...</button>`;
       } else {
-        html += createPageButton(gridId, page, page === currentPage);
+        html += `<button class="mv-page-number ${page === currentPage ? 'active' : ''}" onclick="goToPage('${gridId}', ${page})">${page}</button>`;
       }
     });
   }
-  
+
   container.innerHTML = html;
+  updateButtonStates(gridId);
 }
 
-/**
- * Create a single page number button HTML
- */
-function createPageButton(gridId, pageNum, isActive) {
-  const activeClass = isActive ? 'active' : '';
-  return `<button class="mv-page-number ${activeClass}" onclick="goToSmartPage('${gridId}', ${pageNum})" data-page="${pageNum}">${pageNum}</button>`;
-}
-
-/**
- * Expand ellipsis to show all pages
- */
 function expandEllipsis(gridId) {
   paginationState[gridId].expanded = true;
   generatePageButtons(gridId);
 }
 
-/**
- * Go to a specific page
- */
-function goToSmartPage(gridId, pageNum) {
+function goToPage(gridId, pageNum) {
   const state = paginationState[gridId];
-  
   if (pageNum < 1 || pageNum > state.totalPages) return;
-  
+
   state.currentPage = pageNum;
-  
-  // Show the page
   showPage(gridId, pageNum);
-  
-  // Update UI
   generatePageButtons(gridId);
-  updateButtonStates(gridId);
-  updatePageInfo(gridId);
+
+  const pageNumEl = document.getElementById(`page-num-${gridId}`);
+  if (pageNumEl) pageNumEl.textContent = pageNum;
 }
 
-/**
- * Change page by direction (+1 or -1)
- */
-function changeSmartPage(gridId, direction) {
+function changePage(gridId, direction) {
   const state = paginationState[gridId];
-  const newPage = state.currentPage + direction;
-  
-  goToSmartPage(gridId, newPage);
+  goToPage(gridId, state.currentPage + direction);
 }
 
-/**
- * Show cards for a specific page
- */
 function showPage(gridId, pageNum) {
   const state = paginationState[gridId];
-  const cards = state.cards;
-  
-  // Hide all cards
-  cards.forEach(card => card.style.display = 'none');
-  
-  // Show cards for this page
-  cards.forEach(card => {
+  state.cards.forEach(card => {
     const cardPage = parseInt(card.getAttribute('data-page'));
-    if (cardPage === pageNum) {
-      card.style.display = 'block';
-    }
+    card.style.display = cardPage === pageNum ? 'block' : 'none';
   });
 }
 
-/**
- * Update prev/next button states
- */
 function updateButtonStates(gridId) {
   const state = paginationState[gridId];
   const prevBtn = document.getElementById(`prev-${gridId}`);
   const nextBtn = document.getElementById(`next-${gridId}`);
-  
+
   if (prevBtn) prevBtn.disabled = state.currentPage === 1;
   if (nextBtn) nextBtn.disabled = state.currentPage >= state.totalPages;
 }
 
-/**
- * Update page info display
- */
-function updatePageInfo(gridId) {
-  const state = paginationState[gridId];
-  const pageNumEl = document.getElementById(`page-num-${gridId}`);
-  const pageTotalEl = document.getElementById(`page-total-${gridId}`);
-  
-  if (pageNumEl) pageNumEl.textContent = state.currentPage;
-  if (pageTotalEl) pageTotalEl.textContent = state.totalPages;
-}
-
-/**
- * Populate jump dropdown with every 5th page
- */
 function populateJumpDropdown(gridId) {
   const dropdown = document.getElementById(`jump-dropdown-${gridId}`);
   if (!dropdown) return;
-  
+
   const state = paginationState[gridId];
-  const totalPages = state.totalPages;
-  
   let html = '';
-  
-  // Add every 5th page
-  for (let i = 5; i <= totalPages; i += 5) {
-    html += `<button class="mv-jump-option" onclick="goToSmartPage('${gridId}', ${i}); closeJumpDropdown('${gridId}')">${i}</button>`;
+
+  for (let i = 5; i <= state.totalPages; i += 5) {
+    html += `<button class="mv-jump-option" onclick="goToPage('${gridId}', ${i}); closeJumpDropdown('${gridId}')">${i}</button>`;
   }
-  
-  // Always add last page if not already included
-  if (totalPages % 5 !== 0) {
-    html += `<button class="mv-jump-option" onclick="goToSmartPage('${gridId}', ${totalPages}); closeJumpDropdown('${gridId}')">${totalPages}</button>`;
+
+  if (state.totalPages % 5 !== 0) {
+    html += `<button class="mv-jump-option" onclick="goToPage('${gridId}', ${state.totalPages}); closeJumpDropdown('${gridId}')">${state.totalPages}</button>`;
   }
-  
+
   dropdown.innerHTML = html;
 }
 
-/**
- * Toggle jump dropdown
- */
 function toggleJumpDropdown(gridId) {
   const dropdown = document.getElementById(`jump-dropdown-${gridId}`);
   const btn = document.getElementById(`jump-btn-${gridId}`);
-  
+
   if (!dropdown) return;
-  
+
   const isOpen = dropdown.classList.contains('open');
-  
-  // Close all other dropdowns first
   document.querySelectorAll('.mv-jump-dropdown').forEach(d => d.classList.remove('open'));
   document.querySelectorAll('.mv-jump-btn').forEach(b => b.classList.remove('open'));
-  
+
   if (!isOpen) {
     dropdown.classList.add('open');
     btn.classList.add('open');
   }
 }
 
-/**
- * Close jump dropdown
- */
 function closeJumpDropdown(gridId) {
   const dropdown = document.getElementById(`jump-dropdown-${gridId}`);
   const btn = document.getElementById(`jump-btn-${gridId}`);
-  
+
   if (dropdown) dropdown.classList.remove('open');
   if (btn) btn.classList.remove('open');
 }
@@ -2367,48 +1398,40 @@ document.addEventListener('click', (e) => {
 });
 
 // ============================================
-// OVERRIDE EXISTING PAGINATION FUNCTIONS
+// INITIALIZATION
 // ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  // Check URL hash for initial tab
+  const hash = window.location.hash.replace('#', '');
+  const validTabs = ['solo', 'multi', 'arcs'];
 
-// Override the original initPagination to use smart pagination
-const originalInitPagination = window.initPagination;
-window.initPagination = function() {
-  initSmartPagination();
-};
-
-// Override changePage to use smart pagination
-const originalChangePage = window.changePage;
-window.changePage = function(character, direction) {
-  if (paginationState[character]) {
-    changeSmartPage(character, direction);
+  if (validTabs.includes(hash)) {
+    const tabBtn = document.querySelector(`.mv-tab[onclick*="'${hash}'"]`);
+    if (tabBtn) {
+      document.querySelectorAll('.mv-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.mv-tab-content').forEach(t => t.classList.remove('active'));
+      tabBtn.click();
+    }
   } else {
-    // Fallback to original if not initialized
-    if (originalChangePage) originalChangePage(character, direction);
+    // Default to solo tab
+    renderSoloVideos();
+    document.getElementById('solo-container').dataset.loaded = 'true';
   }
-};
+});
 
-// ============================================
-// INITIALIZE ON DOM READY
-// ============================================
+// Handle hash changes
+window.addEventListener('hashchange', () => {
+  const hash = window.location.hash.replace('#', '');
+  const validTabs = ['solo', 'multi', 'arcs'];
 
-// Run when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initSmartPagination);
-} else {
-  // DOM already loaded
-  initSmartPagination();
-}
-
-// Also run after a short delay to ensure gerchverse.js has loaded
-setTimeout(initSmartPagination, 500);
-
+  if (validTabs.includes(hash)) {
+    const tabBtn = document.querySelector(`.mv-tab[onclick*="'${hash}'"]`);
+    if (tabBtn && !tabBtn.classList.contains('active')) {
+      tabBtn.click();
+    }
+  }
+});
 </script>
-
-
-<!-- Popups disabled in gerchverse.js -->
-
-
-
 
 <!-- Emergency fallback for iOS -->
 <script>
@@ -2425,185 +1448,6 @@ setTimeout(initSmartPagination, 500);
     attempts++;
     if (attempts > 50) clearInterval(interval);
   }, 100);
-})();
-</script>
-
-<!-- URL HASH NAVIGATION: Enable direct links to tabs -->
-<script>
-(function() {
-  // Handle URL hash for tab navigation
-  function handleHashNavigation() {
-    const hash = window.location.hash.replace('#', '');
-    if (!hash) return;
-    
-    const validTabs = ['solo', 'multi', 'arcs'];
-    if (validTabs.includes(hash)) {
-      // Find the tab button and click it
-      const tabBtn = document.querySelector(`.mv-tab[onclick*="'${hash}'"]`);
-      if (tabBtn) {
-        tabBtn.click();
-        // Scroll to tabs
-        document.querySelector('.mv-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  }
-  
-  // Update URL hash when switching tabs
-  const originalSwitchTab = window.switchTab;
-  window.switchTab = function(tabName, clickedBtn) {
-    // Call original function if it exists
-    if (typeof originalSwitchTab === 'function') {
-      originalSwitchTab(tabName, clickedBtn);
-    } else {
-      // Fallback: handle tab switching manually
-      document.querySelectorAll('.mv-tab-content').forEach(tab => {
-        tab.classList.remove('active');
-      });
-      document.querySelectorAll('.mv-tab').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      
-      const targetTab = document.getElementById('tab-' + tabName);
-      if (targetTab) targetTab.classList.add('active');
-      if (clickedBtn) clickedBtn.classList.add('active');
-    }
-    
-    // Update URL hash without scrolling
-    history.replaceState(null, null, '#' + tabName);
-  };
-  
-  // Handle hash on page load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', handleHashNavigation);
-  } else {
-    handleHashNavigation();
-  }
-  
-  // Handle hash changes while on page
-  window.addEventListener('hashchange', handleHashNavigation);
-  
-  console.log('🔗 URL Hash Navigation: Enabled (use #solo, #multi, #arcs)');
-})();
-</script>
-
-<!-- FIXED MULTI-CHARACTER FILTERING -->
-<script>
-(function() {
-  // Track selected characters for multi-filter
-  let selectedMultiChars = new Set(['all']);
-  
-  // Override the filterMulti function to work with smart pagination
-  window.filterMulti = function(character, clickedChip) {
-    const grid = document.getElementById('grid-multi');
-    if (!grid) {
-      console.error('Multi grid not found');
-      return;
-    }
-    
-    const allCards = Array.from(grid.querySelectorAll('.mv-card'));
-    const allChips = document.querySelectorAll('.mv-filter-chip');
-    
-    // Handle "ALL" button
-    if (character === 'all') {
-      selectedMultiChars.clear();
-      selectedMultiChars.add('all');
-      
-      // Update UI
-      allChips.forEach(chip => chip.classList.remove('active'));
-      if (clickedChip) clickedChip.classList.add('active');
-      
-      // Show all cards
-      allCards.forEach(card => card.style.display = 'block');
-      
-      // Re-init smart pagination with all cards
-      if (typeof initPaginationForGrid === 'function') {
-        initPaginationForGrid('multi');
-      }
-      return;
-    }
-    
-    // Remove 'all' from selection
-    selectedMultiChars.delete('all');
-    
-    // Toggle this character
-    if (selectedMultiChars.has(character)) {
-      selectedMultiChars.delete(character);
-      if (clickedChip) clickedChip.classList.remove('active');
-    } else {
-      selectedMultiChars.add(character);
-      if (clickedChip) clickedChip.classList.add('active');
-    }
-    
-    // Remove active from ALL button
-    allChips.forEach(chip => {
-      const onclickText = chip.getAttribute('onclick') || '';
-      const isAllButton = onclickText.includes("'all'") || chip.textContent.trim() === 'ALL';
-      if (isAllButton) chip.classList.remove('active');
-    });
-    
-    // If nothing selected, go back to all
-    if (selectedMultiChars.size === 0) {
-      selectedMultiChars.add('all');
-      allChips.forEach(chip => {
-        const onclickText = chip.getAttribute('onclick') || '';
-        const isAllButton = onclickText.includes("'all'") || chip.textContent.trim() === 'ALL';
-        if (isAllButton) chip.classList.add('active');
-      });
-    }
-    
-    // Filter cards - show if card has ANY selected character
-    const visibleCards = allCards.filter(card => {
-      const cardChars = card.getAttribute('data-characters') || '';
-      for (let char of selectedMultiChars) {
-        if (cardChars.includes(char)) return true;
-      }
-      return false;
-    });
-    
-    // Hide all cards first
-    allCards.forEach(card => card.style.display = 'none');
-    
-    // Show filtered cards
-    visibleCards.forEach(card => card.style.display = 'block');
-    
-    // Update smart pagination state for filtered cards
-    if (typeof paginationState !== 'undefined') {
-      const totalPages = Math.ceil(visibleCards.length / 12) || 1;
-      paginationState['multi'] = {
-        currentPage: 1,
-        totalPages: totalPages,
-        expanded: false,
-        cards: visibleCards
-      };
-      
-      // Re-assign data-page for filtered cards
-      visibleCards.forEach((card, index) => {
-        const pageNum = Math.floor(index / 12) + 1;
-        card.setAttribute('data-page', pageNum);
-      });
-      
-      // Update pagination UI
-      const pageNumEl = document.getElementById('page-num-multi');
-      const pageTotalEl = document.getElementById('page-total-multi');
-      if (pageNumEl) pageNumEl.textContent = '1';
-      if (pageTotalEl) pageTotalEl.textContent = totalPages;
-      
-      // Update prev/next buttons
-      const prevBtn = document.getElementById('prev-multi');
-      const nextBtn = document.getElementById('next-multi');
-      if (prevBtn) prevBtn.disabled = true;
-      if (nextBtn) nextBtn.disabled = totalPages <= 1;
-      
-      // Rebuild page number buttons
-      if (typeof generatePageButtons === 'function') {
-        generatePageButtons('multi');
-      }
-    }
-    
-    console.log('🔍 Multi-filter:', Array.from(selectedMultiChars), '-', visibleCards.length, 'cards visible');
-  };
-  
-  console.log('✅ Fixed multi-character filtering loaded');
 })();
 </script>
 
