@@ -193,23 +193,27 @@
       display: block;
     }
 
-    .card-caption-overlay {
+.card-caption-overlay {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      inset: 0;
       padding: 0.75rem;
-      background: linear-gradient(transparent, rgba(0,0,0,0.9));
+      background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 35%, transparent 70%);
       color: #fff;
       font-family: 'Rajdhani', sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       line-height: 1.3;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .caption-text {
       display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
+
 
     .card-badge { 
       position: absolute; 
@@ -400,6 +404,12 @@
       .card-caption-overlay {
         font-size: 0.75rem;
         padding: 0.5rem;
+        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 40%, transparent 75%);
+      }
+
+      .card-caption-overlay .caption-text {
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
       }
 
       .costar-avatar {
@@ -1140,5 +1150,27 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+
+<!-- WRAP CAPTIONS FOR PROPER LINE-CLAMP -->
+<script>
+(function() {
+  function wrapCaptions() {
+    document.querySelectorAll('.card-caption-overlay').forEach(overlay => {
+      if (overlay.querySelector('.caption-text')) return;
+      const text = overlay.textContent.trim();
+      if (text) {
+        overlay.innerHTML = '<span class="caption-text">' + text + '</span>';
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', wrapCaptions);
+  } else {
+    wrapCaptions();
+  }
+  setTimeout(wrapCaptions, 500);
+  setTimeout(wrapCaptions, 1500);
+})();
+</script>
 </body>
 </html>
