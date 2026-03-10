@@ -195,20 +195,22 @@
 
     .card-caption-overlay {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      inset: 0;
       padding: 0.75rem;
-      background: linear-gradient(transparent, rgba(0,0,0,0.9));
+      padding-top: 40%;
+      background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.4) 60%, transparent 100%);
       color: #fff;
       font-family: 'Rajdhani', sans-serif;
-      font-size: 0.9rem;
-      line-height: 1.3;
+      font-size: 0.85rem;
+      line-height: 1.35;
       display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      text-overflow: ellipsis;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+      box-sizing: border-box;
     }
 
     .card-badge { 
@@ -400,6 +402,9 @@
       .card-caption-overlay {
         font-size: 0.75rem;
         padding: 0.5rem;
+        padding-top: 35%;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
       }
 
       .costar-avatar {
@@ -432,7 +437,12 @@
 
     @media (max-width: 380px) {
       .video-grid { gap: 0.5rem; }
-      .card-caption-overlay { font-size: 0.7rem; }
+      .card-caption-overlay { 
+        font-size: 0.7rem; 
+        padding-top: 35%;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+      }
       .costar-avatar {
         width: 20px;
         height: 20px;
