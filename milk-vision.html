@@ -873,9 +873,9 @@ function renderStoryArcs() {
 ${cardsHtml}
     </div>
     <div class="mv-pagination" id="${paginationId}">
-      <button class="mv-page-btn" onclick="changePage('${arcKey}', -1)" id="prev-${arcKey}">◀</button>
-      <span class="mv-page-info">Page <span id="page-num-${arcKey}">1</span> / <span id="page-total-${arcKey}">1</span></span>
-      <button class="mv-page-btn" onclick="changePage('${arcKey}', 1)" id="next-${arcKey}">▶</button>
+      <button class="mv-page-btn" onclick="changePage('arc-${arcKey}', -1)" id="prev-arc-${arcKey}">◀</button>
+      <span class="mv-page-info">Page <span id="page-num-arc-${arcKey}">1</span> / <span id="page-total-arc-${arcKey}">1</span></span>
+      <button class="mv-page-btn" onclick="changePage('arc-${arcKey}', 1)" id="next-arc-${arcKey}">▶</button>
     </div>
   </div>
 `;
@@ -889,7 +889,7 @@ ${cardsHtml}
     setTimeout(() => {
       Object.keys(arcs).forEach(arcKey => {
         if (typeof initPaginationForGrid === 'function') {
-          initPaginationForGrid(arcKey);
+          initPaginationForGrid(`arc-${arcKey}`);
         }
       });
     }, 100);
@@ -990,7 +990,7 @@ setTimeout(renderStoryArcs, 500);
 // ============================================
 
 // Configuration
-const SMART_PAGE_SIZE = 6; // Videos per page
+const SMART_PAGE_SIZE = 12; // Videos per page
 
 // Store pagination state for each grid
 const paginationState = {};
