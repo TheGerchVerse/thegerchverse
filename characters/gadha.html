@@ -739,6 +739,7 @@
         display: none !important;
       }
     }
+</style
   </style>
 </head>
 <body data-character="gadha">
@@ -838,53 +839,6 @@
 
 <script src="../gerchverse.js"></script>
 <script src="../videos.js"></script>
-<script src="../character-loader.js"></script>
-
-<!-- Emergency fallback for iOS -->
-<script>
-(function() {
-  // Hardcoded calculation for Dec 12, 2021
-  var DISAPPEARANCE = 1639267200000;
-  var days = Math.floor((Date.now() - DISAPPEARANCE) / 86400000);
-
-  // Try to update for 5 seconds
-  var attempts = 0;
-  var interval = setInterval(function() {
-    var el = document.getElementById('gerchanDays');
-    if (el) {
-      el.textContent = days;
-      clearInterval(interval);
-      console.log('[Emergency] Set days to:', days);
-    }
-    attempts++;
-    if (attempts > 50) clearInterval(interval);
-  }, 100);
-})();
-</script>
-
-<!-- DISABLE ALL POPUPS -->
-<script>
-// Override popup functions to prevent them from showing
-window.addEventListener('DOMContentLoaded', function() {
-  // Disable chaos popups
-  window.showChaosPopup = function() { return false; };
-  window.createChaosPopup = function() { return false; };
-  window.spawnChaosPopup = function() { return false; };
-
-  // Disable insolent cow modal
-  window.showInsolentCow = function() { return false; };
-  window.triggerInsolentCow = function() { return false; };
-
-  // Disable any modal showing functions
-  window.showModal = function() { return false; };
-  window.openModal = function() { return false; };
-
-  // Remove any existing popups/modals from DOM
-  var popups = document.querySelectorAll('.chaos-popup, #insolentCowModal, #bugModal, .modal, .popup');
-  popups.forEach(function(p) { p.remove(); });
-});
-</script>
-
 
 <!-- SMART PAGINATION SYSTEM -->
 <script>
@@ -1139,5 +1093,52 @@ window.addEventListener('DOMContentLoaded', function() {
   };
 })();
 </script>
+<script src="../character-loader.js"></script>
+
+<!-- Emergency fallback for iOS -->
+<script>
+(function() {
+  // Hardcoded calculation for Dec 12, 2021
+  var DISAPPEARANCE = 1639267200000;
+  var days = Math.floor((Date.now() - DISAPPEARANCE) / 86400000);
+
+  // Try to update for 5 seconds
+  var attempts = 0;
+  var interval = setInterval(function() {
+    var el = document.getElementById('gerchanDays');
+    if (el) {
+      el.textContent = days;
+      clearInterval(interval);
+      console.log('[Emergency] Set days to:', days);
+    }
+    attempts++;
+    if (attempts > 50) clearInterval(interval);
+  }, 100);
+})();
+</script>
+
+<!-- DISABLE ALL POPUPS -->
+<script>
+// Override popup functions to prevent them from showing
+window.addEventListener('DOMContentLoaded', function() {
+  // Disable chaos popups
+  window.showChaosPopup = function() { return false; };
+  window.createChaosPopup = function() { return false; };
+  window.spawnChaosPopup = function() { return false; };
+
+  // Disable insolent cow modal
+  window.showInsolentCow = function() { return false; };
+  window.triggerInsolentCow = function() { return false; };
+
+  // Disable any modal showing functions
+  window.showModal = function() { return false; };
+  window.openModal = function() { return false; };
+
+  // Remove any existing popups/modals from DOM
+  var popups = document.querySelectorAll('.chaos-popup, #insolentCowModal, #bugModal, .modal, .popup');
+  popups.forEach(function(p) { p.remove(); });
+});
+</script>
+
 </body>
 </html>
