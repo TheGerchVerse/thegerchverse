@@ -914,7 +914,7 @@ const CHARACTERS = {
     avatar: "../images/evilamit.jpg",
     color: "#00FF00"
   },
-    oletexwang: {
+    oletex: {
     name: "Ole' Tex Wang",
     handle: "@oletexwang",
     role: "Big Tex Wang's Father, Wang Clan Patriarch",
