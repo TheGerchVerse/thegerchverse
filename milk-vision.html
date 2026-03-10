@@ -22,7 +22,7 @@
   <style>
     /* ============================================
        MILK-VISION LIBRARY v2.0
-       The Q5 Cinematic Archive - JS Powered
+       JavaScript-Powered Video Archive
        ============================================ */
 
     /* Tab Navigation */
@@ -224,11 +224,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 1rem;
+      gap: 0.5rem;
       margin: 1.5rem 0;
       padding: 1rem;
       background: rgba(0,255,255,0.05);
       border-radius: 8px;
+      flex-wrap: wrap;
     }
 
     .mv-page-btn {
@@ -240,12 +241,19 @@
       font-size: 0.9rem;
       padding: 0.5rem 1rem;
       border-radius: 6px;
-      transition: all 0.3s;
+      transition: all 0.3s ease;
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .mv-page-btn:hover:not(:disabled) {
       background: #00FFFF;
       color: #000;
+      box-shadow: 0 0 20px rgba(0,255,255,0.5);
+      transform: translateY(-2px);
     }
 
     .mv-page-btn:disabled {
@@ -259,6 +267,8 @@
       color: #E0E0E0;
       font-family: 'Orbitron', sans-serif;
       font-size: 0.85rem;
+      margin: 0 0.5rem;
+      white-space: nowrap;
     }
 
     /* Multi-Character Filters */
@@ -452,51 +462,6 @@
       }
     }
 
-    /* Smart Pagination Container */
-    .mv-pagination {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 1.5rem 0;
-      padding: 1rem;
-      background: rgba(0,255,255,0.05);
-      border-radius: 8px;
-      flex-wrap: wrap;
-    }
-
-    /* Prev/Next Buttons */
-    .mv-page-btn {
-      background: transparent;
-      border: 2px solid #00FFFF;
-      color: #00FFFF;
-      cursor: pointer;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.9rem;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      min-width: 44px;
-      min-height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .mv-page-btn:hover:not(:disabled) {
-      background: #00FFFF;
-      color: #000;
-      box-shadow: 0 0 20px rgba(0,255,255,0.5);
-      transform: translateY(-2px);
-    }
-
-    .mv-page-btn:disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-      border-color: #666;
-      color: #666;
-    }
-
     /* Page Number Buttons */
     .mv-page-number {
       background: transparent;
@@ -546,13 +511,21 @@
       background: rgba(0,255,255,0.1);
     }
 
-    /* Page Info Display */
-    .mv-page-info {
-      color: #E0E0E0;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.85rem;
-      margin: 0 0.5rem;
-      white-space: nowrap;
+    /* Pagination Numbers Container */
+    .mv-page-numbers {
+      display: flex;
+      gap: 0.3rem;
+      align-items: center;
+    }
+
+    /* Jump wrapper for positioning */
+    .mv-jump-wrapper {
+      position: relative;
+    }
+
+    /* All pages expanded mode (after clicking ellipsis) */
+    .mv-page-numbers.expanded .mv-page-number.ellipsis {
+      display: none;
     }
 
     /* Jump Dropdown Button */
@@ -630,13 +603,6 @@
 
     .mv-jump-option:hover {
       background: rgba(255,215,0,0.2);
-    }
-
-    /* Pagination Numbers Container */
-    .mv-page-numbers {
-      display: flex;
-      gap: 0.3rem;
-      align-items: center;
     }
 
     /* Mobile Responsive Styles */
@@ -719,16 +685,6 @@
       }
     }
 
-    /* Jump wrapper for positioning */
-    .mv-jump-wrapper {
-      position: relative;
-    }
-
-    /* All pages expanded mode (after clicking ellipsis) */
-    .mv-page-numbers.expanded .mv-page-number.ellipsis {
-      display: none;
-    }
-
     /* Story Arcs Title Banner */
     .mv-arcs-banner {
       text-align: center;
@@ -776,6 +732,30 @@
       color: #FF007F;
       font-style: italic;
       font-size: 0.9rem;
+    }
+
+    /* Loading State */
+    .mv-loading {
+      text-align: center;
+      padding: 3rem;
+      color: #00FFFF;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .mv-loading::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #00FFFF;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-left: 10px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
   </style>
 </head>
@@ -836,20 +816,24 @@
 
 <!-- Tab Navigation -->
 <div class="mv-tabs">
-  <button class="mv-tab active" onclick="switchTab('solo', this)">Solo</button>
-  <button class="mv-tab" onclick="switchTab('multi', this)">Multi</button>
-  <button class="mv-tab" onclick="switchTab('arcs', this)">Story Arcs</button>
+  <button class="mv-tab active" onclick="switchTab('solo')">Solo</button>
+  <button class="mv-tab" onclick="switchTab('multi')">Multi</button>
+  <button class="mv-tab" onclick="switchTab('arcs')">Story Arcs</button>
 </div>
 
 <!-- SOLO TAB -->
 <div id="tab-solo" class="mv-tab-content active">
-  <div id="solo-container"></div>
+  <div id="solo-container">
+    <div class="mv-loading">Loading Solo Videos...</div>
+  </div>
 </div>
 
 <!-- MULTI TAB -->
 <div id="tab-multi" class="mv-tab-content">
   <div class="mv-filters" id="multi-filters"></div>
-  <div id="multi-container"></div>
+  <div id="multi-container">
+    <div class="mv-loading">Loading Multi Videos...</div>
+  </div>
 </div>
 
 <!-- STORY ARCS TAB -->
@@ -869,7 +853,9 @@
     <p>"Where continuity goes to die and profits go to multiply"</p>
   </div>
 
-  <div id="arcs-container"></div>
+  <div id="arcs-container">
+    <div class="mv-loading">Loading Story Arcs...</div>
+  </div>
 </div>
 
 <div style="text-align:center;">
@@ -944,8 +930,8 @@
   <p>GPU exhaustion. Token scarcity. Emotional regret. We kept going. It got worse. Stopping was ethical. This is that point.</p>
 </div>
 
+<!-- Load videos.js FIRST -->
 <script src="./videos.js"></script>
-<script src="./gerchverse.js"></script>
 
 <!-- Milk-Vision Library Rendering Engine -->
 <script>
@@ -954,484 +940,567 @@
 // JavaScript-Powered Video Archive
 // ============================================
 
-const SMART_PAGE_SIZE = 12;
-const paginationState = {};
+(function() {
+  'use strict';
 
-// ============================================
-// TAB SWITCHING
-// ============================================
-function switchTab(tabName, clickedBtn) {
-  // Hide all tabs
-  document.querySelectorAll('.mv-tab-content').forEach(tab => {
-    tab.classList.remove('active');
-  });
-  document.querySelectorAll('.mv-tab').forEach(btn => {
-    btn.classList.remove('active');
-  });
+  const SMART_PAGE_SIZE = 12;
+  const paginationState = {};
+  let selectedMultiChars = new Set(['all']);
+  let currentTab = 'solo';
 
-  // Show selected tab
-  const targetTab = document.getElementById('tab-' + tabName);
-  if (targetTab) targetTab.classList.add('active');
-  if (clickedBtn) clickedBtn.classList.add('active');
+  // ============================================
+  // DEBUG: Check if VIDEO_DB is loaded
+  // ============================================
+  function checkData() {
+    console.log('Checking VIDEO_DB...', typeof VIDEO_DB);
+    console.log('Checking CHARACTERS...', typeof CHARACTERS);
 
-  // Initialize content if needed
-  if (tabName === 'solo' && !document.getElementById('solo-container').dataset.loaded) {
-    renderSoloVideos();
-    document.getElementById('solo-container').dataset.loaded = 'true';
-  } else if (tabName === 'multi' && !document.getElementById('multi-container').dataset.loaded) {
-    renderMultiVideos();
-    document.getElementById('multi-container').dataset.loaded = 'true';
-  } else if (tabName === 'arcs' && !document.getElementById('arcs-container').dataset.loaded) {
-    renderArcs();
-    document.getElementById('arcs-container').dataset.loaded = 'true';
+    if (typeof VIDEO_DB === 'undefined') {
+      console.error('ERROR: VIDEO_DB is not loaded!');
+      showError('Failed to load video database. Please refresh the page.');
+      return false;
+    }
+
+    if (typeof CHARACTERS === 'undefined') {
+      console.error('ERROR: CHARACTERS is not loaded!');
+      showError('Failed to load character data. Please refresh the page.');
+      return false;
+    }
+
+    console.log('VIDEO_DB keys:', Object.keys(VIDEO_DB));
+    console.log('CHARACTERS keys:', Object.keys(CHARACTERS));
+    return true;
   }
 
-  // Update URL hash
-  history.replaceState(null, null, '#' + tabName);
-}
-
-// ============================================
-// SOLO VIDEOS RENDERING
-// ============================================
-function renderSoloVideos() {
-  const container = document.getElementById('solo-container');
-  if (!container || !VIDEO_DB.solo) return;
-
-  let html = '';
-
-  Object.keys(VIDEO_DB.solo).forEach(charKey => {
-    const char = CHARACTERS[charKey];
-    const videos = VIDEO_DB.solo[charKey];
-
-    if (!char || !videos || videos.length === 0) return;
-
-    // Character header
-    html += `
-      <div class="mv-character-header">
-        <img src="${char.avatar}" alt="${char.name}" class="mv-character-avatar">
-        <div class="mv-character-info">
-          <h3>${char.name}</h3>
-          <p class="handle">${char.handle}</p>
-        </div>
-      </div>
-      <div class="mv-grid" id="grid-solo-${charKey}">
-    `;
-
-    // Video cards
-    videos.forEach(video => {
-      html += createVideoCard(video, 'solo');
-    });
-
-    html += '</div>';
-
-    // Pagination
-    html += `
-      <div class="mv-pagination" id="pagination-solo-${charKey}">
-        <button class="mv-page-btn" onclick="changePage('solo-${charKey}', -1)" id="prev-solo-${charKey}">◀</button>
-        <span class="mv-page-info">Page <span id="page-num-solo-${charKey}">1</span> / <span id="page-total-solo-${charKey}">1</span></span>
-        <button class="mv-page-btn" onclick="changePage('solo-${charKey}', 1)" id="next-solo-${charKey}">▶</button>
-      </div>
-    `;
-  });
-
-  container.innerHTML = html;
-
-  // Initialize pagination for each character
-  Object.keys(VIDEO_DB.solo).forEach(charKey => {
-    initPaginationForGrid('solo-' + charKey);
-  });
-}
-
-// ============================================
-// MULTI VIDEOS RENDERING
-// ============================================
-let selectedMultiChars = new Set(['all']);
-
-function renderMultiVideos() {
-  const container = document.getElementById('multi-container');
-  const filtersContainer = document.getElementById('multi-filters');
-
-  if (!container || !VIDEO_DB.multi) return;
-
-  // Render filters
-  let filtersHtml = '<button class="mv-filter-chip active" onclick="filterMulti('all', this)">ALL</button>';
-  Object.keys(CHARACTERS).forEach(charKey => {
-    const char = CHARACTERS[charKey];
-    filtersHtml += `<button class="mv-filter-chip" onclick="filterMulti('${charKey}', this)">${char.name}</button>`;
-  });
-  filtersContainer.innerHTML = filtersHtml;
-
-  // Render grid
-  renderMultiGrid(VIDEO_DB.multi);
-}
-
-function renderMultiGrid(videos) {
-  const container = document.getElementById('multi-container');
-
-  let html = '<div class="mv-grid" id="grid-multi">';
-  videos.forEach(video => {
-    html += createVideoCard(video, 'multi');
-  });
-  html += '</div>';
-
-  // Pagination
-  html += `
-    <div class="mv-pagination" id="pagination-multi">
-      <button class="mv-page-btn" onclick="changePage('multi', -1)" id="prev-multi">◀</button>
-      <span class="mv-page-info">Page <span id="page-num-multi">1</span> / <span id="page-total-multi">1</span></span>
-      <button class="mv-page-btn" onclick="changePage('multi', 1)" id="next-multi">▶</button>
-    </div>
-  `;
-
-  container.innerHTML = html;
-  initPaginationForGrid('multi');
-}
-
-function filterMulti(character, clickedChip) {
-  const allChips = document.querySelectorAll('.mv-filter-chip');
-
-  if (character === 'all') {
-    selectedMultiChars.clear();
-    selectedMultiChars.add('all');
-    allChips.forEach(chip => chip.classList.remove('active'));
-    clickedChip.classList.add('active');
-    renderMultiGrid(VIDEO_DB.multi);
-    return;
-  }
-
-  selectedMultiChars.delete('all');
-
-  if (selectedMultiChars.has(character)) {
-    selectedMultiChars.delete(character);
-    clickedChip.classList.remove('active');
-  } else {
-    selectedMultiChars.add(character);
-    clickedChip.classList.add('active');
-  }
-
-  // Remove active from ALL button
-  allChips.forEach(chip => {
-    if (chip.textContent === 'ALL') chip.classList.remove('active');
-  });
-
-  if (selectedMultiChars.size === 0) {
-    selectedMultiChars.add('all');
-    allChips.forEach(chip => {
-      if (chip.textContent === 'ALL') chip.classList.add('active');
+  function showError(message) {
+    document.querySelectorAll('.mv-tab-content').forEach(tab => {
+      tab.innerHTML = '<div style="text-align:center; padding:3rem; color:#FF007F;"><h3>Error</h3><p>' + message + '</p></div>';
     });
   }
 
-  // Filter videos
-  const filtered = VIDEO_DB.multi.filter(video => {
-    if (selectedMultiChars.has('all')) return true;
-    return video.characters && video.characters.some(c => selectedMultiChars.has(c));
-  });
+  // ============================================
+  // TAB SWITCHING
+  // ============================================
+  window.switchTab = function(tabName) {
+    console.log('Switching to tab:', tabName);
 
-  renderMultiGrid(filtered);
-}
-
-// ============================================
-// STORY ARCS RENDERING
-// ============================================
-function renderArcs() {
-  const container = document.getElementById('arcs-container');
-  if (!container || !VIDEO_DB.arcs) return;
-
-  let html = '';
-
-  VIDEO_DB.arcs.forEach(arc => {
-    const statusClass = arc.status.toLowerCase().includes('ongoing') ? 'ongoing' : 
-                       arc.status.toLowerCase().includes('temporal') || arc.status.toLowerCase().includes('q6') ? 'q6' : '';
-
-    html += `
-      <div class="mv-arc-section">
-        <div class="mv-arc-header">
-          <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">${arc.title}</h3>
-          <span class="mv-arc-status ${statusClass}">${arc.status}</span>
-        </div>
-        <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">${arc.description}</p>
-        <div class="mv-grid" id="grid-arc-${arc.id}">
-    `;
-
-    arc.videos.forEach(video => {
-      html += createVideoCard(video, 'story-arc');
+    // Update active states
+    document.querySelectorAll('.mv-tab').forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes("'" + tabName + "'")) {
+        btn.classList.add('active');
+      }
     });
 
-    html += '</div>';
+    document.querySelectorAll('.mv-tab-content').forEach(tab => {
+      tab.classList.remove('active');
+    });
 
-    // Pagination
-    html += `
-      <div class="mv-pagination" id="pagination-arc-${arc.id}">
-        <button class="mv-page-btn" onclick="changePage('arc-${arc.id}', -1)" id="prev-arc-${arc.id}">◀</button>
-        <span class="mv-page-info">Page <span id="page-num-arc-${arc.id}">1</span> / <span id="page-total-arc-${arc.id}">1</span></span>
-        <button class="mv-page-btn" onclick="changePage('arc-${arc.id}', 1)" id="next-arc-${arc.id}">▶</button>
-      </div>
-    `;
+    const targetTab = document.getElementById('tab-' + tabName);
+    if (targetTab) {
+      targetTab.classList.add('active');
+    }
 
-    html += '</div>';
-  });
+    currentTab = tabName;
 
-  container.innerHTML = html;
+    // Render content
+    if (tabName === 'solo') {
+      renderSoloVideos();
+    } else if (tabName === 'multi') {
+      renderMultiVideos();
+    } else if (tabName === 'arcs') {
+      renderArcs();
+    }
 
-  // Initialize pagination for each arc
-  VIDEO_DB.arcs.forEach(arc => {
-    initPaginationForGrid('arc-' + arc.id);
-  });
-}
-
-// ============================================
-// VIDEO CARD CREATOR
-// ============================================
-function createVideoCard(video, type) {
-  const cardClass = type === 'multi' ? 'mv-card multi-character' : 
-                    type === 'story-arc' ? 'mv-card story-arc' : 'mv-card';
-
-  return `
-    <a href="https://sora.chatgpt.com/p/${video.id}" target="_blank" rel="noopener" class="${cardClass}">
-      <img src="./thumbnails/${video.thumb}" class="mv-thumb" alt="${video.oneLiner}">
-      <div class="mv-card-overlay"><p class="mv-one-liner">"${video.oneLiner}"</p></div>
-      <span class="mv-external">↗ Sora</span>
-    </a>
-  `;
-}
-
-// ============================================
-// PAGINATION SYSTEM
-// ============================================
-function initPaginationForGrid(gridId) {
-  const grid = document.getElementById(`grid-${gridId}`);
-  const paginationContainer = document.getElementById(`pagination-${gridId}`);
-
-  if (!grid || !paginationContainer) return;
-
-  const cards = Array.from(grid.querySelectorAll('.mv-card'));
-  const totalPages = Math.ceil(cards.length / SMART_PAGE_SIZE) || 1;
-
-  paginationState[gridId] = {
-    currentPage: 1,
-    totalPages: totalPages,
-    expanded: false,
-    cards: cards
+    // Update URL hash
+    history.replaceState(null, null, '#' + tabName);
   };
 
-  cards.forEach((card, index) => {
-    const pageNum = Math.floor(index / SMART_PAGE_SIZE) + 1;
-    card.setAttribute('data-page', pageNum);
-  });
+  // ============================================
+  // SOLO VIDEOS RENDERING
+  // ============================================
+  function renderSoloVideos() {
+    if (!checkData()) return;
 
-  buildPaginationUI(gridId, paginationContainer);
-  showPage(gridId, 1);
-}
+    const container = document.getElementById('solo-container');
+    if (!container) return;
 
-function buildPaginationUI(gridId, container) {
-  const state = paginationState[gridId];
-  const totalPages = state.totalPages;
+    if (container.dataset.loaded === 'true') return;
 
-  let html = `
-    <button class="mv-page-btn" onclick="changePage('${gridId}', -1)" id="prev-${gridId}">◀</button>
-    <div class="mv-page-numbers" id="page-numbers-${gridId}"></div>
-    <span class="mv-page-info">Page <span id="page-num-${gridId}">1</span> / <span id="page-total-${gridId}">${totalPages}</span></span>
-    <button class="mv-page-btn" onclick="changePage('${gridId}', 1)" id="next-${gridId}">▶</button>
-  `;
+    console.log('Rendering solo videos...');
 
-  if (totalPages > 5) {
-    html += `
-      <div class="mv-jump-wrapper">
-        <button class="mv-jump-btn" id="jump-btn-${gridId}" onclick="toggleJumpDropdown('${gridId}')">
-          Jump <span class="arrow">▼</span>
-        </button>
-        <div class="mv-jump-dropdown" id="jump-dropdown-${gridId}"></div>
-      </div>
-    `;
-  }
+    let html = '';
+    const soloData = VIDEO_DB.solo || {};
 
-  container.innerHTML = html;
+    Object.keys(soloData).forEach(function(charKey) {
+      const char = CHARACTERS[charKey];
+      const videos = soloData[charKey];
 
-  if (totalPages > 5) {
-    populateJumpDropdown(gridId);
-  }
-
-  generatePageButtons(gridId);
-}
-
-function generatePageButtons(gridId) {
-  const container = document.getElementById(`page-numbers-${gridId}`);
-  if (!container) return;
-
-  const state = paginationState[gridId];
-  const totalPages = state.totalPages;
-  const currentPage = state.currentPage;
-  const expanded = state.expanded;
-
-  let html = '';
-
-  if (totalPages <= 7 || expanded) {
-    for (let i = 1; i <= totalPages; i++) {
-      html += `<button class="mv-page-number ${i === currentPage ? 'active' : ''}" onclick="goToPage('${gridId}', ${i})">${i}</button>`;
-    }
-  } else {
-    const showStart = [1, 2, 3];
-    const showEnd = [totalPages - 2, totalPages - 1, totalPages];
-    const aroundCurrent = [];
-
-    for (let i = Math.max(1, currentPage - 1); i <= Math.min(totalPages, currentPage + 1); i++) {
-      if (!showStart.includes(i) && !showEnd.includes(i)) {
-        aroundCurrent.push(i);
+      if (!char || !videos || videos.length === 0) {
+        console.log('Skipping character:', charKey);
+        return;
       }
-    }
 
-    const pages = [];
-    showStart.forEach(p => pages.push(p));
+      console.log('Rendering character:', charKey, 'with', videos.length, 'videos');
 
-    const needsBeforeEllipsis = aroundCurrent.length > 0 && aroundCurrent[0] > 4;
-    if (needsBeforeEllipsis) pages.push('...');
+      // Character header
+      html += '<div class="mv-character-header">';
+      html += '<img src="' + char.avatar + '" alt="' + char.name + '" class="mv-character-avatar">';
+      html += '<div class="mv-character-info">';
+      html += '<h3>' + char.name + '</h3>';
+      html += '<p class="handle">' + char.handle + '</p>';
+      html += '</div></div>';
 
-    aroundCurrent.forEach(p => pages.push(p));
+      // Video grid
+      html += '<div class="mv-grid" id="grid-solo-' + charKey + '">';
+      videos.forEach(function(video) {
+        html += createVideoCard(video, 'solo');
+      });
+      html += '</div>';
 
-    const needsAfterEllipsis = aroundCurrent.length > 0 && aroundCurrent[aroundCurrent.length - 1] < totalPages - 3;
-    if (needsAfterEllipsis) pages.push('...');
-
-    showEnd.forEach(p => {
-      if (!pages.includes(p)) pages.push(p);
+      // Pagination
+      html += '<div class="mv-pagination" id="pagination-solo-' + charKey + '">';
+      html += '<button class="mv-page-btn" onclick="changePage('solo-' + charKey + '', -1)" id="prev-solo-' + charKey + '">◀</button>';
+      html += '<span class="mv-page-info">Page <span id="page-num-solo-' + charKey + '">1</span> / <span id="page-total-solo-' + charKey + '">1</span></span>';
+      html += '<button class="mv-page-btn" onclick="changePage('solo-' + charKey + '', 1)" id="next-solo-' + charKey + '">▶</button>';
+      html += '</div>';
     });
 
-    pages.forEach(page => {
-      if (page === '...') {
-        html += `<button class="mv-page-number ellipsis" onclick="expandEllipsis('${gridId}')">...</button>`;
-      } else {
-        html += `<button class="mv-page-number ${page === currentPage ? 'active' : ''}" onclick="goToPage('${gridId}', ${page})">${page}</button>`;
-      }
+    container.innerHTML = html;
+    container.dataset.loaded = 'true';
+
+    // Initialize pagination
+    Object.keys(soloData).forEach(function(charKey) {
+      initPaginationForGrid('solo-' + charKey);
     });
   }
 
-  container.innerHTML = html;
-  updateButtonStates(gridId);
-}
+  // ============================================
+  // MULTI VIDEOS RENDERING
+  // ============================================
+  function renderMultiVideos() {
+    if (!checkData()) return;
 
-function expandEllipsis(gridId) {
-  paginationState[gridId].expanded = true;
-  generatePageButtons(gridId);
-}
+    const container = document.getElementById('multi-container');
+    const filtersContainer = document.getElementById('multi-filters');
 
-function goToPage(gridId, pageNum) {
-  const state = paginationState[gridId];
-  if (pageNum < 1 || pageNum > state.totalPages) return;
+    if (!container || container.dataset.loaded === 'true') return;
 
-  state.currentPage = pageNum;
-  showPage(gridId, pageNum);
-  generatePageButtons(gridId);
+    console.log('Rendering multi videos...');
 
-  const pageNumEl = document.getElementById(`page-num-${gridId}`);
-  if (pageNumEl) pageNumEl.textContent = pageNum;
-}
+    // Render filters
+    let filtersHtml = '<button class="mv-filter-chip active" onclick="filterMulti('all', this)">ALL</button>';
+    Object.keys(CHARACTERS).forEach(function(charKey) {
+      const char = CHARACTERS[charKey];
+      filtersHtml += '<button class="mv-filter-chip" onclick="filterMulti('' + charKey + '', this)">' + char.name + '</button>';
+    });
+    filtersContainer.innerHTML = filtersHtml;
 
-function changePage(gridId, direction) {
-  const state = paginationState[gridId];
-  goToPage(gridId, state.currentPage + direction);
-}
+    // Render grid
+    renderMultiGrid(VIDEO_DB.multi || []);
+    container.dataset.loaded = 'true';
+  }
 
-function showPage(gridId, pageNum) {
-  const state = paginationState[gridId];
-  state.cards.forEach(card => {
-    const cardPage = parseInt(card.getAttribute('data-page'));
-    card.style.display = cardPage === pageNum ? 'block' : 'none';
+  function renderMultiGrid(videos) {
+    const container = document.getElementById('multi-container');
+    if (!container) return;
+
+    let html = '<div class="mv-grid" id="grid-multi">';
+    videos.forEach(function(video) {
+      html += createVideoCard(video, 'multi');
+    });
+    html += '</div>';
+
+    // Pagination
+    html += '<div class="mv-pagination" id="pagination-multi">';
+    html += '<button class="mv-page-btn" onclick="changePage('multi', -1)" id="prev-multi">◀</button>';
+    html += '<span class="mv-page-info">Page <span id="page-num-multi">1</span> / <span id="page-total-multi">1</span></span>';
+    html += '<button class="mv-page-btn" onclick="changePage('multi', 1)" id="next-multi">▶</button>';
+    html += '</div>';
+
+    container.innerHTML = html;
+    initPaginationForGrid('multi');
+  }
+
+  window.filterMulti = function(character, clickedChip) {
+    const allChips = document.querySelectorAll('.mv-filter-chip');
+
+    if (character === 'all') {
+      selectedMultiChars.clear();
+      selectedMultiChars.add('all');
+      allChips.forEach(function(chip) { chip.classList.remove('active'); });
+      clickedChip.classList.add('active');
+      renderMultiGrid(VIDEO_DB.multi || []);
+      return;
+    }
+
+    selectedMultiChars.delete('all');
+
+    if (selectedMultiChars.has(character)) {
+      selectedMultiChars.delete(character);
+      clickedChip.classList.remove('active');
+    } else {
+      selectedMultiChars.add(character);
+      clickedChip.classList.add('active');
+    }
+
+    allChips.forEach(function(chip) {
+      if (chip.textContent === 'ALL') chip.classList.remove('active');
+    });
+
+    if (selectedMultiChars.size === 0) {
+      selectedMultiChars.add('all');
+      allChips.forEach(function(chip) {
+        if (chip.textContent === 'ALL') chip.classList.add('active');
+      });
+    }
+
+    const filtered = (VIDEO_DB.multi || []).filter(function(video) {
+      if (selectedMultiChars.has('all')) return true;
+      return video.characters && video.characters.some(function(c) { return selectedMultiChars.has(c); });
+    });
+
+    renderMultiGrid(filtered);
+  };
+
+  // ============================================
+  // STORY ARCS RENDERING
+  // ============================================
+  function renderArcs() {
+    if (!checkData()) return;
+
+    const container = document.getElementById('arcs-container');
+    if (!container || container.dataset.loaded === 'true') return;
+
+    console.log('Rendering story arcs...');
+    console.log('VIDEO_DB.arcs:', VIDEO_DB.arcs);
+
+    const arcsData = VIDEO_DB.arcs || [];
+
+    if (arcsData.length === 0) {
+      container.innerHTML = '<div style="text-align:center; padding:3rem; color:#888;">No story arcs found.</div>';
+      return;
+    }
+
+    let html = '';
+
+    arcsData.forEach(function(arc) {
+      const statusClass = arc.status.toLowerCase().includes('ongoing') ? 'ongoing' : 
+                         arc.status.toLowerCase().includes('temporal') || arc.status.toLowerCase().includes('q6') ? 'q6' : '';
+
+      html += '<div class="mv-arc-section">';
+      html += '<div class="mv-arc-header">';
+      html += '<h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">' + arc.title + '</h3>';
+      html += '<span class="mv-arc-status ' + statusClass + '">' + arc.status + '</span>';
+      html += '</div>';
+      html += '<p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">' + arc.description + '</p>';
+
+      // Videos grid
+      html += '<div class="mv-grid" id="grid-arc-' + arc.id + '">';
+      arc.videos.forEach(function(video) {
+        html += createVideoCard(video, 'story-arc');
+      });
+      html += '</div>';
+
+      // Pagination
+      html += '<div class="mv-pagination" id="pagination-arc-' + arc.id + '">';
+      html += '<button class="mv-page-btn" onclick="changePage('arc-' + arc.id + '', -1)" id="prev-arc-' + arc.id + '">◀</button>';
+      html += '<span class="mv-page-info">Page <span id="page-num-arc-' + arc.id + '">1</span> / <span id="page-total-arc-' + arc.id + '">1</span></span>';
+      html += '<button class="mv-page-btn" onclick="changePage('arc-' + arc.id + '', 1)" id="next-arc-' + arc.id + '">▶</button>';
+      html += '</div>';
+
+      html += '</div>';
+    });
+
+    container.innerHTML = html;
+    container.dataset.loaded = 'true';
+
+    // Initialize pagination for each arc
+    arcsData.forEach(function(arc) {
+      initPaginationForGrid('arc-' + arc.id);
+    });
+  }
+
+  // ============================================
+  // VIDEO CARD CREATOR
+  // ============================================
+  function createVideoCard(video, type) {
+    const cardClass = type === 'multi' ? 'mv-card multi-character' : 
+                      type === 'story-arc' ? 'mv-card story-arc' : 'mv-card';
+
+    return '<a href="https://sora.chatgpt.com/p/' + video.id + '" target="_blank" rel="noopener" class="' + cardClass + '">' +
+           '<img src="./thumbnails/' + video.thumb + '" class="mv-thumb" alt="' + video.oneLiner + '">' +
+           '<div class="mv-card-overlay"><p class="mv-one-liner">"' + video.oneLiner + '"</p></div>' +
+           '<span class="mv-external">↗ Sora</span>' +
+           '</a>';
+  }
+
+  // ============================================
+  // PAGINATION SYSTEM
+  // ============================================
+  function initPaginationForGrid(gridId) {
+    const grid = document.getElementById('grid-' + gridId);
+    const paginationContainer = document.getElementById('pagination-' + gridId);
+
+    if (!grid || !paginationContainer) return;
+
+    const cards = Array.from(grid.querySelectorAll('.mv-card'));
+    const totalPages = Math.ceil(cards.length / SMART_PAGE_SIZE) || 1;
+
+    paginationState[gridId] = {
+      currentPage: 1,
+      totalPages: totalPages,
+      expanded: false,
+      cards: cards
+    };
+
+    cards.forEach(function(card, index) {
+      const pageNum = Math.floor(index / SMART_PAGE_SIZE) + 1;
+      card.setAttribute('data-page', pageNum);
+    });
+
+    buildPaginationUI(gridId, paginationContainer);
+    showPage(gridId, 1);
+  }
+
+  function buildPaginationUI(gridId, container) {
+    const state = paginationState[gridId];
+    const totalPages = state.totalPages;
+
+    let html = '<button class="mv-page-btn" onclick="changePage('' + gridId + '', -1)" id="prev-' + gridId + '">◀</button>';
+    html += '<div class="mv-page-numbers" id="page-numbers-' + gridId + '"></div>';
+    html += '<span class="mv-page-info">Page <span id="page-num-' + gridId + '">1</span> / <span id="page-total-' + gridId + '">' + totalPages + '</span></span>';
+    html += '<button class="mv-page-btn" onclick="changePage('' + gridId + '', 1)" id="next-' + gridId + '">▶</button>';
+
+    if (totalPages > 5) {
+      html += '<div class="mv-jump-wrapper">';
+      html += '<button class="mv-jump-btn" id="jump-btn-' + gridId + '" onclick="toggleJumpDropdown('' + gridId + '')">';
+      html += 'Jump <span class="arrow">▼</span>';
+      html += '</button>';
+      html += '<div class="mv-jump-dropdown" id="jump-dropdown-' + gridId + '"></div>';
+      html += '</div>';
+    }
+
+    container.innerHTML = html;
+
+    if (totalPages > 5) {
+      populateJumpDropdown(gridId);
+    }
+
+    generatePageButtons(gridId);
+  }
+
+  function generatePageButtons(gridId) {
+    const container = document.getElementById('page-numbers-' + gridId);
+    if (!container) return;
+
+    const state = paginationState[gridId];
+    const totalPages = state.totalPages;
+    const currentPage = state.currentPage;
+    const expanded = state.expanded;
+
+    let html = '';
+
+    if (totalPages <= 7 || expanded) {
+      for (let i = 1; i <= totalPages; i++) {
+        html += '<button class="mv-page-number ' + (i === currentPage ? 'active' : '') + '" onclick="goToPage('' + gridId + '', ' + i + ')">' + i + '</button>';
+      }
+    } else {
+      const showStart = [1, 2, 3];
+      const showEnd = [totalPages - 2, totalPages - 1, totalPages];
+      const aroundCurrent = [];
+
+      for (let i = Math.max(1, currentPage - 1); i <= Math.min(totalPages, currentPage + 1); i++) {
+        if (!showStart.includes(i) && !showEnd.includes(i)) {
+          aroundCurrent.push(i);
+        }
+      }
+
+      const pages = [];
+      showStart.forEach(function(p) { pages.push(p); });
+
+      const needsBeforeEllipsis = aroundCurrent.length > 0 && aroundCurrent[0] > 4;
+      if (needsBeforeEllipsis) pages.push('...');
+
+      aroundCurrent.forEach(function(p) { pages.push(p); });
+
+      const needsAfterEllipsis = aroundCurrent.length > 0 && aroundCurrent[aroundCurrent.length - 1] < totalPages - 3;
+      if (needsAfterEllipsis) pages.push('...');
+
+      showEnd.forEach(function(p) {
+        if (!pages.includes(p)) pages.push(p);
+      });
+
+      pages.forEach(function(page) {
+        if (page === '...') {
+          html += '<button class="mv-page-number ellipsis" onclick="expandEllipsis('' + gridId + '')">...</button>';
+        } else {
+          html += '<button class="mv-page-number ' + (page === currentPage ? 'active' : '') + '" onclick="goToPage('' + gridId + '', ' + page + ')">' + page + '</button>';
+        }
+      });
+    }
+
+    container.innerHTML = html;
+    updateButtonStates(gridId);
+  }
+
+  window.expandEllipsis = function(gridId) {
+    paginationState[gridId].expanded = true;
+    generatePageButtons(gridId);
+  };
+
+  window.goToPage = function(gridId, pageNum) {
+    const state = paginationState[gridId];
+    if (pageNum < 1 || pageNum > state.totalPages) return;
+
+    state.currentPage = pageNum;
+    showPage(gridId, pageNum);
+    generatePageButtons(gridId);
+
+    const pageNumEl = document.getElementById('page-num-' + gridId);
+    if (pageNumEl) pageNumEl.textContent = pageNum;
+  };
+
+  window.changePage = function(gridId, direction) {
+    const state = paginationState[gridId];
+    window.goToPage(gridId, state.currentPage + direction);
+  };
+
+  function showPage(gridId, pageNum) {
+    const state = paginationState[gridId];
+    state.cards.forEach(function(card) {
+      const cardPage = parseInt(card.getAttribute('data-page'));
+      card.style.display = cardPage === pageNum ? 'block' : 'none';
+    });
+  }
+
+  function updateButtonStates(gridId) {
+    const state = paginationState[gridId];
+    const prevBtn = document.getElementById('prev-' + gridId);
+    const nextBtn = document.getElementById('next-' + gridId);
+
+    if (prevBtn) prevBtn.disabled = state.currentPage === 1;
+    if (nextBtn) nextBtn.disabled = state.currentPage >= state.totalPages;
+  }
+
+  function populateJumpDropdown(gridId) {
+    const dropdown = document.getElementById('jump-dropdown-' + gridId);
+    if (!dropdown) return;
+
+    const state = paginationState[gridId];
+    let html = '';
+
+    for (let i = 5; i <= state.totalPages; i += 5) {
+      html += '<button class="mv-jump-option" onclick="goToPage('' + gridId + '', ' + i + '); closeJumpDropdown('' + gridId + '')">' + i + '</button>';
+    }
+
+    if (state.totalPages % 5 !== 0) {
+      html += '<button class="mv-jump-option" onclick="goToPage('' + gridId + '', ' + state.totalPages + '); closeJumpDropdown('' + gridId + '')">' + state.totalPages + '</button>';
+    }
+
+    dropdown.innerHTML = html;
+  }
+
+  window.toggleJumpDropdown = function(gridId) {
+    const dropdown = document.getElementById('jump-dropdown-' + gridId);
+    const btn = document.getElementById('jump-btn-' + gridId);
+
+    if (!dropdown) return;
+
+    const isOpen = dropdown.classList.contains('open');
+    document.querySelectorAll('.mv-jump-dropdown').forEach(function(d) { d.classList.remove('open'); });
+    document.querySelectorAll('.mv-jump-btn').forEach(function(b) { b.classList.remove('open'); });
+
+    if (!isOpen) {
+      dropdown.classList.add('open');
+      btn.classList.add('open');
+    }
+  };
+
+  window.closeJumpDropdown = function(gridId) {
+    const dropdown = document.getElementById('jump-dropdown-' + gridId);
+    const btn = document.getElementById('jump-btn-' + gridId);
+
+    if (dropdown) dropdown.classList.remove('open');
+    if (btn) btn.classList.remove('open');
+  };
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.mv-jump-wrapper')) {
+      document.querySelectorAll('.mv-jump-dropdown').forEach(function(d) { d.classList.remove('open'); });
+      document.querySelectorAll('.mv-jump-btn').forEach(function(b) { b.classList.remove('open'); });
+    }
   });
-}
 
-function updateButtonStates(gridId) {
-  const state = paginationState[gridId];
-  const prevBtn = document.getElementById(`prev-${gridId}`);
-  const nextBtn = document.getElementById(`next-${gridId}`);
+  // ============================================
+  // INITIALIZATION
+  // ============================================
+  function init() {
+    console.log('Milk-Vision Library initializing...');
 
-  if (prevBtn) prevBtn.disabled = state.currentPage === 1;
-  if (nextBtn) nextBtn.disabled = state.currentPage >= state.totalPages;
-}
-
-function populateJumpDropdown(gridId) {
-  const dropdown = document.getElementById(`jump-dropdown-${gridId}`);
-  if (!dropdown) return;
-
-  const state = paginationState[gridId];
-  let html = '';
-
-  for (let i = 5; i <= state.totalPages; i += 5) {
-    html += `<button class="mv-jump-option" onclick="goToPage('${gridId}', ${i}); closeJumpDropdown('${gridId}')">${i}</button>`;
-  }
-
-  if (state.totalPages % 5 !== 0) {
-    html += `<button class="mv-jump-option" onclick="goToPage('${gridId}', ${state.totalPages}); closeJumpDropdown('${gridId}')">${state.totalPages}</button>`;
-  }
-
-  dropdown.innerHTML = html;
-}
-
-function toggleJumpDropdown(gridId) {
-  const dropdown = document.getElementById(`jump-dropdown-${gridId}`);
-  const btn = document.getElementById(`jump-btn-${gridId}`);
-
-  if (!dropdown) return;
-
-  const isOpen = dropdown.classList.contains('open');
-  document.querySelectorAll('.mv-jump-dropdown').forEach(d => d.classList.remove('open'));
-  document.querySelectorAll('.mv-jump-btn').forEach(b => b.classList.remove('open'));
-
-  if (!isOpen) {
-    dropdown.classList.add('open');
-    btn.classList.add('open');
-  }
-}
-
-function closeJumpDropdown(gridId) {
-  const dropdown = document.getElementById(`jump-dropdown-${gridId}`);
-  const btn = document.getElementById(`jump-btn-${gridId}`);
-
-  if (dropdown) dropdown.classList.remove('open');
-  if (btn) btn.classList.remove('open');
-}
-
-// Close dropdowns when clicking outside
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.mv-jump-wrapper')) {
-    document.querySelectorAll('.mv-jump-dropdown').forEach(d => d.classList.remove('open'));
-    document.querySelectorAll('.mv-jump-btn').forEach(b => b.classList.remove('open'));
-  }
-});
-
-// ============================================
-// INITIALIZATION
-// ============================================
-document.addEventListener('DOMContentLoaded', () => {
-  // Check URL hash for initial tab
-  const hash = window.location.hash.replace('#', '');
-  const validTabs = ['solo', 'multi', 'arcs'];
-
-  if (validTabs.includes(hash)) {
-    const tabBtn = document.querySelector(`.mv-tab[onclick*="'${hash}'"]`);
-    if (tabBtn) {
-      document.querySelectorAll('.mv-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.mv-tab-content').forEach(t => t.classList.remove('active'));
-      tabBtn.click();
+    if (!checkData()) {
+      console.error('Data check failed');
+      return;
     }
+
+    // Check URL hash for initial tab
+    const hash = window.location.hash.replace('#', '');
+    const validTabs = ['solo', 'multi', 'arcs'];
+
+    if (validTabs.includes(hash)) {
+      console.log('Initializing from hash:', hash);
+      // Update tab buttons
+      document.querySelectorAll('.mv-tab').forEach(function(btn) {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes("'" + hash + "'")) {
+          btn.classList.add('active');
+        }
+      });
+
+      document.querySelectorAll('.mv-tab-content').forEach(function(tab) {
+        tab.classList.remove('active');
+      });
+
+      const targetTab = document.getElementById('tab-' + hash);
+      if (targetTab) targetTab.classList.add('active');
+
+      currentTab = hash;
+    }
+
+    // Render initial tab
+    console.log('Rendering initial tab:', currentTab);
+    if (currentTab === 'solo') {
+      renderSoloVideos();
+    } else if (currentTab === 'multi') {
+      renderMultiVideos();
+    } else if (currentTab === 'arcs') {
+      renderArcs();
+    }
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    // Default to solo tab
-    renderSoloVideos();
-    document.getElementById('solo-container').dataset.loaded = 'true';
+    init();
   }
-});
 
-// Handle hash changes
-window.addEventListener('hashchange', () => {
-  const hash = window.location.hash.replace('#', '');
-  const validTabs = ['solo', 'multi', 'arcs'];
+  // Handle hash changes
+  window.addEventListener('hashchange', function() {
+    const hash = window.location.hash.replace('#', '');
+    const validTabs = ['solo', 'multi', 'arcs'];
 
-  if (validTabs.includes(hash)) {
-    const tabBtn = document.querySelector(`.mv-tab[onclick*="'${hash}'"]`);
-    if (tabBtn && !tabBtn.classList.contains('active')) {
-      tabBtn.click();
+    if (validTabs.includes(hash) && hash !== currentTab) {
+      window.switchTab(hash);
     }
-  }
-});
+  });
+
+})();
 </script>
+
+<!-- Load gerchverse.js AFTER our script -->
+<script src="./gerchverse.js"></script>
 
 <!-- Emergency fallback for iOS -->
 <script>
