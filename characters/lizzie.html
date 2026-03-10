@@ -197,20 +197,22 @@
       position: absolute;
       inset: 0;
       padding: 0.75rem;
-      padding-top: 40%;
-      background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.4) 60%, transparent 100%);
+      background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 35%, transparent 70%);
       color: #fff;
       font-family: 'Rajdhani', sans-serif;
       font-size: 0.85rem;
-      line-height: 1.35;
+      line-height: 1.3;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .card-caption-overlay .caption-text {
       display: -webkit-box;
-      -webkit-line-clamp: 4;
-      line-clamp: 4;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      text-overflow: ellipsis;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.9);
-      box-sizing: border-box;
     }
 
     .card-badge { 
@@ -402,7 +404,10 @@
       .card-caption-overlay {
         font-size: 0.75rem;
         padding: 0.5rem;
-        padding-top: 35%;
+        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 40%, transparent 75%);
+      }
+
+      .card-caption-overlay .caption-text {
         -webkit-line-clamp: 3;
         line-clamp: 3;
       }
@@ -439,7 +444,11 @@
       .video-grid { gap: 0.5rem; }
       .card-caption-overlay { 
         font-size: 0.7rem; 
-        padding-top: 35%;
+        padding: 0.4rem;
+        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 40%, transparent 75%);
+      }
+
+      .card-caption-overlay .caption-text {
         -webkit-line-clamp: 3;
         line-clamp: 3;
       }
@@ -1149,5 +1158,33 @@ window.addEventListener('DOMContentLoaded', function() {
   };
 })();
 </script>
-</body>
+
+<!-- WRAP CAPTIONS FOR PROPER LINE-CLAMP -->
+<script>
+(function() {
+  function wrapCaptions() {
+    document.querySelectorAll('.card-caption-overlay').forEach(overlay => {
+      // Skip if already wrapped
+      if (overlay.querySelector('.caption-text')) return;
+
+      // Wrap text content in span
+      const text = overlay.textContent.trim();
+      if (text) {
+        overlay.innerHTML = '<span class="caption-text">' + text + '</span>';
+      }
+    });
+  }
+
+  // Run on load and after dynamic content loads
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', wrapCaptions);
+  } else {
+    wrapCaptions();
+  }
+
+  // Re-run after a delay for dynamically loaded content
+  setTimeout(wrapCaptions, 500);
+  setTimeout(wrapCaptions, 1500);
+})();
+</script></body>
 </html>
