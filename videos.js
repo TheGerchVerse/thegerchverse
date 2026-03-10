@@ -791,30 +791,289 @@ const VIDEO_DB = {
 
 
   ],
-
-  // ============================================
+/*  
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                ║
+║  ███████╗ ████████╗  ██████╗  ██████╗  ██╗   ██╗        █████╗   ██████╗    ██████╗  ███████╗  ║
+║  ██╔════╝ ╚══██╔══╝ ██╔═══██╗ ██╔══██╗ ╚██╗ ██╔╝       ██╔══██╗  ██╔══██╗  ██╔════╝  ██╔════╝  ║
+║  ███████╗    ██║    ██║   ██║ ██████╔╝  ╚████╔╝        ███████║  ██████╔╝  ██║       ███████╗  ║
+║  ╚════██║    ██║    ██║   ██║ ██╔══██╗   ╚██╔╝         ██╔══██║  ██╔══██╗  ██║       ╚════██║  ║
+║  ███████║    ██║    ╚██████╔╝ ██║  ██║    ██║          ██║  ██║  ██║  ██║  ╚██████╗  ███████║  ║
+║  ╚══════╝    ╚═╝     ╚═════╝  ╚═╝  ╚═╝    ╚═╝          ╚═╝  ╚═╝  ╚═╝  ╚═╝   ╚═════╝  ╚══════╝  ║
+║════════════════════════════════════════════════════════════════════════════════════════════════║
+║                         T H E    A R C - I V E    ( A N D    F R I E N D S )                   ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝ 
+*/
+    // ============================================
   // STORY ARCS
   // ============================================
   arcs: {
     "q5-launch": {
-      title: "Q5 Launch",
-      description: "The explosive launch of Q5 profits and the chaos that followed.",
-      videoIds: ["s_69122a2e5de8819183189a1d47e0e512", "s_691232463604819180f69b2938f59375", "s_691cf10c0914819182a446918b283ad9"]
+      title: "Where is Gerchan?",
+      description: "Gerchan has not posted in a while. This has been interpreted as evidence. What follows is a growing library of documentaries, multilingual trailers, podcasts, police interviews, and increasingly intense speculation. Big Tex convenes Gen Z analysts to unpack the digital silence. Meanwhile, Michael Moo has been actively investigating, presenting color-coded suspicion charts from his command center and compiling timelines that grow more detailed by the day. He also produced the riveting multilingual investigative documentary Gerchanheit 7-11 – Where Is Gerchan? There are theories. Answers remain pending. Content does not.",
+      status: "ONGOING",
+      videos: [
+        { id: "s_694ce36d120c819198db46970ca8004f", thumbnail: "arc-missing01.jpg", oneLiner: "Big Tex and Lizzie have questions." },
+        { id: "s_695c8eef0a4881918a48ce3f06fd56e4", thumbnail: "arc-missing02.jpg", oneLiner: "Big Tex begins actively investigating." },
+        { id: "s_695cbb2fe49481919557ae2e6f5b0aa6", thumbnail: "arc-missing03.jpg", oneLiner: "Big Tex continues questioning." },
+        { id: "s_695e984a227081919d81b0fe851ae646", thumbnail: "arc-missing04.jpg", oneLiner: "Big Tex hosts a podcast with the youth sleuths of today." },
+        { id: "s_695e90ad0948819184e3d09e1cb35d91", thumbnail: "arc-missing05.jpg", oneLiner: "'Anonymous' eyewitness accounts'." },
+        { id: "s_695da27808a881918e2a60fb8bd76c27", thumbnail: "arc-missing06.jpg", oneLiner: "Michael Moo starts investigating." },
+        { id: "s_695dac928d288191aea7c6f80aa6de3f", thumbnail: "arc-missing07.jpg", oneLiner: "Gerchanheit: 7-11 - Trailer A.)" },
+        { id: "s_695e819c667c8191946b29755540e138", thumbnail: "arc-missing08.jpg", oneLiner: "Gerchanheit: 7-11 - Trailer B." },
+        { id: "s_695eb3c61d488191aba1f301f8ae8f35", thumbnail: "arc-missing09.jpg", oneLiner: "Released footage from Amit's questioning." },
+        { id: "s_695e9dd9562481919112bec40aafff0b", thumbnail: "arc-missing10.jpg", oneLiner: "Gerchanheit 7-11 - Main Trailer." },
+        { id: "s_695eb4c4774881919e4483674ffa3e3d", thumbnail: "arc-missing11.jpg", oneLiner: "Gerchanheit 7-11 - Main Trailer Spanish Ver." },
+        { id: "s_695f5a1ab7e081918a8474cc55d01164", thumbnail: "arc-missing12.jpg", oneLiner: "Gerchanheit 7-11 - Main Trailer Brazil PT Ver." },
+        { id: "s_696338ca450481919c7d6900d0405d1b", thumbnail: "arc-missing13.jpg", oneLiner: "Gerchanheit 7-11 - Main Trailer German Ver." },
+        { id: "s_696339a5adb08191ae59de127abeaee6", thumbnail: "arc-missing14.jpg", oneLiner: "Gerchanheit 7-11 - Main Trailer Russian Ver." },
+        { id: "s_69633a602c608191999c05016edc839b", thumbnail: "arc-missing15.jpg", oneLiner: "Gerchanheit 7-11 - Main Trailer Japanese Ver." },
+        { id: "s_69633b14b98c819183776a0c8ed19eb0", thumbnail: "arc-missing16.jpg", oneLiner: "Gerchanheit 7-11 - Main Trailer Chinese (Trad.) Ver." }
+      ]
     },
-    "space-gulag": {
-      title: "Space Gulag",
-      description: "Amit's orbital detention facility for the insolent.",
-      videoIds: ["s_69136063eeb081919815295beae07040", "s_6918bd3000a08191a586c1fd5f7a842c"]
+    "insolence-overload": {
+      title: "Insolence Overload",
+      description: "Too much insolence takes a potentially deadly toll on Amit.",
+      status: "COMPLETE",
+      videos: [
+        { id: "s_6932288f5a308191be65148153bf1754", thumbnail: "arc-toomuchinsolence-01.jpg", oneLiner: "Amit's Collapse. MNN Reports." },
+        { id: "s_693106237f4081919cb6e2bb4f10b6ea", thumbnail: "arc-toomuchinsolence-02.jpg", oneLiner: "Reporters catch Lizzie as she leaves the hospital." },
+        { id: "s_69310a48ac288191a465bc70bfb9d57c", thumbnail: "arc-toomuchinsolence-03.jpg", oneLiner: "Leon not fond of reporters." }
+      ]
     },
-    "lizzie-investigation": {
-      title: "Lizzie Investigation",
-      description: "The FTC's probe into Ionix and Lizzie's questionable practices.",
-      videoIds: ["s_6920a25f0a608191be14559b83244e72", "s_69209e853a548191b95f3d5f2afce97e"]
+    "executive-flight-assets": {
+      title: "Executive Flight Assets",
+      description: "Not a story arc, but in our defense, Mediocrates approved (he was having a good day and we took advantage). Our core Gerch-Verse family members have special 'vehicles' and we needed somewhere to put the footage. 'Story Arcs' was closer than 'Random Asset Dump,' so here we are. Continuity is a myth we tell ourselves.",
+      status: "COMPLETE",
+      videos: [
+        { id: "s_69723174fad88191b80179d58e510a9f", thumbnail: "arc-executive-flight-assets-01.jpg", oneLiner: "Amit: Pegasus." },
+        { id: "s_69723473fd088191a1afc323fe5bf52a", thumbnail: "arc-executive-flight-assets-02.jpg", oneLiner: "Leon: Black Pegasus" },
+        { id: "s_6972345733a08191a2f8cd219120d8c5", thumbnail: "arc-executive-flight-assets-03.jpg", oneLiner: "Lizzie: Phoenix" },
+        { id: "s_6972343d821c8191b8819cd87f42ad4d", thumbnail: "arc-executive-flight-assets-04.jpg", oneLiner: "Big Tex: Red Rooster (DUH)." }
+      ]
     },
-    "gadha-prophecy": {
-      title: "Gadha Prophecy",
-      description: "The divine bovine's milk prophecy unfolds.",
-      videoIds: ["s_694960034c78819191ca6a13de9fcd14", "s_69711b1ab1008191b3a23e0fc2d6c084"]
+    "lizzie-the-snitch": {
+      title: "Lizzie the Snitch",
+      description: "He steals the milk. Lizzie steals the moment. The arrest steals the ending.",
+      status: "COMPLETE",
+      videos: [
+        { id: "s_6923ed35d1cc8191bfec3b78382c5df5", thumbnail: "arc-grandlarceny-00.jpg", oneLiner: "Hacker for hire." },
+        { id: "s_691265aa499c81918bad7e7826a6646f", thumbnail: "arc-grandlarceny-01.jpg", oneLiner: "Midnight prototype raid." },
+        { id: "s_6923ee03ebcc8191a4f4bb94438f5123", thumbnail: "arc-grandlarceny-02.jpg", oneLiner: "Gloves. Crates. Trunk slam. Lizzie rewinds once." },
+        { id: "s_69164791dbc48191a28b97fdd644b50c", thumbnail: "arc-grandlarceny-03.jpg", oneLiner: "The board tries to wrangle their CEO." },
+        { id: "s_6923dcdacfc081918b4076a09536dee8", thumbnail: "arc-grandlarceny-04.jpg", oneLiner: "The arrest." }
+      ]
+    },
+    "bloodline-error": {
+      title: "Bloodline Error",
+      description: "Ionix Labs: redefining accuracy. Turns out dairy is thicker than blood.",
+      status: "ONGOING — 1639+ DAYS",
+      videos: [
+        { id: "s_691e9c1138d88191a35080733b640a1a", thumbnail: "arc-bloodline-01.jpg", oneLiner: "Biological Relation: High." },
+        { id: "s_691f699c51f081919d82376dd8469237", thumbnail: "arc-bloodline-02.jpg", oneLiner: "Birth Control." },
+        { id: "s_691fa08857148191a2c2b0b6dc640be9", thumbnail: "arc-bloodline-03.jpg", oneLiner: "The Accent Slips." },
+        { id: "s_691ffa86d2808191893639d22cf7ddcf", thumbnail: "arc-bloodline-04.jpg", oneLiner: "Lactose Interference." }
+      ]
+    },
+    "q6-profits-apocalypse": {
+      title: "Q6 Profits Apocalypse",
+      description: "Amit Jr. arrives from the future. Warnings screamed. Warnings ignored. The gulag opens for time-travelers. Amit rushes to the future to investigate.",
+      status: "TEMPORAL VIOLATION",
+      videos: [
+        { id: "s_699beec67d58819195edfdc366b74e54", thumbnail: "arc-q6warning-00.jpg", oneLiner: "The arrival." },
+        { id: "s_6918be0246808191aeb73a7d5ff07d04", thumbnail: "arc-q6warning-01.jpg", oneLiner: "Warning ignored. Express to gulag" },
+        { id: "s_691bbd4893f0819188f666dca233fe22", thumbnail: "arc-q6warning-02.jpg", oneLiner: "Rich forever." },
+        { id: "s_691def3490048191881cb2e07a29c312", thumbnail: "arc-q6warning-03.jpg", oneLiner: "Nightmarish landscape." },
+        { id: "s_691e0e8ed6408191a3e768064b6efebf", thumbnail: "arc-q6warning-04.jpg", oneLiner: "Amit Jr. leads reparations demands." }
+      ]
+    },
+    "gerchfinity-doomsday": {
+      title: "Gerchfinity Wars: Doomsday",
+      description: "Continuity is a suggestion, not a promise. We open inside one of Amit's many suspiciously identical space fortresses as certain familiar names are flagged 'hostile,' which feels biased but on-brand. Leadership decisions are made loudly. Very loudly. From there, the timeline clocks out. Scenes overlap. Cause and effect stop returning emails. Portals open at the worst possible moments, and family therapy is replaced with cosmic escalation. Oh — remember Amit Jr. came from Q6? Yes, that's why child Amit was left in the Burger King bathroom in the first place. Let's also not forget Amit did the same to Jr. because that's how we learn best - from our parents. But that will be a tale for another time. Preventative anti–Q6 Profits Apocalypse strategy. So… that clearly didn't work. This arc is simply the next attempt to stop Q6 before it monetizes reality itself. Are these events sequential? Parallel? A quality control error? Officially: cosmic instability. Unofficially: Doomsday runs on vibes and refuses refunds. Oh, and some of the thumbnails were edited to look better than they actually do. But that's just a theory. A Q6 theory.",
+      status: "Status: Beats Us 🤷",
+      videos: [
+        { id: "s_699ccdd2597881918d5d35e6d091f40a", thumbnail: "arc-doomsday01.jpg", oneLiner: "Hostiles Flagged" },
+        { id: "s_699ce0bc47008191b16f5c13d41768f0", thumbnail: "arc-doomsday02.jpg", oneLiner: "The cast of the Gerch-Verse wait with bated breath." },
+        { id: "s_699f387cc0a481918f98efcc11bae250", thumbnail: "arc-doomsday03a.jpg", oneLiner: "(Ver 1) Amit sees mama for the first time since Burger King." },
+        { id: "s_699f43e0451c8191827959137254b7da", thumbnail: "arc-doomsday03b.jpg", oneLiner: "(Ver 2) Amit loses it." },
+        { id: "s_699cf173e64c8191a74383a120ecbe32", thumbnail: "arc-doomsday04.jpg", oneLiner: "Dark Amit and Light Amit collide." },
+        { id: "s_699cfee98a0481918e1883045e887ea7", thumbnail: "arc-doomsday05.jpg", oneLiner: "The siege rages on." },
+        { id: "s_69a236f1f6108191be1a5dab144634c6", thumbnail: "arc-doomsday06.jpg", oneLiner: "Abandoned-by-mama Amit clashes with kept-by-mama Evil Amit." }
+      ]
+    },
+    "f-infinity": {
+      title: "F∞ (F Infinity): Speedway of Insolencium",
+      description: "In F∞, the engines run on premium fuel and unpasteurized insolence. Lap times fall. Moral standards fall faster. Ethics spin at Turn One.",
+      status: "COMPLETE",
+      videos: [
+        { id: "s_6918bba3b41c81918923feb393b012c1", thumbnail: "arc-f-infinity01.jpg", oneLiner: "The Profit Formula." },
+        { id: "s_691fd41ef42c81919efc2da9036bba01", thumbnail: "arc-f-infinity02.jpg", oneLiner: "Legacy vs Destiny." },
+        { id: "s_6923e1a515c481919a9f1d5994ca5f47", thumbnail: "arc-f-infinity03.jpg", oneLiner: "Osaka Drift: Legacy vs Destiny." },
+        { id: "s_693910d605c88191b62298b26bdaa435", thumbnail: "arc-f-infinity04.jpg", oneLiner: "Legacy on Fire." },
+        { id: "s_6954d7894874819186e758aa3ed3ab45", thumbnail: "arc-f-infinity05a.jpg", oneLiner: "Race of Gods." },
+        { id: "s_6954d70ab644819180fdf67c2e3621dd", thumbnail: "arc-f-infinity05b.jpg", oneLiner: "Race of Gods V2." }
+      ]
+    },
+    "milk-wars": {
+      title: "Milk Wars: Plant-Based Reckoning",
+      description: "Facing declining margins, Amit deploys the Trojan Cow strategy against unsuspecting vegan farms. The midnight ambush ignites a dairy war, forcing Lizzie — minority stakeholder, maximum fury — to descend in flames and blood bombs. Their clash levels the land, but from the ashes hatches a phoenix, turning destruction into defiant renewal.",
+      status: "ONGOING — 3891+ DAYS",
+      videos: [
+        { id: "s_69264dbb2eac81918100f0246ab7923c", thumbnail: "arc-milkwars01.jpg", oneLiner: "Profits Down. Culprit? Vegan Cheese Farmers." },
+        { id: "s_69265481b0f48191845686256725e950", thumbnail: "arc-milkwars02.jpg", oneLiner: "Deploy the Trojan Cow." },
+        { id: "s_69265b5e8f9c8191a7a1c376ed52e3ec", thumbnail: "arc-milkwars03.jpg", oneLiner: "Minority Stakeholder Fury." },
+        { id: "s_692867ad12fc81919f7d83be73695379", thumbnail: "arc-milkwars04.jpg", oneLiner: "There will be blood. Maybe 2%." },
+        { id: "s_692c6e3ebb188191a4d681752dfbdcea", thumbnail: "arc-milkwars05.jpg", oneLiner: "Lizzie's fiery counter-assult." },
+        { id: "s_6929a8a85c90819189225b72c7bd1e3d", thumbnail: "arc-milkwars06.jpg", oneLiner: "Zord battle: Dairy Legacy vs Plant-based Destiny." },
+        { id: "s_6954d70ab644819180fdf67c2e3621dd", thumbnail: "arc-milkwars07.jpg", oneLiner: "The Aftermath. Time to Rebuild" },
+        { id: "s_6954d70ab644819180fdf67c2e3621dd", thumbnail: "arc-milkwars08.jpg", oneLiner: "Rise from the ashes. Rebirth." }
+      ]
+    },
+    "toy-commercials": {
+      title: "Toy Commercials",
+      description: "We asked for approval. Mediocrates was conflicted. 'Is this... responsible?' he whispered. Amit's Mother materialized: 'Manageable. That's how parents like their kids.' Mediocrates lit up—finally, a moral framework he could disappoint. He signed. Then we asked, 'Should toy commercials be in Story Arcs?' and everyone just shrugged. A generation learned that joy comes in blister packs, narrative cohesion is optional, and 'some assembly required' means you're already working for us, tiny consumer. Also that the Gerch-Verse organizes content like a raccoon organizes trash.",
+      status: "STATUS: Manageable",
+      videos: [
+        { id: "s_691bbd63e69c819199931f768eea3136", thumbnail: "arc-toys-amit.jpg", oneLiner: "Visionary Executive Action Figure - insolence not included." },
+        { id: "s_691f505e9d748191aae19d2b73fdec12", thumbnail: "arc-toys-lizzie.jpg", oneLiner: "Ionix Blood Analyzer." },
+        { id: "s_692e026b7f348191834a694ea16a694e", thumbnail: "arc-toys-leon.jpg", oneLiner: "Leon Cochran Courtroom Play Set." },
+        { id: "s_6935302aa35881918233d7a98de8de73", thumbnail: "arc-toys-bigtex.jpg", oneLiner: "Big Tex Wang Action Figure." },
+        { id: "s_69ab6507421c8191bb1714aa0ee18c18", thumbnail: "arc-toys-raj-sterling.jpg", oneLiner: "Raj & Sterling: Service Command Play Set." },
+        { id: "s_69ab73c1886c8191935dbfc06a5b1cbd", thumbnail: "arc-toys-amitmom.jpg", oneLiner: "'Have it Your Way' Play Set." },
+        { id: "s_69ab74e7a4ac8191aacb9f79392191c9", thumbnail: "arc-toys-pharma-bro.jpg", oneLiner: "Pharma Bro Action Figure." }
+      ]
+    },
+    "gerch-clone-pipeline": {
+      title: "The Gerch Clone Pipeline",
+      description: "Lizzie 'rescues' Gerch clones at midnight and reroutes them through Leon-built shell companies into her rawhide side hustle. CEO by day, off-book slaughter by night. Raj gives the all-clear whenever Amit visits his space gulag. Tex buys the carcasses for brisket and calls it fair trade. Amit preaches that cows are holy—except the 'insolent' ones he owns. Somewhere between sacred doctrine and smoked brisket, the supply chain starts asking questions.",
+      status: "ONGOING — 3891+ DAYS",
+      videos: [
+        { id: "s_693bbebc4d58819184f1951242d0e75f", thumbnail: "arc-clonepipeline-01.jpg", oneLiner: "Raj gives Lizzie a call." },
+        { id: "s_692c701f638881918e350cb0885f581b", thumbnail: "arc-clonepipeline-02.jpg", oneLiner: "Lizzie sneaks in undetected." },
+        { id: "s_692da25bae5081918efe21274df02951", thumbnail: "arc-clonepipeline-03.jpg", oneLiner: "Rawhide Lizzie." },
+        { id: "s_692de95bc33881918605bdbaf48bbdbc", thumbnail: "arc-clonepipeline-04.jpg", oneLiner: "Total Anonymity - Leon leads." },
+        { id: "s_693342d857f88191bc587269213525cf", thumbnail: "arc-clonepipeline-05.jpg", oneLiner: "Big Tex wants a piece." },
+        { id: "s_6933c43ab3a08191a8741c7b5ae08081", thumbnail: "arc-clonepipeline-06.jpg", oneLiner: "Amit snoops around." },
+        { id: "s_6935ab1ea4b4819181ca008e7295a1fe", thumbnail: "arc-clonepipeline-07.jpg", oneLiner: "Tex warns Lizzie." },
+        { id: "s_693cac5ab94081919bfc634d26e42032", thumbnail: "arc-clonepipeline-08.jpg", oneLiner: "Amit doesn't agree with beef." },
+        { id: "s_693cd07450a88191b04ec8bec6c5c61e", thumbnail: "arc-clonepipeline-09.jpg", oneLiner: "No 'beef' between us." },
+        { id: "s_693c3855d3448191a0ea51bb38ccf42f", thumbnail: "arc-clonepipeline-10.jpg", oneLiner: "Time to duke it out." }
+      ]
+    },
+    "gadha-saga": {
+      title: "The Gadha Saga",
+      description: "Big Tex asks if Lizzie has ever spotted Gadha during her midnight Gerch cow raids at Gerchan Farms Butchery. She tells Big Tex that Gadha is always kept locked up in Amit's space Gulag. Big Tex, determined, sets out to secure that divine bovine to grill up some fine brisket.",
+      status: "COMPLETE FOR NOW",
+      videos: [
+        { id: "s_6934fc83913c8191abddfe479d6f066e", thumbnail: "arc-gadhasaga-01.jpg", oneLiner: "Big Tex asks Lizzie about Gadha. Duh, Amit's space gulag." },
+        { id: "s_693494240fec8191ad97af4bf4b58ca9", thumbnail: "arc-gadhasaga-02.jpg", oneLiner: "Big Tex begs Leon. Leon can't help." },
+        { id: "s_69349827ce4c8191ae2dfa8459543278", thumbnail: "arc-gadhasaga-03.jpg", oneLiner: "Leon lays out the facts to Big Tex." },
+        { id: "s_693512f2b49481919eb7e1b6303444ef", thumbnail: "arc-gadhasaga-04.jpg", oneLiner: "Big Tex lifts off." },
+        { id: "s_693521967fa481918baaa3e6dd27fa88", thumbnail: "arc-gadhasaga-05.jpg", oneLiner: "Amit is alerted." },
+        { id: "s_6935293571b88191bd09577674757629", thumbnail: "arc-gadhasaga-06.jpg", oneLiner: "The space chase begins." },
+        { id: "s_693665e120548191b2a900ced2cc6f40", thumbnail: "arc-gadhasaga-07.jpg", oneLiner: "Raj begs Lizzie to diagnose Amit's destiny." },
+        { id: "s_6938c5ae23788191b0b25b782f6ff352", thumbnail: "arc-gadhasaga-08.jpg", oneLiner: "Unexpected transmission." },
+        { id: "s_6938c5d49004819196bdfeb0a066ca6a", thumbnail: "arc-gadhasaga-09.jpg", oneLiner: "Lucky break. Lucky Amit." },
+        { id: "s_6938deca915881918f6ddc5d5e0830fb", thumbnail: "arc-gadhasaga-10.jpg", oneLiner: "Big Tex trades beef and hospitaly for oil." }
+      ]
+    },
+    "rajs-past": {
+      title: "Raj's Past",
+      description: "A brief history on the origins of the beloved Raj Mehta and how he found purpose at Gerchan Farms and came to be Amit's Executive Assistant",
+      status: "COMPLETE - HIRED",
+      videos: [
+        { id: "s_693d04781e7c8191b519d04b1cc18032", thumbnail: "arc-rajorigin-01.jpg", oneLiner: "Leaving home." },
+        { id: "s_693e57d4b4948191ab5ac74587d6e266", thumbnail: "arc-rajorigin-02.jpg", oneLiner: "Now Hiring." },
+        { id: "s_693ed5752e288191bafe471c157290c6", thumbnail: "arc-rajorigin-03.jpg", oneLiner: "Boarding to Mumbai." },
+        { id: "s_693f163785348191855265c8848e8d17", thumbnail: "arc-rajorigin-04.jpg", oneLiner: "The interview." },
+        { id: "s_693f1952053c8191bf9ce90c353bce7d", thumbnail: "arc-rajorigin-05.jpg", oneLiner: "The retroactive update." }
+      ]
+    },
+    "insolencium": {
+      title: "Insolencium",
+      description: "Amit discovers Insolencium, a rare and potent element that can neutralize Gerchlander's insolence. He instinctively knows that this is Gerchlander's only weakness (prob because his good pal YogaFlex Luthor Chakravarthy told him), and fortifies not only his space gulag with this glowing green matter, but infuses into his own blood as well. Gerchlander ventures to Amit's space gulag to pillage some Gadha Golden Udder Milk...but Amit is more-than-ready...The result? Total dominion over Gerchlander.",
+      status: "COMPLETE - Gerchlander Neutralized and Compliant",
+      videos: [
+        { id: "s_697c00a28e6081919b412c7781e5f6de", thumbnail: "arc-insolencium01.jpg", oneLiner: "The discovery & the transfusion." },
+        { id: "s_697c384c7bdc8191b0eab2548c033fb6", thumbnail: "arc-insolencium02.jpg", oneLiner: "Setting the trap." },
+        { id: "s_697d548de4f881918a7d4aa4f846e3a2", thumbnail: "arc-insolencium03.jpg", oneLiner: "Owned." }
+      ]
+    },
+    "unsupervised-global-expansion": {
+      title: "Unsupervised Global Expansion",
+      description: "At some point, we decided the Land of the Rising Sun needed more Gerch-Verse. What followed was a flurry of toy commercials, retro tokusatsu-style hero battles, space tourism promotions, and at least one extremely serious truck advertisement. Some of it aired. Some of it probably shouldn't have. All of it exists. Consider this our lovingly disorganized archive of neon ambition and aggressively subtitled optimism. We regret nothing, except maybe the exploding robot budget.",
+      status: "COMPLETE",
+      videos: [
+        { id: "s_6918bae15d8881919274ff0b23ea08ef", thumbnail: "arc-risingsun01.jpg", oneLiner: "Amit defends Japan against Godzilla." },
+        { id: "s_693e81a46ce881919cfb8db8152b32e7", thumbnail: "arc-risingsun02.jpg", oneLiner: "TV Commercial for Gerch clone brisket." },
+        { id: "s_693e81c579648191a130e12cd867a5d0", thumbnail: "arc-risingsun03.jpg", oneLiner: "Amit Gaur: Nehru Suit Ranger." },
+        { id: "s_693efa7e0e888191a0ac481ce7bfc568", thumbnail: "arc-risingsun04.jpg", oneLiner: "Big Tex Wang Ranger." },
+        { id: "s_693efadaca248191a4a8b38b1fa562ae", thumbnail: "arc-risingsun05.jpg", oneLiner: "Lizzie Holmes Ranger." },
+        { id: "s_693efd6f7fcc81919abc4fd625a936d6", thumbnail: "arc-risingsun06.jpg", oneLiner: "Leon Cochran: Legal Suit Ranger." },
+        { id: "s_69430b2924f881919feb0aae407d4d7f", thumbnail: "arc-risingsun07.jpg", oneLiner: "Law Office of Leon Cochran Ad 1." },
+        { id: "s_69431350e77c819183d7436996971215", thumbnail: "arc-risingsun08.jpg", oneLiner: "Law Office of Leon Cochran Ad 2." },
+        { id: "s_6954808fe98481919c16596539e115b2", thumbnail: "arc-risingsun09.jpg", oneLiner: "Gadha Gulag Space Tours." },
+        { id: "s_696472165b7c8191849a2c5002cd7532", thumbnail: "arc-risingsun10.jpg", oneLiner: "Q5 Profits Banzai Classroom." },
+        { id: "s_6965f7c899508191a0a02627e4b60513", thumbnail: "arc-risingsun11.jpg", oneLiner: "Red Rooster Space Tours." },
+        { id: "s_6969c4e2f6a481918832a4b35af2bc15", thumbnail: "arc-risingsun12.jpg", oneLiner: "Gigantamax G150." },
+        { id: "s_697c0717608c8191b0509b8dca67026f", thumbnail: "arc-risingsun13.jpg", oneLiner: "Cole Mercer - Pharma Bro Ranger." },
+        { id: "s_69823f58737881919aa20c4196b99f04", thumbnail: "arc-risingsun14.jpg", oneLiner: "Kids Insolent Cow Meal." },
+        { id: "s_6983e3de54048191a426eba58620fb09", thumbnail: "arc-risingsun15.jpg", oneLiner: "Red Rooster Ranch Steakhouse." },
+        { id: "s_699cefd0e2808191ac128741c3c2b69a", thumbnail: "arc-risingsun16.jpg", oneLiner: "Evil Amit Ranger." },
+        { id: "s_699cfdfa413881918e02b0b623ea65f9", thumbnail: "arc-risingsun17.jpg", oneLiner: "Gerch Motors Gigantamax X1500." },
+        { id: "s_69a7cbab67788191bb02a956e5fe4f76", thumbnail: "arc-risingsun18.jpg", oneLiner: "Gargantamax 5000." },
+        { id: "s_69abd46b31088191b542d388a1fa46d5", thumbnail: "arc-risingsun19.jpg", oneLiner: "Ole' Tex Wang Ranger." },
+        { id: "s_69accf3866e48191a73678e52ae1be6d", thumbnail: "arc-risingsun20.jpg", oneLiner: "Indubitable Butler Ranger." },
+        { id: "s_69adb849d0d88191a5d5ca7b33d39798", thumbnail: "arc-risingsun21.jpg", oneLiner: "Raj Ranger." }
+      ]
+    },
+    "asmr-break-time": {
+      title: "ASMR Break Time",
+      description: "ASMR relaxation collection. Not a story arc. Not even close. We literally put a question mark in the title and you're still reading. That's the Gerch-Verse commitment to quality—if it's relaxing and features our characters, it goes in the arcs section. Approval from Mediocrates was recommended but ignored, much like narrative structure.",
+      status: "STILL RECORDING (STILL NOT AN ARC)",
+      videos: [
+        { id: "s_693e68e7225081918cdacfb4c1999000", thumbnail: "arc-asmr01.jpg", oneLiner: "Amit." },
+        { id: "s_6955eaa20edc8191a4fd5b730284fd4b", thumbnail: "arc-asmr02.jpg", oneLiner: "Raj." },
+        { id: "s_69531962cc148191840c0ec0136451e4", thumbnail: "arc-asmr03.jpg", oneLiner: "Leon." },
+        { id: "s_6955ed4b89348191baf59b3b3009d641", thumbnail: "arc-asmr04.jpg", oneLiner: "Sterling." },
+        { id: "s_695320d783388191849b42e3d1255093", thumbnail: "arc-asmr05.jpg", oneLiner: "Big Tex." },
+        { id: "s_69532681ec7c8191a15944205f83c031", thumbnail: "arc-asmr06.jpg", oneLiner: "Lizzie." }
+      ]
+    },
+    "music-videos": {
+      title: "Music Videos",
+      description: "FILE UNDER: 'Definitely not a story arc but we ran out of tabs.' Mediocrates raged for forty-five minutes, then track seven changed his mind and he added seventeen more videos. These aren't arcs. These are cries for help. Zero training, fax-machine vocals, temporal-rift Auto-Tune. One track charted in Q5 negatives because nobody could tell if it was music or a hostage recording. We put it in 'Story Arcs' because 'Miscellaneous Sonic War Crimes' felt too on-the-nose. Official: Belongs nowhere. Actual: Needed shelf space. Not art. Pathology with a beat that we organized next to legitimate narrative content because chaos is our love language. Warning: May cause spontaneous choreography, hearing damage, and urges to invest in Q6. You could do this too—and shouldn't. But if you do, put it in the wrong section. It's tradition.",
+      status: "MEDIOCRATES DISAPPROVES (BUT SECRETLY BOBS HEAD)",
+      videos: [
+        { id: "s_692be9b9fda08191b1b96da78975b0e9", thumbnail: "arc-musicvideos-rawhide-hearts.jpg", oneLiner: "Rawhide Hearts" },
+        { id: "s_69535b3bf7e881919b88d1d06132b124", thumbnail: "solo-leon-riddlers-ballad.jpg", oneLiner: "A Riddler's Ballad" },
+        { id: "s_695c02634ba48191a657b5f054b8ad6f", thumbnail: "arc-musicvideos-i-own-the-pulse.jpg", oneLiner: "I Own the Pulse." },
+        { id: "s_69647b418bf08191ae096b49de7ae3ed", thumbnail: "arc-sunset-gold.jpg", oneLiner: "Sunset Gold" },
+        { id: "s_69a673b7ea14819186b8c1d485d2e1c8", thumbnail: "arc-musicvideos-big-wheels-turnin.jpg", oneLiner: "Big Wheels Turnin'" },
+        { id: "s_697f87fda9548191852a7c1af29f695a", thumbnail: "arc-musicvideos-dont-grow.jpg", oneLiner: "Don't grow" },
+        { id: "s_69a642e88f048191a4a10493cd4f8099", thumbnail: "arc-musicvideos-timeless-love.jpg", oneLiner: "Timeless Love" },
+        { id: "s_6990cd6226588191a11f1dec17a51b8d", thumbnail: "arc-musicvideos-voices-of-destiny.jpg", oneLiner: "Voices of Destiny" },
+        { id: "s_6993abc42bcc819181dfc4fec29b603d", thumbnail: "arc-musicvideos-riddle-me-this-love.jpg", oneLiner: "Riddle me this Love" },
+        { id: "s_69a51590e61481918f196d1acae8e742", thumbnail: "arc-musicvideos-move-like-mumbai.jpg", oneLiner: "Move like Mumbai" },
+        { id: "s_69a5a97112308191ac18e93b8739164f", thumbnail: "arc-musicvideos-ill-rise.jpg", oneLiner: "I'll Rise" },
+        { id: "s_69a8dbe045b881919f8c8ddc3a44d380", thumbnail: "arc-musicvideos-transcendant-farewell.jpg", oneLiner: "Transcendant Farewell" },
+        { id: "s_695a0a39c8d481918172982b33047a92", thumbnail: "solo-leon-riddle-me-this-music-video.jpg", oneLiner: "Riddle me This" },
+        { id: "s_696965680b588191b2b34091a528b1ad", thumbnail: "solo-eelon-singing-lonely.jpg", oneLiner: "Somebody to Love Me" },
+        { id: "s_6977f4f780cc8191bc0ae145e229eb10", thumbnail: "arc-musicvideos-engine-in-the-open-sky.jpg", oneLiner: "Engine in the Open Sky" },
+        { id: "s_6969e4a525788191b3fe9cfdb4f4b2be", thumbnail: "solo-leon-riddle-me-this-classroom.jpg", oneLiner: "Riddlin' in the classroom" },
+        { id: "s_69837fc9b1f08191b018966c235af0f6", thumbnail: "arc-musicvideos-your-eyes-speak.jpg", oneLiner: "Speak With Your Eyes." },
+        { id: "s_69a3f6c097cc8191be8c03340f5191c4", thumbnail: "arc-musicvideos-sax-it-to-me.jpg", oneLiner: "Sax it to me." },
+        { id: "s_69a157a85ee48191afa3b90d1f8af0d4", thumbnail: "arc-musicvideos-strings-on-me.jpg", oneLiner: "Strings on Me" },
+        { id: "s_69a68a20ff048191a1696b6d60820a01", thumbnail: "arc-music-videos-a-breeze-that-knows-my-name.jpg", oneLiner: "A Breeze that Knows My Name" },
+        { id: "s_6997c30c7d248191a936d2340437f3ac", thumbnail: "arc-musicvideos-sunshine-eelon.jpg", oneLiner: "Sunshine" },
+        { id: "s_699b88289b348191bcad23d74b9bb9e4", thumbnail: "arc-musicvideos-my-desire.jpg", oneLiner: "My Desire" },
+        { id: "s_699687197f148191b627a45ef02babd8", thumbnail: "arc-musicvideos-riddle-me-to-the-moon.jpg", oneLiner: "Riddle me to the Moon. (And Back)" },
+        { id: "s_69a3eb54b29881919b038e50e9152917", thumbnail: "arc-musicvideos-eelon-violin.jpg", oneLiner: "Eel-On tries the violin." },
+        { id: "s_69990df04bd8819199f0a330d9f3fd53", thumbnail: "arc-musicvideos-evilamit-q4-on-ice.jpg", oneLiner: "Q4 On Ice." },
+        { id: "s_69ab03065d10819198327c3533af8400", thumbnail: "solo-amitsmother-spectacular.jpg", oneLiner: "Spectacular." },
+        { id: "s_698ea2890d808191853e919b9c2a3d53", thumbnail: "solo-cole-quarterly-prophets.jpg", oneLiner: "Quarterly prophets (of profits)." },
+        { id: "s_69ace9879b7c819190476e7d86e86bd3", thumbnail: "arc-musicvideos-mommy-hips-dont-lie.jpg", oneLiner: "Mommy's Hips Don't Lie." }
+      ]
     }
   }
 };
