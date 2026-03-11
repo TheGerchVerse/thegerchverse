@@ -495,6 +495,7 @@ const VIDEO_DB = {
       { id: "s_699fb2681cc8819195d3b53c9b0303fb", thumb: "solo-cole-salad-pugzley.jpg", oneLiner: "Making salad with @lofoandpu.pugzley.", arc: null },
       { id: "s_699fb59bd0688191bbc1657071d99746", thumb: "solo-cole-salad-pugzley-mba-treats.jpg", oneLiner: "Making MBA word salad treats with @lofoandpu.pugzley.", arc: null },
       { id: "s_69aafbd0f18c8191b4e0af1c6881e8df", thumb: "solo-cole-scarcity-is-culture.jpg", oneLiner: "Scarcity is culture.", arc: null },
+      { id: "s_69719b661ae88191ae2304c18a57eef4", thumb: "solo-cole-innovation-isnt-free.jpg", oneLiner: "Innovation isn't free.", arc: null },
     ],
 
 /*
@@ -790,7 +791,8 @@ const VIDEO_DB = {
     { id: "s_69a5a97112308191ac18e93b8739164f", thumb: "amitjr-bkrescue-onice.jpg", oneLiner: "BK Rescue: On Ice.", characters: ["amitjr", "lightamit", "amitsmother"], arc: null },
     { id: "s_69a642e88f048191a4a10493cd4f8099", thumb: "multi-amitjrmother-timelesslove.jpg", oneLiner: "Timeless Love.", characters: ["amitjr", "amitsmother"], arc: null },
     { id: "s_69a51590e61481918f196d1acae8e742", thumb: "multi-offsitemumbai.jpg", oneLiner: "Mumbai Offsite.", characters: ["amit", "amitjr", "lightamit", "darkamit", "amitsmother", "raj", "evilamit"], arc: null },
-    { id: "s_69acc3404578819184c7d827d645c7e9", thumb: "multi-sterling-leon-tardiness.jpg", oneLiner: "Tardiness", characters: ["leon", "sterling"], arc: null },
+    { id: "s_6972c26c1a6c8191840116dcc0d5f303", thumb: "multi-amit-gadha-voice-activated-dairy.jpg", oneLiner: "Voice-activated dairy", characters: ["amit", "gadha"], arc: null },
+
 
 
 
@@ -834,6 +836,22 @@ const VIDEO_DB = {
         { id: "s_69633a602c608191999c05016edc839b", thumbnail: "arc-missing15.jpg", oneLiner: "Gerchanheit 7-11 - Main Trailer Japanese Ver." },
         { id: "s_69633b14b98c819183776a0c8ed19eb0", thumbnail: "arc-missing16.jpg", oneLiner: "Gerchanheit 7-11 - Main Trailer Chinese (Trad.) Ver." }
       ]
+
+    },
+    "gadha-golden-shower": {
+      title: "Gadha's Golden Shower: How Milk Made Monsters",
+      description: "Before sense, there was Amit's Mother. Before Q5, there was Gadha. Before responsible parenting, there was roofie ambrosia. This genealogy of terror traces the divine lactation that birthed Dark and Light Amit from celestial udders, the eternal documentary investigation into Amit's Mother (who remains unlocatable, un-interviewable, and extremely promiscuous across timelines), and the absolutely unhinged creation myth of Amit Jr. and Evil Amit via mythological substances that would get CPS called if this weren't already a space gulag operation. Origin stories are supposed to explain things. This one just raises better questions.",
+      status: "STATUS: Depends on Amit's Mother",
+      videos: [
+        { id: "s_6982a26ba9688191b2dc43aef71025e5", thumbnail: "arc-gadha-golden-shower-00.jpg", oneLiner: "Family Tree Attempt." },
+        { id: "s_6974e9c2a3c08191a77207e7ee7e96fb", thumbnail: "arc-gadha-golden-shower-01.jpg", oneLiner: "Who is Amit's Mother?" },
+        { id: "s_6974d75f3e7881918261a35615ed7a78", thumbnail: "arc-gadha-golden-shower-02.jpg", oneLiner: "Dark Amit, Light Amit." },
+        { id: "s_6974d5db42d88191b327f358a59bcfe2", thumbnail: "arc-gadha-golden-shower-03.jpg", oneLiner: "Amit is Born." },
+        { id: "s_69960c66d8c48191b663793380927676", thumbnail: "arc-gadha-golden-shower-04.jpg", oneLiner: "Evil Amit is Born." }
+        { id: "s_6988b7cf49a081919ef9965234f24c5b", thumbnail: "arc-gadha-golden-shower-05.jpg", oneLiner: "Another genealogy attempt." },
+      ]  
+      
+      
     },
     "insolence-overload": {
       title: "Insolence Overload",
@@ -844,6 +862,7 @@ const VIDEO_DB = {
         { id: "s_693106237f4081919cb6e2bb4f10b6ea", thumbnail: "arc-toomuchinsolence-02.jpg", oneLiner: "Reporters catch Lizzie as she leaves the hospital." },
         { id: "s_69310a48ac288191a465bc70bfb9d57c", thumbnail: "arc-toomuchinsolence-03.jpg", oneLiner: "Leon not fond of reporters." }
       ]
+
     },
     "executive-flight-assets": {
       title: "Executive Flight Assets",
@@ -855,6 +874,7 @@ const VIDEO_DB = {
         { id: "s_6972345733a08191a2f8cd219120d8c5", thumbnail: "arc-executive-flight-assets-03.jpg", oneLiner: "Lizzie: Phoenix" },
         { id: "s_6972343d821c8191b8819cd87f42ad4d", thumbnail: "arc-executive-flight-assets-04.jpg", oneLiner: "Big Tex: Red Rooster (DUH)." }
       ]
+
     },
     "lizzie-the-snitch": {
       title: "Lizzie the Snitch",
@@ -867,6 +887,7 @@ const VIDEO_DB = {
         { id: "s_69164791dbc48191a28b97fdd644b50c", thumbnail: "arc-grandlarceny-03.jpg", oneLiner: "The board tries to wrangle their CEO." },
         { id: "s_6923dcdacfc081918b4076a09536dee8", thumbnail: "arc-grandlarceny-04.jpg", oneLiner: "The arrest." }
       ]
+
     },
     "bloodline-error": {
       title: "Bloodline Error",
@@ -878,6 +899,7 @@ const VIDEO_DB = {
         { id: "s_691fa08857148191a2c2b0b6dc640be9", thumbnail: "arc-bloodline-03.jpg", oneLiner: "The Accent Slips." },
         { id: "s_691ffa86d2808191893639d22cf7ddcf", thumbnail: "arc-bloodline-04.jpg", oneLiner: "Lactose Interference." }
       ]
+
     },
     "q6-profits-apocalypse": {
       title: "Q6 Profits Apocalypse",
@@ -890,6 +912,7 @@ const VIDEO_DB = {
         { id: "s_691def3490048191881cb2e07a29c312", thumbnail: "arc-q6warning-03.jpg", oneLiner: "Nightmarish landscape." },
         { id: "s_691e0e8ed6408191a3e768064b6efebf", thumbnail: "arc-q6warning-04.jpg", oneLiner: "Amit Jr. leads reparations demands." }
       ]
+
     },
     "gerchfinity-doomsday": {
       title: "Gerchfinity Wars: Doomsday",
@@ -904,6 +927,7 @@ const VIDEO_DB = {
         { id: "s_699cfee98a0481918e1883045e887ea7", thumbnail: "arc-doomsday05.jpg", oneLiner: "The siege rages on." },
         { id: "s_69a236f1f6108191be1a5dab144634c6", thumbnail: "arc-doomsday06.jpg", oneLiner: "Abandoned-by-mama Amit clashes with kept-by-mama Evil Amit." }
       ]
+
     },
     "f-infinity": {
       title: "F∞ (F Infinity): Speedway of Insolencium",
@@ -917,6 +941,7 @@ const VIDEO_DB = {
         { id: "s_6954d7894874819186e758aa3ed3ab45", thumbnail: "arc-f-infinity05a.jpg", oneLiner: "Race of Gods." },
         { id: "s_6954d70ab644819180fdf67c2e3621dd", thumbnail: "arc-f-infinity05b.jpg", oneLiner: "Race of Gods V2." }
       ]
+
     },
     "milk-wars": {
       title: "Milk Wars: Plant-Based Reckoning",
@@ -932,6 +957,7 @@ const VIDEO_DB = {
         { id: "s_6954d70ab644819180fdf67c2e3621dd", thumbnail: "arc-milkwars07.jpg", oneLiner: "The Aftermath. Time to Rebuild" },
         { id: "s_6954d70ab644819180fdf67c2e3621dd", thumbnail: "arc-milkwars08.jpg", oneLiner: "Rise from the ashes. Rebirth." }
       ]
+
     },
     "toy-commercials": {
       title: "Toy Commercials",
@@ -946,6 +972,7 @@ const VIDEO_DB = {
         { id: "s_69ab73c1886c8191935dbfc06a5b1cbd", thumbnail: "arc-toys-amitmom.jpg", oneLiner: "'Have it Your Way' Play Set." },
         { id: "s_69ab74e7a4ac8191aacb9f79392191c9", thumbnail: "arc-toys-pharma-bro.jpg", oneLiner: "Pharma Bro Action Figure." }
       ]
+
     },
     "gerch-clone-pipeline": {
       title: "The Gerch Clone Pipeline",
@@ -963,6 +990,7 @@ const VIDEO_DB = {
         { id: "s_693cd07450a88191b04ec8bec6c5c61e", thumbnail: "arc-clonepipeline-09.jpg", oneLiner: "No 'beef' between us." },
         { id: "s_693c3855d3448191a0ea51bb38ccf42f", thumbnail: "arc-clonepipeline-10.jpg", oneLiner: "Time to duke it out." }
       ]
+
     },
     "gadha-saga": {
       title: "The Gadha Saga",
@@ -980,6 +1008,7 @@ const VIDEO_DB = {
         { id: "s_6938c5d49004819196bdfeb0a066ca6a", thumbnail: "arc-gadhasaga-09.jpg", oneLiner: "Lucky break. Lucky Amit." },
         { id: "s_6938deca915881918f6ddc5d5e0830fb", thumbnail: "arc-gadhasaga-10.jpg", oneLiner: "Big Tex trades beef and hospitaly for oil." }
       ]
+
     },
     "rajs-past": {
       title: "Raj's Past",
@@ -992,6 +1021,7 @@ const VIDEO_DB = {
         { id: "s_693f163785348191855265c8848e8d17", thumbnail: "arc-rajorigin-04.jpg", oneLiner: "The interview." },
         { id: "s_693f1952053c8191bf9ce90c353bce7d", thumbnail: "arc-rajorigin-05.jpg", oneLiner: "The retroactive update." }
       ]
+
     },
     "insolencium": {
       title: "Insolencium",
@@ -1002,6 +1032,7 @@ const VIDEO_DB = {
         { id: "s_697c384c7bdc8191b0eab2548c033fb6", thumbnail: "arc-insolencium02.jpg", oneLiner: "Setting the trap." },
         { id: "s_697d548de4f881918a7d4aa4f846e3a2", thumbnail: "arc-insolencium03.jpg", oneLiner: "Owned." }
       ]
+
     },
     "unsupervised-global-expansion": {
       title: "Unsupervised Global Expansion",
@@ -1030,6 +1061,7 @@ const VIDEO_DB = {
         { id: "s_69accf3866e48191a73678e52ae1be6d", thumbnail: "arc-risingsun20.jpg", oneLiner: "Indubitable Butler Ranger." },
         { id: "s_69adb849d0d88191a5d5ca7b33d39798", thumbnail: "arc-risingsun21.jpg", oneLiner: "Raj Ranger." }
       ]
+
     },
     "asmr-break-time": {
       title: "ASMR Break Time",
@@ -1043,6 +1075,7 @@ const VIDEO_DB = {
         { id: "s_695320d783388191849b42e3d1255093", thumbnail: "arc-asmr05.jpg", oneLiner: "Big Tex." },
         { id: "s_69532681ec7c8191a15944205f83c031", thumbnail: "arc-asmr06.jpg", oneLiner: "Lizzie." }
       ]
+
     },
     "music-videos": {
       title: "Music Videos",
@@ -1077,8 +1110,11 @@ const VIDEO_DB = {
         { id: "s_69ab03065d10819198327c3533af8400", thumbnail: "solo-amitsmother-spectacular.jpg", oneLiner: "Spectacular." },
         { id: "s_698ea2890d808191853e919b9c2a3d53", thumbnail: "solo-cole-quarterly-prophets.jpg", oneLiner: "Quarterly prophets (of profits)." },
         { id: "s_69ace9879b7c819190476e7d86e86bd3", thumbnail: "arc-musicvideos-mommy-hips-dont-lie.jpg", oneLiner: "Mommy's Hips Don't Lie." }
-      ]
+      ]      
+
+
     }
+
   }
 };
 
