@@ -847,7 +847,7 @@ const VIDEO_DB = {
         { id: "s_6974e9c2a3c08191a77207e7ee7e96fb", thumbnail: "arc-gadha-golden-shower-01.jpg", oneLiner: "Who is Amit's Mother?" },
         { id: "s_6974d75f3e7881918261a35615ed7a78", thumbnail: "arc-gadha-golden-shower-02.jpg", oneLiner: "Dark Amit, Light Amit." },
         { id: "s_6974d5db42d88191b327f358a59bcfe2", thumbnail: "arc-gadha-golden-shower-03.jpg", oneLiner: "Amit is Born." },
-        { id: "s_69960c66d8c48191b663793380927676", thumbnail: "arc-gadha-golden-shower-04.jpg", oneLiner: "Evil Amit is Born." }
+        { id: "s_69960c66d8c48191b663793380927676", thumbnail: "arc-gadha-golden-shower-04.jpg", oneLiner: "Evil Amit is Born." },
         { id: "s_6988b7cf49a081919ef9965234f24c5b", thumbnail: "arc-gadha-golden-shower-05.jpg", oneLiner: "Another genealogy attempt." },
       ]  
       
@@ -860,7 +860,7 @@ const VIDEO_DB = {
       videos: [
         { id: "s_6932288f5a308191be65148153bf1754", thumbnail: "arc-toomuchinsolence-01.jpg", oneLiner: "Amit's Collapse. MNN Reports." },
         { id: "s_693106237f4081919cb6e2bb4f10b6ea", thumbnail: "arc-toomuchinsolence-02.jpg", oneLiner: "Reporters catch Lizzie as she leaves the hospital." },
-        { id: "s_69310a48ac288191a465bc70bfb9d57c", thumbnail: "arc-toomuchinsolence-03.jpg", oneLiner: "Leon not fond of reporters." }
+        { id: "s_69310a48ac288191a465bc70bfb9d57c", thumbnail: "arc-toomuchinsolence-03.jpg", oneLiner: "Leon not fond of reporters." },
       ]
 
     },
