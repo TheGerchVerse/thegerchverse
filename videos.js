@@ -216,6 +216,7 @@ const VIDEO_DB = {
       { id: "s_697245b0e008819199bf20643cdd65fc", thumb: "amit-light-amit-concept-02.jpg", oneLiner: "Light Amit Concept Ver 2.", arc: null },
       { id: "s_6972490ebc88819184ba50bb7bb7d583", thumb: "amit-dark-amit-concept-01.jpg", oneLiner: "Dark Amit Concept Ver 1.", arc: null },
       { id: "s_6972492aacd88191a341381cbbc8b0d2", thumb: "amit-dark-amit-concept-02.jpg", oneLiner: "Dark Amit Concept Ver 2.", arc: null },
+      { id: "s_697ff244c7d881919989caf77cb1e89a", thumb: "amit-insolent-cow-sermon.jpg", oneLiner: "Insolent Cow Sermon.", arc: null },
     ],
 
 /*
