@@ -928,7 +928,7 @@ const VIDEO_DB = {
     },
     "ionix-biomarker-scandal": {
       title: "Ionix Biomarker Scandal",
-      description: "Ionix Labs deploys the 'Biomarker Generator' — Lizzie's repurposed coffee machine that now fabricates bloodwork via RNG—while disclosing liability in bold font on page 47 in Comic Sans bold font. Light Amit weeps. Dark Amit celebrates. Michael Moo leaks it all. Cue the hunt: Gerchlander and Dark Amit rampage through the city while Moo hides in a basement, eating curry with his bare hands, watching civilization burn on stolen cable.",
+      description: "Ionix Labs deploys the 'Biomarker Generator' — Lizzie's repurposed coffee machine that now fabricates bloodwork test results via RNG—while disclosing liability in bold font on page 47 in Comic Sans bold font. Light Amit weeps. Dark Amit celebrates. Michael Moo leaks it all. Cue the hunt: Gerchlander and Dark Amit rampage through the city while Moo hides in a basement, eating curry with his bare hands, watching civilization burn on stolen cable.",
       status: "Status: Unresolved. Moo keeps appearing in unrelated footage anyway. Continuity is dead. Long live the chaos. 🤷",
       videos: [
         { id: "s_697ec561c6fc8191ab269d5e2b80967a", thumbnail: "arc-biomarker01.jpg", oneLiner: "Reliability is a Legacy Concept." },
