@@ -214,6 +214,7 @@ const VIDEO_DB = {
       { id: "s_6971a917ced08191bd8cc48636e69a4a", thumb: "amit-host-saturdaynight.jpg", oneLiner: "Tonight's host.", arc: null },
       { id: "s_69724578df40819186361433556b72e9", thumb: "amit-light-amit-concept-01.jpg", oneLiner: "Light Amit Concept Ver 1.", arc: null },
       { id: "s_697245b0e008819199bf20643cdd65fc", thumb: "amit-light-amit-concept-02.jpg", oneLiner: "Light Amit Concept Ver 2.", arc: null },
+      { id: "s_6972e5edf43c81918c594d223f143faf", thumb: "amit-light-amit-concept-03.jpg", oneLiner: "Light Amit Concept Ver 3.", arc: null },
       { id: "s_6972490ebc88819184ba50bb7bb7d583", thumb: "amit-dark-amit-concept-01.jpg", oneLiner: "Dark Amit Concept Ver 1.", arc: null },
       { id: "s_6972492aacd88191a341381cbbc8b0d2", thumb: "amit-dark-amit-concept-02.jpg", oneLiner: "Dark Amit Concept Ver 2.", arc: null },
       { id: "s_697ff244c7d881919989caf77cb1e89a", thumb: "amit-insolent-cow-sermon.jpg", oneLiner: "Insolent Cow Sermon.", arc: null },
@@ -792,6 +793,7 @@ const VIDEO_DB = {
     { id: "s_69a642e88f048191a4a10493cd4f8099", thumb: "multi-amitjrmother-timelesslove.jpg", oneLiner: "Timeless Love.", characters: ["amitjr", "amitsmother"], arc: null },
     { id: "s_69a51590e61481918f196d1acae8e742", thumb: "multi-offsitemumbai.jpg", oneLiner: "Mumbai Offsite.", characters: ["amit", "amitjr", "lightamit", "darkamit", "amitsmother", "raj", "evilamit"], arc: null },
     { id: "s_6972c26c1a6c8191840116dcc0d5f303", thumb: "multi-amit-gadha-voice-activated-dairy.jpg", oneLiner: "Voice-activated dairy", characters: ["amit", "gadha"], arc: null },
+    { id: "s_697510dcbad08191a98bc11240ffbfae", thumb: "multi-amit-moral-struggles.jpg", oneLiner: "Amit's moral struggle", characters: ["amit", "lightamit", "darkamit"], arc: null }
 
 
 
@@ -848,7 +850,7 @@ const VIDEO_DB = {
         { id: "s_6974d75f3e7881918261a35615ed7a78", thumbnail: "arc-gadha-golden-shower-02.jpg", oneLiner: "Dark Amit, Light Amit." },
         { id: "s_6974d5db42d88191b327f358a59bcfe2", thumbnail: "arc-gadha-golden-shower-03.jpg", oneLiner: "Amit is Born." },
         { id: "s_69960c66d8c48191b663793380927676", thumbnail: "arc-gadha-golden-shower-04.jpg", oneLiner: "Evil Amit is Born." },
-        { id: "s_6988b7cf49a081919ef9965234f24c5b", thumbnail: "arc-gadha-golden-shower-05.jpg", oneLiner: "Another genealogy attempt." },
+        { id: "s_6988b7cf49a081919ef9965234f24c5b", thumbnail: "arc-gadha-golden-shower-05.jpg", oneLiner: "Another genealogy attempt." }
       ]  
       
       
@@ -860,7 +862,7 @@ const VIDEO_DB = {
       videos: [
         { id: "s_6932288f5a308191be65148153bf1754", thumbnail: "arc-toomuchinsolence-01.jpg", oneLiner: "Amit's Collapse. MNN Reports." },
         { id: "s_693106237f4081919cb6e2bb4f10b6ea", thumbnail: "arc-toomuchinsolence-02.jpg", oneLiner: "Reporters catch Lizzie as she leaves the hospital." },
-        { id: "s_69310a48ac288191a465bc70bfb9d57c", thumbnail: "arc-toomuchinsolence-03.jpg", oneLiner: "Leon not fond of reporters." },
+        { id: "s_69310a48ac288191a465bc70bfb9d57c", thumbnail: "arc-toomuchinsolence-03.jpg", oneLiner: "Leon not fond of reporters." }
       ]
 
     },
