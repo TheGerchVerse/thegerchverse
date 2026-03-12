@@ -220,6 +220,7 @@ const VIDEO_DB = {
       { id: "s_697ff244c7d881919989caf77cb1e89a", thumb: "amit-insolent-cow-sermon.jpg", oneLiner: "Insolent Cow Sermon.", arc: null },
       { id: "s_69812d9d0fd08191aad46ea686191ce5", thumb: "amit-rose-are-red-violets-are-blue.jpg", oneLiner: "Roses are red, violets are blue.", arc: null },
       { id: "s_69823bc923588191b371b2816bdcce53", thumb: "amit-gerchburgers.jpg", oneLiner: "Gerchburgers", arc: null },
+      { id: "s_6975277c65dc81919015a1abc404c6d1", thumb: "amit-content-violation.jpg", oneLiner: "Content Violation", arc: null },
 
     ],
 
