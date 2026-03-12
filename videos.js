@@ -222,6 +222,8 @@ const VIDEO_DB = {
       { id: "s_69823bc923588191b371b2816bdcce53", thumb: "amit-gerchburgers.jpg", oneLiner: "Gerchburgers", arc: null },
       { id: "s_6975277c65dc81919015a1abc404c6d1", thumb: "amit-content-violation.jpg", oneLiner: "Content Violation", arc: null },
       { id: "s_69764f78e670819186e03ea2dcfb2d15", thumb: "amit-take-me-to-the-milk.jpg", oneLiner: "Take me to the milk!", arc: null },
+      { id: "s_6976c639b3d08191b2d17d3693987d13", thumb: "amit-perfect-woman.jpg", oneLiner: "Amit's Perfect Woman.", arc: null },
+      { id: "s_69823bc923588191b371b2816bdcce53", thumb: "amit-gerch-burgers.jpg", oneLiner: "Gerch Burgers.", arc: null },
 
     ],
 
@@ -795,7 +797,13 @@ const VIDEO_DB = {
     { id: "s_69a642e88f048191a4a10493cd4f8099", thumb: "multi-amitjrmother-timelesslove.jpg", oneLiner: "Timeless Love.", characters: ["amitjr", "amitsmother"], arc: null },
     { id: "s_69a51590e61481918f196d1acae8e742", thumb: "multi-offsitemumbai.jpg", oneLiner: "Mumbai Offsite.", characters: ["amit", "amitjr", "lightamit", "darkamit", "amitsmother", "raj", "evilamit"], arc: null },
     { id: "s_6972c26c1a6c8191840116dcc0d5f303", thumb: "multi-amit-gadha-voice-activated-dairy.jpg", oneLiner: "Voice-activated dairy", characters: ["amit", "gadha"], arc: null },
-    { id: "s_697510dcbad08191a98bc11240ffbfae", thumb: "multi-amit-moral-struggles.jpg", oneLiner: "Amit's moral struggle", characters: ["amit", "lightamit", "darkamit"], arc: null }
+    { id: "s_697510dcbad08191a98bc11240ffbfae", thumb: "multi-amit-moral-struggles.jpg", oneLiner: "Amit's moral struggle", characters: ["amit", "lightamit", "darkamit"], arc: null },
+    { id: "s_697510dcbad08191a98bc11240ffbfae", thumb: "multi-amit-dark-light-legacy.jpg", oneLiner: "Legacy of Milk.", characters: ["amit", "lightamit", "darkamit"], arc: null },
+    { id: "s_697858e9d27081918342becae9ce29f5", thumb: "multi-amit-cole-pricetag-teeth.jpg", oneLiner: "A price tag with teeth.", characters: ["amit", "cole"], arc: null },
+    { id: "s_697d4502e7948191bd7c2979f9672c29", thumb: "multi-amit-cole-duel.jpg", oneLiner: "Katana duel.", characters: ["amit", "cole"], arc: null },
+    { id: "s_697e3c24a44c8191b062535c6b38c375", thumb: "multi-amit-dark-refusal.jpg", oneLiner: "Refusal is insolence", characters: ["amit", "darkamit"], arc: null },
+    { id: "s_697e847581088191bc4df07fdc6ef2e4", thumb: "multi-amit-gadha-showdown.jpg", oneLiner: "Holy cow showdown.", characters: ["amit", "gadha"], arc: null },
+    { id: "s_6980e62ea6b881919e3ae415c8132bd6", thumb: "multi-amit-gerchlander-weaponized.jpg", oneLiner: "Weaponized against insolence.", characters: ["amit", "gerchlander"], arc: null }
 
 
 
@@ -918,6 +926,35 @@ const VIDEO_DB = {
       ]
 
     },
+    "ionix-biomarker-scandal": {
+      title: "Ionix Biomarker Scandal",
+      description: "Ionix Labs deploys the 'Biomarker Generator' — Lizzie's repurposed coffee machine that now fabricates bloodwork via RNG—while disclosing liability in bold font on page 47 in Comic Sans bold font. Light Amit weeps. Dark Amit celebrates. Michael Moo leaks it all. Cue the hunt: Gerchlander and Dark Amit rampage through the city while Moo hides in a basement, eating curry with his bare hands, watching civilization burn on stolen cable.",
+      status: "Status: Unresolved. Moo keeps appearing in unrelated footage anyway. Continuity is dead. Long live the chaos. 🤷",
+      videos: [
+        { id: "s_697ec561c6fc8191ab269d5e2b80967a", thumbnail: "arc-biomarker01.jpg", oneLiner: "Reliability is a Legacy Concept." },
+        { id: "s_697ec58e53b081918e1464c165dfef87", thumbnail: "arc-biomarker02.jpg", oneLiner: "Consent is theater." },
+        { id: "s_6980090fefc48191b50f7f34c933a6b5", thumbnail: "arc-biomarker03.jpg", oneLiner: "Page 47." },
+        { id: "s_69802646c4ac8191a0fcad4968d65c3d", thumbnail: "arc-biomarker04.jpg", oneLiner: "Page 47. Comic Sans." },
+        { id: "s_6980121573d08191bb3aa31c3b427745", thumbnail: "arc-biomarker04a.jpg", oneLiner: "Page 47. Efficient." },
+        { id: "s_697fbf215d148191b57cbb95a8bd5899", thumbnail: "arc-biomarker05.jpg", oneLiner: "Biomarkers. Randomized." },
+        { id: "s_69825ed9fdb88191afacf196313180a1", thumbnail: "arc-biomarker06.jpg", oneLiner: "Here comes the Moo." },
+        { id: "s_69823821985c81918920f5f1f1f40d58", thumbnail: "arc-biomarker07.jpg", oneLiner: "News is out. Moo chows down." },
+        { id: "s_698198063e048191aacd7895c6b1fdf5", thumbnail: "arc-biomarker08.jpg", oneLiner: "Lizzie in hot water." },
+        { id: "s_6982384c74188191ab252cdaba1e445a", thumbnail: "arc-biomarker09.jpg", oneLiner: "Legal Technicalities." },
+        { id: "s_6982390900c481918b2d988757dd9285", thumbnail: "arc-biomarker10.jpg", oneLiner: "Sterling covers." },
+        { id: "s_6983e427a1e0819185a23f25a9fcd487", thumbnail: "arc-biomarker11.jpg", oneLiner: "Amit is taken by surprise." },
+        { id: "s_69826fc9847c81918f8a6a54800a1db6", thumbnail: "arc-biomarker12.jpg", oneLiner: "Amit panics. Lizzie keeps calm." },
+        { id: "s_6982a540d8548191aa23fbe4621d48b8", thumbnail: "arc-biomarker13.jpg", oneLiner: "Lizzie deflects reporters." },
+        { id: "s_6982b6c8b5988191b7c5faff02f22a29", thumbnail: "arc-biomarker14.jpg", oneLiner: "Big Tex clearly doesn't care." },
+        { id: "s_69824a89f9848191a60d359b7cce14a0", thumbnail: "arc-biomarker15.jpg", oneLiner: "Dark Amit weights in." },
+        { id: "s_6982389a6ad88191a21cbbc70a1fe33a", thumbnail: "arc-biomarker16.jpg", oneLiner: "Amit summons his lethal asset." },
+        { id: "s_6983a84ab1888191b2f9bccb41b51bb8", thumbnail: "arc-biomarker17.jpg", oneLiner: "Dark Amit and Gerchlander go hunting." },
+        { id: "s_698613e4c0d48191ba29a72805ddfe84", thumbnail: "arc-biomarker18.jpg", oneLiner: "Michael Moo hides, eats, and prays." }
+      ]
+
+
+
+    },
     "gerchfinity-doomsday": {
       title: "Gerchfinity Wars: Doomsday",
       description: "Continuity is a suggestion, not a promise. We open inside one of Amit's many suspiciously identical space fortresses as certain familiar names are flagged 'hostile,' which feels biased but on-brand. Leadership decisions are made loudly. Very loudly. From there, the timeline clocks out. Scenes overlap. Cause and effect stop returning emails. Portals open at the worst possible moments, and family therapy is replaced with cosmic escalation. Oh — remember Amit Jr. came from Q6? Yes, that's why child Amit was left in the Burger King bathroom in the first place. Let's also not forget Amit did the same to Jr. because that's how we learn best - from our parents. But that will be a tale for another time. Preventative anti–Q6 Profits Apocalypse strategy. So… that clearly didn't work. This arc is simply the next attempt to stop Q6 before it monetizes reality itself. Are these events sequential? Parallel? A quality control error? Officially: cosmic instability. Unofficially: Doomsday runs on vibes and refuses refunds. Oh, and some of the thumbnails were edited to look better than they actually do. But that's just a theory. A Q6 theory.",
@@ -931,6 +968,7 @@ const VIDEO_DB = {
         { id: "s_699cfee98a0481918e1883045e887ea7", thumbnail: "arc-doomsday05.jpg", oneLiner: "The siege rages on." },
         { id: "s_69a236f1f6108191be1a5dab144634c6", thumbnail: "arc-doomsday06.jpg", oneLiner: "Abandoned-by-mama Amit clashes with kept-by-mama Evil Amit." }
       ]
+      
 
     },
     "f-infinity": {
