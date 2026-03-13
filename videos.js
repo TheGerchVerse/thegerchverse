@@ -1110,7 +1110,7 @@ const VIDEO_DB = {
     "toon-gulag": {
       title: "The Toon Gulag Escape",
       description: "A dimensional malfunction maroons the cast as sanitized cartoon avatars in a brightly-colored purgatory where background characters keep pointing at exit signs labeled 'GERCH-VERSE' like that's helpful navigation. The Gerch-Verse cast endures peppy animation physics and fourth-wall commentary from locals who seem aware they're fictional—trapped in a medium that demands optimism while their souls remain in quarterly earnings. They eventually locate portals home through sheer narrative convenience. Whether the cartoon world survives their departure is classified.",
-      status: "STATUS: Manageable",
+      status: "STATUS: Resolved (Pending Dimensional Recidivism)",
       videos: [
         { id: "s_6983e886a4408191a18f5765c76d5789", thumbnail: "arc-toon-gulag-amit.jpg", oneLiner: "Gerch-Verse or bust." },
         { id: "s_6985479e12688191a727ff21922d0c81", thumbnail: "arc-toon-gulag-leon.jpg", oneLiner: "Animated antics." },
