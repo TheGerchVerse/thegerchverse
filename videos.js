@@ -225,6 +225,7 @@ const VIDEO_DB = {
       { id: "s_6976c639b3d08191b2d17d3693987d13", thumb: "amit-perfect-woman.jpg", oneLiner: "Amit's Perfect Woman.", arc: null },
       { id: "s_69823bc923588191b371b2816bdcce53", thumb: "amit-gerch-burgers.jpg", oneLiner: "Gerch Burgers.", arc: null },
       { id: "s_69893a18a15481918896107d6a77f9fa", thumb: "amit-polar-dominance.jpg", oneLiner: "Gerch Burgers.", arc: null },
+      { id: "s_698989da3b2481919a06c6a5269fd043", thumb: "amit-Gnarring-for-gold.jpg", oneLiner: "Gerch Burgers.", arc: null },
 
     ],
 
@@ -672,11 +673,13 @@ HANNAH
       { id: "s_69b4998b5ab48191af173341350c3f73", thumb: "solo-hannah-founder.jpg", oneLiner: "I'm a founder.", arc: null },
       { id: "s_69b4be9ec39c8191bb33c15692b1377f", thumb: "solo-hannah-hdf.jpg", oneLiner: "The Hannah Delvey Foundation (HDF).", arc: null },
       { id: "s_69b4c5c56050819196aea886035beac6", thumb: "solo-hannah-future-waiting.jpg", oneLiner: "Keeping the future waiting.", arc: null },
-      { id: "s_placeholder_renderings", thumb: "hannah-renderings.jpg", oneLiner: "These are conceptual. Like my liquidity.", arc: null },
-      { id: "s_placeholder_accent", thumb: "hannah-accent-origin.jpg", oneLiner: "I grew up... here and there. Mostly there.", arc: null },
-      { id: "s_placeholder_rooster", thumb: "hannah-rooster-accents.jpg", oneLiner: "Authentic Americana. Very expensive. Very Texas.", arc: null },
-      { id: "s_placeholder_sunglasses", thumb: "hannah-sunglasses-indoor.jpg", oneLiner: "I don't do fluorescent lighting. Or accountability.", arc: null },
-      { id: "s_placeholder_visa", thumb: "hannah-visa-questions.jpg", oneLiner: "Mediocrates approved it. What more do you people want?", arc: null },
+      { id: "s_69b4e4c3223c8191a8eb056bed1098e3", thumb: "solo-hannah-backstage.jpg", oneLiner: "Backstage pass.", arc: null },
+      { id: "s_69b4fb0bd68c8191a5e79bef45df4001", thumb: "solo-hannah-destination-manifest.jpg", oneLiner: "Destination manifest", arc: null },
+      { id: "s_69b4fc13fe90819180634c0252c98f06", thumb: "solo-hannah-represent-taste.jpg", oneLiner: "I represent taste.", arc: null },
+      { id: "s_69b4fcc16dec8191a9ee78437659c03d", thumb: "solo-hannah-substantial-collateral.jpg", oneLiner: "Vision.", arc: null },
+      { id: "s_69b4fd8efeec8191b03ab1b12b87ee71", thumb: "solo-hannah-museum-acquisition.jpg", oneLiner: "Exhibit A - Acquisition.", arc: null },
+      
+      
     ],
 
 /*
@@ -837,7 +840,8 @@ HANNAH
     { id: "s_6980e62ea6b881919e3ae415c8132bd6", thumb: "multi-amit-gerchlander-weaponized.jpg", oneLiner: "Weaponized against insolence.", characters: ["amit", "gerchlander"], arc: null },
     { id: "s_69b4c7ef5f508191acc71a02b29ab071", thumb: "multi-hannah-cole-swipe-left.jpg", oneLiner: "Swipe left.", characters: ["hannah", "cole"], arc: null },
     { id: "s_69b4cf5d166c8191935419af41ffad0c", thumb: "multi-hannah-tex-stand-there.jpg", oneLiner: "Western Party.", characters: ["hannah", "bigtex"], arc: null },
-    { id: "s_69874be1ebe48191afb6e13bbe0f1555", thumb: "multi-amit-raj-moo.jpg", oneLiner: "Moo.", characters: ["amit", "raj"], arc: null }
+    { id: "s_69874be1ebe48191afb6e13bbe0f1555", thumb: "multi-amit-raj-moo.jpg", oneLiner: "Moo.", characters: ["amit", "raj"], arc: null },
+    { id: "s_69b4fb4aeec08191b6d2322bec884304", thumb: "multi-hannah-lizzie-light-stay-on.jpg", oneLiner: "Whatever lets the light stay on.", characters: ["lizzie", "hannah"], arc: null }
 
 
 
