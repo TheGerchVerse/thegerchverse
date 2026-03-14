@@ -670,7 +670,7 @@ HANNAH
     hannah: [
       { id: "s_69b4998b5ab48191af173341350c3f73", thumb: "solo-hannah-founder.jpg", oneLiner: "I'm a founder.", arc: null },
       { id: "s_69b4be9ec39c8191bb33c15692b1377f", thumb: "solo-hannah-hdf.jpg", oneLiner: "The Hannah Delvey Foundation (HDF).", arc: null },
-      { id: "s_placeholder_investor", thumb: "hannah-investor-lunch.jpg", oneLiner: "Wire transfer or bearer bond? I don't have time for small denominations.", arc: null },
+      { id: "s_69b4c5c56050819196aea886035beac6", thumb: "solo-hannah-future-waiting.jpg", oneLiner: "Keeping the future waiting.", arc: null },
       { id: "s_placeholder_renderings", thumb: "hannah-renderings.jpg", oneLiner: "These are conceptual. Like my liquidity.", arc: null },
       { id: "s_placeholder_accent", thumb: "hannah-accent-origin.jpg", oneLiner: "I grew up... here and there. Mostly there.", arc: null },
       { id: "s_placeholder_rooster", thumb: "hannah-rooster-accents.jpg", oneLiner: "Authentic Americana. Very expensive. Very Texas.", arc: null },
@@ -833,8 +833,9 @@ HANNAH
     { id: "s_697d4502e7948191bd7c2979f9672c29", thumb: "multi-amit-cole-duel.jpg", oneLiner: "Katana duel.", characters: ["amit", "cole"], arc: null },
     { id: "s_697e3c24a44c8191b062535c6b38c375", thumb: "multi-amit-dark-refusal.jpg", oneLiner: "Refusal is insolence", characters: ["amit", "darkamit"], arc: null },
     { id: "s_697e847581088191bc4df07fdc6ef2e4", thumb: "multi-amit-gadha-showdown.jpg", oneLiner: "Holy cow showdown.", characters: ["amit", "gadha"], arc: null },
-    { id: "s_6980e62ea6b881919e3ae415c8132bd6", thumb: "multi-amit-gerchlander-weaponized.jpg", oneLiner: "Weaponized against insolence.", characters: ["amit", "gerchlander"], arc: null }
-
+    { id: "s_6980e62ea6b881919e3ae415c8132bd6", thumb: "multi-amit-gerchlander-weaponized.jpg", oneLiner: "Weaponized against insolence.", characters: ["amit", "gerchlander"], arc: null },
+    { id: "s_69b4c7ef5f508191acc71a02b29ab071", thumb: "multi-hannah-cole-swipe-left.jpg", oneLiner: "Swipe left.", characters: ["hannah", "cole"], arc: null },
+    { id: "s_69b4cf5d166c8191935419af41ffad0c", thumb: "multi-hannah-tex-stand-there.jpg", oneLiner: "Western Party.", characters: ["hannah", "bigtex"], arc: null }
 
 
 
