@@ -678,6 +678,7 @@ HANNAH
       { id: "s_69b4fc13fe90819180634c0252c98f06", thumb: "solo-hannah-represent-taste.jpg", oneLiner: "I represent taste.", arc: null },
       { id: "s_69b4fcc16dec8191a9ee78437659c03d", thumb: "solo-hannah-substantial-collateral.jpg", oneLiner: "Vision.", arc: null },
       { id: "s_69b4fd8efeec8191b03ab1b12b87ee71", thumb: "solo-hannah-museum-acquisition.jpg", oneLiner: "Exhibit A - Acquisition.", arc: null },
+      { id: "s_69b505325e0881918ff2fea8aba22b60", thumb: "solo-hannah-dinner-check.jpg", oneLiner: "Dinner check ft. @lofoandpu.pugzley.", arc: null },
       
       
     ],
@@ -842,6 +843,7 @@ HANNAH
     { id: "s_69b4cf5d166c8191935419af41ffad0c", thumb: "multi-hannah-tex-stand-there.jpg", oneLiner: "Western Party.", characters: ["hannah", "bigtex"], arc: null },
     { id: "s_69874be1ebe48191afb6e13bbe0f1555", thumb: "multi-amit-raj-moo.jpg", oneLiner: "Moo.", characters: ["amit", "raj"], arc: null },
     { id: "s_69b4fb4aeec08191b6d2322bec884304", thumb: "multi-hannah-lizzie-light-stay-on.jpg", oneLiner: "Whatever lets the light stay on.", characters: ["lizzie", "hannah"], arc: null }
+    
 
 
 
