@@ -1056,7 +1056,7 @@ HANNAH
       title: "Toy Commercials",
       description: "We asked for approval. Mediocrates was conflicted. 'Is this... responsible?' he whispered. Amit's Mother materialized: 'Manageable. That's how parents like their kids.' Mediocrates lit up—finally, a moral framework he could disappoint. He signed. Then we asked, 'Should toy commercials be in Story Arcs?' and everyone just shrugged. A generation learned that joy comes in blister packs, narrative cohesion is optional, and 'some assembly required' means you're already working for us, tiny consumer. Also that the Gerch-Verse organizes content like a raccoon organizes trash.",
       status: "STATUS: Manageable",
-    statusColor: "yellow",
+    statusColor: "red",
       videos: [
         { id: "s_691bbd63e69c819199931f768eea3136", thumbnail: "arc-toys-amit.jpg", oneLiner: "Visionary Executive Action Figure - insolence not included." },
         { id: "s_691f505e9d748191aae19d2b73fdec12", thumbnail: "arc-toys-lizzie.jpg", oneLiner: "Ionix Blood Analyzer." },
