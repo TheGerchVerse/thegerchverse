@@ -197,7 +197,12 @@
       position: absolute;
       inset: 0;
       padding: 0.75rem;
-      background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 35%, transparent 70%);
+      background: linear-gradient(
+    to top, 
+    rgba(0,0,0,0.5) 0%,      /* Was 0.95 - now 50% opacity */
+    rgba(0,0,0,0.25) 35%,   /* Was 0.7 - now 25% opacity */
+    transparent 70%
+  );
       color: #fff;
       font-family: 'Rajdhani', sans-serif;
       font-size: 0.85rem;
