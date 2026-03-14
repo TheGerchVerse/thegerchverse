@@ -304,7 +304,7 @@
       content: '';
       position: absolute;
       left: 50%;
-      top: 60px; /* Start below the glitch element */
+      top: 60px;
       bottom: 0;
       width: 2px;
       background: linear-gradient(to bottom, #00FFFF, #FF007F, #FFD700);
@@ -356,9 +356,10 @@
       margin-bottom: 1rem;
     }
     
+    /* ============================================
+       STATUS PILL COLORS - EXPLICIT CONTROL
+       ============================================ */
     .mv-arc-status {
-      background: #FFD700;
-      color: #000;
       font-family: 'Orbitron', sans-serif;
       font-size: 0.65rem;
       font-weight: 900;
@@ -366,16 +367,29 @@
       border-radius: 4px;
       text-transform: uppercase;
     }
-    
-    .mv-arc-status.ongoing {
+
+    /* YELLOW - Default/pending/manageable */
+    .mv-arc-status.ongoingyellow {
+      background: #FFD700;
+      color: #000;
+    }
+
+    /* GREEN - Complete/ongoing/active */
+    .mv-arc-status.completegreen {
       background: #03AC13;
       color: #fff;
     }
-    
-    .mv-arc-status.q6 {
+
+    /* RED - Chaos/Q6/temporal violation */
+    .mv-arc-status.chaosred {
       background: #FF0000;
       color: #fff;
       animation: pulse 1s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
     }
     
     /* Empty State */
@@ -408,27 +422,24 @@
       font-size: 0.7rem;
       text-align: center;
     }
-    
-    /* Popups disabled in gerchverse.js - no CSS blocking needed */
 
-/* Push quote below the timeline glitch */
-.mv-timeline-glitch + p,
-.mv-timeline-glitch ~ p,
-#tab-arcs > p {
-  margin-top: 1rem !important;
-  position: relative;
-  z-index: 1;
-  padding-top: 0;
-}
+    /* Push quote below the timeline glitch */
+    .mv-timeline-glitch + p,
+    .mv-timeline-glitch ~ p,
+    #tab-arcs > p {
+      margin-top: 1rem !important;
+      position: relative;
+      z-index: 1;
+      padding-top: 0;
+    }
 
-/* Give the glitch its own space */
-.mv-timeline-glitch {
-  position: relative !important;
-  margin-bottom: 0.5rem !important;
-  display: inline-block !important;
-}
+    /* Give the glitch its own space */
+    .mv-timeline-glitch {
+      position: relative !important;
+      margin-bottom: 0.5rem !important;
+      display: inline-block !important;
+    }
     
-  
     /* Mobile fixes for title */
     @media (max-width: 480px) {
       .glass-card {
@@ -454,293 +465,225 @@
       }
     }
 
-  
-/* ============================================
-   SMART PAGINATION SYSTEM v1.0
-   Auto-detects all .mv-grid elements
-   ============================================ */
+    /* ============================================
+       SMART PAGINATION SYSTEM v1.0
+       ============================================ */
+    .mv-page-numbers {
+      display: flex;
+      gap: 0.3rem;
+      align-items: center;
+    }
 
-/* Smart Pagination Container */
-.mv-pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 1.5rem 0;
-  padding: 1rem;
-  background: rgba(0,255,255,0.05);
-  border-radius: 8px;
-  flex-wrap: wrap;
-}
+    .mv-page-number {
+      background: transparent;
+      border: 2px solid #00FFFF;
+      color: #00FFFF;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      min-width: 40px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* Prev/Next Buttons */
-.mv-page-btn {
-  background: transparent;
-  border: 2px solid #00FFFF;
-  color: #00FFFF;
-  cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.9rem;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  min-width: 44px;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .mv-page-number:hover:not(.active):not(.ellipsis) {
+      background: rgba(0,255,255,0.2);
+      box-shadow: 0 0 15px rgba(0,255,255,0.4);
+      transform: translateY(-2px);
+    }
 
-.mv-page-btn:hover:not(:disabled) {
-  background: #00FFFF;
-  color: #000;
-  box-shadow: 0 0 20px rgba(0,255,255,0.5);
-  transform: translateY(-2px);
-}
+    .mv-page-number.active {
+      background: #FF007F;
+      border-color: #FF007F;
+      color: #000;
+      box-shadow: 0 0 20px rgba(255,0,127,0.6);
+      font-weight: 700;
+    }
 
-.mv-page-btn:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-  border-color: #666;
-  color: #666;
-}
+    .mv-page-number.ellipsis {
+      border-color: #666;
+      color: #888;
+      cursor: pointer;
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
 
-/* Page Number Buttons */
-.mv-page-number {
-  background: transparent;
-  border: 2px solid #00FFFF;
-  color: #00FFFF;
-  cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  min-width: 40px;
-  min-height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .mv-page-number.ellipsis:hover {
+      border-color: #00FFFF;
+      color: #00FFFF;
+      background: rgba(0,255,255,0.1);
+    }
 
-.mv-page-number:hover:not(.active):not(.ellipsis) {
-  background: rgba(0,255,255,0.2);
-  box-shadow: 0 0 15px rgba(0,255,255,0.4);
-  transform: translateY(-2px);
-}
+    .mv-jump-wrapper {
+      position: relative;
+    }
 
-/* Active Page (Magenta) */
-.mv-page-number.active {
-  background: #FF007F;
-  border-color: #FF007F;
-  color: #000;
-  box-shadow: 0 0 20px rgba(255,0,127,0.6);
-  font-weight: 700;
-}
+    .mv-jump-btn {
+      background: transparent;
+      border: 2px solid #FFD700;
+      color: #FFD700;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      min-height: 40px;
+    }
 
-/* Ellipsis Button */
-.mv-page-number.ellipsis {
-  border-color: #666;
-  color: #888;
-  cursor: pointer;
-  font-size: 1rem;
-  letter-spacing: 2px;
-}
+    .mv-jump-btn:hover {
+      background: rgba(255,215,0,0.2);
+      box-shadow: 0 0 15px rgba(255,215,0,0.4);
+    }
 
-.mv-page-number.ellipsis:hover {
-  border-color: #00FFFF;
-  color: #00FFFF;
-  background: rgba(0,255,255,0.1);
-}
+    .mv-jump-btn .arrow {
+      font-size: 0.6rem;
+      transition: transform 0.3s ease;
+    }
 
-/* Page Info Display */
-.mv-page-info {
-  color: #E0E0E0;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.85rem;
-  margin: 0 0.5rem;
-  white-space: nowrap;
-}
+    .mv-jump-btn.open .arrow {
+      transform: rotate(180deg);
+    }
 
-/* Jump Dropdown Button */
-.mv-jump-btn {
-  background: transparent;
-  border: 2px solid #FFD700;
-  color: #FFD700;
-  cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  min-height: 40px;
-}
+    .mv-jump-dropdown {
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      background: rgba(0,0,0,0.95);
+      border: 2px solid #FFD700;
+      border-radius: 8px;
+      padding: 0.5rem;
+      min-width: 80px;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 100;
+      display: none;
+      box-shadow: 0 -10px 30px rgba(255,215,0,0.3);
+    }
 
-.mv-jump-btn:hover {
-  background: rgba(255,215,0,0.2);
-  box-shadow: 0 0 15px rgba(255,215,0,0.4);
-}
+    .mv-jump-dropdown.open {
+      display: block;
+      animation: slideUp 0.2s ease-out;
+    }
 
-.mv-jump-btn .arrow {
-  font-size: 0.6rem;
-  transition: transform 0.3s ease;
-}
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.mv-jump-btn.open .arrow {
-  transform: rotate(180deg);
-}
+    .mv-jump-option {
+      background: transparent;
+      border: none;
+      color: #FFD700;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      padding: 0.5rem;
+      width: 100%;
+      text-align: center;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
 
-/* Jump Dropdown Menu */
-.mv-jump-dropdown {
-  position: absolute;
-  bottom: 100%;
-  right: 0;
-  background: rgba(0,0,0,0.95);
-  border: 2px solid #FFD700;
-  border-radius: 8px;
-  padding: 0.5rem;
-  min-width: 80px;
-  max-height: 200px;
-  overflow-y: auto;
-  z-index: 100;
-  display: none;
-  box-shadow: 0 -10px 30px rgba(255,215,0,0.3);
-}
+    .mv-jump-option:hover {
+      background: rgba(255,215,0,0.2);
+    }
 
-.mv-jump-dropdown.open {
-  display: block;
-  animation: slideUp 0.2s ease-out;
-}
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .mv-pagination {
+        position: relative;
+        padding: 0.8rem 0.5rem;
+        gap: 0.3rem;
+      }
+      
+      .mv-page-numbers {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        max-width: calc(100vw - 120px);
+        padding-right: 20px;
+        mask-image: linear-gradient(to right, black 85%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+      }
+      
+      .mv-page-numbers::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .mv-page-number {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.6rem;
+        min-width: 36px;
+        min-height: 36px;
+        flex-shrink: 0;
+      }
+      
+      .mv-page-btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+        min-width: 40px;
+        min-height: 40px;
+      }
+      
+      .mv-page-info {
+        font-size: 0.75rem;
+        order: -1;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+      
+      .mv-jump-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+      }
+      
+      .mv-jump-dropdown {
+        bottom: auto;
+        top: 100%;
+        right: 50%;
+        transform: translateX(50%);
+        box-shadow: 0 10px 30px rgba(255,215,0,0.3);
+      }
+    }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    @media (max-width: 480px) {
+      .mv-page-numbers {
+        max-width: calc(100vw - 100px);
+      }
+      
+      .mv-page-number {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.5rem;
+        min-width: 32px;
+        min-height: 32px;
+      }
+      
+      .mv-page-btn {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+      }
+    }
 
-.mv-jump-option {
-  background: transparent;
-  border: none;
-  color: #FFD700;
-  cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.8rem;
-  padding: 0.5rem;
-  width: 100%;
-  text-align: center;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-}
-
-.mv-jump-option:hover {
-  background: rgba(255,215,0,0.2);
-}
-
-/* Pagination Numbers Container */
-.mv-page-numbers {
-  display: flex;
-  gap: 0.3rem;
-  align-items: center;
-}
-
-/* Mobile Responsive Styles */
-@media (max-width: 768px) {
-  .mv-pagination {
-    position: relative;
-    padding: 0.8rem 0.5rem;
-    gap: 0.3rem;
-  }
-  
-  .mv-page-numbers {
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    max-width: calc(100vw - 120px);
-    padding-right: 20px;
-    mask-image: linear-gradient(to right, black 85%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
-  }
-  
-  .mv-page-numbers::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .mv-page-number {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.6rem;
-    min-width: 36px;
-    min-height: 36px;
-    flex-shrink: 0;
-  }
-  
-  .mv-page-btn {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-    min-width: 40px;
-    min-height: 40px;
-  }
-  
-  .mv-page-info {
-    font-size: 0.75rem;
-    order: -1;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Jump button below on mobile */
-  .mv-jump-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 0.5rem;
-  }
-  
-  .mv-jump-dropdown {
-    bottom: auto;
-    top: 100%;
-    right: 50%;
-    transform: translateX(50%);
-    box-shadow: 0 10px 30px rgba(255,215,0,0.3);
-  }
-}
-
-@media (max-width: 480px) {
-  .mv-page-numbers {
-    max-width: calc(100vw - 100px);
-  }
-  
-  .mv-page-number {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.5rem;
-    min-width: 32px;
-    min-height: 32px;
-  }
-  
-  .mv-page-btn {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.6rem;
-  }
-}
-
-/* Jump wrapper for positioning */
-.mv-jump-wrapper {
-  position: relative;
-}
-
-/* All pages expanded mode (after clicking ellipsis) */
-.mv-page-numbers.expanded .mv-page-number.ellipsis {
-  display: none;
-}
-
+    .mv-page-numbers.expanded .mv-page-number.ellipsis {
+      display: none;
+    }
 </style>
 </head>
 <body data-no-popups>
-
 
 <!-- Desktop Nav -->
 <nav>
@@ -788,10 +731,6 @@
 <div class="glass-card" style="max-width: min(900px, 95vw); width: auto; text-align: center; margin: 2rem auto 2rem auto; border: 2px solid rgba(0, 255, 255, 0.4); box-shadow: 0 0 30px rgba(0, 255, 255, 0.2); padding: 0.8rem 1.5rem; display: block; box-sizing: border-box;">
   <h1 class="page-title" style="text-align: center; margin: 0; font-size: clamp(1.5rem, 4vw, 3rem); background: linear-gradient(45deg, #00FFFF, #FF007F); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(0,255,255,0.5); filter: brightness(1.3); line-height: 1.2; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">📚 The Arc-Hive 📚</h1>
 </div>
-
-
-<!-- Tab Navigation -->
-
 
 <!-- STORY ARCS SECTION - DYNAMICALLY GENERATED FROM VIDEO_DB -->
 <div id="tab-arcs" class="mv-tab-content active">
@@ -1000,7 +939,6 @@
 }
 </style>
 
-
   <!-- Dynamic Arcs Container -->
   <div id="arcs-container"></div>
 
@@ -1028,13 +966,28 @@ function renderStoryArcs() {
     const gridId = `grid-arc-${arcKey}`;
     const paginationId = `pagination-arc-${arcKey}`;
 
-    // Determine status class
-    let statusClass = '';
-    const statusUpper = (arc.status || '').toUpperCase();
-    if (statusUpper.includes('ONGOING')) {
-      statusClass = 'ongoing';
-    } else if (statusUpper.includes('Q6') || statusUpper.includes('TEMPORAL') || statusUpper.includes('BEATS US')) {
-      statusClass = 'q6';
+    // ============================================
+    // EXPLICIT COLOR CONTROL - NEW SYSTEM
+    // ============================================
+    // Determine status class from explicit statusColor field (yellow/green/red)
+    let statusClass = 'ongoingyellow'; // default yellow
+    const colorLower = (arc.statusColor || '').toLowerCase().trim();
+
+    if (colorLower === 'green') {
+      statusClass = 'completegreen';
+    } else if (colorLower === 'red') {
+      statusClass = 'chaosred';
+    } else if (colorLower === 'yellow') {
+      statusClass = 'ongoingyellow';
+    }
+    // Backward compatibility: check old keywords in status field
+    else {
+      const statusLower = (arc.status || '').toLowerCase();
+      if (statusLower.includes('ongoing') && !statusLower.includes('yellow')) {
+        statusClass = 'completegreen';
+      } else if (statusLower.includes('q6') || statusLower.includes('temporal') || statusLower.includes('chaos') || statusLower.includes('violation')) {
+        statusClass = 'chaosred';
+      }
     }
 
     // Build video cards HTML
@@ -1050,13 +1003,13 @@ function renderStoryArcs() {
       });
     }
 
-    // Build the arc section HTML
+    // Build the arc section HTML with "Status:" prefix
     html += `
   <!-- ARC: ${arc.title} -->
   <div class="mv-arc-section">
     <div class="mv-arc-header">
       <h3 style="margin: 0; color: #FFD700; font-family: 'Orbitron', sans-serif;">ARC: ${arc.title}</h3>
-      <span class="mv-arc-status ${statusClass}">${arc.status}</span>
+      <span class="mv-arc-status ${statusClass}">Status: ${arc.status}</span>
     </div>
     <p style="color: #E0E0E0; margin: 0 0 1rem 0; font-size: 0.9rem;">
       ${arc.description}
@@ -1220,7 +1173,7 @@ function initPaginationForGrid(gridId) {
   paginationState[gridId] = {
     currentPage: 1,
     totalPages: totalPages,
-    expanded: false, // Track if ellipsis was clicked
+    expanded: false,
     cards: cards
   };
   
@@ -1314,8 +1267,6 @@ function generatePageButtons(gridId) {
     }
   } else {
     // Smart ellipsis display
-    // Always show: 1, 2, 3 ... current-1, current, current+1 ... last-2, last-1, last
-    
     const showStart = [1, 2, 3];
     const showEnd = [totalPages - 2, totalPages - 1, totalPages];
     
@@ -1558,12 +1509,6 @@ if (document.readyState === 'loading') {
 setTimeout(initSmartPagination, 500);
 
 </script>
-
-
-<!-- Popups disabled in gerchverse.js -->
-
-
-
 
 <!-- Emergency fallback for iOS -->
 <script>

@@ -869,6 +869,7 @@ HANNAH
       title: "Where is Gerchan?",
       description: "Gerchan has not posted in a while. This has been interpreted as evidence. What follows is a growing library of documentaries, multilingual trailers, podcasts, police interviews, and increasingly intense speculation. Big Tex convenes Gen Z analysts to unpack the digital silence. Meanwhile, Michael Moo has been actively investigating, presenting color-coded suspicion charts from his command center and compiling timelines that grow more detailed by the day. He also produced the riveting multilingual investigative documentary Gerchanheit 7-11 – Where Is Gerchan? There are theories. Answers remain pending. Content does not.",
       status: "ONGOING",
+    statusColor: "yellow",
       videos: [
         { id: "s_694ce36d120c819198db46970ca8004f", thumbnail: "arc-missing01.jpg", oneLiner: "Big Tex and Lizzie have questions." },
         { id: "s_695c8eef0a4881918a48ce3f06fd56e4", thumbnail: "arc-missing02.jpg", oneLiner: "Big Tex begins actively investigating." },
@@ -893,6 +894,7 @@ HANNAH
       title: "Gadha's Golden Shower: How Milk Made Monsters",
       description: "Before sense, there was Amit's Mother. Before Q5, there was Gadha. Before responsible parenting, there was roofie ambrosia. This genealogy of terror traces the divine lactation that birthed Dark and Light Amit from celestial udders, the eternal documentary investigation into Amit's Mother (who remains unlocatable, un-interviewable, and extremely promiscuous across timelines), and the absolutely unhinged creation myth of Amit Jr. and Evil Amit via mythological substances that would get CPS called if this weren't already a space gulag operation. Origin stories are supposed to explain things. This one just raises better questions.",
       status: "STATUS: Depends on Amit's Mother",
+    statusColor: "yellow",
       videos: [
         { id: "s_6982a26ba9688191b2dc43aef71025e5", thumbnail: "arc-gadha-golden-shower-00.jpg", oneLiner: "Family Tree Attempt." },
         { id: "s_6974e9c2a3c08191a77207e7ee7e96fb", thumbnail: "arc-gadha-golden-shower-01.jpg", oneLiner: "Who is Amit's Mother?" },
@@ -908,6 +910,7 @@ HANNAH
       title: "Insolence Overload",
       description: "Too much insolence takes a potentially deadly toll on Amit.",
       status: "COMPLETE",
+    statusColor: "green",
       videos: [
         { id: "s_6932288f5a308191be65148153bf1754", thumbnail: "arc-toomuchinsolence-01.jpg", oneLiner: "Amit's Collapse. MNN Reports." },
         { id: "s_693106237f4081919cb6e2bb4f10b6ea", thumbnail: "arc-toomuchinsolence-02.jpg", oneLiner: "Reporters catch Lizzie as she leaves the hospital." },
@@ -919,6 +922,7 @@ HANNAH
       title: "Executive Flight Assets",
       description: "Not a story arc, but in our defense, Mediocrates approved (he was having a good day and we took advantage). Our core Gerch-Verse family members have special 'vehicles' and we needed somewhere to put the footage. 'Story Arcs' was closer than 'Random Asset Dump,' so here we are. Continuity is a myth we tell ourselves.",
       status: "COMPLETE",
+    statusColor: "green",
       videos: [
         { id: "s_69723174fad88191b80179d58e510a9f", thumbnail: "arc-executive-flight-assets-01.jpg", oneLiner: "Amit: Pegasus." },
         { id: "s_69723473fd088191a1afc323fe5bf52a", thumbnail: "arc-executive-flight-assets-02.jpg", oneLiner: "Leon: Black Pegasus" },
@@ -931,6 +935,7 @@ HANNAH
       title: "Lizzie the Snitch",
       description: "He steals the milk. Lizzie steals the moment. The arrest steals the ending.",
       status: "COMPLETE",
+    statusColor: "green",
       videos: [
         { id: "s_6923ed35d1cc8191bfec3b78382c5df5", thumbnail: "arc-grandlarceny-00.jpg", oneLiner: "Hacker for hire." },
         { id: "s_691265aa499c81918bad7e7826a6646f", thumbnail: "arc-grandlarceny-01.jpg", oneLiner: "Midnight prototype raid." },
@@ -944,6 +949,7 @@ HANNAH
       title: "Bloodline Error",
       description: "Ionix Labs: redefining accuracy. Turns out dairy is thicker than blood.",
       status: "ONGOING — 1639+ DAYS",
+    statusColor: "yellow",
       videos: [
         { id: "s_691e9c1138d88191a35080733b640a1a", thumbnail: "arc-bloodline-01.jpg", oneLiner: "Biological Relation: High." },
         { id: "s_691f699c51f081919d82376dd8469237", thumbnail: "arc-bloodline-02.jpg", oneLiner: "Birth Control." },
@@ -956,6 +962,7 @@ HANNAH
       title: "Q6 Profits Apocalypse",
       description: "Amit Jr. arrives from the future. Warnings screamed. Warnings ignored. The gulag opens for time-travelers. Amit rushes to the future to investigate.",
       status: "TEMPORAL VIOLATION",
+    statusColor: "red",
       videos: [
         { id: "s_699beec67d58819195edfdc366b74e54", thumbnail: "arc-q6warning-00.jpg", oneLiner: "The arrival." },
         { id: "s_6918be0246808191aeb73a7d5ff07d04", thumbnail: "arc-q6warning-01.jpg", oneLiner: "Warning ignored. Express to gulag" },
@@ -969,6 +976,7 @@ HANNAH
       title: "Ionix Biomarker Scandal",
       description: "Ionix Labs deploys the 'Biomarker Generator' — Lizzie's repurposed coffee machine that now fabricates bloodwork test results via RNG—while disclosing liability in bold font on page 47 in Comic Sans bold font. Light Amit weeps. Dark Amit celebrates. Michael Moo leaks it all. Cue the hunt: Gerchlander and Dark Amit rampage through the city while Moo hides in a basement, eating curry with his bare hands, watching civilization burn on stolen cable.",
       status: "Status: Unresolved. Moo keeps appearing in unrelated footage anyway. Continuity is dead. Long live the chaos. 🤷",
+    statusColor: "yellow",
       videos: [
         { id: "s_697ec561c6fc8191ab269d5e2b80967a", thumbnail: "arc-biomarker01.jpg", oneLiner: "Reliability is a Legacy Concept." },
         { id: "s_697ec58e53b081918e1464c165dfef87", thumbnail: "arc-biomarker02.jpg", oneLiner: "Consent is theater." },
@@ -999,6 +1007,7 @@ HANNAH
       title: "Gerchfinity Wars: Doomsday",
       description: "Continuity is a suggestion, not a promise. We open inside one of Amit's many suspiciously identical space fortresses as certain familiar names are flagged 'hostile,' which feels biased but on-brand. Leadership decisions are made loudly. Very loudly. From there, the timeline clocks out. Scenes overlap. Cause and effect stop returning emails. Portals open at the worst possible moments, and family therapy is replaced with cosmic escalation. Oh — remember Amit Jr. came from Q6? Yes, that's why child Amit was left in the Burger King bathroom in the first place. Let's also not forget Amit did the same to Jr. because that's how we learn best - from our parents. But that will be a tale for another time. Preventative anti–Q6 Profits Apocalypse strategy. So… that clearly didn't work. This arc is simply the next attempt to stop Q6 before it monetizes reality itself. Are these events sequential? Parallel? A quality control error? Officially: cosmic instability. Unofficially: Doomsday runs on vibes and refuses refunds. Oh, and some of the thumbnails were edited to look better than they actually do. But that's just a theory. A Q6 theory.",
       status: "Status: Beats Us 🤷",
+    statusColor: "yellow",
       videos: [
         { id: "s_699ccdd2597881918d5d35e6d091f40a", thumbnail: "arc-doomsday01.jpg", oneLiner: "Hostiles Flagged" },
         { id: "s_699ce0bc47008191b16f5c13d41768f0", thumbnail: "arc-doomsday02.jpg", oneLiner: "The cast of the Gerch-Verse wait with bated breath." },
@@ -1015,6 +1024,7 @@ HANNAH
       title: "F∞ (F Infinity): Speedway of Insolencium",
       description: "In F∞, the engines run on premium fuel and unpasteurized insolence. Lap times fall. Moral standards fall faster. Ethics spin at Turn One.",
       status: "COMPLETE",
+    statusColor: "green",
       videos: [
         { id: "s_6918bba3b41c81918923feb393b012c1", thumbnail: "arc-f-infinity01.jpg", oneLiner: "The Profit Formula." },
         { id: "s_691fd41ef42c81919efc2da9036bba01", thumbnail: "arc-f-infinity02.jpg", oneLiner: "Legacy vs Destiny." },
@@ -1029,6 +1039,7 @@ HANNAH
       title: "Milk Wars: Plant-Based Reckoning",
       description: "Facing declining margins, Amit deploys the Trojan Cow strategy against unsuspecting vegan farms. The midnight ambush ignites a dairy war, forcing Lizzie — minority stakeholder, maximum fury — to descend in flames and blood bombs. Their clash levels the land, but from the ashes hatches a phoenix, turning destruction into defiant renewal.",
       status: "ONGOING — 3891+ DAYS",
+    statusColor: "yellow",
       videos: [
         { id: "s_69264dbb2eac81918100f0246ab7923c", thumbnail: "arc-milkwars01.jpg", oneLiner: "Profits Down. Culprit? Vegan Cheese Farmers." },
         { id: "s_69265481b0f48191845686256725e950", thumbnail: "arc-milkwars02.jpg", oneLiner: "Deploy the Trojan Cow." },
@@ -1045,6 +1056,7 @@ HANNAH
       title: "Toy Commercials",
       description: "We asked for approval. Mediocrates was conflicted. 'Is this... responsible?' he whispered. Amit's Mother materialized: 'Manageable. That's how parents like their kids.' Mediocrates lit up—finally, a moral framework he could disappoint. He signed. Then we asked, 'Should toy commercials be in Story Arcs?' and everyone just shrugged. A generation learned that joy comes in blister packs, narrative cohesion is optional, and 'some assembly required' means you're already working for us, tiny consumer. Also that the Gerch-Verse organizes content like a raccoon organizes trash.",
       status: "STATUS: Manageable",
+    statusColor: "yellow",
       videos: [
         { id: "s_691bbd63e69c819199931f768eea3136", thumbnail: "arc-toys-amit.jpg", oneLiner: "Visionary Executive Action Figure - insolence not included." },
         { id: "s_691f505e9d748191aae19d2b73fdec12", thumbnail: "arc-toys-lizzie.jpg", oneLiner: "Ionix Blood Analyzer." },
@@ -1060,6 +1072,7 @@ HANNAH
       title: "The Gerch Clone Pipeline",
       description: "Lizzie 'rescues' Gerch clones at midnight and reroutes them through Leon-built shell companies into her rawhide side hustle. CEO by day, off-book slaughter by night. Raj gives the all-clear whenever Amit visits his space gulag. Tex buys the carcasses for brisket and calls it fair trade. Amit preaches that cows are holy—except the 'insolent' ones he owns. Somewhere between sacred doctrine and smoked brisket, the supply chain starts asking questions.",
       status: "ONGOING — 3891+ DAYS",
+    statusColor: "yellow",
       videos: [
         { id: "s_693bbebc4d58819184f1951242d0e75f", thumbnail: "arc-clonepipeline-01.jpg", oneLiner: "Raj gives Lizzie a call." },
         { id: "s_692c701f638881918e350cb0885f581b", thumbnail: "arc-clonepipeline-02.jpg", oneLiner: "Lizzie sneaks in undetected." },
@@ -1078,6 +1091,7 @@ HANNAH
       title: "The Gadha Saga",
       description: "Big Tex asks if Lizzie has ever spotted Gadha during her midnight Gerch cow raids at Gerchan Farms Butchery. She tells Big Tex that Gadha is always kept locked up in Amit's space Gulag. Big Tex, determined, sets out to secure that divine bovine to grill up some fine brisket.",
       status: "COMPLETE FOR NOW",
+    statusColor: "green",
       videos: [
         { id: "s_6934fc83913c8191abddfe479d6f066e", thumbnail: "arc-gadhasaga-01.jpg", oneLiner: "Big Tex asks Lizzie about Gadha. Duh, Amit's space gulag." },
         { id: "s_693494240fec8191ad97af4bf4b58ca9", thumbnail: "arc-gadhasaga-02.jpg", oneLiner: "Big Tex begs Leon. Leon can't help." },
@@ -1096,6 +1110,7 @@ HANNAH
       title: "Raj's Past",
       description: "A brief history on the origins of the beloved Raj Mehta and how he found purpose at Gerchan Farms and came to be Amit's Executive Assistant",
       status: "COMPLETE - HIRED",
+    statusColor: "green",
       videos: [
         { id: "s_693d04781e7c8191b519d04b1cc18032", thumbnail: "arc-rajorigin-01.jpg", oneLiner: "Leaving home." },
         { id: "s_693e57d4b4948191ab5ac74587d6e266", thumbnail: "arc-rajorigin-02.jpg", oneLiner: "Now Hiring." },
@@ -1109,6 +1124,7 @@ HANNAH
       title: "Insolencium",
       description: "Amit discovers Insolencium, a rare and potent element that can neutralize Gerchlander's insolence. He instinctively knows that this is Gerchlander's only weakness (prob because his good pal YogaFlex Luthor Chakravarthy told him), and fortifies not only his space gulag with this glowing green matter, but infuses into his own blood as well. Gerchlander ventures to Amit's space gulag to pillage some Gadha Golden Udder Milk...but Amit is more-than-ready...The result? Total dominion over Gerchlander.",
       status: "COMPLETE - Gerchlander Neutralized and Compliant",
+    statusColor: "green",
       videos: [
         { id: "s_697c00a28e6081919b412c7781e5f6de", thumbnail: "arc-insolencium01.jpg", oneLiner: "The discovery & the transfusion." },
         { id: "s_697c384c7bdc8191b0eab2548c033fb6", thumbnail: "arc-insolencium02.jpg", oneLiner: "Setting the trap." },
@@ -1120,6 +1136,7 @@ HANNAH
       title: "Unsupervised Global Expansion",
       description: "At some point, we decided the Land of the Rising Sun needed more Gerch-Verse. What followed was a flurry of toy commercials, retro tokusatsu-style hero battles, space tourism promotions, and at least one extremely serious truck advertisement. Some of it aired. Some of it probably shouldn't have. All of it exists. Consider this our lovingly disorganized archive of neon ambition and aggressively subtitled optimism. We regret nothing, except maybe the exploding robot budget.",
       status: "COMPLETE",
+    statusColor: "green",
       videos: [
         { id: "s_6918bae15d8881919274ff0b23ea08ef", thumbnail: "arc-risingsun01.jpg", oneLiner: "Amit defends Japan against Godzilla." },
         { id: "s_693e81a46ce881919cfb8db8152b32e7", thumbnail: "arc-risingsun02.jpg", oneLiner: "TV Commercial for Gerch clone brisket." },
@@ -1151,6 +1168,7 @@ HANNAH
       title: "The Toon Gulag Escape",
       description: "A dimensional malfunction maroons the cast as sanitized cartoon avatars in a brightly-colored purgatory where background characters keep pointing at exit signs labeled 'GERCH-VERSE' like that's helpful navigation. The Gerch-Verse cast endures peppy animation physics and fourth-wall commentary from locals who seem aware they're fictional—trapped in a medium that demands optimism while their souls remain in quarterly earnings. They eventually locate portals home through sheer narrative convenience. Whether the cartoon world survives their departure is classified.",
       status: "STATUS: Resolved (Pending Dimensional Recidivism)",
+    statusColor: "green",
       videos: [
         { id: "s_6983e886a4408191a18f5765c76d5789", thumbnail: "arc-toon-gulag-amit.jpg", oneLiner: "Gerch-Verse or bust." },
         { id: "s_6985479e12688191a727ff21922d0c81", thumbnail: "arc-toon-gulag-leon.jpg", oneLiner: "Animated antics." },
@@ -1169,6 +1187,7 @@ HANNAH
       title: "ASMR Break Time",
       description: "ASMR relaxation collection. Not a story arc. Not even close. We literally put a question mark in the title and you're still reading. That's the Gerch-Verse commitment to quality—if it's relaxing and features our characters, it goes in the arcs section. Approval from Mediocrates was recommended but ignored, much like narrative structure.",
       status: "STILL RECORDING (STILL NOT AN ARC)",
+    statusColor: "yellow",
       videos: [
         { id: "s_693e68e7225081918cdacfb4c1999000", thumbnail: "arc-asmr01.jpg", oneLiner: "Amit." },
         { id: "s_6955eaa20edc8191a4fd5b730284fd4b", thumbnail: "arc-asmr02.jpg", oneLiner: "Raj." },
@@ -1183,6 +1202,7 @@ HANNAH
       title: "Music Videos",
       description: "FILE UNDER: 'Definitely not a story arc but we ran out of tabs.' Mediocrates raged for forty-five minutes, then track seven changed his mind and he added seventeen more videos. These aren't arcs. These are cries for help. Zero training, fax-machine vocals, temporal-rift Auto-Tune. One track charted in Q5 negatives because nobody could tell if it was music or a hostage recording. We put it in 'Story Arcs' because 'Miscellaneous Sonic War Crimes' felt too on-the-nose. Official: Belongs nowhere. Actual: Needed shelf space. Not art. Pathology with a beat that we organized next to legitimate narrative content because chaos is our love language. Warning: May cause spontaneous choreography, hearing damage, and urges to invest in Q6. You could do this too—and shouldn't. But if you do, put it in the wrong section. It's tradition.",
       status: "MEDIOCRATES DISAPPROVES (BUT SECRETLY BOBS HEAD)",
+    statusColor: "yellow",
       videos: [
         { id: "s_692be9b9fda08191b1b96da78975b0e9", thumbnail: "arc-musicvideos-rawhide-hearts.jpg", oneLiner: "Rawhide Hearts" },
         { id: "s_69535b3bf7e881919b88d1d06132b124", thumbnail: "solo-leon-riddlers-ballad.jpg", oneLiner: "A Riddler's Ballad" },
