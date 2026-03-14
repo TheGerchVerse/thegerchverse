@@ -224,6 +224,7 @@ const VIDEO_DB = {
       { id: "s_69764f78e670819186e03ea2dcfb2d15", thumb: "amit-take-me-to-the-milk.jpg", oneLiner: "Take me to the milk!", arc: null },
       { id: "s_6976c639b3d08191b2d17d3693987d13", thumb: "amit-perfect-woman.jpg", oneLiner: "Amit's Perfect Woman.", arc: null },
       { id: "s_69823bc923588191b371b2816bdcce53", thumb: "amit-gerch-burgers.jpg", oneLiner: "Gerch Burgers.", arc: null },
+      { id: "s_69893a18a15481918896107d6a77f9fa", thumb: "amit-polar-dominance.jpg", oneLiner: "Gerch Burgers.", arc: null },
 
     ],
 
@@ -835,7 +836,8 @@ HANNAH
     { id: "s_697e847581088191bc4df07fdc6ef2e4", thumb: "multi-amit-gadha-showdown.jpg", oneLiner: "Holy cow showdown.", characters: ["amit", "gadha"], arc: null },
     { id: "s_6980e62ea6b881919e3ae415c8132bd6", thumb: "multi-amit-gerchlander-weaponized.jpg", oneLiner: "Weaponized against insolence.", characters: ["amit", "gerchlander"], arc: null },
     { id: "s_69b4c7ef5f508191acc71a02b29ab071", thumb: "multi-hannah-cole-swipe-left.jpg", oneLiner: "Swipe left.", characters: ["hannah", "cole"], arc: null },
-    { id: "s_69b4cf5d166c8191935419af41ffad0c", thumb: "multi-hannah-tex-stand-there.jpg", oneLiner: "Western Party.", characters: ["hannah", "bigtex"], arc: null }
+    { id: "s_69b4cf5d166c8191935419af41ffad0c", thumb: "multi-hannah-tex-stand-there.jpg", oneLiner: "Western Party.", characters: ["hannah", "bigtex"], arc: null },
+    { id: "s_69874be1ebe48191afb6e13bbe0f1555", thumb: "multi-amit-raj-moo.jpg", oneLiner: "Moo.", characters: ["amit", "raj"], arc: null }
 
 
 
@@ -978,6 +980,7 @@ HANNAH
         { id: "s_6982a540d8548191aa23fbe4621d48b8", thumbnail: "arc-biomarker13.jpg", oneLiner: "Lizzie deflects reporters." },
         { id: "s_6982b6c8b5988191b7c5faff02f22a29", thumbnail: "arc-biomarker14.jpg", oneLiner: "Big Tex clearly doesn't care." },
         { id: "s_69824a89f9848191a60d359b7cce14a0", thumbnail: "arc-biomarker15.jpg", oneLiner: "Dark Amit weights in." },
+        { id: "s_6987bb5250308191a5dabd743dfe16bc", thumbnail: "arc-biomarker15a.jpg", oneLiner: "Hand over the moo." },
         { id: "s_6982389a6ad88191a21cbbc70a1fe33a", thumbnail: "arc-biomarker16.jpg", oneLiner: "Amit summons his lethal asset." },
         { id: "s_6983a84ab1888191b2f9bccb41b51bb8", thumbnail: "arc-biomarker17.jpg", oneLiner: "Dark Amit and Gerchlander go hunting." },
         { id: "s_698613e4c0d48191ba29a72805ddfe84", thumbnail: "arc-biomarker18.jpg", oneLiner: "Michael Moo hides, eats, and prays." }
