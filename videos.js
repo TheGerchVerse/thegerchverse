@@ -649,6 +649,36 @@ const VIDEO_DB = {
     ],
 
 /*
+╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
+HANNAH
+*/
+
+/*
+╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                      ║                                                                                                               
+║ ██╗  ██╗  █████╗  ███╗   ██╗ ███╗   ██╗  █████╗  ██╗  ██╗    ██████╗  ███████╗ ██╗      ██╗   ██╗ ███████╗ ██╗   ██╗ ║
+║ ██║  ██║ ██╔══██╗ ████╗  ██║ ████╗  ██║ ██╔══██╗ ██║  ██║    ██╔══██╗ ██╔════╝ ██║      ██║   ██║ ██╔════╝ ╚██╗ ██╔╝ ║
+║ ███████║ ███████║ ██╔██╗ ██║ ██╔██╗ ██║ ███████║ ███████║    ██║  ██║ █████╗   ██║      ██║   ██║ █████╗    ╚████╔╝  ║
+║ ██╔══██║ ██╔══██║ ██║╚██╗██║ ██║╚██╗██║ ██╔══██║ ██╔══██║    ██║  ██║ ██╔══╝   ██║      ██║   ██║ ██╔══╝     ╚██╔╝   ║
+║ ██║  ██║ ██║  ██║ ██║ ╚████║ ██║ ╚████║ ██║  ██║ ██║  ██║    ██████╔╝ ███████╗ ███████╗  ╚████╔╝  ███████╗    ██║    ║
+║ ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═╝  ╚═══╝ ╚═╝  ╚═══╝ ╚═╝  ╚═╝ ╚═╝  ╚═╝    ╚═════╝  ╚══════╝ ╚══════╝   ╚═══╝   ╚══════╝    ╚═╝    ║
+║══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════║
+║                                              H A N N A H      D E L V E Y                                            ║
+╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+    // HANNAH DELVEY - 8 videos
+    hannah: [
+      { id: "s_placeholder_281park", thumb: "hannah-281park-00.jpg", oneLiner: "281 Park. It's happening. It's always been happening.", arc: null },
+      { id: "s_placeholder_foundation", thumb: "hannah-foundation-pitch.jpg", oneLiner: "The Hannah Delvey Foundation: Where culture meets collateral.", arc: null },
+      { id: "s_placeholder_investor", thumb: "hannah-investor-lunch.jpg", oneLiner: "Wire transfer or bearer bond? I don't have time for small denominations.", arc: null },
+      { id: "s_placeholder_renderings", thumb: "hannah-renderings.jpg", oneLiner: "These are conceptual. Like my liquidity.", arc: null },
+      { id: "s_placeholder_accent", thumb: "hannah-accent-origin.jpg", oneLiner: "I grew up... here and there. Mostly there.", arc: null },
+      { id: "s_placeholder_rooster", thumb: "hannah-rooster-accents.jpg", oneLiner: "Authentic Americana. Very expensive. Very Texas.", arc: null },
+      { id: "s_placeholder_sunglasses", thumb: "hannah-sunglasses-indoor.jpg", oneLiner: "I don't do fluorescent lighting. Or accountability.", arc: null },
+      { id: "s_placeholder_visa", thumb: "hannah-visa-questions.jpg", oneLiner: "Mediocrates approved it. What more do you people want?", arc: null },
+    ],
+
+/*
 ╔══════════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                      ║
 ║        █████╗    ███╗   ███╗   ██╗   ████████╗             ██╗   ███████╗            ║
@@ -1191,6 +1221,7 @@ const CHARACTERS = {
     avatar: "../images/amit.jpg",
     color: "#00FFFF"
   },
+
   lizzie: {
     name: "Lizzie Holmes",
     handle: "@sheranos",
@@ -1198,6 +1229,7 @@ const CHARACTERS = {
     avatar: "../images/lizzie.jpg",
     color: "#FF007F"
   },
+
   leon: {
     name: "Leon Cochran",
     handle: "@leoncochran",
@@ -1205,6 +1237,7 @@ const CHARACTERS = {
     avatar: "../images/leon.jpg",
     color: "#099fdf"
   },
+
   bigtex: {
     name: "Big Tex Wang",
     handle: "@bigtexwang",
@@ -1212,6 +1245,7 @@ const CHARACTERS = {
     avatar: "../images/bigtex.jpg",
     color: "#FF4444"
   },
+
   gadha: {
     name: "Gadha",
     handle: "@gadhamilk",
@@ -1219,6 +1253,7 @@ const CHARACTERS = {
     avatar: "../images/gadha.jpg",
     color: "#FFD700"
   },
+
   raj: {
     name: "Raj Mehta",
     handle: "@grchnraj",
@@ -1226,6 +1261,7 @@ const CHARACTERS = {
     avatar: "../images/raj.jpg",
     color: "#FF8800"
   },
+
   sterling: {
     name: "Sterling Winslow",
     handle: "@sterlingwinslow",
@@ -1233,6 +1269,7 @@ const CHARACTERS = {
     avatar: "../images/sterling.jpg",
     color: "#888888"
   },
+
   eelon: {
     name: "Eel On Muskmelon",
     handle: "@eelonmuskmelon",
@@ -1240,6 +1277,7 @@ const CHARACTERS = {
     avatar: "../images/eelon.jpg",
     color: "#FF66CC"
   },
+
   cole: {
     name: "Cole Mercer",
     handle: "@pharma_bro",
@@ -1247,6 +1285,7 @@ const CHARACTERS = {
     avatar: "../images/cole.jpg",
     color: "#5786bc"
   },
+
   lightamit: {
     name: "Light Amit",
     handle: "@lightamit",
@@ -1254,6 +1293,7 @@ const CHARACTERS = {
     avatar: "../images/lightamit.jpg",
     color: "#fbdd55"
   },
+
   darkamit: {
     name: "Dark Amit",
     handle: "@darkamit",
@@ -1261,6 +1301,7 @@ const CHARACTERS = {
     avatar: "../images/darkamit.jpg",
     color: "#6433d5"
   },
+
   amitsmother: {
     name: "Amit's Mother",
     handle: "@amitsmother",
@@ -1268,6 +1309,7 @@ const CHARACTERS = {
     avatar: "../images/amitsmother.jpg",
     color: "#0e864a"
   },
+
   evilamit: {
     name: "Evil Amit",
     handle: "@evilgrchnfrms",
@@ -1275,6 +1317,7 @@ const CHARACTERS = {
     avatar: "../images/evilamit.jpg",
     color: "#00FF00"
   },
+
     oletex: {
     name: "Ole' Tex Wang",
     handle: "@oletexwang",
@@ -1282,6 +1325,7 @@ const CHARACTERS = {
     avatar: "../images/oletexwang.jpg",
     color: "#df4e14"
   },
+
   gerchlander: {
     name: "Gerchlander",
     handle: "@gerchlander",
@@ -1289,6 +1333,7 @@ const CHARACTERS = {
     avatar: "../images/gerchlander.jpg",
     color: "#FF0000"
   },
+
   michaelmoo: {
     name: "Michael Moo",
     handle: "@michael.moo",
@@ -1296,6 +1341,7 @@ const CHARACTERS = {
     avatar: "../images/michaelmoo.jpg",
     color: "#FFA500"
   },
+
   mediocrates: {
     name: "Mediocrates",
     handle: "@medi0cr4t3s",
@@ -1303,6 +1349,15 @@ const CHARACTERS = {
     avatar: "../images/mediocrates-profile.jpg",
     color: "#ffffff"
   },
+
+  hannah: {
+    name: "Hannah Delvey",
+    handle: "@hannahdelvey",
+    role: "Luxury Confidence Scam Architect",
+    avatar: "../images/hannah.jpg",
+    color: "#C0C0C0"
+  },
+
   amitjr: {
     name: "Amit Jr.",
     handle: "@amitjrq6",
@@ -1310,6 +1365,7 @@ const CHARACTERS = {
     avatar: "../images/amitjrq6.jpg",
     color: "#808080"
   },
+
 };
 
 // Export for use in other scripts
