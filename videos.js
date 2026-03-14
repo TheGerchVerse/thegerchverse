@@ -668,8 +668,8 @@ HANNAH
 */
     // HANNAH DELVEY - 8 videos
     hannah: [
-      { id: "s_placeholder_281park", thumb: "hannah-281park-00.jpg", oneLiner: "281 Park. It's happening. It's always been happening.", arc: null },
-      { id: "s_placeholder_foundation", thumb: "hannah-foundation-pitch.jpg", oneLiner: "The Hannah Delvey Foundation: Where culture meets collateral.", arc: null },
+      { id: "s_69b4998b5ab48191af173341350c3f73", thumb: "solo-hannah-founder.jpg", oneLiner: "I'm a founder.", arc: null },
+      { id: "s_69b4be9ec39c8191bb33c15692b1377f", thumb: "solo-hannah-hdf.jpg", oneLiner: "The Hannah Delvey Foundation (HDF).", arc: null },
       { id: "s_placeholder_investor", thumb: "hannah-investor-lunch.jpg", oneLiner: "Wire transfer or bearer bond? I don't have time for small denominations.", arc: null },
       { id: "s_placeholder_renderings", thumb: "hannah-renderings.jpg", oneLiner: "These are conceptual. Like my liquidity.", arc: null },
       { id: "s_placeholder_accent", thumb: "hannah-accent-origin.jpg", oneLiner: "I grew up... here and there. Mostly there.", arc: null },
