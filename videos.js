@@ -226,6 +226,19 @@ const VIDEO_DB = {
       { id: "s_69823bc923588191b371b2816bdcce53", thumb: "amit-gerch-burgers.jpg", oneLiner: "Gerch Burgers.", arc: null },
       { id: "s_69893a18a15481918896107d6a77f9fa", thumb: "amit-polar-dominance.jpg", oneLiner: "Gerch Burgers.", arc: null },
       { id: "s_698989da3b2481919a06c6a5269fd043", thumb: "amit-Gnarring-for-gold.jpg", oneLiner: "Gerch Burgers.", arc: null },
+      { id: "s_698989da3b2481919a06c6a5269fd043", thumb: "amit-pugzley-q5-output.jpg", oneLiner: "Q5 Output ft. lofoandpu.pugzley.", arc: null },
+      { id: "s_698bfa8040f08191ad1527d15aac01b3", thumb: "amit-q5-origins.jpg", oneLiner: "Q5 Origins.", arc: null },
+      { id: "s_6992bedaa54081919b2e9ac6b6bd3bd5", thumb: "amit-understanding-after-belief.jpg", oneLiner: "Understanding comes after belief", arc: null },
+      { id: "s_69933235db3081919f0c17cdbf6615cb", thumb: "amit-obedimint-gum.jpg", oneLiner: "ObediMint", arc: null },
+      { id: "s_69938501db3481918e42ca8b46555d0a", thumb: "amit-MBA-word-salad.jpg", oneLiner: "MBA Word Salad", arc: null },
+      { id: "s_6993b76976008191b785848842ec6ee8", thumb: "amit-insolence-inspection.jpg", oneLiner: "Insolence Inspection.", arc: null },
+      { id: "s_6993fdf63a8481919e0b40acc56e8d25", thumb: "amit-evolution.jpg", oneLiner: "Evolution.", arc: null },
+      { id: "s_69948e4f7af081918c1f68a5001efd7d", thumb: "amit-evolution02.jpg", oneLiner: "Evolution Ver2.", arc: null },
+      { id: "s_6994cdc89e448191b0c7b960b9c553e2", thumb: "amit-jurassic-insolence.jpg", oneLiner: "Jurassic Insolence.", arc: null },
+      { id: "s_6994f4c3c18881918a940e96c45f7f0a", thumb: "amit-ninja-please.jpg", oneLiner: "Ninja, please.", arc: null },
+      { id: "s_69952821cff8819187de6a1e319a0465", thumb: "amit-lion-wrestle.jpg", oneLiner: "Beast Mode.", arc: null },
+      { id: "s_6996014f2a048191846edaab615862d6", thumb: "amit-kraken.jpg", oneLiner: "Taming the Beast.", arc: null }
+      
 
     ],
 
@@ -842,8 +855,14 @@ HANNAH
     { id: "s_69b4c7ef5f508191acc71a02b29ab071", thumb: "multi-hannah-cole-swipe-left.jpg", oneLiner: "Swipe left.", characters: ["hannah", "cole"], arc: null },
     { id: "s_69b4cf5d166c8191935419af41ffad0c", thumb: "multi-hannah-tex-stand-there.jpg", oneLiner: "Western Party.", characters: ["hannah", "bigtex"], arc: null },
     { id: "s_69874be1ebe48191afb6e13bbe0f1555", thumb: "multi-amit-raj-moo.jpg", oneLiner: "Moo.", characters: ["amit", "raj"], arc: null },
-    { id: "s_69b4fb4aeec08191b6d2322bec884304", thumb: "multi-hannah-lizzie-light-stay-on.jpg", oneLiner: "Whatever lets the light stay on.", characters: ["lizzie", "hannah"], arc: null }
-    
+    { id: "s_69b4fb4aeec08191b6d2322bec884304", thumb: "multi-hannah-lizzie-light-stay-on.jpg", oneLiner: "Whatever lets the light stay on.", characters: ["lizzie", "hannah"], arc: null },
+    { id: "s_6989f83933608191b6015ed30c43fb50", thumb: "multi-eelon-amit-gerchmotors-best-sales.jpg", oneLiner: "Gerch Motors: Best Sales.", characters: ["eelon", "amit"], arc: null },
+    { id: "s_698a6408f2c48191ab3d24a8c73b8d99", thumb: "multi-amit-darkamit-expendable-zilla.jpg", oneLiner: "Expendable-zilla.", characters: ["darkamit", "amit"], arc: null },
+    { id: "s_698d53f5dd3481919949c87fbaa7bf89", thumb: "multi-amit-darkamit-silence-is-golden.jpg", oneLiner: "Silence is golden.", characters: ["darkamit", "amit"], arc: null },
+    { id: "s_698f64bde598819186a23d24f4b7cbc1", thumb: "multi-amit-lizzie-tex-milk-baron-game.jpg", oneLiner: "The Milk Baron.", characters: ["lizzie", "amit", "bigtex"], arc: null },
+    { id: "s_699508ce6e4c81918562dbcd2643237e", thumb: "multi-amit-evilamit-quarters-disagreement.jpg", oneLiner: "Profits and Quarters", characters: ["evilamit", "amit"], arc: null },
+    { id: "s_699538cd5c188191908d156e93f9d324", thumb: "multi-amit-evilamit-lion-victory.jpg", oneLiner: "Respectful Victory.", characters: ["evilamit", "amit"], arc: null },
+    { id: "s_6995f46521b081919badd48c14f37a65", thumb: "multi-amit-evilamit-happy-workers.jpg", oneLiner: "Happy Workers.", characters: ["evilamit", "amit"], arc: null },
 
 
 
@@ -1158,7 +1177,8 @@ HANNAH
         { id: "s_69a7cbab67788191bb02a956e5fe4f76", thumbnail: "arc-risingsun18.jpg", oneLiner: "Gargantamax 5000." },
         { id: "s_69abd46b31088191b542d388a1fa46d5", thumbnail: "arc-risingsun19.jpg", oneLiner: "Ole' Tex Wang Ranger." },
         { id: "s_69accf3866e48191a73678e52ae1be6d", thumbnail: "arc-risingsun20.jpg", oneLiner: "Indubitable Butler Ranger." },
-        { id: "s_69adb849d0d88191a5d5ca7b33d39798", thumbnail: "arc-risingsun21.jpg", oneLiner: "Raj Ranger." }
+        { id: "s_69adb849d0d88191a5d5ca7b33d39798", thumbnail: "arc-risingsun21.jpg", oneLiner: "Raj Ranger." },
+        { id: "s_6993fd0a9f3c8191b1e6469f0a3eb25d", thumbnail: "arc-risingsun22.jpg", oneLiner: "Baba Ganoush." }
       ]
 
 
@@ -1205,12 +1225,12 @@ HANNAH
     statusColor: "yellow",
       videos: [
         { id: "s_692be9b9fda08191b1b96da78975b0e9", thumbnail: "arc-musicvideos-rawhide-hearts.jpg", oneLiner: "Rawhide Hearts" },
+        { id: "s_69a642e88f048191a4a10493cd4f8099", thumbnail: "arc-musicvideos-timeless-love.jpg", oneLiner: "Timeless Love" },
         { id: "s_69535b3bf7e881919b88d1d06132b124", thumbnail: "solo-leon-riddlers-ballad.jpg", oneLiner: "A Riddler's Ballad" },
         { id: "s_695c02634ba48191a657b5f054b8ad6f", thumbnail: "arc-musicvideos-i-own-the-pulse.jpg", oneLiner: "I Own the Pulse." },
         { id: "s_69647b418bf08191ae096b49de7ae3ed", thumbnail: "arc-sunset-gold.jpg", oneLiner: "Sunset Gold" },
         { id: "s_69a673b7ea14819186b8c1d485d2e1c8", thumbnail: "arc-musicvideos-big-wheels-turnin.jpg", oneLiner: "Big Wheels Turnin'" },
         { id: "s_697f87fda9548191852a7c1af29f695a", thumbnail: "arc-musicvideos-dont-grow.jpg", oneLiner: "Don't grow" },
-        { id: "s_69a642e88f048191a4a10493cd4f8099", thumbnail: "arc-musicvideos-timeless-love.jpg", oneLiner: "Timeless Love" },
         { id: "s_6990cd6226588191a11f1dec17a51b8d", thumbnail: "arc-musicvideos-voices-of-destiny.jpg", oneLiner: "Voices of Destiny" },
         { id: "s_6993abc42bcc819181dfc4fec29b603d", thumbnail: "arc-musicvideos-riddle-me-this-love.jpg", oneLiner: "Riddle me this Love" },
         { id: "s_69a51590e61481918f196d1acae8e742", thumbnail: "arc-musicvideos-move-like-mumbai.jpg", oneLiner: "Move like Mumbai" },
@@ -1231,7 +1251,11 @@ HANNAH
         { id: "s_69990df04bd8819199f0a330d9f3fd53", thumbnail: "arc-musicvideos-evilamit-q4-on-ice.jpg", oneLiner: "Q4 On Ice." },
         { id: "s_69ab03065d10819198327c3533af8400", thumbnail: "solo-amitsmother-spectacular.jpg", oneLiner: "Spectacular." },
         { id: "s_698ea2890d808191853e919b9c2a3d53", thumbnail: "solo-cole-quarterly-prophets.jpg", oneLiner: "Quarterly prophets (of profits)." },
-        { id: "s_69ace9879b7c819190476e7d86e86bd3", thumbnail: "arc-musicvideos-mommy-hips-dont-lie.jpg", oneLiner: "Mommy's Hips Don't Lie." }
+        { id: "s_69ace9879b7c819190476e7d86e86bd3", thumbnail: "arc-musicvideos-mommy-hips-dont-lie.jpg", oneLiner: "Mommy's Hips Don't Lie." },
+        { id: "s_698f8eb52f6c8191b6302b9faf0ce84c", thumbnail: "arc-musicvideos-q5-on-ice.jpg", oneLiner: "Q5 On Ice." },
+        { id: "s_69912b9523488191871daf8ebd35105c", thumbnail: "arc-musicvideos-q5-ballads.jpg", oneLiner: "Q5 Ballads." },
+        { id: "s_699211ccb40481919d270cf9a37c84fb", thumbnail: "arc-musicvideos-cows-insolence-farm.jpg", oneLiner: "Insolence." },
+        { id: "s_6994c795c74881919766f6cd30bf8f71", thumbnail: "arc-musicvideos-the-gerch-verse.jpg", oneLiner: "The Gerch-Verse." }
       ]      
 
 
