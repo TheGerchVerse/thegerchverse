@@ -917,7 +917,7 @@ HANNAH
     { id: "s_699790dc4db88191a2dbe4d379556f26", thumb: "multi-amit-leon-legal-loophole.jpg", oneLiner: "Legal loophole.", characters: ["amit", "leon"], arc: null },
     { id: "s_6998c46dd8dc8191a0fb790b4bc332a9", thumb: "multi-amit-evilamit-profits-four-quarters.jpg", oneLiner: "4 Quarters.", characters: ["amit", "evilamit"], arc: null },
     { id: "s_6998bfa32d888191969780087a009ed2", thumb: "multi-amit-amitsmother-gadha-abandoned01.jpg", oneLiner: "Abandoned Pt.1", characters: ["amit", "amitsmother", "gadha"], arc: null },
-    { id: "s_6998e57e0eb081919c79f2df0d6d332a", thumb: "multi-evilamit-amitsmother-gadha-amitjrq6-abandoned02.jpg", oneLiner: "Abandoned Pt.2", characters: ["evilamit", "amitsmother", "gadha", "amitjunior"], arc: null },
+    { id: "s_6998e57e0eb081919c79f2df0d6d332a", thumb: "multi-evilamit-amitsmother-gadha-amitjrq6-abandoned02.jpg", oneLiner: "Abandoned Pt.2", characters: ["evilamit", "amitsmother", "gadha", "amitjr"], arc: null },
     { id: "s_69990bd2e348819199b950ff21b6056a", thumb: "multi-amit-evilamit-lactose-free-gerch.jpg", oneLiner: "Lactose-free Gerch Milk.", characters: ["amit", "evilamit"], arc: null },
     { id: "s_699a1ef345648191bbf98c20051c021d", thumb: "multi-amit-evilamit-arm-wrestle.jpg", oneLiner: "Effort is Optional.", characters: ["amit", "evilamit"], arc: null },
     { id: "s_699b738b2394819183bb5a7028dca018", thumb: "multi-amit-gadha-dark-light-gerchlander-eelon-race-cheetah.jpg", oneLiner: "The Race.", characters: ["amit", "gadha", "eelon", "darkamit", "lightamit", "gerchlander"], arc: null },
@@ -995,29 +995,25 @@ HANNAH
       
       
      },
-     "have-it-your-betrayal": {
-  title: "Have It Your Betrayal: The Amit Origin",
-  description: "Boston, 1981. A time-traveling warning ignored. A mother who chose booty calls over bloodlines. The moment a Whopper wrapper became both blanket and birth certificate for a supervillain.",
-  status: "CANONICAL — ORIGIN CHRONICLE",
-  statusColor: "red",
-  videos: [
-    { id: "s_69b19e5550308191bd8f542929c7257d", thumbnail: "arc-betrayal-01.jpg", oneLiner: "The Burger King bathroom abandonment." },
-    { id: "s_6998bfa32d888191969780087a009ed2", thumbnail: "arc-betrayal-02.jpg", oneLiner: "Gadha distracts Amit.'" },
-    { id: "s_6998e57e0eb081919c79f2df0d6d332a", thumbnail: "arc-betrayal-03.jpg", oneLiner: "Amit must remain. Q6 must be avoided." },
-    { id: "s_69b257c0d0248191904fce0a1a1b5ced", thumbnail: "arc-betrayal-03a.jpg", oneLiner: "Evil Amit stays with Mama." },
-    { id: "s_69a4750eb13c8191ad90370680a02542", thumbnail: "arc-betrayal-04.jpg", oneLiner: "Interview room confession." },
-    { id: "s_69a5ea36ff888191b4b1ddb4c86fa83b", thumbnail: "arc-betrayal-04a.jpg", oneLiner: "Amit seeks the truth." },
-    { id: "s_699f8c318b5c8191ac8c914eb2b9303b", thumbnail: "arc-betrayal-4b.jpg", oneLiner: "Just rubbing it in." },
-    { id: "s_699f8c318b5c8191ac8c914eb2b9303b", thumbnail: "arc-betrayal-05.jpg", oneLiner: "Funny jokes, but not for Amit." },
-    { id: "s_69b204de452081918e5080bb25be9e35", thumbnail: "arc-betrayal-06.jpg", oneLiner: "History repeats itself." }
-    
-  ]
-} 
-
-
-      
-    },
-    "insolence-overload": {
+   "have-it-your-betrayal": {
+title: "Have It Your Betrayal: The Amit Origin",
+description: "Boston, 1981. A time-traveling warning ignored. A mother who chose booty calls over bloodlines. The moment a Whopper wrapper became both blanket and birth certificate for a supervillain.",
+status: "CANONICAL — ORIGIN CHRONICLE",
+statusColor: "red",
+videos: [
+  { id: "s_69b19e5550308191bd8f542929c7257d", thumbnail: "arc-betrayal-01.jpg", oneLiner: "The Burger King bathroom abandonment." },
+  { id: "s_6998bfa32d888191969780087a009ed2", thumbnail: "arc-betrayal-02.jpg", oneLiner: "Gadha distracts Amit.'" },
+  { id: "s_6998e57e0eb081919c79f2df0d6d332a", thumbnail: "arc-betrayal-03.jpg", oneLiner: "Amit must remain. Q6 must be avoided." },
+  { id: "s_69b257c0d0248191904fce0a1a1b5ced", thumbnail: "arc-betrayal-03a.jpg", oneLiner: "Evil Amit stays with Mama." },
+  { id: "s_69a4750eb13c8191ad90370680a02542", thumbnail: "arc-betrayal-04.jpg", oneLiner: "Interview room confession." },
+  { id: "s_69a5ea36ff888191b4b1ddb4c86fa83b", thumbnail: "arc-betrayal-04a.jpg", oneLiner: "Amit seeks the truth." },
+  { id: "s_699f8c318b5c8191ac8c914eb2b9303b", thumbnail: "arc-betrayal-4b.jpg", oneLiner: "Just rubbing it in." },
+  { id: "s_699f8c318b5c8191ac8c914eb2b9303b", thumbnail: "arc-betrayal-05.jpg", oneLiner: "Funny jokes, but not for Amit." },
+  { id: "s_69b204de452081918e5080bb25be9e35", thumbnail: "arc-betrayal-06.jpg", oneLiner: "History repeats itself." }
+  
+]
+  },
+  "insolence-overload": {
       title: "Insolence Overload",
       description: "Too much insolence takes a potentially deadly toll on Amit.",
       status: "COMPLETE",
