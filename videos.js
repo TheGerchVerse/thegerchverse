@@ -245,7 +245,8 @@ const VIDEO_DB = {
       { id: "s_699a20591b2481919e98d07c21f2f011", thumb: "amit-hand-slapping.jpg", oneLiner: "Hand-Slapped Dairy.", arc: null },
       { id: "s_699e553955c081918e9f6e58adde221c", thumb: "amit-valhalla-acquisition.jpg", oneLiner: "Valhalla acquisition.", arc: null },
       { id: "s_699eab02dba0819190781c4507c001f0", thumb: "amit-domestication.jpg", oneLiner: "Domestication.", arc: null },
-      { id: "s_69a2092318cc8191a0e3c6bc0107016f", thumb: "amit-mommy-issues.jpg", oneLiner: "Mommy issues.", arc: null }
+      { id: "s_69a2092318cc8191a0e3c6bc0107016f", thumb: "amit-mommy-issues.jpg", oneLiner: "Mommy issues.", arc: null },
+      { id: "s_69a310a73e088191ba4dbfebeaa665b0", thumb: "amit-q5-approval-tirade.jpg", oneLiner: "Q5 Approved Overnight.", arc: null }
       
       
 
@@ -889,6 +890,7 @@ HANNAH
     { id: "s_699f8c318b5c8191ac8c914eb2b9303b", thumb: "multi-amit-evilamit-amitsmother-gadha-rub-it-in.jpg", oneLiner: "Rubbing it in.", characters: ["amit", "evilamit", "gadha", "amitsmother"], arc: null },
     { id: "s_699fb81268c481919f4d52b4220cf02a", thumb: "multi-amit-evilamit-supreme-dream-benevolent.jpg", oneLiner: "Evil Amit: Supreme - Dream Benevolent.", characters: ["amit", "evilamit"], arc: null },
     { id: "s_69b6091e6b288191b67d6bc533861244", thumb: "multi-hannah-leon-catchphrase.jpg", oneLiner: "Not a catchphrase.", characters: ["leon", "hannah"], arc: null },
+    { id: "s_69b64fa3dcfc8191a804b80709f87d04", thumb: "multi-hannah-amit-seed-funding.jpg", oneLiner: "Seed funding.", characters: ["amit", "hannah"], arc: null },
     
     
 
