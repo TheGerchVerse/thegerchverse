@@ -535,6 +535,27 @@ const VIDEO_DB = {
       { id: "s_69719b661ae88191ae2304c18a57eef4", thumb: "solo-cole-innovation-isnt-free.jpg", oneLiner: "Innovation isn't free.", arc: null },
     ],
 
+
+/*
+╔══════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                      ║
+║                       ██████╗   ██████╗   ██╗       ██╗   ███╗   ██╗                 ║
+║                      ██╔════╝  ██╔═══██╗  ██║       ██║   ████╗  ██║                 ║
+║                      ██║       ██║   ██║  ██║       ██║   ██╔██╗ ██║                 ║
+║                      ██║       ██║   ██║  ██║       ██║   ██║╚██╗██║                 ║
+║                      ╚██████╗  ╚██████╔╝  ███████╗  ██║   ██║ ╚████║                 ║
+║                       ╚═════╝   ╚═════╝   ╚══════╝  ╚═╝   ╚═╝  ╚═══╝                 ║
+║══════════════════════════════════════════════════════════════════════════════════════║
+║                                C O L I N   M E R C E R                               ║
+╚══════════════════════════════════════════════════════════════════════════════════════╝
+*/
+    // COLIN MERCER 
+    colin: [
+      { id: "placeholder_001", thumb: "solo-colin-intro.jpg", oneLiner: "Colin introduces himself to the Gerch-Verse. The patent expires when he says it does.", arc: null },
+      { id: "placeholder_002", thumb: "solo-colin-legacy.jpg", oneLiner: "The father of modern pharmaceutical pricing. If Cole is the villain, Colin wrote the playbook—and patented it.", arc: null },
+      { id: "placeholder_003", thumb: "solo-colin-patents.jpg", oneLiner: "Patents don't expire, they just get renewed. Forever.", arc: null },
+    ],
+
 /*
 ╔═══════════════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                           ║
@@ -901,6 +922,7 @@ HANNAH
     { id: "s_69a5ea36ff888191b4b1ddb4c86fa83b", thumb: "multi-amit-and-mother-real-reason.jpg", oneLiner: "The real reason.", characters: ["amit", "amitsmother"], arc: null },
     { id: "s_69ab7966b7b48191aba0010d12bab11a", thumb: "multi-amit-mediocrates-12%-growth.jpg", oneLiner: "12% Growth", characters: ["amit", "mediocrates"], arc: null },
     { id: "s_69ac959141f48191b0068298e8454419", thumb: "multi-moocoin-dump.jpg", oneLiner: "Moo pumps. Lizzie Dumps.", characters: ["michaelmoo", "lizzie", "darkamit", "amit"], arc: null },
+    { id: "s_69acc746643c81918f0fd67ce4aaee97", thumb: "multi-amit-oletex-boar-attack.jpg", oneLiner: "Boar attack.", characters: ["oletex", "amit"], arc: null },
     
     
 
@@ -1418,6 +1440,14 @@ const CHARACTERS = {
     role: "Big Tex Wang's Father, Wang Clan Patriarch",
     avatar: "../images/oletexwang.jpg",
     color: "#df4e14"
+  },
+
+    colin: {
+    name: "Colin Mercer",
+    handle: "@pharma_dad",
+    role: "The Patriarch of Pharmaceutical Pricing",
+    avatar: "../images/colin.jpg",
+    color: "#4169E1"
   },
 
   gerchlander: {
