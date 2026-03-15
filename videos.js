@@ -1024,8 +1024,23 @@ videos: [
         { id: "s_69310a48ac288191a465bc70bfb9d57c", thumbnail: "arc-toomuchinsolence-03.jpg", oneLiner: "Leon not fond of reporters." }
       ]
 
-    },
-    "executive-flight-assets": {
+
+},      
+"gerchlings": {
+  title: "Gerchlings: The Before-Times",
+  description: "Many insolent children, one shared destiny of corporate trauma. Before Q5, before the profit projections, before the milk-slaps—there was recess. And it was already problematic.",
+  status: "COMPLETE",
+  statusColor: "green",
+  videos: [
+    { id: "s_69b2dd17ab888191b7abc3dbc52c85c3", thumbnail: "arc-gerchlings-01.jpg", oneLiner: "Bake sale profits." },
+    { id: "s_69b2607e9c408191a3f08ded212200d8", thumbnail: "arc-gerchlings-02.jpg", oneLiner: "Science project." },
+    { id: "s_69b259fbcf0c8191a0e99d9e3f5967fd", thumbnail: "arc-gerchlings-03.jpg", oneLiner: "Legal origins." },
+    { id: "s_69b25b88d30c8191940cace3ca8bc997", thumbnail: "arc-gerchlings-04.jpg", oneLiner: "Horsing around." },
+    { id: "s_69b26292299c819196d0b3ee5907dcb2", thumbnail: "arc-gerchlings-05.jpg", oneLiner: "Teacher's pet." }
+]
+  },
+
+  "executive-flight-assets": {
       title: "Executive Flight Assets",
       description: "Not a story arc, but in our defense, Mediocrates approved (he was having a good day and we took advantage). Our core Gerch-Verse family members have special 'vehicles' and we needed somewhere to put the footage. 'Story Arcs' was closer than 'Random Asset Dump,' so here we are. Continuity is a myth we tell ourselves.",
       status: "COMPLETE",
@@ -1521,7 +1536,7 @@ const CHARACTERS = {
     role: "Son of Amit, Whistleblower from Q6",
     avatar: "../images/amitjrq6.jpg",
     color: "#808080"
-  },
+  }
 
 };
 
