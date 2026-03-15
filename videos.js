@@ -260,7 +260,8 @@ const VIDEO_DB = {
       { id: "s_69afb40a21c081918e7fd4ff19fce571", thumb: "amit-ceo-burger-challenge.jpg", oneLiner: "CEO Burger Challenge", arc: null },
       { id: "s_69afb80fa6dc8191852451b823367dc1", thumb: "amit-gerch-beach-resort.jpg", oneLiner: "Gerchan Farms Beach Resort", arc: null },
       { id: "s_69afb8baac4081918e49b16049555bca", thumb: "amit-pugzley-hearing-goats.jpg", oneLiner: "Hearing goats ft. lofoandpu.pugzley", arc: null },
-      { id: "s_69afbfaec6848191af7d2a2132c876b2", thumb: "amit-bird-submission.jpg", oneLiner: "Submission", arc: null }
+      { id: "s_69afbfaec6848191af7d2a2132c876b2", thumb: "amit-bird-submission.jpg", oneLiner: "Submission", arc: null },
+      { id: "s_69b08816b3e8819196880d7790b41b6b", thumb: "amit-dj-milk-drop.jpg", oneLiner: "Milk Drop", arc: null }
       
 
     ],
@@ -990,8 +991,30 @@ HANNAH
         { id: "s_6974d5db42d88191b327f358a59bcfe2", thumbnail: "arc-gadha-golden-shower-03.jpg", oneLiner: "Amit is Born." },
         { id: "s_69960c66d8c48191b663793380927676", thumbnail: "arc-gadha-golden-shower-04.jpg", oneLiner: "Evil Amit is Born." },
         { id: "s_6988b7cf49a081919ef9965234f24c5b", thumbnail: "arc-gadha-golden-shower-05.jpg", oneLiner: "Another genealogy attempt." }
-      ]  
+      ] 
       
+      
+     },
+     "have-it-your-betrayal": {
+  title: "Have It Your Betrayal: The Amit Origin",
+  description: "Boston, 1981. A time-traveling warning ignored. A mother who chose booty calls over bloodlines. The moment a Whopper wrapper became both blanket and birth certificate for a supervillain.",
+  status: "CANONICAL — ORIGIN CHRONICLE",
+  statusColor: "red",
+  videos: [
+    { id: "s_69b19e5550308191bd8f542929c7257d", thumbnail: "arc-betrayal-01.jpg", oneLiner: "The Burger King bathroom abandonment." },
+    { id: "s_6998bfa32d888191969780087a009ed2", thumbnail: "arc-betrayal-02.jpg", oneLiner: "Gadha distracts Amit.'" },
+    { id: "s_6998e57e0eb081919c79f2df0d6d332a", thumbnail: "arc-betrayal-03.jpg", oneLiner: "Amit must remain. Q6 must be avoided." },
+    { id: "s_69b257c0d0248191904fce0a1a1b5ced", thumbnail: "arc-betrayal-03a.jpg", oneLiner: "Evil Amit stays with Mama." },
+    { id: "s_69a4750eb13c8191ad90370680a02542", thumbnail: "arc-betrayal-04.jpg", oneLiner: "Interview room confession." },
+    { id: "s_69a5ea36ff888191b4b1ddb4c86fa83b", thumbnail: "arc-betrayal-04a.jpg", oneLiner: "Amit seeks the truth." },
+    { id: "s_699f8c318b5c8191ac8c914eb2b9303b", thumbnail: "arc-betrayal-4b.jpg", oneLiner: "Just rubbing it in." },
+    { id: "s_699f8c318b5c8191ac8c914eb2b9303b", thumbnail: "arc-betrayal-05.jpg", oneLiner: "Funny jokes, but not for Amit." },
+    { id: "s_69b204de452081918e5080bb25be9e35", thumbnail: "arc-betrayal-06.jpg", oneLiner: "History repeats itself." }
+    
+  ]
+} 
+
+
       
     },
     "insolence-overload": {
