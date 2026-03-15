@@ -242,7 +242,10 @@ const VIDEO_DB = {
       { id: "s_699792f84fbc8191bc2c4ddb87701c2b", thumb: "amit-to-prosperity.jpg", oneLiner: "To prosperity.", arc: null },
       { id: "s_6997a5382b1081919ef33710f74c70c0", thumb: "amit-keep-milk-rolling.jpg", oneLiner: "Keep the milk rolling.", arc: null },
       { id: "s_6997b91963b08191a15ff11a60245885", thumb: "amit-profits-respect.jpg", oneLiner: "Profits and Respect.", arc: null },
-      { id: "s_699a20591b2481919e98d07c21f2f011", thumb: "amit-hand-slapping.jpg", oneLiner: "Hand-Slapped Dairy.", arc: null }
+      { id: "s_699a20591b2481919e98d07c21f2f011", thumb: "amit-hand-slapping.jpg", oneLiner: "Hand-Slapped Dairy.", arc: null },
+      { id: "s_699e553955c081918e9f6e58adde221c", thumb: "amit-valhalla-acquisition.jpg", oneLiner: "Valhalla acquisition.", arc: null },
+      { id: "s_699eab02dba0819190781c4507c001f0", thumb: "amit-domestication.jpg", oneLiner: "Domestication.", arc: null },
+      { id: "s_69a2092318cc8191a0e3c6bc0107016f", thumb: "amit-mommy-issues.jpg", oneLiner: "Mommy issues.", arc: null }
       
       
 
@@ -698,6 +701,7 @@ HANNAH
       { id: "s_69b4fcc16dec8191a9ee78437659c03d", thumb: "solo-hannah-substantial-collateral.jpg", oneLiner: "Vision.", arc: null },
       { id: "s_69b4fd8efeec8191b03ab1b12b87ee71", thumb: "solo-hannah-museum-acquisition.jpg", oneLiner: "Exhibit A - Acquisition.", arc: null },
       { id: "s_69b505325e0881918ff2fea8aba22b60", thumb: "solo-hannah-dinner-check.jpg", oneLiner: "Dinner check ft. @lofoandpu.pugzley.", arc: null },
+      { id: "s_69b6202f48908191ae4c1184c8a3624d", thumb: "solo-hannah-payment-method.jpg", oneLiner: "Do you know what money is?", arc: null },
       
       
     ],
@@ -880,6 +884,9 @@ HANNAH
     { id: "s_69990bd2e348819199b950ff21b6056a", thumb: "multi-amit-evilamit-lactose-free-gerch.jpg", oneLiner: "Lactose-free Gerch Milk.", characters: ["amit", "evilamit"], arc: null },
     { id: "s_699a1ef345648191bbf98c20051c021d", thumb: "multi-amit-evilamit-arm-wrestle.jpg", oneLiner: "Effort is Optional.", characters: ["amit", "evilamit"], arc: null },
     { id: "s_699b738b2394819183bb5a7028dca018", thumb: "multi-amit-gadha-dark-light-gerchlander-eelon-race-cheetah.jpg", oneLiner: "The Race.", characters: ["amit", "gadha", "eelon", "darkamit", "lightamit", "gerchlander"], arc: null },
+    { id: "s_699c7310f6688191be6f783fdfd288a0", thumb: "multi-amit-evilamit-have-it-your-way.jpg", oneLiner: "Have it your way.", characters: ["amit", "evilamit"], arc: null },
+    { id: "s_699f8c318b5c8191ac8c914eb2b9303b", thumb: "multi-amit-evilamit-amitsmother-gadha-rub-it-in.jpg", oneLiner: "Rubbing it in.", characters: ["amit", "evilamit", "gadha", "amitsmother"], arc: null },
+    { id: "s_699fb81268c481919f4d52b4220cf02a", thumb: "multi-amit-evilamit-supreme-dream-benevolent.jpg", oneLiner: "Evil Amit: Supreme - Dream Benevolent.", characters: ["amit", "evilamit"], arc: null },
     
     
 
