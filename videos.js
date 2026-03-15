@@ -551,7 +551,7 @@ const VIDEO_DB = {
 */
     // COLIN MERCER 
     colin: [
-      { id: "placeholder_001", thumb: "solo-colin-intro.jpg", oneLiner: "Colin introduces himself to the Gerch-Verse. The patent expires when he says it does.", arc: null },
+      { id: "s_69b653bd00f881919a9f30b286a920ab", thumb: "solo-colin-caravaggio-acquisition.jpg", oneLiner: "Caravaggio Acquisition.", arc: null },
       { id: "placeholder_002", thumb: "solo-colin-legacy.jpg", oneLiner: "The father of modern pharmaceutical pricing. If Cole is the villain, Colin wrote the playbook—and patented it.", arc: null },
       { id: "placeholder_003", thumb: "solo-colin-patents.jpg", oneLiner: "Patents don't expire, they just get renewed. Forever.", arc: null },
     ],
@@ -923,6 +923,7 @@ HANNAH
     { id: "s_69ab7966b7b48191aba0010d12bab11a", thumb: "multi-amit-mediocrates-12%-growth.jpg", oneLiner: "12% Growth", characters: ["amit", "mediocrates"], arc: null },
     { id: "s_69ac959141f48191b0068298e8454419", thumb: "multi-moocoin-dump.jpg", oneLiner: "Moo pumps. Lizzie Dumps.", characters: ["michaelmoo", "lizzie", "darkamit", "amit"], arc: null },
     { id: "s_69acc746643c81918f0fd67ce4aaee97", thumb: "multi-amit-oletex-boar-attack.jpg", oneLiner: "Boar attack.", characters: ["oletex", "amit"], arc: null },
+    { id: "s_69b65b715c5081919cd8a6d9ffc2631e", thumb: "multi-colin-cole-defend-ego.jpg", oneLiner: "Defending your ego.", characters: ["cole", "colin"], arc: null },
     
     
 
