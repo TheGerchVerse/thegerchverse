@@ -237,7 +237,13 @@ const VIDEO_DB = {
       { id: "s_6994cdc89e448191b0c7b960b9c553e2", thumb: "amit-jurassic-insolence.jpg", oneLiner: "Jurassic Insolence.", arc: null },
       { id: "s_6994f4c3c18881918a940e96c45f7f0a", thumb: "amit-ninja-please.jpg", oneLiner: "Ninja, please.", arc: null },
       { id: "s_69952821cff8819187de6a1e319a0465", thumb: "amit-lion-wrestle.jpg", oneLiner: "Beast Mode.", arc: null },
-      { id: "s_6996014f2a048191846edaab615862d6", thumb: "amit-kraken.jpg", oneLiner: "Taming the Beast.", arc: null }
+      { id: "s_6996014f2a048191846edaab615862d6", thumb: "amit-kraken.jpg", oneLiner: "Taming the Beast.", arc: null },
+      { id: "s_69962e9e4c808191b72739d7d70564b5", thumb: "amit-defend-Q5.jpg", oneLiner: "Defend Q5.", arc: null },
+      { id: "s_699792f84fbc8191bc2c4ddb87701c2b", thumb: "amit-to-prosperity.jpg", oneLiner: "To prosperity.", arc: null },
+      { id: "s_6997a5382b1081919ef33710f74c70c0", thumb: "amit-keep-milk-rolling.jpg", oneLiner: "Keep the milk rolling.", arc: null },
+      { id: "s_6997b91963b08191a15ff11a60245885", thumb: "amit-profits-respect.jpg", oneLiner: "Profits and Respect.", arc: null },
+      { id: "s_699a20591b2481919e98d07c21f2f011", thumb: "amit-hand-slapping.jpg", oneLiner: "Hand-Slapped Dairy.", arc: null }
+      
       
 
     ],
@@ -863,6 +869,18 @@ HANNAH
     { id: "s_699508ce6e4c81918562dbcd2643237e", thumb: "multi-amit-evilamit-quarters-disagreement.jpg", oneLiner: "Profits and Quarters", characters: ["evilamit", "amit"], arc: null },
     { id: "s_699538cd5c188191908d156e93f9d324", thumb: "multi-amit-evilamit-lion-victory.jpg", oneLiner: "Respectful Victory.", characters: ["evilamit", "amit"], arc: null },
     { id: "s_6995f46521b081919badd48c14f37a65", thumb: "multi-amit-evilamit-happy-workers.jpg", oneLiner: "Happy Workers.", characters: ["evilamit", "amit"], arc: null },
+    { id: "s_69961a812bf0819189b4d636d030d20a", thumb: "multi-amit-evilamit-return-of-the-brother.jpg", oneLiner: "Return of the brother.", characters: ["evilamit", "amit"], arc: null },
+    { id: "s_699739618e188191893fab6b367e9f99", thumb: "multi-amit-evilamit-gadha-bullet-time.jpg", oneLiner: "I can do it better.", characters: ["evilamit", "amit", "gadha"], arc: null },
+    { id: "s_69976ec24d1c81918ebeef4c6c2e190c", thumb: "multi-amit-evilamit-giving-back.jpg", oneLiner: "Giving back.", characters: ["evilamit", "amit"], arc: null },
+    { id: "s_69976ec24d1c81918ebeef4c6c2e190c", thumb: "multi-amit-evilamit-giving-back.jpg", oneLiner: "Giving back.", characters: ["amit", "leon"], arc: null },
+    { id: "s_699790dc4db88191a2dbe4d379556f26", thumb: "multi-amit-leon-legal-loophole.jpg", oneLiner: "Legal loophole.", characters: ["amit", "leon"], arc: null },
+    { id: "s_6998c46dd8dc8191a0fb790b4bc332a9", thumb: "multi-amit-evilamit-profits-four-quarters.jpg", oneLiner: "4 Quarters.", characters: ["amit", "evilamit"], arc: null },
+    { id: "s_6998bfa32d888191969780087a009ed2", thumb: "multi-amit-amitsmother-gadha-abandoned01.jpg", oneLiner: "Abandoned Pt.1", characters: ["amit", "amitsmother", "gadha"], arc: null },
+    { id: "s_6998e57e0eb081919c79f2df0d6d332a", thumb: "multi-evilamit-amitsmother-gadha-amitjrq6-abandoned02.jpg", oneLiner: "Abandoned Pt.2", characters: ["evilamit", "amitsmother", "gadha", "amitjunior"], arc: null },
+    { id: "s_69990bd2e348819199b950ff21b6056a", thumb: "multi-amit-evilamit-lactose-free-gerch.jpg", oneLiner: "Lactose-free Gerch Milk.", characters: ["amit", "evilamit"], arc: null },
+    { id: "s_699a1ef345648191bbf98c20051c021d", thumb: "multi-amit-evilamit-arm-wrestle.jpg", oneLiner: "Effort is Optional.", characters: ["amit", "evilamit"], arc: null },
+    { id: "s_699a2494008081918d4157ce2d01e59a", thumb: "multi-amit-gadha-apple.jpg", oneLiner: "Side Gulag Exhibit.", characters: ["amit", "gadha"], arc: null },
+    
 
 
 
