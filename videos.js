@@ -253,8 +253,14 @@ const VIDEO_DB = {
       { id: "s_69a607ecdbc08191b1aaf9c99a5c0bd4", thumb: "amit-cereal.jpg", oneLiner: "Goes well w/Gerch Milk.", arc: null },
       { id: "s_69a61d604d14819183dbb2d250dff531", thumb: "amit-gerch-yogurt-fiber.jpg", oneLiner: "Goes well w/Gerch Milk.", arc: null },
       { id: "s_69a68c605eec8191837b9cdb5d62f4bc", thumb: "amit-pugzley-dj.jpg", oneLiner: "Boardroom B2B ft. lofoandpu.pugzley", arc: null },
-      { id: "s_69aa40a845f081918347f92473bcf2c5", thumb: "amit-the-gerchverse-promo.jpg", oneLiner: "Visit The Gerch-Verse!", arc: null }
-      
+      { id: "s_69aa40a845f081918347f92473bcf2c5", thumb: "amit-the-gerchverse-promo.jpg", oneLiner: "Visit The Gerch-Verse!", arc: null },
+      { id: "s_69adb17b86608191aad086a6bf24f0d0", thumb: "amit-gerch-beef-amit-supreme.jpg", oneLiner: "Gerch Beef Amit Supreme", arc: null },
+      { id: "s_69af3d55dee8819189a0adb3ed75e280", thumb: "amit-titanic-acquisition.jpg", oneLiner: "Titanic Acquisition", arc: null },
+      { id: "s_69afaf10962c819192121859ea5dd6cf", thumb: "amit-whip-nae-nae.jpg", oneLiner: "Whip/Nae Nae", arc: null },
+      { id: "s_69afb40a21c081918e7fd4ff19fce571", thumb: "amit-ceo-burger-challenge.jpg", oneLiner: "CEO Burger Challenge", arc: null },
+      { id: "s_69afb80fa6dc8191852451b823367dc1", thumb: "amit-gerch-beach-resort.jpg", oneLiner: "Gerchan Farms Beach Resort", arc: null },
+      { id: "s_69afb8baac4081918e49b16049555bca", thumb: "amit-pugzley-hearing-goats.jpg", oneLiner: "Hearing goats ft. lofoandpu.pugzley", arc: null },
+      { id: "s_69afbfaec6848191af7d2a2132c876b2", thumb: "amit-bird-submission.jpg", oneLiner: "Submission", arc: null }
       
 
     ],
@@ -1130,7 +1136,11 @@ HANNAH
         { id: "s_692c6e3ebb188191a4d681752dfbdcea", thumbnail: "arc-milkwars05.jpg", oneLiner: "Lizzie's fiery counter-assult." },
         { id: "s_6929a8a85c90819189225b72c7bd1e3d", thumbnail: "arc-milkwars06.jpg", oneLiner: "Zord battle: Dairy Legacy vs Plant-based Destiny." },
         { id: "s_6954d70ab644819180fdf67c2e3621dd", thumbnail: "arc-milkwars07.jpg", oneLiner: "The Aftermath. Time to Rebuild" },
-        { id: "s_6954d70ab644819180fdf67c2e3621dd", thumbnail: "arc-milkwars08.jpg", oneLiner: "Rise from the ashes. Rebirth." }
+        { id: "s_699a4fa37d108191b816b25a2c3403f0", thumbnail: "arc-milkwars08.jpg", oneLiner: "Rise from the Ashes" },
+        { id: "s_69afb8baac4081918e49b16049555bca", thumbnail: "arc-milkwars09.jpg", oneLiner: "Pugzley's new employer." },
+        { id: "s_69b0865d0a408191adc81d0a962152fd", thumbnail: "arc-milkwars10.jpg", oneLiner: "Vegan Cheese Earnings." },
+        { id: "s_69b05531e82c8191aba19cfe2896c856", thumbnail: "arc-milkwars11.jpg", oneLiner: "15% profit dip due to Vegan Cheese." },
+        
       ]
 
     },
@@ -1286,25 +1296,28 @@ HANNAH
       status: "MEDIOCRATES DISAPPROVES (BUT SECRETLY BOBS HEAD)",
     statusColor: "yellow",
       videos: [
-        { id: "s_692be9b9fda08191b1b96da78975b0e9", thumbnail: "arc-musicvideos-rawhide-hearts.jpg", oneLiner: "Rawhide Hearts" },
+        
         { id: "s_69a642e88f048191a4a10493cd4f8099", thumbnail: "arc-musicvideos-timeless-love.jpg", oneLiner: "Timeless Love" },
         { id: "s_69535b3bf7e881919b88d1d06132b124", thumbnail: "solo-leon-riddlers-ballad.jpg", oneLiner: "A Riddler's Ballad" },
         { id: "s_695c02634ba48191a657b5f054b8ad6f", thumbnail: "arc-musicvideos-i-own-the-pulse.jpg", oneLiner: "I Own the Pulse." },
         { id: "s_69647b418bf08191ae096b49de7ae3ed", thumbnail: "arc-sunset-gold.jpg", oneLiner: "Sunset Gold" },
         { id: "s_69a673b7ea14819186b8c1d485d2e1c8", thumbnail: "arc-musicvideos-big-wheels-turnin.jpg", oneLiner: "Big Wheels Turnin'" },
         { id: "s_697f87fda9548191852a7c1af29f695a", thumbnail: "arc-musicvideos-dont-grow.jpg", oneLiner: "Don't grow" },
-        { id: "s_6990cd6226588191a11f1dec17a51b8d", thumbnail: "arc-musicvideos-voices-of-destiny.jpg", oneLiner: "Voices of Destiny" },
+        { id: "s_692be9b9fda08191b1b96da78975b0e9", thumbnail: "arc-musicvideos-rawhide-hearts.jpg", oneLiner: "Rawhide Hearts" },
         { id: "s_6993abc42bcc819181dfc4fec29b603d", thumbnail: "arc-musicvideos-riddle-me-this-love.jpg", oneLiner: "Riddle me this Love" },
         { id: "s_69a51590e61481918f196d1acae8e742", thumbnail: "arc-musicvideos-move-like-mumbai.jpg", oneLiner: "Move like Mumbai" },
         { id: "s_69a5a97112308191ac18e93b8739164f", thumbnail: "arc-musicvideos-ill-rise.jpg", oneLiner: "I'll Rise" },
         { id: "s_69a8dbe045b881919f8c8ddc3a44d380", thumbnail: "arc-musicvideos-transcendant-farewell.jpg", oneLiner: "Transcendant Farewell" },
         { id: "s_695a0a39c8d481918172982b33047a92", thumbnail: "solo-leon-riddle-me-this-music-video.jpg", oneLiner: "Riddle me This" },
         { id: "s_696965680b588191b2b34091a528b1ad", thumbnail: "solo-eelon-singing-lonely.jpg", oneLiner: "Somebody to Love Me" },
+        { id: "s_69afac5f08a08191819d672aa580a1b9", thumbnail: "arc-musicvideos-rise-from-q6", oneLiner: "Rise from the Q6 Wreckage" },
+        { id: "s_6990cd6226588191a11f1dec17a51b8d", thumbnail: "arc-musicvideos-voices-of-destiny.jpg", oneLiner: "Voices of Destiny" },
         { id: "s_6977f4f780cc8191bc0ae145e229eb10", thumbnail: "arc-musicvideos-engine-in-the-open-sky.jpg", oneLiner: "Engine in the Open Sky" },
         { id: "s_6969e4a525788191b3fe9cfdb4f4b2be", thumbnail: "solo-leon-riddle-me-this-classroom.jpg", oneLiner: "Riddlin' in the classroom" },
         { id: "s_69837fc9b1f08191b018966c235af0f6", thumbnail: "arc-musicvideos-your-eyes-speak.jpg", oneLiner: "Speak With Your Eyes." },
         { id: "s_69a3f6c097cc8191be8c03340f5191c4", thumbnail: "arc-musicvideos-sax-it-to-me.jpg", oneLiner: "Sax it to me." },
         { id: "s_69a157a85ee48191afa3b90d1f8af0d4", thumbnail: "arc-musicvideos-strings-on-me.jpg", oneLiner: "Strings on Me" },
+        { id: "s_69af337c7c6c8191815b05cff16d3675", thumbnail: "arc-musicvideos-want-the-taller-one.jpg", oneLiner: "(I want) the taller one)." },
         { id: "s_69a68a20ff048191a1696b6d60820a01", thumbnail: "arc-music-videos-a-breeze-that-knows-my-name.jpg", oneLiner: "A Breeze that Knows My Name" },
         { id: "s_6997c30c7d248191a936d2340437f3ac", thumbnail: "arc-musicvideos-sunshine-eelon.jpg", oneLiner: "Sunshine" },
         { id: "s_699b88289b348191bcad23d74b9bb9e4", thumbnail: "arc-musicvideos-my-desire.jpg", oneLiner: "My Desire" },
