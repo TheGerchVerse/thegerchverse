@@ -250,8 +250,10 @@ const VIDEO_DB = {
       { id: "s_69a374127f6c8191aa5f22c9b3733e05", thumb: "amit-honoring-legacy-bull-wrestle.jpg", oneLiner: "Honoring Legacy.", arc: null },
       { id: "s_69a3c2a483a48191a97d6a6456dcabb4", thumb: "amit-conquest.jpg", oneLiner: "Conquest.", arc: null },
       { id: "s_69a3c5492f008191b0af20378a083f87", thumb: "amit-mummy-issues.jpg", oneLiner: "Mummy Issues.", arc: null },
-      { id: "s_69a607ecdbc08191b1aaf9c99a5c0bd4", thumb: "amit-cereal.jpg", oneLiner: "Goes well w/Gerch Milk.", arc: null }
-      { id: "s_69a61d604d14819183dbb2d250dff531", thumb: "amit-gerch-yogurt-fiber.jpg", oneLiner: "Goes well w/Gerch Milk.", arc: null }
+      { id: "s_69a607ecdbc08191b1aaf9c99a5c0bd4", thumb: "amit-cereal.jpg", oneLiner: "Goes well w/Gerch Milk.", arc: null },
+      { id: "s_69a61d604d14819183dbb2d250dff531", thumb: "amit-gerch-yogurt-fiber.jpg", oneLiner: "Goes well w/Gerch Milk.", arc: null },
+      { id: "s_69a68c605eec8191837b9cdb5d62f4bc", thumb: "amit-pugzley-dj.jpg", oneLiner: "Boardroom B2B ft. lofoandpu.pugzley", arc: null },
+      { id: "s_69aa40a845f081918347f92473bcf2c5", thumb: "amit-the-gerchverse-promo.jpg", oneLiner: "Visit The Gerch-Verse!", arc: null }
       
       
 
@@ -897,6 +899,8 @@ HANNAH
     { id: "s_69b6091e6b288191b67d6bc533861244", thumb: "multi-hannah-leon-catchphrase.jpg", oneLiner: "Not a catchphrase.", characters: ["leon", "hannah"], arc: null },
     { id: "s_69b64fa3dcfc8191a804b80709f87d04", thumb: "multi-hannah-amit-seed-funding.jpg", oneLiner: "Seed funding.", characters: ["amit", "hannah"], arc: null },
     { id: "s_69a5ea36ff888191b4b1ddb4c86fa83b", thumb: "multi-amit-and-mother-real-reason.jpg", oneLiner: "The real reason.", characters: ["amit", "amitsmother"], arc: null },
+    { id: "s_69ab7966b7b48191aba0010d12bab11a", thumb: "multi-amit-mediocrates-12%-growth.jpg", oneLiner: "12% Growth", characters: ["amit", "mediocrates"], arc: null },
+    { id: "s_69ac959141f48191b0068298e8454419", thumb: "multi-moocoin-dump.jpg", oneLiner: "Moo pumps. Lizzie Dumps.", characters: ["michaelmoo", "lizzie", "darkamit", "amit"], arc: null },
     
     
 
