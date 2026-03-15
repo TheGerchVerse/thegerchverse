@@ -704,6 +704,7 @@ HANNAH
       { id: "s_69b6202f48908191ae4c1184c8a3624d", thumb: "solo-hannah-payment-method.jpg", oneLiner: "Do you know what money is?", arc: null },
       
       
+      
     ],
 
 /*
@@ -887,6 +888,7 @@ HANNAH
     { id: "s_699c7310f6688191be6f783fdfd288a0", thumb: "multi-amit-evilamit-have-it-your-way.jpg", oneLiner: "Have it your way.", characters: ["amit", "evilamit"], arc: null },
     { id: "s_699f8c318b5c8191ac8c914eb2b9303b", thumb: "multi-amit-evilamit-amitsmother-gadha-rub-it-in.jpg", oneLiner: "Rubbing it in.", characters: ["amit", "evilamit", "gadha", "amitsmother"], arc: null },
     { id: "s_699fb81268c481919f4d52b4220cf02a", thumb: "multi-amit-evilamit-supreme-dream-benevolent.jpg", oneLiner: "Evil Amit: Supreme - Dream Benevolent.", characters: ["amit", "evilamit"], arc: null },
+    { id: "s_69b6091e6b288191b67d6bc533861244", thumb: "multi-hannah-leon-catchphrase.jpg", oneLiner: "Not a catchphrase.", characters: ["leon", "hannah"], arc: null },
     
     
 
