@@ -913,7 +913,6 @@ HANNAH
     { id: "s_69961a812bf0819189b4d636d030d20a", thumb: "multi-amit-evilamit-return-of-the-brother.jpg", oneLiner: "Return of the brother.", characters: ["evilamit", "amit"], arc: null },
     { id: "s_699739618e188191893fab6b367e9f99", thumb: "multi-amit-evilamit-gadha-bullet-time.jpg", oneLiner: "I can do it better.", characters: ["evilamit", "amit", "gadha"], arc: null },
     { id: "s_69976ec24d1c81918ebeef4c6c2e190c", thumb: "multi-amit-evilamit-giving-back.jpg", oneLiner: "Giving back.", characters: ["evilamit", "amit"], arc: null },
-    { id: "s_69976ec24d1c81918ebeef4c6c2e190c", thumb: "multi-amit-evilamit-giving-back.jpg", oneLiner: "Giving back.", characters: ["amit", "leon"], arc: null },
     { id: "s_699790dc4db88191a2dbe4d379556f26", thumb: "multi-amit-leon-legal-loophole.jpg", oneLiner: "Legal loophole.", characters: ["amit", "leon"], arc: null },
     { id: "s_6998c46dd8dc8191a0fb790b4bc332a9", thumb: "multi-amit-evilamit-profits-four-quarters.jpg", oneLiner: "4 Quarters.", characters: ["amit", "evilamit"], arc: null },
     { id: "s_6998bfa32d888191969780087a009ed2", thumb: "multi-amit-amitsmother-gadha-abandoned01.jpg", oneLiner: "Abandoned Pt.1", characters: ["amit", "amitsmother", "gadha"], arc: null },
