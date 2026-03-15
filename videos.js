@@ -879,7 +879,8 @@ HANNAH
     { id: "s_6998e57e0eb081919c79f2df0d6d332a", thumb: "multi-evilamit-amitsmother-gadha-amitjrq6-abandoned02.jpg", oneLiner: "Abandoned Pt.2", characters: ["evilamit", "amitsmother", "gadha", "amitjunior"], arc: null },
     { id: "s_69990bd2e348819199b950ff21b6056a", thumb: "multi-amit-evilamit-lactose-free-gerch.jpg", oneLiner: "Lactose-free Gerch Milk.", characters: ["amit", "evilamit"], arc: null },
     { id: "s_699a1ef345648191bbf98c20051c021d", thumb: "multi-amit-evilamit-arm-wrestle.jpg", oneLiner: "Effort is Optional.", characters: ["amit", "evilamit"], arc: null },
-    { id: "s_699a2494008081918d4157ce2d01e59a", thumb: "multi-amit-gadha-apple.jpg", oneLiner: "Side Gulag Exhibit.", characters: ["amit", "gadha"], arc: null },
+    { id: "s_699b738b2394819183bb5a7028dca018", thumb: "multi-amit-gadha-dark-light-gerchlander-eelon-race-cheetah.jpg", oneLiner: "The Race.", characters: ["amit", "gadha", "eelon", "darkamit", "lightamit", "gerchlander"], arc: null },
+    
     
 
 
