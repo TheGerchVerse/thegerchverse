@@ -246,7 +246,10 @@ const VIDEO_DB = {
       { id: "s_699e553955c081918e9f6e58adde221c", thumb: "amit-valhalla-acquisition.jpg", oneLiner: "Valhalla acquisition.", arc: null },
       { id: "s_699eab02dba0819190781c4507c001f0", thumb: "amit-domestication.jpg", oneLiner: "Domestication.", arc: null },
       { id: "s_69a2092318cc8191a0e3c6bc0107016f", thumb: "amit-mommy-issues.jpg", oneLiner: "Mommy issues.", arc: null },
-      { id: "s_69a310a73e088191ba4dbfebeaa665b0", thumb: "amit-q5-approval-tirade.jpg", oneLiner: "Q5 Approved Overnight.", arc: null }
+      { id: "s_69a310a73e088191ba4dbfebeaa665b0", thumb: "amit-q5-approval-tirade.jpg", oneLiner: "Q5 Approved Overnight.", arc: null },
+      { id: "s_69a374127f6c8191aa5f22c9b3733e05", thumb: "amit-honoring-legacy-bull-wrestle.jpg", oneLiner: "Honoring Legacy.", arc: null },
+      { id: "s_69a3c2a483a48191a97d6a6456dcabb4", thumb: "amit-conquest.jpg", oneLiner: "Conquest.", arc: null },
+      { id: "s_69a3c5492f008191b0af20378a083f87", thumb: "amit-mummy-issues.jpg", oneLiner: "Mummy Issues.", arc: null }
       
       
 
@@ -1285,7 +1288,8 @@ HANNAH
         { id: "s_698f8eb52f6c8191b6302b9faf0ce84c", thumbnail: "arc-musicvideos-q5-on-ice.jpg", oneLiner: "Q5 On Ice." },
         { id: "s_69912b9523488191871daf8ebd35105c", thumbnail: "arc-musicvideos-q5-ballads.jpg", oneLiner: "Q5 Ballads." },
         { id: "s_699211ccb40481919d270cf9a37c84fb", thumbnail: "arc-musicvideos-cows-insolence-farm.jpg", oneLiner: "Insolence." },
-        { id: "s_6994c795c74881919766f6cd30bf8f71", thumbnail: "arc-musicvideos-the-gerch-verse.jpg", oneLiner: "The Gerch-Verse." }
+        { id: "s_6994c795c74881919766f6cd30bf8f71", thumbnail: "arc-musicvideos-the-gerch-verse.jpg", oneLiner: "The Gerch-Verse." },
+        { id: "s_69a331c96e288191a1533f19def4f947", thumbnail: "arc-musicvideos-unbreakable.jpg", oneLiner: "Unbreakable Gold." }
       ]      
 
 
