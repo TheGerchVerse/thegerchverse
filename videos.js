@@ -927,7 +927,7 @@ HANNAH
     { id: "s_69b6091e6b288191b67d6bc533861244", thumb: "multi-hannah-leon-catchphrase.jpg", oneLiner: "Not a catchphrase.", characters: ["leon", "hannah"], arc: null },
     { id: "s_69b64fa3dcfc8191a804b80709f87d04", thumb: "multi-hannah-amit-seed-funding.jpg", oneLiner: "Seed funding.", characters: ["amit", "hannah"], arc: null },
     { id: "s_69a5ea36ff888191b4b1ddb4c86fa83b", thumb: "multi-amit-and-mother-real-reason.jpg", oneLiner: "The real reason.", characters: ["amit", "amitsmother"], arc: null },
-    { id: "s_69ab7966b7b48191aba0010d12bab11a", thumb: "multi-amit-mediocrates-12%-growth.jpg", oneLiner: "12% Growth", characters: ["amit", "mediocrates"], arc: null },
+    { id: "s_69ab7966b7b48191aba0010d12bab11a", thumb: "multi-amit-mediocrates-growth.jpg", oneLiner: "12% Growth", characters: ["amit", "mediocrates"], arc: null },
     { id: "s_69ac959141f48191b0068298e8454419", thumb: "multi-moocoin-dump.jpg", oneLiner: "Moo pumps. Lizzie Dumps.", characters: ["michaelmoo", "lizzie", "darkamit", "amit"], arc: null },
     { id: "s_69acc746643c81918f0fd67ce4aaee97", thumb: "multi-amit-oletex-boar-attack.jpg", oneLiner: "Boar attack.", characters: ["oletex", "amit"], arc: null },
     { id: "s_69b65b715c5081919cd8a6d9ffc2631e", thumb: "multi-colin-cole-defend-ego.jpg", oneLiner: "Defending your ego.", characters: ["cole", "colin"], arc: null },
@@ -1478,7 +1478,7 @@ const CHARACTERS = {
     colin: {
     name: "Colin Mercer",
     handle: "@pharma_dad",
-    role: "The Patriarch of Pharmaceutical Pricing",
+    role: "Pharma Magnate",
     avatar: "../images/colin.jpg",
     color: "#4169E1"
   },
